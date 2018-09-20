@@ -6,8 +6,8 @@
       </span>
       <v-spacer></v-spacer>
       <v-tooltip bottom>
-        <v-btn icon slot="activator" @click="changeView('home')">
-          <v-icon color="grey darken-3">home</v-icon>
+        <v-btn icon dark slot="activator" @click="changeView('home')">
+          <v-icon>home</v-icon>
         </v-btn>
         <span>Home</span>
       </v-tooltip>
@@ -17,10 +17,11 @@
               :key="item.title"
               v-show="!notShow[item.name]"
       >
-        <v-btn icon slot="activator">
-          <v-icon color="grey darken-3">{{ item.action }}</v-icon>
+        <v-btn icon dark slot="activator">
+          <v-icon>{{ item.action }}</v-icon>
         </v-btn>
-        <v-list>
+        <v-list subheader>
+	  <v-subheader>{{ item.title }}</v-subheader>
           <v-list-tile
             v-for="subItem in item.items"
             v-show="!notShow[subItem.name]"
@@ -281,7 +282,7 @@ export default {
       }
     },
     headerClass() {
-      return this.mode === 'normal' ? 'grey lighten-3' : 'orange'
+      return this.mode === 'normal' ? 'indigo darken-3' : 'orange'
     }
   },
   components: {

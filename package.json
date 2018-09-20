@@ -10,6 +10,7 @@
   "dependencies": {
     "@ledgerhq/hw-app-btc": "^4.7.3",
     "@ledgerhq/hw-transport-u2f": "^4.7.3",
+    "abi-decoder": "^1.2.0",
     "bignumber.js": "^4.1.0",
     "file-saver": "^1.3.8",
     "js-sha256": "^0.9.0",
@@ -28,6 +29,7 @@
     "babel-loader": "^7.1.4",
     "babel-plugin-transform-runtime": "^6.22.0",
     "babel-preset-env": "^1.7.0",
+    "babel-preset-es2015": "^6.24.1",
     "babel-preset-stage-2": "^6.22.0",
     "babel-register": "^6.22.0",
     "bip32-utils": "^0.10.2",
@@ -59,6 +61,7 @@
     "shelljs": "^0.7.6",
     "store": "^2.0.12",
     "style-loader": "^0.18.2",
+    "uglifyjs-webpack-plugin": "1.1.6",
     "url-loader": "^0.5.8",
     "vue-cli-plugin-vuetify": "^0.1.6",
     "vue-i18n": "^7.6.0",

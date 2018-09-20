@@ -65,33 +65,33 @@
                    label="Full Name"
                    v-model.trim="fullName"
                    required
-                   outline
+                   box
                   ></v-text-field>
                   <v-text-field
                    label="Mother's Full Name"
                    v-model.trim="motherFullName"
-                   outline
+		   box
                   ></v-text-field>
                   <v-text-field
                    label="Father's Full Name"
                    v-model.trim="fatherFullName"
-                   outline
+                   box
                   ></v-text-field>
                   <v-text-field
                    label="Date of Birth (YYYYMMDD // 01 of May 2018 => 20180501)"
                    v-model.trim="dateOfBirth"
                    required
-                   outline
+		   box
                   ></v-text-field>
                   <v-text-field
-                   label="Time of Birth (HH24mmss // 19:30:00 => 193000)"
+                   label="Time of Birth (HH24mm // 19:30 => 1930)"
                    v-model.trim="timeOfBirth"
-                   outline
+		   box
                   ></v-text-field>
                   <v-text-field
                    label="Place of Birth (City, State, Country)"
                    v-model.trim="placeOfBirth"
-                   outline
+		   box
                   ></v-text-field>
                   <br><br>
                   <v-layout>
@@ -100,7 +100,8 @@
                        label="Gas Price (1e-8 HTML/gas)"
                        v-model.trim="gasPrice"
                        required
-                       outline
+		       box
+		       background-color="indigo lighten-3"
                       ></v-text-field>
                     </v-flex>
                     <v-flex xs4>
@@ -108,7 +109,8 @@
                        label="Gas Limit"
                        v-model.trim="gasLimit"
                        required
-                       outline
+		       box
+                       background-color="indigo lighten-3"
                       ></v-text-field>
                     </v-flex>
                     <v-flex xs4>
@@ -116,7 +118,8 @@
                        label="Fee"
                        v-model.trim="fee"
                        required
-                       outline
+                       box
+		       background-color="indigo lighten-3"
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -136,6 +139,9 @@
                   <v-card-text>
                     <v-container grid-list-md>
                       <v-layout wrap>
+			<v-flex xs12>
+			  <b>Please store the ID below in a safe place, as it is the unique ID for this Birth registration.</b>
+			</v-flex>
 			<v-flex xs10>
 			  <v-text-field label="Hash ID" v-model="hashID" disabled></v-text-field>
 			</v-flex>
@@ -172,75 +178,42 @@
 		  <v-text-field
 		   class="mx-3"
                    flat
-                   label="Heir Hash Code"
+                   label="Hash ID"
                    prepend-inner-icon="search"
                    solo-inverted
+		   v-model.trim="searchHashID"
+		   append-icon="send"
+		   @click:append="callTo"		   
 		  ></v-text-field> 
-                  <v-text-field
-                   label="Full Name"
-                   v-model.trim="fullName"
-                   required
-                   outline
-                  ></v-text-field>
-                  <v-text-field
-                   label="Mother's Full Name"
-                   v-model.trim="motherFullName"
-                   outline
-                  ></v-text-field>
-                  <v-text-field
-                   label="Father's Full Name"
-                   v-model.trim="fatherFullName"
-                   outline
-                  ></v-text-field>
-                  <v-text-field
-                   label="Date of Birth (YYYYMMDD // 01 of May 2018 => 20180501)"
-                   v-model.trim="dateOfBirth"
-                   required
-                   outline
-                  ></v-text-field>
-                  <v-text-field
-                   label="Time of Birth (HH24mmss // 19:30:00 => 193000)"
-                   v-model.trim="timeOfBirth"
-                   outline
-                  ></v-text-field>
-                  <v-text-field
-                   label="Place of Birth (City, State, Country)"
-                   v-model.trim="placeOfBirth"
-                   outline
-                  ></v-text-field>
-                  <br><br>
-                  <v-layout>
-                    <v-flex xs4>
-                      <v-text-field
-                       label="Gas Price (1e-8 HTML/gas)"
-                       v-model.trim="gasPrice"
-                       required
-                       outline
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-text-field
-                       label="Gas Limit"
-                       v-model.trim="gasLimit"
-                       required
-                       outline
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-text-field
-                       label="Fee"
-                       v-model.trim="fee"
-                       required
-                       outline
-                      ></v-text-field>
-                    </v-flex>
-                  </v-layout>
                 </v-form>
               </v-card-text>
-              <v-card-actions>
-                <v-spacer></v-spacer>
-                <v-btn class="success" dark @click="send" :disabled="notValid">{{ $t('common.confirm') }}</v-btn>
-              </v-card-actions>
+	      <v-dialog v-model="execResultDialog" persistent max-width="50%">
+                <v-card>
+                  <v-card-title>
+                    <span class="headline">
+                      {{ $t('call_contract.result') + ': ' + this.resultStatus }}
+                    </span>
+                  </v-card-title>
+                  <v-card-text>
+                    <v-container grid-list-md>
+                      <v-layout wrap>
+                        <v-flex xs12>
+                          <v-text-field label="Full Name" v-model="resultFullName" readonly></v-text-field>
+                          <v-text-field label="Mother's Full Name" v-model="resultMotherFullName" readonly></v-text-field>
+                          <v-text-field label="Father's Full Name" v-model="resultFatherFullName" readonly></v-text-field>
+                          <v-text-field label="Date of Birth" v-model="resultDateOfBirth" readonly></v-text-field>
+                          <v-text-field label="Time of Birth" v-model="resultTimeOfBirth" readonly></v-text-field>
+                          <v-text-field label="Place of Birth" v-model="resultPlaceOfBirth" readonly></v-text-field>
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                  </v-card-text>
+                  <v-card-actions>
+                    <v-spacer></v-spacer>
+                    <v-btn class="blue--text darken-1" flat @click.native="execResultDialog = false">OK</v-btn>
+                  </v-card-actions>
+                </v-card>
+              </v-dialog>
             </v-flex>
           </v-container>
         </v-card>
@@ -266,24 +239,36 @@ export default {
       method: null,
       inputParams: [],
       fullName: '',
+      motherFullName: '',
+      fatherFullName: '',
       dateOfBirth: '',
       timeOfBirth: '',
+      placeOfBirth: '',
       gasPrice: '40',
       gasLimit: '2500000',
       fee: '0.01',
       confirmSendDialog: false,
+      execResultDialog: false,
       rawTx: 'loading...',
       canSend: false,
       sending: false,
-      hashID: ''
+      hashID: '',
+      searchHashID: '',
+      resultStatus: '',
+      resultFullName: 'loading...',
+      resultMotherFullName: 'loading...',
+      resultFatherFullName: 'loading...',
+      resultDateOfBirth: 'loading...',
+      resultTimeOfBirth: 'loading...',
+      resultPlaceOfBirth: 'loading...'
     }
   },
   computed: {
     notValid: function() {
       //@todo valid the address
       const nameCheck = /^(?!\s*$).+/.test(this.fullName)
-      const dateOfBirthCheck = /^\b[0-9]{8}\b$/.test(this.dateOfBirth)
-      const timeOfBirthCheck = this.timeOfBirth == '' || /^\b([0-9]{6})\b$/.test(this.timeOfBirth)
+      const dateOfBirthCheck = /^\b[0-9]{8}\b$/.test(this.dateOfBirth) && parseInt(this.dateOfBirth) <= parseInt(this.todayFormattedDate())
+      const timeOfBirthCheck = this.timeOfBirth == '' || /^\b([0-1]\d|2[0-3])[0-5]\d$/.test(this.timeOfBirth)
       const gasPriceCheck = /^\d+\.?\d*$/.test(this.gasPrice) && this.gasPrice > 0
       const gasLimitCheck = /^\d+\.?\d*$/.test(this.gasLimit) && this.gasLimit > 0
       const feeCheck = /^\d+\.?\d*$/.test(this.fee) && this.fee > 0.0001
@@ -300,12 +285,14 @@ export default {
       try {
 
 	const abiJson = [{"constant": true, "inputs": [{"name": "hash", "type": "string"} ], "name": "getHeir", "outputs": [{"name": "result", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "hash", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "name": "newHeir", "outputs": [{"name": "result", "type": "string"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": false, "name": "hash", "type": "string"} ], "name": "heirEvent", "type": "event"} ]
-
+	
 	this.hashID = sha256(this.fullName+this.motherFullName+this.fatherFullName+this.dateOfBirth+this.timeOfBirth+this.placeOfBirth+Date.now())
 
         const encodedData = abi.encodeMethod(abiJson[1], [this.hashID, this.fullName, this.motherFullName, this.fatherFullName, this.dateOfBirth, this.timeOfBirth, this.placeOfBirth]).substr(2)
-        this.confirmSendDialog = true
-        try {
+        
+	this.confirmSendDialog = true
+        
+	try {
           this.rawTx = await webWallet.getWallet().generateSendToContractTx(this.contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee)
         } catch (e) {
           this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e)
@@ -326,15 +313,74 @@ export default {
       this.sending = true
       try {
         const txId = await webWallet.getWallet().sendRawTx(this.rawTx)
-        this.confirmSendDialog = false
+	this.confirmSendDialog = false
         this.sending = false
-        this.$root.success('Successful send. You can view at ' + server.currentNode().getTxExplorerUrl(txId))
+        const txViewUrl = server.currentNode().getTxExplorerUrl(txId)
+        this.$root.success(`Successful sent! You can follow the transaction on <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`, true, 0)
         this.$emit('send')
       } catch (e) {
         alert(e.message || e)
         this.$root.log.error('send_to_contract_post_raw_tx_error', e.response || e.stack || e.toString() || e)
         this.confirmSendDialog = false
       }
+    },
+
+
+    async callTo() {
+      if(this.searchHashID != ''){
+
+        try {
+
+	  const abiJson = [{"constant": true, "inputs": [{"name": "hash", "type": "string"} ], "name": "getHeir", "outputs": [{"name": "result", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "hash", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "name": "newHeir", "outputs": [{"name": "result", "type": "string"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": false, "name": "hash", "type": "string"} ], "name": "heirEvent", "type": "event"} ]
+
+          const encodedData = abi.encodeMethod(abiJson[0], [this.searchHashID]).substr(2)
+
+          this.execResultDialog = true
+        
+            try {
+	      var encodedResult = await webWallet.getWallet().callContract(this.contractAddress, encodedData)
+          
+	      encodedResult = '0x' + encodedResult
+
+	      var decodedResult = abi.decodeMethod(abiJson[0], encodedResult)
+	  
+	      this.resultStatus = decodedResult[0]
+	      this.resultFullName = decodedResult[1]
+	      this.resultMotherFullName = decodedResult[2]
+	      this.resultFatherFullName = decodedResult[3]
+	      this.resultDateOfBirth = decodedResult[4]
+	      this.resultTimeOfBirth = decodedResult[5]
+	      this.resultPlaceOfBirth = decodedResult[6]
+
+            } catch (e) {
+              this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e)
+              alert(e.message || e)
+              this.execResultDialog = false
+            }
+          } catch (e) {
+            this.$root.error('Params error')
+            this.$root.log.error('call_contract_encode_abi_error', e.stack || e.toString() || e)
+            return false
+          }
+       }
+    },
+
+    todayFormattedDate() {
+      var today = new Date();
+      var dd = today.getDate();
+      var mm = today.getMonth()+1; //January is 0!
+
+      var yyyy = today.getFullYear();
+      if(dd<10){
+        dd='0'+dd;
+      } 
+      if(mm<10){
+        mm='0'+mm;
+      } 
+      
+      var formattedDate = yyyy+mm+dd;
+      
+      return formattedDate;
     },
 
     onCopySucc: function() {
