@@ -38,6 +38,12 @@
            </v-list-tile>
         </v-list>
       </v-menu>
+      <v-tooltip bottom v-show="showLogoff">
+        <v-btn icon dark slot="activator" @click="logoff">
+          <v-icon>power_settings_new</v-icon>
+        </v-btn>
+        <span>Log off</span>
+      </v-tooltip>      
     </v-toolbar>
     <main>
       <v-content>
@@ -120,7 +126,7 @@ export default {
       notifyList: {},
       items: [
         {
-          action: 'input',
+          action: 'open_in_browser',
           title: 'Add Wallet',
           name: 'new_wallet',
 	  active: true,
@@ -231,19 +237,19 @@ export default {
           active: false,
           items: [
             {
-              title: 'TokenFarm',
-              name: 'create_token',
-              image: 'http://104.236.228.131/tokenfarm/dist/images/tokenfarm_logo_menu.png'
-            },
-            {
               title: 'myOffspring',
               name: 'dapp_myoffspring',
               image: 'http://104.236.228.131/tokenfarm/dist/images/myoffspring_logo_menu.png'
+            },
+            {
+              title: 'TokenFarm',
+              name: 'create_token',
+              image: 'http://104.236.228.131/tokenfarm/dist/images/tokenfarm_logo_menu.png'
             }
           ]
         },
         {
-          action: 'power_settings_new',
+          action: 'settings',
           title: 'Settings',
           name: 'top_settings',
           active: false,
@@ -251,7 +257,7 @@ export default {
             {
               title: 'General',
               name: 'settings',
-              action: 'settings'
+              action: 'list'
             }
           ]
         }
@@ -283,7 +289,10 @@ export default {
     },
     headerClass() {
       return this.mode === 'normal' ? 'indigo darken-3' : 'orange'
-    }
+    },
+    showLogoff(){
+      return !(this.mode === 'offline' || !this.wallet)
+    },
   },
   components: {
     Notify,
@@ -321,6 +330,10 @@ export default {
           this.current = 'view'
         }
       }
+    },
+    logoff(){
+      this.wallet = null
+      this.current = 'home'
     },
     changeView(name) {
       this.current = name

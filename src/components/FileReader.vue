@@ -1,7 +1,7 @@
 <template>
   <v-btn @click="clickBtn" :color="color">
     <slot>{{ $t('file_reader.upload') }}</slot>
-    <input type="file" style="display: none;" @change="handleFiles" ref="input"/>
+    <input type="file" style="display: none;" @change="handleFiles" ref="input" />
   </v-btn>
 </template>
 
@@ -26,6 +26,7 @@ export default {
         })
       }
       reader.readAsText(file)
+      this.$refs.input.value = ''
     }
   }
 }

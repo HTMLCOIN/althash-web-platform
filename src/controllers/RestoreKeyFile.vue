@@ -32,7 +32,7 @@ export default {
       let content = keyfile.parse(upload.content)
       if (content) {
         this.passwordRequired = true
-        this.content = content
+	this.content = content
       }
       else {
         this.$root.error('the_key_file_is_not_a_valid_format')

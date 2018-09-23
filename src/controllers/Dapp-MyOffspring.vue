@@ -32,27 +32,34 @@
         Check
         <v-icon>search</v-icon>
       </v-tab>
-      <v-tab-item
-      >
-        <v-card flat>
-          <v-card-text>
-	    <v-container fluid grid-list-md>
-              <v-flex xs6 offset-xs3>
-                <center>
-	          <span class="display-1">Welcome to MyOffspring!</span>
-	          <br><br>
-                  This application allows you to register your children and create a Birth Certificate for them in the <b>AltHash</b> blockchain.
+      <v-tab-item>
+      <template>
+        <v-layout row>
+          <v-flex xs12 sm6 offset-sm3>
+            <br><br>
+	    <v-card>
+              <v-card-text>
+		<div align="center">
+                  <img src="images/myoffspring_splash.jpg">
                   <br><br>
-                  To create a new record, just click on "New" menu item, and fill in the details about the birth of your heir. 
+                  <span class="display-1">Welcome to MyOffspring!</span>
 		  <br><br>
-		  <b>Take note of the hash code generated, as it will be the unique identifier for the birth registration.</b>
+                  <span class="subheading">
+		  This application allows you to register your children and create a Birth Certificate for them in the <b>AltHash</b> blockchain.
+                  <br><br>
+                  To create a new record, just click on "New" menu item, and fill in the details about the birth of your heir.
+                  <br><br>
+                  <b>Take note of the hash code generated, as it will be the unique identifier for the birth registration.</b>
                   <br><br>
                   Once the transaction is confirmed, the registration is complete and you can verify it through the menu item "Check".
-                </center>
-	      </v-flex>
-            </v-container>
-          </v-card-text>
-        </v-card>
+                  </span>
+		  <br><br>
+                </div>
+              </v-card-text>
+            </v-card>
+          </v-flex>
+        </v-layout>
+      </template>
       </v-tab-item>
       <v-tab-item
       >
