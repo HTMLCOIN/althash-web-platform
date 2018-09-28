@@ -5,6 +5,19 @@
         <span class="text"><img src="images/logo_althash_webplatform.png" alt="Althash Webplatform Logo"></span>
       </span>
       <v-spacer></v-spacer>
+
+      <v-menu bottom open-on-hover offset-y
+              :nudge-width="100"
+              v-for="dapp in dapps.items"
+              :key="dapp.title"
+              v-show="!notShow['dapps']"
+      >
+        <v-btn icon large dark slot="activator" @click="changeView(dapp.name)">
+          <img :src="dapp.btn" style="height:35px;width:auto;">
+        </v-btn>
+      </v-menu>
+
+      <v-spacer></v-spacer>
       <v-tooltip bottom>
         <v-btn icon dark slot="activator" @click="changeView('home')">
           <v-icon>home</v-icon>
@@ -29,10 +42,9 @@
             @click="changeView(subItem.name)"
            >
              <v-list-tile-content>
-               <v-list-tile-title class="body-2" v-if="!item.dapps">{{ subItem.title }}</v-list-tile-title>
-               <v-list-tile-title class="body-2" v-else><img :src="subItem.image"></v-list-tile-title>
+               <v-list-tile-title class="body-2">{{ subItem.title }}</v-list-tile-title>
              </v-list-tile-content>
-             <v-list-tile-action v-if="!item.dapps">
+             <v-list-tile-action>
                <v-icon>{{ subItem.action }}</v-icon>
              </v-list-tile-action>
            </v-list-tile>
@@ -230,25 +242,6 @@ export default {
           ]
         },
         {
-          dapps: true,
-          action: 'apps',
-          title: 'DApps',
-          name: 'dapps',
-          active: false,
-          items: [
-            {
-              title: 'myOffspring',
-              name: 'dapp_myoffspring',
-              image: 'http://104.236.228.131/tokenfarm/dist/images/myoffspring_logo_menu.png'
-            },
-            {
-              title: 'TokenFarm',
-              name: 'create_token',
-              image: 'http://104.236.228.131/tokenfarm/dist/images/tokenfarm_logo_menu.png'
-            }
-          ]
-        },
-        {
           action: 'settings',
           title: 'Settings',
           name: 'top_settings',
@@ -261,7 +254,27 @@ export default {
             }
           ]
         }
-      ]
+      ],
+      dapps: {   
+	  action: 'apps',
+          title: 'DApps',
+          name: 'dapps',
+          active: false,
+          items: [
+            {
+              title: 'myOffspring',
+              name: 'dapp_myoffspring',
+              image: 'images/myoffspring_logo_menu.png',
+	      btn: 'images/myoffspring_menu_btn.png'
+            },
+            {
+              title: 'TokenFarm',
+              name: 'create_token',
+              image: 'images/tokenfarm_logo_menu.png',
+              btn: 'images/tokenfarm_menu_btn.png'
+            }
+          ] 
+      }
     }
   },
   computed: {

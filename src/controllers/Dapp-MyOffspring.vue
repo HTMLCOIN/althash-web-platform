@@ -40,7 +40,7 @@
 	    <v-card>
               <v-card-text>
 		<div align="center">
-                  <img src="images/myoffspring_splash.jpg">
+                  <div><img src="images/myoffspring_splash2.jpg" style="width: 50%;height: auto;"></div>
                   <br><br>
                   <span class="display-1">Welcome to MyOffspring!</span>
 		  <br><br>
@@ -85,13 +85,13 @@
                    box
                   ></v-text-field>
                   <v-text-field
-                   label="Date of Birth (YYYYMMDD // 01 of May 2018 => 20180501)"
+                   label="Date of Birth (dd/mm/yyyy)"
                    v-model.trim="dateOfBirth"
                    required
 		   box
                   ></v-text-field>
                   <v-text-field
-                   label="Time of Birth (HH24mm // 19:30 => 1930)"
+                   label="Time of Birth (hh24:mm) | 1:30 -> 01:30"
                    v-model.trim="timeOfBirth"
 		   box
                   ></v-text-field>
@@ -240,7 +240,7 @@ import sha256 from 'js-sha256'
 export default {
   data () {
     return {
-      contractAddress: 'a6b65568a80c022071195fee0b30fe848e219683',
+      contractAddress: '0b0c37fa6d64078dac7cfa4ccc43529a615602a1',
       abi: '',
       parsedAbi: null,
       method: null,
@@ -274,8 +274,8 @@ export default {
     notValid: function() {
       //@todo valid the address
       const nameCheck = /^(?!\s*$).+/.test(this.fullName)
-      const dateOfBirthCheck = /^\b[0-9]{8}\b$/.test(this.dateOfBirth) && parseInt(this.dateOfBirth) <= parseInt(this.todayFormattedDate())
-      const timeOfBirthCheck = this.timeOfBirth == '' || /^\b([0-1]\d|2[0-3])[0-5]\d$/.test(this.timeOfBirth)
+      const dateOfBirthCheck = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)\d{2})$/.test(this.dateOfBirth) && parseInt(this.dateOfBirth.split("/").reverse().join("")) <= parseInt(this.todayFormattedDate())
+      const timeOfBirthCheck = this.timeOfBirth == '' || /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(this.timeOfBirth)
       const gasPriceCheck = /^\d+\.?\d*$/.test(this.gasPrice) && this.gasPrice > 0
       const gasLimitCheck = /^\d+\.?\d*$/.test(this.gasLimit) && this.gasLimit > 0
       const feeCheck = /^\d+\.?\d*$/.test(this.fee) && this.fee > 0.0001
@@ -293,9 +293,13 @@ export default {
 
 	const abiJson = [{"constant": true, "inputs": [{"name": "hash", "type": "string"} ], "name": "getHeir", "outputs": [{"name": "result", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "hash", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "name": "newHeir", "outputs": [{"name": "result", "type": "string"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": false, "name": "hash", "type": "string"} ], "name": "heirEvent", "type": "event"} ]
 	
-	this.hashID = sha256(this.fullName+this.motherFullName+this.fatherFullName+this.dateOfBirth+this.timeOfBirth+this.placeOfBirth+Date.now())
+	var newDateOfBirth = this.dateOfBirth.split("/").reverse().join("")
 
-        const encodedData = abi.encodeMethod(abiJson[1], [this.hashID, this.fullName, this.motherFullName, this.fatherFullName, this.dateOfBirth, this.timeOfBirth, this.placeOfBirth]).substr(2)
+	var newTimeOfBirth = this.timeOfBirth.replace(/:/g,"")
+
+	this.hashID = sha256(this.fullName+this.motherFullName+this.fatherFullName+newDateOfBirth+newTimeOfBirth+this.placeOfBirth+Date.now())
+
+        const encodedData = abi.encodeMethod(abiJson[1], [this.hashID, this.fullName, this.motherFullName, this.fatherFullName, newDateOfBirth, newTimeOfBirth, this.placeOfBirth]).substr(2)
         
 	this.confirmSendDialog = true
         
@@ -325,6 +329,14 @@ export default {
         const txViewUrl = server.currentNode().getTxExplorerUrl(txId)
         this.$root.success(`Successful sent! You can follow the transaction on <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`, true, 0)
         this.$emit('send')
+
+	this.fullName = ''
+        this.motherFullName = ''
+        this.fatherFullName = ''
+        this.dateOfBirth = ''
+        this.timeOfBirth = ''
+        this.placeOfBirth = ''
+
       } catch (e) {
         alert(e.message || e)
         this.$root.log.error('send_to_contract_post_raw_tx_error', e.response || e.stack || e.toString() || e)
@@ -351,12 +363,27 @@ export default {
 
 	      var decodedResult = abi.decodeMethod(abiJson[0], encodedResult)
 	  
+	      var rawDoB = decodedResult[4].toString()
+	      var formattedDateOfBirth = ''
+	      if(rawDoB != '0'){
+	        formattedDateOfBirth = rawDoB.substring(6)+"/"+rawDoB.substring(4,6)+"/"+rawDoB.substring(0,4)
+              }
+
+	      var rawToB = decodedResult[5].toString()
+	      var formattedTimeOfBirth = ''
+	      if(rawToB != '0'){
+	        if(rawToB.length == 3) {
+	          rawToB = '0' + rawToB
+	        }
+	        formattedTimeOfBirth = rawToB.substring(0,2)+":"+rawToB.substring(2)
+              }
+
 	      this.resultStatus = decodedResult[0]
 	      this.resultFullName = decodedResult[1]
 	      this.resultMotherFullName = decodedResult[2]
 	      this.resultFatherFullName = decodedResult[3]
-	      this.resultDateOfBirth = decodedResult[4]
-	      this.resultTimeOfBirth = decodedResult[5]
+	      this.resultDateOfBirth = formattedDateOfBirth
+	      this.resultTimeOfBirth = formattedTimeOfBirth
 	      this.resultPlaceOfBirth = decodedResult[6]
 
             } catch (e) {
