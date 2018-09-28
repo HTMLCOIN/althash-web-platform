@@ -3,7 +3,7 @@
     <v-container fluid grid-list-md>
       <v-flex xs6 offset-xs3>
         <v-card-title class="justify-center">
-          <span class="headline"><img src="http://104.236.228.131/htmlcoin-web-wallet/dist/images/tokenfarm_logo21.png"></span>
+          <span class="headline"><img src="images/tokenfarm_logo21.png"></span>
         </v-card-title>
       </v-flex>
     </v-container>
