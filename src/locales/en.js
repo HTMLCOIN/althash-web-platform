@@ -185,14 +185,15 @@ export default {
     mode: 'Mode',
   },
   warning: {
-    title: 'Warning',
+    title: 'Important',
     list: [
-      'We cannot recover your funds if you visit a phishing site or lose your backup. Please make sure to keep backups of your private keys/seed words.',
+      'We cannot recover your funds if you visit a phishing site or lose your backups. Please make sure to keep backups of your private keys/seed words safe.',
       'We do not store your private keys and/or seed words on this web wallet.',
+      'We are not responsible for any lost funds or damages related to the use of this platform.',
       'You as a user, are entirely responsible for your funds and your own security.',
-      'Please make sure to keep an updated antivirus and operating system.',
+      'Please make sure to utilize updated operating systems and antivirus programs/services.',
       'Please keep your private keys PRIVATE, do not give them to anyone.',
-      'If you use Restore from Mnemonic, the seed words and password must be exactly right or the wallet will create a new address. When using Restore from Mnemonic, confirm you have the correct address.',
+      'If you use Restore from Mnemonic, the seed words and password must be exactly right or the wallet will create a new address. When using Restore from Mnemonic, confirm you have the correct address.'
     ]
   }
 }

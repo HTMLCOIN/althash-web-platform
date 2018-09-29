@@ -25,7 +25,7 @@
 
 <script>
 import mnemonic from 'components/Mnemonic'
-import password from 'components/Password'
+import password from 'components/PasswordCreate'
 import webWallet from 'libs/web-wallet'
 
 export default {

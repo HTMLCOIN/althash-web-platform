@@ -18,7 +18,7 @@
       </v-menu>
 
       <v-spacer></v-spacer>
-      <v-tooltip bottom>
+      <v-tooltip bottom v-show="!isCurrent['home']">
         <v-btn icon dark slot="activator" @click="changeView('home')">
           <v-icon>home</v-icon>
         </v-btn>
@@ -62,7 +62,7 @@
         <v-container fluid fill-height justify-center>
           <v-layout row wrap>
             <v-flex xs10 offset-xs1>
-              <home :view="isCurrent['home']" v-show="isCurrent['home']"></home>
+              <home v-show="isCurrent['home']" @openDapp="openDapp"></home>
               <create-wallet :view="isCurrent['create']" @created="setWallet" v-show="isCurrent['create']"></create-wallet>
               <create-mnemonic :view="isCurrent['create_from_mnemonic']" @created="setWallet" v-show="isCurrent['create_from_mnemonic']"></create-mnemonic>
               <restore-wallet @restored="setWallet" v-show="isCurrent['restore_from_mnemonic']"></restore-wallet>
@@ -350,6 +350,13 @@ export default {
     },
     changeView(name) {
       this.current = name
+    },
+    openDapp(name) {
+      if(this.mode === 'offline' || !this.wallet){
+        alert('You need to either import or create a new Wallet before using Dapps! Please go to the \"Add Wallet\" menu at the top of the page.')
+      }else{
+        this.changeView(name);
+      }
     },
     error(msg, isHtml = false, ttl = 10) {
       this.addNotify(msg, 'error', isHtml, ttl)

@@ -9,7 +9,10 @@
           <v-container grid-list-md>
             <v-layout wrap>
               <v-flex xs12>
-                <v-text-field :label="$t('password.password')" type="password" v-model="password" ref="passwordInput" @keydown.enter="confirmPassword"></v-text-field>
+                <v-text-field :label="$t('password.password')" type="password" v-model="password" ref="passwordInput"></v-text-field>
+              </v-flex>
+              <v-flex xs12>
+                <v-text-field label="repeat the password" type="password" v-model="repeatPassword" @keydown.enter="confirmPassword"></v-text-field>
               </v-flex>
             </v-layout>
           </v-container>
@@ -28,7 +31,8 @@ import Vue from 'vue'
 export default {
   data() {
     return {
-      password: ''
+      password: '',
+      repeatPassword: ''
     }
   },
   props: ['open', 'validate', 'notEmpty', 'title'],
@@ -43,10 +47,14 @@ export default {
   methods: {
     confirmPassword() {
       const password = this.password
-      if (this.notEmpty && this.password === '') {
+      if (this.notEmpty && (this.password === '' || this.repeatPassword === '')) {
         this.$root.error('Password is required!')
         return false
       }
+      if (this.password != this.repeatPassword){
+        this.$root.error('Passwords do not match!')
+        return false
+      }        
       this.$emit('password', password)
       this.password = ''
       return true

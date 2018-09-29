@@ -12,7 +12,7 @@
 </template>
 
 <script>
-import password from 'components/Password'
+import password from 'components/PasswordCreate'
 import fileCreator from 'components/FileCreator'
 import keyfile from 'libs/keyfile'
 import webWallet from 'libs/web-wallet'

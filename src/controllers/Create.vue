@@ -15,7 +15,7 @@
 </template>
 
 <script>
-import password from 'components/Password'
+import password from 'components/PasswordCreate'
 import webWallet from 'libs/web-wallet'
 import fileCreator from 'components/FileCreator'
 import keyfile from 'libs/keyfile'
