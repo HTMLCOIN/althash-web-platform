@@ -39,7 +39,7 @@
               <v-card color="light-blue darken-1" dark>
                 <v-card-title class="subheading"><div class="cursor" @click="openDapp('create_token')"><img src="images/tokenfarm_logo_white.png" style="width:100%;height:auto;"></div></v-card-title>
                 <v-card-text>
-		  <p>TokenFarm boosts the process of creating Tokens on <b>AltHash</b> with just a few clicks!</p><p>You can access it by clicking on its logo at the top menu bar, after importing or creating a wallet.</p>
+		  <p>TokenFarm boosts the process of creating Tokens on <b>AltHash</b> with just a few clicks!</p>
 		</v-card-text>
               </v-card>
             </v-flex>
