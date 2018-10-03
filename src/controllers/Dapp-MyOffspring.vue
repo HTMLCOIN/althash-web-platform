@@ -91,7 +91,7 @@
 		   box
                   ></v-text-field>
                   <v-text-field
-                   label="Time of Birth (hh24:mm) | 1:30 -> 01:30"
+                   label="Time of Birth (HH24:mm) (1:30 AM => 01:30 | 1:30 PM => 13:30)" 
                    v-model.trim="timeOfBirth"
 		   box
                   ></v-text-field>
@@ -401,13 +401,15 @@ export default {
 
     todayFormattedDate() {
       var today = new Date();
-      var dd = today.getDate();
-      var mm = today.getMonth()+1; //January is 0!
 
-      var yyyy = today.getFullYear();
+      var dd = today.getDate().toString();
+      var mm = (today.getMonth()+1).toString(); //January is 0!
+      var yyyy = today.getFullYear().toString();
+
       if(dd<10){
         dd='0'+dd;
       } 
+
       if(mm<10){
         mm='0'+mm;
       } 
