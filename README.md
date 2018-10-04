@@ -2,6 +2,8 @@
 
 'sudo git clone' into www folder 
 
+'cd althash-web-platform'
+
 'sudo npm install'
 
 'sudo npm run build'
