@@ -52,6 +52,8 @@
                   <b>Take note of the hash code generated, as it will be the unique identifier for the birth registration.</b>
                   <br><br>
                   Once the transaction is confirmed, the registration is complete and you can verify it through the menu item "Check".
+		  <br><br>
+		  MyOffspring was developed based on suggestions given by our Communities Manager, <b>Heitor Guimarães</b>, supported by the Community member <p>Karol Pyla</p>, who wanted to register his son, <p>Julek</p>, on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!
                   </span>
 		  <br><br>
                 </div>
