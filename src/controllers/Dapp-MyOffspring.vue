@@ -53,7 +53,7 @@
                   <br><br>
                   Once the transaction is confirmed, the registration is complete and you can verify it through the menu item "Check".
 		  <br><br>
-		  MyOffspring was developed based on suggestions given by our Communities Manager, <b>Heitor Guimarães</b>, supported by the Community member <p>Karol Pyla</p>, who wanted to register his son, <p>Julek</p>, on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!
+		  MyOffspring was developed based on suggestions given by our Communities Manager, <b>Heitor Guimarães</b>, supported by the Community member <b>Karol Pyla</b>, who wanted to register his son, <b>Julek</b>, on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!
                   </span>
 		  <br><br>
                 </div>
