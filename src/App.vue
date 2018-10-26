@@ -10,9 +10,8 @@
               :nudge-width="100"
               v-for="dapp in dapps.items"
               :key="dapp.title"
-              v-show="!notShow['dapps']"
       >
-        <v-btn icon large dark slot="activator" @click="changeView(dapp.name)">
+        <v-btn icon large dark slot="activator" @click="openDapp(dapp.name)">
           <img :src="dapp.btn" style="height:35px;width:auto;">
         </v-btn>
       </v-menu>
@@ -81,6 +80,7 @@
               <call-contract v-if="isCurrent['call_contract']"></call-contract>
               <create-token v-if="isCurrent['create_token']"></create-token>
               <dapp-myoffspring v-if="isCurrent['dapp_myoffspring']"></dapp-myoffspring>
+              <dapp-crypticmag v-if="isCurrent['dapp_crypticmag']"></dapp-crypticmag>
               <config v-if="isCurrent['settings']"></config>
             </v-flex>
           </v-layout>
@@ -114,6 +114,7 @@ import RequestPayment from 'controllers/RequestPayment'
 import DumpKeyFile from 'controllers/DumpKeyFile'
 import CreateToken from 'controllers/CreateToken'
 import DappMyoffspring from 'controllers/Dapp-MyOffspring'
+import DappCrypticmag from 'controllers/Dapp-CrypticMAG'
 import CreateContract from 'controllers/CreateContract'
 import SendToContract from 'controllers/SendToContract.vue'
 import CallContract from 'controllers/CallContract.vue'
@@ -272,6 +273,12 @@ export default {
               name: 'create_token',
               image: 'images/tokenfarm_logo_menu.png',
               btn: 'images/tokenfarm_menu_btn.png'
+            },
+            {
+              title: 'CrypticMAG',
+              name: 'dapp_crypticmag',
+              image: 'images/crypticmag_logo_menu.png',
+              btn: 'images/crypticmag_menu_btn.png'
             }
           ] 
       }
@@ -297,6 +304,7 @@ export default {
         send_to_contract: this.mode === 'offline' || !this.wallet,
         call_contract: this.mode === 'offline' || !this.wallet,
 	dapp_myoffspring: this.mode === 'offline' || !this.wallet,
+	dapp_crypticmag: this.mode === 'offline' || !this.wallet,
         dapps: this.mode === 'offline' || !this.wallet,
       }
     },
@@ -326,6 +334,7 @@ export default {
     DumpKeyFile,
     CreateToken,
     DappMyoffspring,
+    DappCrypticmag,
     CreateContract,
     SendToContract,
     CallContract,
@@ -353,7 +362,7 @@ export default {
     },
     openDapp(name) {
       if(this.mode === 'offline' || !this.wallet){
-        alert('You need to either import or create a new Wallet before using Dapps! Please go to the \"Add Wallet\" menu at the top of the page.')
+        alert('You need to either import or create a new Wallet before using Dapps! Please go to the \"Add Wallet\" menu at the top-right corner of the page.')
       }else{
         this.changeView(name);
       }
