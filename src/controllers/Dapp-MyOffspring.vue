@@ -8,11 +8,11 @@
       </v-flex>
     </v-container>
     <v-tabs
-      centered
-      icons-and-text
-      color="transparent"
-      slider-color="teal"
-      v-model="active"
+     centered
+     icons-and-text
+     color="transparent"
+     slider-color="teal"
+     v-model="active"
     >
       <v-tab ripple>
         Info
@@ -29,33 +29,33 @@
       <v-tab-item>
         <template>
           <v-layout row>
-          <v-flex xs12 sm6 offset-sm3>
-            <br><br>
-            <v-card>
-              <v-card-text>
-                <div align="center">
-                  <div>
-                    <img src="images/myoffspring_splash2.jpg" style="width: 50%;height: auto;">
+            <v-flex xs12 sm6 offset-sm3>
+              <br><br>
+              <v-card>
+                <v-card-text>
+                  <div align="center">
+                    <div>
+                      <img src="images/myoffspring_splash2.jpg" style="width: 50%;height: auto;">
+                    </div>
+                    <br><br>
+                    <span class="display-1">Welcome to MyOffspring!</span>
+                    <br><br>
+                    <span class="subheading">
+                      This application allows you to register your children and create a Birth Certificate for them in the <b>AltHash</b> blockchain.
+                      <br><br>
+                      To create a new record, just click on "New" menu item, and fill in the details about the birth of your heir.
+                      <br><br>
+                      <b>Take note of the hash code generated, as it will be the unique identifier for the birth registration.</b>
+                      <br><br>
+                      Once the transaction is confirmed, the registration is complete and you can verify it through the menu item "Check".
+                      <br><br>
+                      MyOffspring was developed based on suggestions given by our Communities Manager, <b>Heitor Guimarães</b>, supported by the Community member <b>Karol Pyla</b>, who wanted to register his son, <b>Julek</b>, on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!
+                    </span>
+                    <br><br>
                   </div>
-                  <br><br>
-                  <span class="display-1">Welcome to MyOffspring!</span>
-                  <br><br>
-                  <span class="subheading">
-                    This application allows you to register your children and create a Birth Certificate for them in the <b>AltHash</b> blockchain.
-                    <br><br>
-                    To create a new record, just click on "New" menu item, and fill in the details about the birth of your heir.
-                    <br><br>
-                    <b>Take note of the hash code generated, as it will be the unique identifier for the birth registration.</b>
-                    <br><br>
-                    Once the transaction is confirmed, the registration is complete and you can verify it through the menu item "Check".
-                    <br><br>
-                    MyOffspring was developed based on suggestions given by our Communities Manager, <b>Heitor Guimarães</b>, supported by the Community member <b>Karol Pyla</b>, who wanted to register his son, <b>Julek</b>, on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!
-                  </span>
-                  <br><br>
-                </div>
-              </v-card-text>
-            </v-card>
-          </v-flex>
+                </v-card-text>
+              </v-card>
+            </v-flex>
           </v-layout>
         </template>
       </v-tab-item>
