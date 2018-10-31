@@ -10,9 +10,8 @@
               :nudge-width="100"
               v-for="dapp in dapps.items"
               :key="dapp.title"
-              v-show="!notShow['dapps']"
       >
-        <v-btn icon large dark slot="activator" @click="changeView(dapp.name)">
+        <v-btn icon large dark slot="activator" @click="openDapp(dapp.name)">
           <img :src="dapp.btn" style="height:35px;width:auto;">
         </v-btn>
       </v-menu>
@@ -353,7 +352,7 @@ export default {
     },
     openDapp(name) {
       if(this.mode === 'offline' || !this.wallet){
-        alert('You need to either import or create a new Wallet before using Dapps! Please go to the \"Add Wallet\" menu at the top of the page.')
+        alert('You need to either import or create a new Wallet before using Dapps! Please go to the \"Add Wallet\" menu at the top-right corner of the page.')
       }else{
         this.changeView(name);
       }
