@@ -309,7 +309,7 @@ export default {
       }
     },
     headerClass() {
-      return this.mode === 'normal' ? 'indigo darken-3' : 'orange'
+      return this.mode === 'normal' ? (this.network === 'mainnet' ? 'indigo darken-3' : 'deep-purple darken-3') : 'orange'   
     },
     showLogoff(){
       return !(this.mode === 'offline' || !this.wallet)
