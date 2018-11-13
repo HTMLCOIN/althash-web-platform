@@ -81,19 +81,70 @@
                   v-model.trim="fatherFullName"
                   box
                   ></v-text-field>
+                  <v-layout>
+                    <v-flex xs6>
+                      <v-menu
+                      ref="dateOfBirth_menu"
+                      :close-on-content-click="false"
+                      v-model="dateOfBirth_menu"
+                      :nudge-right="40"
+                      lazy
+                      transition="scale-transition"
+                      offset-y
+                      full-width
+                      min-width="290px"
+                      >
+                        <v-text-field
+                        slot="activator"
+                        v-model="dateOfBirth"
+                        label="Date of Birth"
+                        prepend-icon="event"
+                        readonly
+                        box
+                        ></v-text-field>
+                        <v-date-picker
+                        ref="picker"
+                        v-model="dateOfBirth"
+                        :max="new Date().toISOString().substr(0, 10)"
+                        min="1900-01-01"
+                        @change="dateOfBirth_save"
+                        ></v-date-picker>
+                      </v-menu>
+                    </v-flex>
+                    <v-flex xs6>
+                      <v-menu
+                      ref="timeOfBirth_menu"
+                      :close-on-content-click="false"
+                      v-model="timePicker"
+                      :nudge-right="40"
+                      :return-value.sync="timeOfBirth"
+                      lazy
+                      transition="scale-transition"
+                      offset-y
+                      full-width
+                      max-width="290px"
+                      min-width="290px"
+                      >
+                        <v-text-field
+                        slot="activator"
+                        v-model="timeOfBirth"
+                        label="Time of Birth"
+                        prepend-icon="access_time"
+                        readonly
+                        box
+                        ></v-text-field>
+                        <v-time-picker
+                        v-if="timePicker"
+                        v-model="timeOfBirth"
+                        full-width
+                        format="24hr"
+                        @change="timeOfBirth_save"
+                        ></v-time-picker>
+                      </v-menu>
+                    </v-flex>
+                  </v-layout>
                   <v-text-field
-                  label="Date of Birth (dd/mm/yyyy)"
-                  v-model.trim="dateOfBirth"
-                  required
-                  box
-                  ></v-text-field>
-                  <v-text-field
-                  label="Time of Birth (HH24:mm) (1:30 AM => 01:30 | 1:30 PM => 13:30)" 
-                  v-model.trim="timeOfBirth"
-                  box
-                  ></v-text-field>
-                  <v-text-field
-                  label="Place of Birth (City, State, Country)"
+                  label="Place of Birth (Facility, City, State/Province, Country)"
                   v-model.trim="placeOfBirth"
                   box
                   ></v-text-field>
@@ -202,7 +253,7 @@
                           <img src="images/logo_althash.png" style="width: auto; height: 40px;">
                         </v-flex>
                         <v-flex xs12>
-                          <span class="font-weight-medium my-2 headline font-italic">
+                          <span class="font-weight-medium my-2 headline font-bold">
                             Digital Birth Certificate
                           </span>
                         </v-flex>
@@ -265,11 +316,8 @@
   import webWallet from 'libs/web-wallet'
   import abi from 'ethjs-abi'
   import server from 'libs/server'
-
   import sha256 from 'js-sha256'
-
   import qrcode from 'qrcode'
-
   export default {
     data () {
       return {
@@ -281,8 +329,11 @@
         fullName: '',
         motherFullName: '',
         fatherFullName: '',
+        dateOfBirth_menu: false,
         dateOfBirth: '',
-        timeOfBirth: '',
+        timeOfBirth_menu: false,
+        timeOfBirth: null,
+        timePicker: false,
         placeOfBirth: '',
         gasPrice: '40',
         gasLimit: '2500000',
@@ -308,7 +359,7 @@
       notValid: function() {
         //@todo valid the address
         const nameCheck = /^(?!\s*$).+/.test(this.fullName)
-        const dateOfBirthCheck = /^(?:(?:31(\/|-|\.)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(\/|-|\.)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)\d{2})$|^(?:29(\/|-|\.)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(\/|-|\.)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)\d{2})$/.test(this.dateOfBirth) && parseInt(this.dateOfBirth.split("/").reverse().join("")) <= parseInt(this.todayFormattedDate())
+        const dateOfBirthCheck = /^(?:(?:31(-)(?:0?[13578]|1[02]))\1|(?:(?:29|30)(-)(?:0?[1,3-9]|1[0-2])\2))(?:(?:1[6-9]|[2-9]\d)\d{2})$|^(?:29(-)0?2\3(?:(?:(?:1[6-9]|[2-9]\d)(?:0[48]|[2468][048]|[13579][26])|(?:(?:16|[2468][048]|[3579][26])00))))$|^(?:0?[1-9]|1\d|2[0-8])(-)(?:(?:0?[1-9])|(?:1[0-2]))\4(?:(?:1[6-9]|[2-9]\d)\d{2})$/.test(this.dateOfBirth.split("-").reverse().join("-")) && parseInt(this.dateOfBirth.replace(/-/g,"")) <= parseInt(this.todayFormattedDate())
         const timeOfBirthCheck = this.timeOfBirth == '' || /^(0[0-9]|1[0-9]|2[0-3]):[0-5][0-9]$/.test(this.timeOfBirth)
         const gasPriceCheck = /^\d+\.?\d*$/.test(this.gasPrice) && this.gasPrice > 0
         const gasLimitCheck = /^\d+\.?\d*$/.test(this.gasLimit) && this.gasLimit > 0
@@ -319,24 +370,20 @@
     watch: {
       method: function() {
         this.inputParams = []
+      },
+      dateOfBirth_menu (val) {
+        val && this.$nextTick(() => (this.$refs.picker.activePicker = 'YEAR'))
       }
     },
     methods: {
       async send() {
         try {
-
           const abiJson = [{"constant": true, "inputs": [{"name": "hash", "type": "string"} ], "name": "getHeir", "outputs": [{"name": "result", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "hash", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "name": "newHeir", "outputs": [{"name": "result", "type": "string"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": false, "name": "hash", "type": "string"} ], "name": "heirEvent", "type": "event"} ]
-
-          var newDateOfBirth = this.dateOfBirth.split("/").reverse().join("")
-
+          var newDateOfBirth = this.dateOfBirth.replace(/-/g,"")
           var newTimeOfBirth = this.timeOfBirth.replace(/:/g,"")
-
           this.hashID = sha256(this.fullName+this.motherFullName+this.fatherFullName+newDateOfBirth+newTimeOfBirth+this.placeOfBirth+Date.now())
-
           const encodedData = abi.encodeMethod(abiJson[1], [this.hashID, this.fullName, this.motherFullName, this.fatherFullName, newDateOfBirth, newTimeOfBirth, this.placeOfBirth]).substr(2)
-
           this.confirmSendDialog = true
-
           try {
             this.rawTx = await webWallet.getWallet().generateSendToContractTx(this.contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee)
           } catch (e) {
@@ -353,7 +400,6 @@
           return false
         }
       },
-
       async confirmSend() {
         this.sending = true
         try {
@@ -363,12 +409,11 @@
           const txViewUrl = server.currentNode().getTxExplorerUrl(txId)
           this.$root.success(`Successful sent! You can follow the transaction on <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`, true, 0)
           this.$emit('send')
-
           this.fullName = ''
           this.motherFullName = ''
           this.fatherFullName = ''
           this.dateOfBirth = ''
-          this.timeOfBirth = ''
+          this.timeOfBirth = null
           this.placeOfBirth = ''
         } catch (e) {
           alert(e.message || e)
@@ -376,58 +421,53 @@
           this.confirmSendDialog = false
         }
       },
-
       async callTo() {
         if(this.searchHashID != ''){
-
           try {
-
             const abiJson = [{"constant": true, "inputs": [{"name": "hash", "type": "string"} ], "name": "getHeir", "outputs": [{"name": "result", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "hash", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "name": "newHeir", "outputs": [{"name": "result", "type": "string"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": false, "name": "hash", "type": "string"} ], "name": "heirEvent", "type": "event"} ]
-
             const encodedData = abi.encodeMethod(abiJson[0], [this.searchHashID]).substr(2)
-
             try {
               var encodedResult = await webWallet.getWallet().callContract(this.contractAddress, encodedData)
-
               encodedResult = '0x' + encodedResult
-
               var decodedResult = abi.decodeMethod(abiJson[0], encodedResult)
-
               var rawDoB = decodedResult[4].toString()
-
               var formattedDateOfBirth = ''
-
               if(rawDoB != '0'){
-                formattedDateOfBirth = rawDoB.substring(6)+"/"+rawDoB.substring(4,6)+"/"+rawDoB.substring(0,4)
+                formattedDateOfBirth = rawDoB.substring(0,4)+"-"+rawDoB.substring(4,6)+"-"+rawDoB.substring(6)
               }
-
               var rawToB = decodedResult[5].toString()
               var formattedTimeOfBirth = ''
               if(rawToB != '0'){
-                if(rawToB.length == 3) {
-                  rawToB = '0' + rawToB
+                switch(rawToB.length) {
+                  case 3:
+                    rawToB = '0' + rawToB
+                    break;
+                  case 2:
+                    rawToB = '00' + rawToB
+                    break;
+                  case 1:
+                    rawToB = '000' + rawToB
+                    break;
                 }
                 formattedTimeOfBirth = rawToB.substring(0,2)+":"+rawToB.substring(2)
               }
-
+              else{
+                formattedTimeOfBirth = '00:00'
+              }
               this.resultStatus = decodedResult[0]
-
               if(this.resultStatus == 'Heir record found.'){
                 this.execResultDialog = true
-
                 this.resultFullName = decodedResult[1]
                 this.resultMotherFullName = decodedResult[2]
                 this.resultFatherFullName = decodedResult[3]
                 this.resultDateOfBirth = formattedDateOfBirth
                 this.resultTimeOfBirth = formattedTimeOfBirth
                 this.resultPlaceOfBirth = decodedResult[6]
-
                 this.drawQrCode()
               }
               else{
                 alert('Record not found!')
               }
-
             } catch (e) {
               this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e)
               alert(e.message || e)
@@ -440,34 +480,32 @@
           }
         }
       },
-
+      dateOfBirth_save (date) {
+        this.$refs.dateOfBirth_menu.save(this.dateOfBirth)
+      },
+      timeOfBirth_save () {
+        this.$refs.timeOfBirth_menu.save(this.timeOfBirth)
+      },
       todayFormattedDate() {
         var today = new Date();
-
         var dd = today.getDate().toString();
         var mm = (today.getMonth()+1).toString(); //January is 0!
         var yyyy = today.getFullYear().toString();
-
         if(dd<10){
           dd='0'+dd;
         } 
-
         if(mm<10){
           mm='0'+mm;
         } 
-
         var formattedDate = yyyy+mm+dd;
-
         return formattedDate;
       },
-
       onCopySucc: function() {
         this.$root.success('copy success')
       },
       onCopyError: function() {
         this.$root.error('copy fail')
       },
-
       drawQrCode() {
         qrcode.toDataURL(`${this.searchHashID}`, (err, url) => {
           this.qr = url
@@ -476,4 +514,3 @@
     }
   }
 </script>
-
