@@ -55,12 +55,14 @@
         </v-flex>
         <v-flex d-flex xs12 sm6 md3 child-flex>
           <v-card color="light-blue darken-1" dark>
-            <v-card-title class="title"><b>Featured:<br> Community DAPPs</b></v-card-title>
+            <v-card-title class="title"><b>Community DAPPs</b></v-card-title>
 	    <v-card-text>
-              <p><b>The most exciting news associated with this release!</b></p>
-              <p>The HTMLCOIN Foundation will encourage and support community-created DAPPs by featuring them on the web platform. You can have your application working on this hub!</p>
-              <p>Candidates will be evaluated by our Tech Team, and the ones meeting standards will have their interfaces deployed on our DAPPs section.</p>
-              <p>The two first community DAPPs to be released will be <b>CrypticMAG</b> and <b>Biffy Platinum</b>. Congrats!</p>
+              <p><b>It's time!</b></p>
+              <p><center><img src="images/logo_crypticMAG_transparent_white.png" @click="openDapp('dapp-crypticmag')" class="cursor" style="width:65%; height:auto; border:0"></center></p>
+              <p>We're very excited to announce the deployment of our first Community-developed DAPP!</p>
+              <p><b>CrypticMAG</b> is a Token and a Decentralized Application that will allow its magazine readers to redeem prizes through a web interface here in the AltHash Web Platform.</p>
+	      <p>To access it, remember to log in by adding a wallet (top-right corner menu) and clicking on CrypticMAG's icon.</p>
+	      <p>Good luck on your redeeming!</p>
 	    </v-card-text>
 	    <v-container
           fluid
@@ -69,28 +71,16 @@
           <v-layout row wrap>
             <v-flex xs8 offset-xs2>
               <v-card color="transparent" flat>
-                <v-layout row align-center>
-                  <v-flex xs6>
-		    <div>
-                      <a href="https://crypticmag.com" target="_blank">
-		        <img
-                          src="images/logo_Cryptic_MAG_white.png"
-                          style="width:100%;height:auto;border:0"
-                        >
-		      </a>
-		    </div>
-                  </v-flex>
-                  <v-flex xs6>
-		    <div>
-		      <a href="http://biffytoken.site" target="_blank">
-                        <img
-                          src="images/logo_Biffy_white.png"
-                          style="width:100%;height:auto;border:0"
-                        ></img>
-                      </a>
-		    </div>
-                  </v-flex>
-                </v-layout>
+	        <div>
+	          <a href="http://biffytoken.site" target="_blank">
+                    <img
+                      src="images/logo_Biffy_white.png"
+                      style="width:65%; height:auto;border:0"
+                    ></img>
+                  </a>
+	          <br>
+	          <b>Soon: Biffy Platinum</b>
+	        </div>
               </v-card>
             </v-flex>
           </v-layout>

@@ -34,14 +34,20 @@
 	    <v-card>
               <v-card-text>
 		<div align="center">
-                  <div><img src="images/myoffspring_splash2.jpg" style="width: 50%;height: auto;"></div>
+                  <div><img src="images/crypticmag_splash.jpg" style="height: auto; width: 75%;"></div>
                   <br><br>
                   <span class="display-1">Welcome to CypticMAG!</span>
 		  <br><br>
                   <span class="subheading">
-		  This is the front-end for Cryptic Magazine reward redeeming.
-                  <br><br>
-                  To redeem your prize, just enter the code found in your magazine issue, along with the destination wallet address, into the form in the "Redeem" tab.
+                    This application allows the redeeming of rewards found inside your Cryptic Magazine.
+                    <br><br>
+		    To redeem your prize view the "redeem" tab, then enter the code found inside your magazine along with your destination wallet.
+		    <br><br>
+		    After you have entered in the code, review that the info is correct then press confirm.
+		    <br><br>
+		    We look forward to rewarding you again in the next edition.
+		    <br><br>
+		    Stay Tuned & Good Luck!
 		  </span>
 		  <br><br>
                 </div>
@@ -168,7 +174,7 @@ export default {
     notValid: function() {
       //@todo valid the address
       const rewardCodeCheck = this.rewardCode != ''
-      const destinationWalletAddressCheck = this.destinationWalletAddress != ''
+      const destinationWalletAddressCheck = this.destinationWalletAddress != '' && /^[H|h][a-zA-Z0-9]{33}$/.test(this.destinationWalletAddress)
       const gasPriceCheck = /^\d+\.?\d*$/.test(this.gasPrice) && this.gasPrice > 0
       const gasLimitCheck = /^\d+\.?\d*$/.test(this.gasLimit) && this.gasLimit > 0
       const feeCheck = /^\d+\.?\d*$/.test(this.fee) && this.fee > 0.0001

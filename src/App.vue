@@ -2,7 +2,7 @@
   <v-app light>
     <v-toolbar :class="headerClass" app fixed height="82px" clipped-left>
       <span class="title">
-        <span class="text"><img src="images/logo_althash_webplatform.png" alt="Althash Webplatform Logo"></span>
+        <span class="text"><img src="images/logo_althash_webplatform.png" alt="Althash Web Platform Logo" class="cursor" @click="changeView('home')"></span>
       </span>
       <v-spacer></v-spacer>
 
@@ -91,6 +91,12 @@
     <warning></warning>
   </v-app>
 </template>
+
+<style>
+  .cursor:hover{
+    cursor: pointer;
+  }
+</style>
 
 <script>
 import Vue from 'vue'
