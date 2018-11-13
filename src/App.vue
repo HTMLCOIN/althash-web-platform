@@ -50,7 +50,7 @@
         </v-list>
       </v-menu>
       <v-tooltip bottom v-show="showLogoff">
-        <v-btn icon dark slot="activator" @click="logoff">
+        <v-btn icon dark slot="activator" @click.stop="logoff_dialog = true">
           <v-icon>power_settings_new</v-icon>
         </v-btn>
         <span>Log off</span>
@@ -87,6 +87,34 @@
         </v-container>
       </v-content>
     </main>
+    <v-dialog
+      v-model="logoff_dialog"
+      max-width="290"
+    >
+      <v-card>
+        <v-card-title class="headline">Log off?</v-card-title>
+
+        <v-card-actions>
+          <v-spacer></v-spacer>
+
+          <v-btn
+            color="red darken-1"
+            flat="flat"
+            @click="logoff_dialog = false"
+          >
+            No
+          </v-btn>
+
+          <v-btn
+            color="green darken-1"
+            flat="flat"
+            @click="logoff"
+          >
+            Yes
+          </v-btn>
+        </v-card-actions>
+      </v-card>
+    </v-dialog>
     <notify></notify>
     <warning></warning>
   </v-app>
@@ -139,6 +167,7 @@ export default {
    return {
       wallet: false,
       current: 'home',
+      logoff_dialog: false,
       network: config.getNetwork(),
       mode: config.getMode(),
       log: log,
@@ -362,6 +391,7 @@ export default {
     logoff(){
       this.wallet = null
       this.current = 'home'
+      this.logoff_dialog = false
     },
     changeView(name) {
       this.current = name
