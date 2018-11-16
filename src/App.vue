@@ -2,7 +2,7 @@
   <v-app light>
     <v-toolbar :class="headerClass" app fixed height="82px" clipped-left>
       <span class="title">
-        <span class="text"><img src="images/logo_althash_webplatform.png" alt="Althash Webplatform Logo"></span>
+        <span class="text"><img src="images/logo_althash_webplatform.png" alt="Althash Web Platform Logo" class="cursor" @click="changeView('home')"></span>
       </span>
       <v-spacer></v-spacer>
 
@@ -80,6 +80,7 @@
               <call-contract v-if="isCurrent['call_contract']"></call-contract>
               <create-token v-if="isCurrent['create_token']"></create-token>
               <dapp-myoffspring v-if="isCurrent['dapp_myoffspring']"></dapp-myoffspring>
+              <dapp-crypticmag v-if="isCurrent['dapp_crypticmag']"></dapp-crypticmag>
               <config v-if="isCurrent['settings']"></config>
             </v-flex>
           </v-layout>
@@ -119,6 +120,12 @@
   </v-app>
 </template>
 
+<style>
+  .cursor:hover{
+    cursor: pointer;
+  }
+</style>
+
 <script>
 import Vue from 'vue'
 import createLog from 'localstorage-logger'
@@ -141,6 +148,7 @@ import RequestPayment from 'controllers/RequestPayment'
 import DumpKeyFile from 'controllers/DumpKeyFile'
 import CreateToken from 'controllers/CreateToken'
 import DappMyoffspring from 'controllers/Dapp-MyOffspring'
+import DappCrypticmag from 'controllers/Dapp-CrypticMAG'
 import CreateContract from 'controllers/CreateContract'
 import SendToContract from 'controllers/SendToContract.vue'
 import CallContract from 'controllers/CallContract.vue'
@@ -300,6 +308,12 @@ export default {
               name: 'create_token',
               image: 'images/tokenfarm_logo_menu.png',
               btn: 'images/tokenfarm_menu_btn.png'
+            },
+            {
+              title: 'CrypticMAG',
+              name: 'dapp_crypticmag',
+              image: 'images/crypticmag_logo_menu.png',
+              btn: 'images/crypticmag_menu_btn.png'
             }
           ] 
       }
@@ -325,6 +339,7 @@ export default {
         send_to_contract: this.mode === 'offline' || !this.wallet,
         call_contract: this.mode === 'offline' || !this.wallet,
 	dapp_myoffspring: this.mode === 'offline' || !this.wallet,
+	dapp_crypticmag: this.mode === 'offline' || !this.wallet,
         dapps: this.mode === 'offline' || !this.wallet,
       }
     },
@@ -354,6 +369,7 @@ export default {
     DumpKeyFile,
     CreateToken,
     DappMyoffspring,
+    DappCrypticmag,
     CreateContract,
     SendToContract,
     CallContract,
