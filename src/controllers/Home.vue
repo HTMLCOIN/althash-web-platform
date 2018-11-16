@@ -58,7 +58,7 @@
             <v-card-title class="title"><b>Community DAPPs</b></v-card-title>
 	    <v-card-text>
               <p><b>It's time!</b></p>
-              <p><center><img src="images/logo_crypticMAG_transparent_white.png" @click="openDapp('dapp-crypticmag')" class="cursor" style="width:65%; height:auto; border:0"></center></p>
+              <p><center><img src="images/logo_crypticMAG_transparent_white.png" @click="openDapp('dapp-crypticmag')" class="cursor" style="max-width: 150px; width:65%; height:auto; border:0"></center></p>
               <p>We're very excited to announce the deployment of our first Community-developed DAPP!</p>
               <p><b>CrypticMAG</b> is a Token and a Decentralized Application that will allow its magazine readers to redeem prizes through a web interface here in the AltHash Web Platform.</p>
 	      <p>To access it, remember to log in by adding a wallet (top-right corner menu) and clicking on CrypticMAG's icon.</p>
@@ -75,7 +75,7 @@
 	          <a href="http://biffytoken.site" target="_blank">
                     <img
                       src="images/logo_Biffy_white.png"
-                      style="width:65%; height:auto;border:0"
+                      style="max-width: 100px; width:65%; height:auto; border:0"
                     ></img>
                   </a>
 	          <br>
