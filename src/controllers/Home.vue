@@ -87,6 +87,7 @@
         </v-flex>
       </v-layout>
     </v-container>
+    </v-container>
   </v-card>
 </template>
 

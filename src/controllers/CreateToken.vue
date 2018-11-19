@@ -44,6 +44,7 @@
                   <br><br>
 		  After the Transaction is confirmed, you will be able to find your token on the "View Wallet Info" option in "Wallet Functions" menu. You might need to refresh the browser and re-import your wallet before seeing your Tokens.
                   <br><br>
+                  </span>
                 </div>
               </v-card-text>
             </v-card>
@@ -150,74 +151,105 @@
 </template>
 
 <script>
-import webWallet from 'libs/web-wallet'
-import server from 'libs/server'
+import webWallet from "libs/web-wallet";
+import server from "libs/server";
 export default {
-  data () {
+  data() {
     return {
-      name: '',
-      symbol: '',
-      decimal: '8',
-      totalSupply: '',
-      gasPrice: '40',
-      gasLimit: '2500000',
-      fee: '0.01',
+      name: "",
+      symbol: "",
+      decimal: "8",
+      totalSupply: "",
+      gasPrice: "40",
+      gasLimit: "2500000",
+      fee: "0.01",
       confirmSendDialog: false,
       introDialog: true,
-      rawTx: 'loading...',
+      rawTx: "loading...",
       canSend: false,
       sending: false
-    }
+    };
   },
   computed: {
     notValid: function() {
       //@todo valid the address
-      const nameCheck = /^(?!\s*$).+/.test(this.name)
-      const symbolCheck = /^\b[a-zA-Z0-9_]+\b$/.test(this.symbol)
-      const decimalCheck = /^(0|[1-9][0-9]*)$/.test(this.decimal) && this.decimal < 256
-      const totalSupplyCheck = !isNaN(this.totalSupply) && this.totalSupply != '' && /^([1-9]*)$/.test(this.decimal) 
-      const gasPriceCheck = /^\d+\.?\d*$/.test(this.gasPrice) && this.gasPrice > 0
-      const gasLimitCheck = /^\d+\.?\d*$/.test(this.gasLimit) && this.gasLimit > 0
-      const feeCheck = /^\d+\.?\d*$/.test(this.fee) && this.fee > 0.0001
-      return !(nameCheck && symbolCheck && decimalCheck && totalSupplyCheck && gasPriceCheck && gasLimitCheck && feeCheck)
+      const nameCheck = /^(?!\s*$).+/.test(this.name);
+      const symbolCheck = /^\b[a-zA-Z0-9_]+\b$/.test(this.symbol);
+      const decimalCheck =
+        /^(0|[1-9][0-9]*)$/.test(this.decimal) && this.decimal < 256;
+      const totalSupplyCheck =
+        !isNaN(this.totalSupply) &&
+        this.totalSupply != "" &&
+        /^([1-9]*)$/.test(this.decimal);
+      const gasPriceCheck =
+        /^\d+\.?\d*$/.test(this.gasPrice) && this.gasPrice > 0;
+      const gasLimitCheck =
+        /^\d+\.?\d*$/.test(this.gasLimit) && this.gasLimit > 0;
+      const feeCheck = /^\d+\.?\d*$/.test(this.fee) && this.fee > 0.0001;
+      return !(
+        nameCheck &&
+        symbolCheck &&
+        decimalCheck &&
+        totalSupplyCheck &&
+        gasPriceCheck &&
+        gasLimitCheck &&
+        feeCheck
+      );
     }
   },
   methods: {
     async send() {
-      this.confirmSendDialog = true
-      const wallet = webWallet.getWallet()
+      this.confirmSendDialog = true;
+      const wallet = webWallet.getWallet();
       try {
-        this.rawTx = await wallet.generateCreateTokenTx(this.name, this.symbol, this.decimal, this.totalSupply, this.gasLimit, this.gasPrice, this.fee)
-        this.canSend = true
+        this.rawTx = await wallet.generateCreateTokenTx(
+          this.name,
+          this.symbol,
+          this.decimal,
+          this.totalSupply,
+          this.gasLimit,
+          this.gasPrice,
+          this.fee
+        );
+        this.canSend = true;
       } catch (e) {
-        alert(e.message || e)
-        this.$root.log.error('create_contract_token_error', e.stack || e.toString() || e)
-        this.confirmSendDialog = false
-        return false
+        alert(e.message || e);
+        this.$root.log.error(
+          "create_contract_token_error",
+          e.stack || e.toString() || e
+        );
+        this.confirmSendDialog = false;
+        return false;
       }
     },
     async confirmSend() {
-      const wallet = webWallet.getWallet()
-      this.sending = true
+      const wallet = webWallet.getWallet();
+      this.sending = true;
       try {
-        const txId = await wallet.sendRawTx(this.rawTx)
-        this.confirmSendDialog = false
-        this.sending = false
-	const txViewUrl = server.currentNode().getTxExplorerUrl(txId)
-        this.$root.success(`Successful sent! You can view it at <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`, true, 0)
-        this.$emit('send')
+        const txId = await wallet.sendRawTx(this.rawTx);
+        this.confirmSendDialog = false;
+        this.sending = false;
+        const txViewUrl = server.currentNode().getTxExplorerUrl(txId);
+        this.$root.success(
+          `Successful sent! You can view it at <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`,
+          true,
+          0
+        );
+        this.$emit("send");
 
-	this.name = ''
-        this.symbol = ''
-        this.decimal = '8'
-        this.totalSupply = ''
-
+        this.name = "";
+        this.symbol = "";
+        this.decimal = "8";
+        this.totalSupply = "";
       } catch (e) {
-        alert(e.message || e)
-        this.$root.log.error('create_contract_post_raw_tx_error', e.response || e.stack || e.toString() || e)
-        this.confirmSendDialog = false
+        alert(e.message || e);
+        this.$root.log.error(
+          "create_contract_post_raw_tx_error",
+          e.response || e.stack || e.toString() || e
+        );
+        this.confirmSendDialog = false;
       }
     }
   }
-}
+};
 </script>
