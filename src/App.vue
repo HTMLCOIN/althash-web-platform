@@ -5,17 +5,34 @@
         <span class="text"><img src="~assets/images/logo_althash_webplatform.png" alt="Althash Web Platform Logo" class="cursor" @click="changeView('home')"></span>
       </span>
       <v-spacer></v-spacer>
-
       <v-menu bottom open-on-hover offset-y
-              :nudge-width="100"
-              v-for="dapp in dapps.items"
-              :key="dapp.title"
-      >
-        <v-btn icon large dark slot="activator" @click="openDapp(dapp.name)">
-          <img :src="dapp.btn" style="height:35px;width:auto;">
+              nudge-width="100"              
+              key="myOffspring" >
+        <v-btn icon large dark slot="activator" @click="openDapp('dapp_myoffspring')">
+          <img src="~assets/images/myoffspring_menu_btn.png" style="height:35px;width:auto;">
         </v-btn>
       </v-menu>
-
+      <v-menu bottom open-on-hover offset-y
+              nudge-width="100"              
+              key="TokenFarm" >
+        <v-btn icon large dark slot="activator" @click="openDapp('create_token')">
+          <img src="~assets/images/tokenfarm_menu_btn.png" style="height:35px;width:auto;">
+        </v-btn>
+      </v-menu>
+      <v-menu bottom open-on-hover offset-y
+              nudge-width="100"              
+              key="CrypticMAG" >
+        <v-btn icon large dark slot="activator" @click="openDapp('dapp_crypticmag')">
+          <img src="~assets/images/crypticmag_menu_btn.png" style="height:35px;width:auto;">
+        </v-btn>
+      </v-menu>
+      <v-menu bottom open-on-hover offset-y
+              nudge-width="100"              
+              key="AltProof" >
+        <v-btn icon large dark slot="activator" @click="openDapp('dapp_altproof')">
+          <img src="~assets/images/altproof_menu_btn.png" style="height:35px;width:auto;">
+        </v-btn>
+      </v-menu>
       <v-spacer></v-spacer>
       <v-tooltip bottom v-show="!isCurrent['home']">
         <v-btn icon dark slot="activator" @click="changeView('home')">

@@ -63,13 +63,7 @@
           <v-container fluid grid-list-md>
             <v-flex xs6 offset-xs3>
               <v-card-text>
-                <v-form>
-                  <h3 class="headline">Hash type:</h3> 
-                  <v-radio-group v-model="hash" row @change="reprocessHash">
-                    <v-radio label="MD5" :value="'md5'" :key="'md5'"></v-radio>
-                    <v-radio label="SHA1" :value="'sha1'" :key="'sha1'"></v-radio>
-                    <v-radio label="SHA-256" :value="'sha256'" :key="'sha256'"></v-radio>
-                  </v-radio-group>
+                <v-form>                  
                   <h3 class="headline">Upload:</h3>    
                   <br>  
                   <div class="text-xs-center file">                    
@@ -85,18 +79,18 @@
                   <br>
                   <div class="text-xs-center">or</div>                                 
                   <br>
-                  <v-textarea label="Text" v-model="text" :disabled="isTextareaEnabled" @keyup="textHash" box></v-textarea>
+                  <v-textarea label="Text" v-model="text" :disabled="isFile" @keyup="textHash" box></v-textarea>
                   <v-text-field
                     label="File name:"   
                     v-model="fileName"
-                    v-if="isShowOutput"                                     
+                    v-if="isFile"                                     
                     disabled
                     box
                   ></v-text-field>        
                   <v-text-field
                     label="File size:"
                     v-model="fileSize"
-                    v-if="isShowOutput"
+                    v-if="isFile"
                     disabled
                     box
                   ></v-text-field>                                                          
@@ -218,6 +212,8 @@
                         <v-flex xs12>                          
                           <div class="text-xs-center">
                             <p class="caption">Hash ID: {{ searchHashID }}</p> 
+                            <p class="caption">Block Number: {{ blockNumber }}</p>
+                            <p class="caption">Block Timestamp: {{ blockTimestamp }}</p>
                             <img :src="qr" style="width: 75px; height: auto;"/>
                           </div>
                         </v-flex>
@@ -274,8 +270,6 @@ import abi from "ethjs-abi";
 import server from "libs/server";
 import sha256 from "js-sha256";
 import qrcode from "qrcode";
-import md5 from "js-md5";
-import sha1 from "js-sha1";
 
 const abiJson = JSON.parse(
   '[{"constant":true,"inputs":[{"name":"hash","type":"string"}],"name":"getDocument","outputs":[{"name":"stored","type":"bool"},{"name":"blockNumber","type":"uint256"},{"name":"blockTimestamp","type":"uint256"},{"name":"sender","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"newDocument","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"blockNumber","type":"uint256"},{"indexed":false,"name":"hash","type":"string"}],"name":"DocumentEvent","type":"event"}]'
@@ -308,22 +302,15 @@ export default {
       sending: false,
       hashID: "",
       searchHashID: "",
-      resultStatus: "",
-      resultFullName: "loading...",
-      resultMotherFullName: "loading...",
-      resultFatherFullName: "loading...",
-      resultDateOfBirth: "loading...",
-      resultTimeOfBirth: "loading...",
-      resultPlaceOfBirth: "loading...",
       qr: "",
       file: null,
       fileName: "",
       fileSize: "",
-      hash: "sha256",
       text: "",
-      isTextareaEnabled: false,
-      isShowOutput: false,
-      loadStatus: 0
+      isTextareaEnabled: false,      
+      loadStatus: 0,
+      blockNumber: 0,
+      blockTimestamp: 0
     };
   },
   computed: {
@@ -340,7 +327,7 @@ export default {
       return !(gasPriceCheck && gasLimitCheck && feeCheck && hashID);
     },
     isFile() {
-      return this.file !== null;
+      return this.fileName !==  "";
     }
   },
   watch: {
@@ -349,9 +336,6 @@ export default {
     },
     isTextareaEnabled() {
       return this.isTextareaEnabled;
-    },
-    hashID() {
-      if (this.text === "" && this.file === null) this.hashID = "";
     }
   },
   methods: {
@@ -430,11 +414,18 @@ export default {
             encodedResult = "0x" + encodedResult;
             let decodedResult = abi.decodeMethod(abiJson[0], encodedResult);
 
-            this.resultStatus = decodedResult[0];
+            let stored = decodedResult[0];
 
-            this.execResultDialog = true;
-
-            this.drawQrCode();
+            if (stored) {
+              this.blockNumber = decodedResult[1].words[0];
+              this.blockTimestamp = new Date(
+                Date.now() - decodedResult[2].words[0]
+              ).toLocaleString();
+              this.execResultDialog = true;
+              this.drawQrCode();
+            } else {
+              alert("Record not found!");
+            }
           } catch (e) {
             this.$root.log.error(
               "call_contract_call_contract_error",
@@ -465,18 +456,27 @@ export default {
       });
     },
     async uploadFile(event = null) {
-      this.hashID = "";
-      if (event !== null) {
-        this.file = event.target.files[0];
-        this.isTextareaEnabled = this.file !== null;
-        this.text = "";
+      try {
+        this.hashID = "";
 
-        this.fileName = this.file.name;
-        this.fileSize = this.formatSize(this.file.size);
+        let file = event.target.files[0];       
+
+        if (file.size > (1024 * 1024) * 500) throw new Error(`The max size of the file should have 500 MegaByte! "File name: ${file.name} - Size: ${this.formatSize(file.size)}"`);
+        
+        this.fileSize = this.formatSize(file.size);
+
+        const fileBinaryString = await this.fileReader(file);
+        this.parseHash(fileBinaryString);
+        this.isTextareaEnabled = false;
+        this.text = "";
+        this.fileName = file.name;
+      } catch (err) {
+        this.$root.error(err.message);
+        this.$root.log.error(
+          "call_contract_encode_abi_error",
+          err.stack || err.toString() || err
+        );
       }
-      const fileBinaryString = await this.fileReader(this.file);
-      this.parseHash(fileBinaryString);
-      this.isShowOutput = true;
     },
     async fileReader(file) {
       return await new Promise((resolve, reject) => {
@@ -527,23 +527,13 @@ export default {
       else if (this.text && this.file === null) this.textHash();
     },
     parseHash(hash) {
-      switch (this.hash) {
-        case "md5":
-          this.hashID = md5(hash);
-          break;
-        case "sha1":
-          this.hashID = sha1(hash);
-          break;
-        default:
-          this.hashID = sha256(hash);
-          break;
-      }
+      this.hashID = sha256(hash);
     },
     textHash() {
       this.parseHash(this.text);
     },
     removeFile() {
-      this.file = null;
+      this.isTextareaEnabled = true;
       this.fileName = "";
       this.fileSize = "";
       this.hashID = "";
