@@ -309,39 +309,7 @@ export default {
             }
           ]
         }
-      ],
-      dapps: {
-        action: "apps",
-        title: "DApps",
-        name: "dapps",
-        active: false,
-        items: [
-          {
-            title: "myOffspring",
-            name: "dapp_myoffspring",
-            image: "images/myoffspring_logo_menu.png",
-            btn: "images/myoffspring_menu_btn.png"
-          },
-          {
-            title: "TokenFarm",
-            name: "create_token",
-            image: "images/tokenfarm_logo_menu.png",
-            btn: "images/tokenfarm_menu_btn.png"
-          },
-          {
-            title: "CrypticMAG",
-            name: "dapp_crypticmag",
-            image: "images/crypticmag_logo_menu.png",
-            btn: "images/crypticmag_menu_btn.png"
-          },
-            {
-            title: "AltProof",
-            name: "dapp_altproof",
-            image: "images/logo_altproof.png",
-            btn: "images/altproof_menu_btn.png"
-          }
-        ]
-      }
+      ]
     };
   },
   computed: {
