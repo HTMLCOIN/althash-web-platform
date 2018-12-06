@@ -3,54 +3,60 @@
     <v-container fluid grid-list-md>
       <v-flex xs6 offset-xs3>
         <v-card-title class="justify-center">
-          <span class="headline"><img src="~assets/images/logo_altproof.png"></span>
+          <span class="headline">
+            <img src="~assets/images/logo_altproof.png">
+          </span>
         </v-card-title>
       </v-flex>
     </v-container>
-    <v-tabs
-     centered
-     icons-and-text
-     color="transparent"
-     slider-color="teal"     
-    >
-      <v-tab ripple>
-        Info
+    <v-tabs centered icons-and-text color="transparent" slider-color="teal" v-model="active">
+      <v-tab ripple>Info
         <v-icon>info</v-icon>
       </v-tab>
-      <v-tab ripple>
-        New
+      <v-tab ripple @click="reset">New
         <v-icon>child_care</v-icon>
       </v-tab>
-      <v-tab ripple>
-        Check
+      <v-tab ripple @click="reset">Check
         <v-icon>search</v-icon>
       </v-tab>
       <v-tab-item>
         <template>
           <v-layout row>
             <v-flex xs12 sm6 offset-sm3>
-              <br><br>
+              <br>
+              <br>
               <v-card>
                 <v-card-text>
                   <div align="center">
                     <div>
-                      <img src="~assets/images/myoffspring_splash2.jpg" style="width: 50%;height: auto;">
+                      <img
+                        src="~assets/images/myoffspring_splash2.jpg"
+                        style="width: 50%;height: auto;"
+                      >
                     </div>
-                    <br><br>
+                    <br>
+                    <br>
                     <span class="display-1">Welcome to MyOffspring!</span>
-                    <br><br>
+                    <br>
+                    <br>
                     <span class="subheading">
-                      This application allows you to register your children and create a Birth Certificate for them in the <b>AltHash</b> blockchain.
-                      <br><br>
-                      To create a new record, just click on "New" menu item, and fill in the details about the birth of your heir.
-                      <br><br>
+                      This application allows you to register your children and create a Birth Certificate for them in the
+                      <b>AltHash</b> blockchain.
+                      <br>
+                      <br>To create a new record, just click on "New" menu item, and fill in the details about the birth of your heir.
+                      <br>
+                      <br>
                       <b>Take note of the hash code generated, as it will be the unique identifier for the birth registration.</b>
-                      <br><br>
-                      Once the transaction is confirmed, the registration is complete and you can verify it through the menu item "Check".
-                      <br><br>
-                      MyOffspring was developed based on suggestions given by our Communities Manager, <b>Heitor Guimarães</b>, supported by the Community member <b>Karol Pyla</b>, who wanted to register his son, <b>Julek</b>, on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!
+                      <br>
+                      <br>Once the transaction is confirmed, the registration is complete and you can verify it through the menu item "Check".
+                      <br>
+                      <br>MyOffspring was developed based on suggestions given by our Communities Manager,
+                      <b>Heitor Guimarães</b>, supported by the Community member
+                      <b>Karol Pyla</b>, who wanted to register his son,
+                      <b>Julek</b>, on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!
                     </span>
-                    <br><br>
+                    <br>
+                    <br>
                   </div>
                 </v-card-text>
               </v-card>
@@ -63,70 +69,56 @@
           <v-container fluid grid-list-md>
             <v-flex xs6 offset-xs3>
               <v-card-text>
-                <v-form>                  
-                  <h3 class="headline">Upload:</h3>    
-                  <br>  
-                  <div class="text-xs-center file">                    
-                      <input type="file" @change="uploadFile" ref="file">
-                      <div>                      
-                        <v-btn flat icon color="blue" @click="$refs.file.click()">
-                          <v-icon x-large>cloud_upload</v-icon>
-                        </v-btn>                        
-                      </div>
-                      <span>{{loadStatus}}%</span>
-                      <span @click="removeFile" class="remove-file" v-show="isFile"><v-icon color="red accent-4">delete_forever</v-icon></span>
-                  </div>   
+                <v-form>
+                  <h3 class="headline">Upload:</h3>
                   <br>
-                  <div class="text-xs-center">or</div>                                 
+                  <div class="text-xs-center file">
+                    <input type="file" @change="uploadFile" ref="file">
+                    <div>
+                      <v-btn flat icon color="blue" @click="$refs.file.click()">
+                        <v-icon x-large>cloud_upload</v-icon>
+                      </v-btn>
+                    </div>
+                    <span>{{loadStatus}}%</span>
+                    <span @click="removeFile" class="remove-file" v-show="isFile">
+                      <v-icon color="red accent-4">delete_forever</v-icon>
+                    </span>
+                  </div>
+                  <br>
+                  <div class="text-xs-center">or</div>
                   <br>
                   <v-textarea label="Text" v-model="text" :disabled="isFile" @keyup="textHash" box></v-textarea>
-                  <v-text-field
-                    label="File name:"   
-                    v-model="fileName"
-                    v-if="isFile"                                     
-                    disabled
-                    box
-                  ></v-text-field>        
-                  <v-text-field
-                    label="File size:"
-                    v-model="fileSize"
-                    v-if="isFile"
-                    disabled
-                    box
-                  ></v-text-field>                                                          
-                  <v-text-field
-                    label="Hash:"
-                    v-model="hashID"
-                    disabled
-                    box
-                  ></v-text-field>  
-                  <br><br>
+                  <v-text-field label="File name:" v-model="fileName" v-if="isFile" disabled box></v-text-field>
+                  <v-text-field label="File size:" v-model="fileSize" v-if="isFile" disabled box></v-text-field>
+                  <v-text-field label="Hash:" v-model="hashID" disabled box></v-text-field>
+                  <br>
+                  <br>
                   <v-layout>
                     <v-flex xs4>
                       <v-text-field
-                      label="Gas Price (1e-8 HTML/gas)"
-                      v-model.trim="gasPrice"
-                      required
-                      box
-                      background-color="indigo lighten-3"
+                        label="Gas Price (1e-8 HTML/gas)"
+                        v-model.trim="gasPrice"
+                        required
+                        box
+                        background-color="indigo lighten-3"
                       ></v-text-field>
                     </v-flex>
                     <v-flex xs4>
                       <v-text-field
-                      label="Gas Limit"
-                      v-model.trim="gasLimit"
-                      required
-                      box
-                      background-color="indigo lighten-3"
+                        label="Gas Limit"
+                        v-model.trim="gasLimit"
+                        required
+                        box
+                        background-color="indigo lighten-3"
                       ></v-text-field>
                     </v-flex>
                     <v-flex xs4>
                       <v-text-field
-                      label="Fee"
-                      v-model.trim="fee"
-                      required
-                      box
-                      background-color="indigo lighten-3"
+                        label="Fee"
+                        v-model.trim="fee"
+                        required
+                        box
+                        background-color="indigo lighten-3"
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -134,14 +126,17 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn class="success" dark @click="send" :disabled="notValid">{{ $t('common.confirm') }}</v-btn>
+                <v-btn
+                  class="success"
+                  dark
+                  @click="send"
+                  :disabled="notValid"
+                >{{ $t('common.confirm') }}</v-btn>
               </v-card-actions>
               <v-dialog v-model="confirmSendDialog" persistent max-width="50%">
                 <v-card>
                   <v-card-title>
-                    <span class="headline">
-                    {{ $t('send_to_contract.confirm') }}
-                    </span>
+                    <span class="headline">{{ $t('send_to_contract.confirm') }}</span>
                   </v-card-title>
                   <v-card-text>
                     <v-container grid-list-md>
@@ -153,9 +148,14 @@
                           <v-text-field label="Hash ID" v-model="hashID" disabled></v-text-field>
                         </v-flex>
                         <v-flex xs2>
-                          <v-btn small class="mt-3" color="cyan" v-clipboard:copy="hashID" v-clipboard:success="onCopySucc" v-clipboard:error="onCopyError">
-                            {{ $t('common.copy') }}
-                          </v-btn>
+                          <v-btn
+                            small
+                            class="mt-3"
+                            color="cyan"
+                            v-clipboard:copy="hashID"
+                            v-clipboard:success="onCopySucc"
+                            v-clipboard:error="onCopyError"
+                          >{{ $t('common.copy') }}</v-btn>
                         </v-flex>
                         <v-flex xs12>
                           <v-text-field label="Raw Tx" v-model="rawTx" disabled></v-text-field>
@@ -165,9 +165,24 @@
                   </v-card-text>
                   <v-card-actions>
                     <v-spacer></v-spacer>
-                    <v-btn class="blue--text darken-1" flat @click="confirmSend" v-show="canSend && !sending">{{ $t('common.confirm') }}</v-btn>
-                    <v-btn class="red--text darken-1" flat @click.native="confirmSendDialog = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
-                    <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
+                    <v-btn
+                      class="blue--text darken-1"
+                      flat
+                      @click="confirmSend"
+                      v-show="canSend && !sending"
+                    >{{ $t('common.confirm') }}</v-btn>
+                    <v-btn
+                      class="red--text darken-1"
+                      flat
+                      @click.native="confirmSendDialog = false"
+                      :v-show="!sending"
+                    >{{ $t('common.cancel') }}</v-btn>
+                    <v-progress-circular
+                      indeterminate
+                      :size="50"
+                      v-show="sending"
+                      class="primary--text"
+                    ></v-progress-circular>
                   </v-card-actions>
                 </v-card>
               </v-dialog>
@@ -182,15 +197,38 @@
               <v-card-text>
                 <v-form>
                   <v-text-field
-                  class="mx-3"
-                  flat
-                  label="Hash ID"
-                  prepend-inner-icon="search"
-                  solo-inverted
-                  v-model.trim="searchHashID"
-                  append-icon="send"
-                  @click:append="callTo"   
-                  ></v-text-field> 
+                    class="mx-3"
+                    flat
+                    label="Hash ID"
+                    prepend-inner-icon="search"
+                    solo-inverted
+                    v-model.trim="searchHashID"
+                    append-icon="send"
+                    @click:append="callTo"
+                  ></v-text-field>
+                  <br>
+                  <div class="text-xs-center file">
+                    <input type="file" @change="uploadFile" ref="file">
+                    <div>
+                      <v-btn flat icon color="blue" @click="$refs.file.click()">
+                        <v-icon x-large>cloud_upload</v-icon>
+                      </v-btn>
+                    </div>
+                    <span>{{loadStatus}}%</span>
+                    <span @click="removeFileSearch" class="remove-file" v-show="isFile">
+                      <v-icon color="red accent-4">delete_forever</v-icon>
+                    </span>
+                  </div>
+                  <br>
+                  <div class="text-xs-center">or</div>
+                  <br>
+                  <v-textarea
+                    label="Text"
+                    v-model="textSearch"
+                    :disabled="isFile"
+                    @keyup="textHashSearch"
+                    box
+                  ></v-textarea>
                 </v-form>
               </v-card-text>
               <v-dialog v-model="execResultDialog" width="600px">
@@ -199,22 +237,28 @@
                     <v-container align-center grid-list-md text-md-center>
                       <v-layout row wrap>
                         <v-flex xs6>
-                          <img src="~assets/images/logo_altproof.png" style="width: auto; height: 40px;">
+                          <img
+                            src="~assets/images/logo_altproof.png"
+                            style="width: auto; height: 40px;"
+                          >
                         </v-flex>
                         <v-flex xs6>
-                          <img src="~assets/images/logo_althash.png" style="width: auto; height: 40px;">
+                          <img
+                            src="~assets/images/logo_althash.png"
+                            style="width: auto; height: 40px;"
+                          >
                         </v-flex>
                         <v-flex xs12>
-                          <span class="font-weight-medium my-2 headline font-bold">
-                            Digital Certificate
-                          </span>
+                          <span
+                            class="font-weight-medium my-2 headline font-bold"
+                          >Digital Certificate</span>
                         </v-flex>
-                        <v-flex xs12>                          
+                        <v-flex xs12>
                           <div class="text-xs-center">
-                            <p class="caption">Hash ID: {{ searchHashID }}</p> 
+                            <p class="caption">Hash ID: {{ searchHashID }}</p>
                             <p class="caption">Block Number: {{ blockNumber }}</p>
                             <p class="caption">Block Timestamp: {{ blockTimestamp }}</p>
-                            <img :src="qr" style="width: 75px; height: auto;"/>
+                            <img :src="qr" style="width: 75px; height: auto;">
                           </div>
                         </v-flex>
                       </v-layout>
@@ -307,10 +351,12 @@ export default {
       fileName: "",
       fileSize: "",
       text: "",
-      isTextareaEnabled: false,      
       loadStatus: 0,
       blockNumber: 0,
-      blockTimestamp: 0
+      blockTimestamp: 0,
+      fileNameSearch: "",
+      textSearch: "",
+      active: null
     };
   },
   computed: {
@@ -327,15 +373,12 @@ export default {
       return !(gasPriceCheck && gasLimitCheck && feeCheck && hashID);
     },
     isFile() {
-      return this.fileName !==  "";
+      return this.fileName !== "";
     }
   },
   watch: {
     method: function() {
       this.inputParams = [];
-    },
-    isTextareaEnabled() {
-      return this.isTextareaEnabled;
     }
   },
   methods: {
@@ -457,19 +500,26 @@ export default {
     },
     async uploadFile(event = null) {
       try {
-        this.hashID = "";
+        this.active === 1 ? (this.hashID = "") : (this.searchHashID = "");
 
-        let file = event.target.files[0];       
+        let file = event.target.files[0];
 
-        if (file.size > (1024 * 1024) * 500) throw new Error(`The max size of the file should have 500 MegaByte! "File name: ${file.name} - Size: ${this.formatSize(file.size)}"`);
-        
+        if (file.size > 1024 * 1024 * 500)
+          throw new Error(
+            `The max size of the file should have 500 MegaByte! "File name: ${
+              file.name
+            } - Size: ${this.formatSize(file.size)}"`
+          );
+
         this.fileSize = this.formatSize(file.size);
 
         const fileBinaryString = await this.fileReader(file);
         this.parseHash(fileBinaryString);
-        this.isTextareaEnabled = false;
+
         this.text = "";
         this.fileName = file.name;
+
+        this.textSearch = "";
       } catch (err) {
         this.$root.error(err.message);
         this.$root.log.error(
@@ -527,16 +577,28 @@ export default {
       else if (this.text && this.file === null) this.textHash();
     },
     parseHash(hash) {
-      this.hashID = sha256(hash);
+      if (this.active === 1) this.hashID = hash !== "" ? sha256(hash) : "";
+      else this.searchHashID = hash !== "" ? sha256(hash) : "";
     },
     textHash() {
       this.parseHash(this.text);
     },
     removeFile() {
-      this.isTextareaEnabled = true;
       this.fileName = "";
       this.fileSize = "";
       this.hashID = "";
+      this.loadStatus = 0;
+    },
+    textHashSearch() {
+      this.parseHash(this.textSearch);
+    },
+    reset() {
+      this.removeFile();
+      this.textSearch = "";
+      this.searchHashID = "";
+    },
+    removeFileSearch() {
+      this.searchHashID = "";
       this.loadStatus = 0;
     }
   }
