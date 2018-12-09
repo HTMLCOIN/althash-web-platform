@@ -208,9 +208,9 @@
                   ></v-text-field>
                   <br>
                   <div class="text-xs-center file">
-                    <input type="file" @change="uploadFile" ref="file">
+                    <input type="file" @change="uploadFile" ref="fileSearch">
                     <div>
-                      <v-btn flat icon color="blue" @click="$refs.file.click()">
+                      <v-btn flat icon color="blue" @click="$refs.fileSearch.click()">
                         <v-icon x-large>cloud_upload</v-icon>
                       </v-btn>
                     </div>
@@ -274,7 +274,7 @@
   </v-card>
 </template>
 
-<style lang="scss">
+<style lang="less">
 .headline {
   img {
     max-height: 150px;
@@ -504,6 +504,12 @@ export default {
 
         let file = event.target.files[0];
 
+        if(typeof file === 'undefined') 
+          return; 
+
+        this.textSearch = "";
+        this.text = "";
+
         if (file.size > 1024 * 1024 * 500)
           throw new Error(
             `The max size of the file should have 500 MegaByte! "File name: ${
@@ -515,11 +521,10 @@ export default {
 
         const fileBinaryString = await this.fileReader(file);
         this.parseHash(fileBinaryString);
-
-        this.text = "";
+        
         this.fileName = file.name;
 
-        this.textSearch = "";
+        
       } catch (err) {
         this.$root.error(err.message);
         this.$root.log.error(
@@ -588,6 +593,7 @@ export default {
       this.fileSize = "";
       this.hashID = "";
       this.loadStatus = 0;
+      this.$refs.file.value = null;
     },
     textHashSearch() {
       this.parseHash(this.textSearch);
@@ -599,7 +605,9 @@ export default {
     },
     removeFileSearch() {
       this.searchHashID = "";
+      this.fileName = "";
       this.loadStatus = 0;
+      this.$refs.fileSearch.value = null;
     }
   }
 };
