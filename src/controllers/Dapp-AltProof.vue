@@ -14,7 +14,7 @@
         <v-icon>info</v-icon>
       </v-tab>
       <v-tab ripple @click="reset">New
-        <v-icon>child_care</v-icon>
+        <v-icon>verified_user</v-icon>
       </v-tab>
       <v-tab ripple @click="reset">Check
         <v-icon>search</v-icon>
@@ -28,32 +28,23 @@
               <v-card>
                 <v-card-text>
                   <div align="center">
-                    <div>
-                      <img
-                        src="~assets/images/myoffspring_splash2.jpg"
-                        style="width: 50%;height: auto;"
-                      >
-                    </div>
-                    <br>
-                    <br>
-                    <span class="display-1">Welcome to MyOffspring!</span>
+                    <span class="display-1">Welcome to AltProof!</span>
                     <br>
                     <br>
                     <span class="subheading">
-                      This application allows you to register your children and create a Birth Certificate for them in the
+                      This decentralized application allows you to register documents' versions in the
                       <b>AltHash</b> blockchain.
                       <br>
-                      <br>To create a new record, just click on "New" menu item, and fill in the details about the birth of your heir.
+                      <br>
+                      As a notary service, <b>you must to keep the copy of your document</b>, as we don't store the file itself. 
+                      <br>
+                      The blockchain will store only a <b>hash</b> of the contents of the document, and only that same file will generate that hash, therefore the file shouldn't be changed after being registered.
                       <br>
                       <br>
-                      <b>Take note of the hash code generated, as it will be the unique identifier for the birth registration.</b>
+                      To create a new record, just click on "New" menu item, and upload your file or type any text you want to register.
                       <br>
-                      <br>Once the transaction is confirmed, the registration is complete and you can verify it through the menu item "Check".
                       <br>
-                      <br>MyOffspring was developed based on suggestions given by our Communities Manager,
-                      <b>Heitor Guimarães</b>, supported by the Community member
-                      <b>Karol Pyla</b>, who wanted to register his son,
-                      <b>Julek</b>, on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!
+                      Once the transaction is confirmed, the registration is complete and you can verify it through the menu item "Check". You can either inform the hash generated upon the registration, or upload the same file, or type the same text that you registered.
                     </span>
                     <br>
                     <br>
@@ -70,7 +61,7 @@
             <v-flex xs6 offset-xs3>
               <v-card-text>
                 <v-form>
-                  <h3 class="headline">Upload:</h3>
+                  <h2 class="headline">Upload:</h2>
                   <br>
                   <div class="text-xs-center file">
                     <input type="file" @change="uploadFile" ref="file">
@@ -90,7 +81,9 @@
                   <v-textarea label="Text" v-model="text" :disabled="isFile" @keyup="textHash" box></v-textarea>
                   <v-text-field label="File name:" v-model="fileName" v-if="isFile" disabled box></v-text-field>
                   <v-text-field label="File size:" v-model="fileSize" v-if="isFile" disabled box></v-text-field>
-                  <v-text-field label="Hash:" v-model="hashID" disabled box></v-text-field>
+                  <br>
+                  <br>
+                  <v-text-field label="Generated Hash:" v-model="hashID" disabled box></v-text-field>
                   <br>
                   <br>
                   <v-layout>
@@ -142,7 +135,7 @@
                     <v-container grid-list-md>
                       <v-layout wrap>
                         <v-flex xs12>
-                          <b>Please store the ID below in a safe place, as it is the unique ID for this Birth registration.</b>
+                          <b>Please store the hash below in a safe place, as it is the unique ID for this content registration.</b>
                         </v-flex>
                         <v-flex xs10>
                           <v-text-field label="Hash ID" v-model="hashID" disabled></v-text-field>
@@ -196,16 +189,7 @@
             <v-flex xs6 offset-xs3>
               <v-card-text>
                 <v-form>
-                  <v-text-field
-                    class="mx-3"
-                    flat
-                    label="Hash ID"
-                    prepend-inner-icon="search"
-                    solo-inverted
-                    v-model.trim="searchHashID"
-                    append-icon="send"
-                    @click:append="callTo"
-                  ></v-text-field>
+                  <h2 class="headline">Upload:</h2>
                   <br>
                   <div class="text-xs-center file">
                     <input type="file" @change="uploadFile" ref="fileSearch">
@@ -229,6 +213,17 @@
                     @keyup="textHashSearch"
                     box
                   ></v-textarea>
+                  <br><br>
+                  <v-text-field
+                    class="mx-3"
+                    flat
+                    label="Hash ID"
+                    prepend-inner-icon="search"
+                    solo-inverted
+                    v-model.trim="searchHashID"
+                    append-icon="send"
+                    @click:append="callTo"
+                  ></v-text-field>
                 </v-form>
               </v-card-text>
               <v-dialog v-model="execResultDialog" width="600px">

@@ -21,16 +21,16 @@
       </v-menu>
       <v-menu bottom open-on-hover offset-y
               nudge-width="100"              
-              key="CrypticMAG" >
-        <v-btn icon large dark slot="activator" @click="openDapp('dapp_crypticmag')">
-          <img src="~assets/images/crypticmag_menu_btn.png" style="height:35px;width:auto;">
+              key="AltProof" >
+        <v-btn icon large dark slot="activator" @click="openDapp('dapp_altproof')">
+          <img src="~assets/images/altproof_menu_btn.png" style="height:35px;width:auto;">
         </v-btn>
       </v-menu>
       <v-menu bottom open-on-hover offset-y
               nudge-width="100"              
-              key="AltProof" >
-        <v-btn icon large dark slot="activator" @click="openDapp('dapp_altproof')">
-          <img src="~assets/images/altproof_menu_btn.png" style="height:35px;width:auto;">
+              key="CrypticMAG" >
+        <v-btn icon large dark slot="activator" @click="openDapp('dapp_crypticmag')">
+          <img src="~assets/images/crypticmag_menu_btn.png" style="height:35px;width:auto;">
         </v-btn>
       </v-menu>
       <v-spacer></v-spacer>
