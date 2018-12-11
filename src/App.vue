@@ -34,7 +34,7 @@
         </v-btn>
       </v-menu>
       <v-spacer></v-spacer>
-      <v-tooltip bottom v-show="!isCurrent['home']">
+      <v-tooltip bottom>
         <v-btn icon dark slot="activator" @click="changeView('home')">
           <v-icon>home</v-icon>
         </v-btn>
@@ -341,8 +341,8 @@ export default {
       return this.mode === "normal"
         ? this.network === "mainnet"
           ? "indigo darken-3"
-          : "deep-purple darken-3"
-        : "orange";
+          : "red darken-3"
+        : "blue-grey lighten-1";
     },
     showLogoff() {
       return !(this.mode === "offline" || !this.wallet);

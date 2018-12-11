@@ -309,15 +309,17 @@ import abi from "ethjs-abi";
 import server from "libs/server";
 import sha256 from "js-sha256";
 import qrcode from "qrcode";
+import config from "libs/config";
 
 const abiJson = JSON.parse(
   '[{"constant":true,"inputs":[{"name":"hash","type":"string"}],"name":"getDocument","outputs":[{"name":"stored","type":"bool"},{"name":"blockNumber","type":"uint256"},{"name":"blockTimestamp","type":"uint256"},{"name":"sender","type":"address"}],"payable":false,"stateMutability":"view","type":"function"},{"constant":false,"inputs":[{"name":"hash","type":"string"}],"name":"newDocument","outputs":[{"name":"success","type":"bool"}],"payable":false,"stateMutability":"nonpayable","type":"function"},{"payable":true,"stateMutability":"payable","type":"fallback"},{"anonymous":false,"inputs":[{"indexed":false,"name":"blockNumber","type":"uint256"},{"indexed":false,"name":"hash","type":"string"}],"name":"DocumentEvent","type":"event"}]'
 );
 
+const contractAddress = config.getNetwork() == "mainnet" ? "5034f90f0fae1f0ab3c8f5385b556b65308cd8ac" : "73ff16a4066702fb58ac775427b5aae905b2ab1e";
+
 export default {
   data() {
     return {
-      contractAddress: "73ff16a4066702fb58ac775427b5aae905b2ab1e",
       abi: "",
       parsedAbi: null,
       method: null,
@@ -379,6 +381,8 @@ export default {
   methods: {
     async send() {
       try {
+
+
         const encodedData = abi
           .encodeMethod(abiJson[1], [this.hashID])
           .substr(2);
@@ -388,7 +392,7 @@ export default {
           this.rawTx = await webWallet
             .getWallet()
             .generateSendToContractTx(
-              this.contractAddress,
+              contractAddress,
               encodedData,
               this.gasLimit,
               this.gasPrice,
@@ -448,7 +452,7 @@ export default {
           try {
             let encodedResult = await webWallet
               .getWallet()
-              .callContract(this.contractAddress, encodedData);
+              .callContract(contractAddress, encodedData);
             encodedResult = "0x" + encodedResult;
             let decodedResult = abi.decodeMethod(abiJson[0], encodedResult);
 
