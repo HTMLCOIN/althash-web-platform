@@ -133,12 +133,37 @@
                   </v-card-title>
                   <v-card-text>
                     <v-container grid-list-md>
-                      <v-layout wrap>
+
+                      <v-layout wrap v-if="text==''">
+                        <v-flex xs12>
+                          <b>Please store the file info below in a safe place, as it contains the unique ID for this content registration.</b>
+                        </v-flex>
+                        <v-flex xs10>
+                          <v-text-field label="File Name and Hash" v-model="fileInfo" disabled>
+                          </v-text-field>
+                        </v-flex>
+                        <v-flex xs2>
+                          <v-btn
+                            small
+                            class="mt-3"
+                            color="cyan"
+                            v-clipboard:copy="fileInfo"
+                            v-clipboard:success="onCopySucc"
+                            v-clipboard:error="onCopyError"
+                          >{{ $t('common.copy') }}</v-btn>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-text-field label="Raw Tx" v-model="rawTx" disabled></v-text-field>
+                        </v-flex>
+                      </v-layout>
+
+                      <v-layout wrap v-else>
                         <v-flex xs12>
                           <b>Please store the hash below in a safe place, as it is the unique ID for this content registration.</b>
                         </v-flex>
                         <v-flex xs10>
-                          <v-text-field label="Hash ID" v-model="hashID" disabled></v-text-field>
+                          <v-text-field label="Text Hash" v-model="hashID" disabled>
+                          </v-text-field>
                         </v-flex>
                         <v-flex xs2>
                           <v-btn
@@ -154,6 +179,7 @@
                           <v-text-field label="Raw Tx" v-model="rawTx" disabled></v-text-field>
                         </v-flex>
                       </v-layout>
+
                     </v-container>
                   </v-card-text>
                   <v-card-actions>
@@ -246,13 +272,17 @@
                         <v-flex xs12>
                           <span
                             class="font-weight-medium my-2 headline font-bold"
-                          >Digital Certificate</span>
+                          >Content Found</span>
                         </v-flex>
                         <v-flex xs12>
                           <div class="text-xs-center">
-                            <p class="caption">Hash ID: {{ searchHashID }}</p>
-                            <p class="caption">Block Number: {{ blockNumber }}</p>
-                            <p class="caption">Block Timestamp: {{ blockTimestamp }}</p>
+                            <p>The content is registered on <b>Althash Blockchain</b> with the atttributes below:</p>
+                            <b>Block Timestamp:</b> {{ blockTimestamp }}
+                            <br>
+                            <b>Block Number:</b> {{ blockNumber }}
+                            <br>
+                            <b>Hash:</b> <span class="caption">{{ searchHashID }}</span>
+                            <br>
                             <img :src="qr" style="width: 75px; height: auto;">
                           </div>
                         </v-flex>
@@ -459,10 +489,10 @@ export default {
             let stored = decodedResult[0];
 
             if (stored) {
-              this.blockNumber = decodedResult[1].words[0];
+              this.blockNumber = decodedResult[1].words[0]; 
               this.blockTimestamp = new Date(
-                Date.now() - decodedResult[2].words[0]
-              ).toLocaleString();
+                parseInt(decodedResult[2])*1000
+              ).toUTCString();
               this.execResultDialog = true;
               this.drawQrCode();
             } else {
@@ -511,7 +541,7 @@ export default {
 
         if (file.size > 1024 * 1024 * 500)
           throw new Error(
-            `The max size of the file should have 500 MegaByte! "File name: ${
+            `The max size of the file should have 500 MegaBytes! "File name: ${
               file.name
             } - Size: ${this.formatSize(file.size)}"`
           );
@@ -522,6 +552,8 @@ export default {
         this.parseHash(fileBinaryString);
         
         this.fileName = file.name;
+
+        this.fileInfo = "File name: " + file.name + " - File hash: " + this.hashID;
 
         
       } catch (err) {
