@@ -3,7 +3,7 @@
     <v-container fluid grid-list-md>
       <v-flex xs6 offset-xs3>
         <v-card-title class="justify-center">
-          <span class="headline"><img src="images/logo_crypticMAG_transparent.png"></span>
+          <span class="headline"><img src="~assets/images/logo_crypticMAG_transparent.png"></span>
         </v-card-title>
       </v-flex>
     </v-container>
@@ -34,7 +34,7 @@
 	    <v-card>
               <v-card-text>
 		<div align="center">
-                  <div><img src="images/crypticmag_splash.jpg" style="height: auto; width: 75%;"></div>
+                  <div><img src="~assets/images/crypticmag_splash.jpg" style="height: auto; width: 75%;"></div>
                   <br><br>
                   <span class="display-1">Welcome to CypticMAG!</span>
 		  <br><br>

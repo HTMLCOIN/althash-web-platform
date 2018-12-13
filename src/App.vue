@@ -2,22 +2,39 @@
   <v-app light>
     <v-toolbar :class="headerClass" app fixed height="82px" clipped-left>
       <span class="title">
-        <span class="text"><img src="images/logo_althash_webplatform.png" alt="Althash Web Platform Logo" class="cursor" @click="changeView('home')"></span>
+        <span class="text"><img src="~assets/images/logo_althash_webplatform.png" alt="Althash Web Platform Logo" class="cursor" @click="changeView('home')"></span>
       </span>
       <v-spacer></v-spacer>
-
       <v-menu bottom open-on-hover offset-y
-              :nudge-width="100"
-              v-for="dapp in dapps.items"
-              :key="dapp.title"
-      >
-        <v-btn icon large dark slot="activator" @click="openDapp(dapp.name)">
-          <img :src="dapp.btn" style="height:35px;width:auto;">
+              nudge-width="100"              
+              key="myOffspring" >
+        <v-btn icon large dark slot="activator" @click="openDapp('dapp_myoffspring')">
+          <img src="~assets/images/myoffspring_menu_btn.png" style="height:35px;width:auto;">
         </v-btn>
       </v-menu>
-
+      <v-menu bottom open-on-hover offset-y
+              nudge-width="100"              
+              key="TokenFarm" >
+        <v-btn icon large dark slot="activator" @click="openDapp('create_token')">
+          <img src="~assets/images/tokenfarm_menu_btn.png" style="height:35px;width:auto;">
+        </v-btn>
+      </v-menu>
+      <v-menu bottom open-on-hover offset-y
+              nudge-width="100"              
+              key="AltProof" >
+        <v-btn icon large dark slot="activator" @click="openDapp('dapp_altproof')">
+          <img src="~assets/images/altproof_menu_btn.png" style="height:35px;width:auto;">
+        </v-btn>
+      </v-menu>
+      <v-menu bottom open-on-hover offset-y
+              nudge-width="100"              
+              key="CrypticMAG" >
+        <v-btn icon large dark slot="activator" @click="openDapp('dapp_crypticmag')">
+          <img src="~assets/images/crypticmag_menu_btn.png" style="height:35px;width:auto;">
+        </v-btn>
+      </v-menu>
       <v-spacer></v-spacer>
-      <v-tooltip bottom v-show="!isCurrent['home']">
+      <v-tooltip bottom>
         <v-btn icon dark slot="activator" @click="changeView('home')">
           <v-icon>home</v-icon>
         </v-btn>
@@ -81,6 +98,7 @@
               <create-token v-if="isCurrent['create_token']"></create-token>
               <dapp-myoffspring v-if="isCurrent['dapp_myoffspring']"></dapp-myoffspring>
               <dapp-crypticmag v-if="isCurrent['dapp_crypticmag']"></dapp-crypticmag>
+              <dapp-alt-proof v-if="isCurrent['dapp_altproof']"></dapp-alt-proof>
               <config v-if="isCurrent['settings']"></config>
             </v-flex>
           </v-layout>
@@ -121,52 +139,53 @@
 </template>
 
 <style>
-  .cursor:hover{
-    cursor: pointer;
-  }
+.cursor:hover {
+  cursor: pointer;
+}
 </style>
 
 <script>
-import Vue from 'vue'
-import createLog from 'localstorage-logger'
+import Vue from "vue";
+import createLog from "localstorage-logger";
 //Components
-import Notify from 'components/Notify'
-import Warning from 'components/Warning'
-import Home from 'controllers/Home'
-import CreateWallet from 'controllers/Create'
-import CreateMnemonic from 'controllers/CreateMnemonic'
-import RestoreWallet from 'controllers/Restore'
-import RestoreWif from 'controllers/RestoreWif'
-import RestoreMobile from 'controllers/RestoreMobile'
-import RestoreKeyFile from 'controllers/RestoreKeyFile'
-import RestoreLedger from 'controllers/RestoreLedger'
-import ViewWallet from 'controllers/View'
-import ViewTx from 'controllers/ViewTx'
-import SafeSend from 'controllers/SafeSend'
-import Send from 'controllers/Send'
-import RequestPayment from 'controllers/RequestPayment'
-import DumpKeyFile from 'controllers/DumpKeyFile'
-import CreateToken from 'controllers/CreateToken'
-import DappMyoffspring from 'controllers/Dapp-MyOffspring'
-import DappCrypticmag from 'controllers/Dapp-CrypticMAG'
-import CreateContract from 'controllers/CreateContract'
-import SendToContract from 'controllers/SendToContract.vue'
-import CallContract from 'controllers/CallContract.vue'
-import Config from 'controllers/Config'
-import config from 'libs/config'
-import webWallet from 'libs/web-wallet'
-import i18n from 'libs/i18n'
+import Notify from "components/Notify";
+import Warning from "components/Warning";
+import Home from "controllers/Home";
+import CreateWallet from "controllers/Create";
+import CreateMnemonic from "controllers/CreateMnemonic";
+import RestoreWallet from "controllers/Restore";
+import RestoreWif from "controllers/RestoreWif";
+import RestoreMobile from "controllers/RestoreMobile";
+import RestoreKeyFile from "controllers/RestoreKeyFile";
+import RestoreLedger from "controllers/RestoreLedger";
+import ViewWallet from "controllers/View";
+import ViewTx from "controllers/ViewTx";
+import SafeSend from "controllers/SafeSend";
+import Send from "controllers/Send";
+import RequestPayment from "controllers/RequestPayment";
+import DumpKeyFile from "controllers/DumpKeyFile";
+import CreateToken from "controllers/CreateToken";
+import DappMyoffspring from "controllers/Dapp-MyOffspring";
+import DappCrypticmag from "controllers/Dapp-CrypticMAG";
+import DappAltProof from "controllers/Dapp-AltProof";
+import CreateContract from "controllers/CreateContract";
+import SendToContract from "controllers/SendToContract.vue";
+import CallContract from "controllers/CallContract.vue";
+import Config from "controllers/Config";
+import config from "libs/config";
+import webWallet from "libs/web-wallet";
+import i18n from "libs/i18n";
 const log = createLog({
   maxLogSizeInBytes: 500 * 1024 // 500KB
-})
+});
 
 export default {
-  name: 'app',
+  name: "app",
   i18n,
   data() {
-   return {
+    return {
       wallet: false,
-      current: 'home',
+      current: "home",
       logoff_dialog: false,
       network: config.getNetwork(),
       mode: config.getMode(),
@@ -174,181 +193,160 @@ export default {
       notifyList: {},
       items: [
         {
-          action: 'open_in_browser',
-          title: 'Add Wallet',
-          name: 'new_wallet',
-	  active: true,
+          action: "open_in_browser",
+          title: "Add Wallet",
+          name: "new_wallet",
+          active: true,
           items: [
-            { 
-              title: 'Generate New Wallet',
-              name: 'create',
-              action: 'add'
+            {
+              title: "Generate New Wallet",
+              name: "create",
+              action: "add"
             },
             {
-              title: 'Restore from Key File',
-              name: 'restore_from_key_file',
-              action: 'cloud_upload'
+              title: "Restore from Key File",
+              name: "restore_from_key_file",
+              action: "cloud_upload"
             },
             {
-              title: 'Create from Mnemonic',
-              name: 'create_from_mnemonic',
-              action: 'assignment'
+              title: "Create from Mnemonic",
+              name: "create_from_mnemonic",
+              action: "assignment"
             },
             {
-              title: 'Restore from Mnemonic',
-              name: 'restore_from_mnemonic',
-              action: 'sms'
+              title: "Restore from Mnemonic",
+              name: "restore_from_mnemonic",
+              action: "sms"
             },
             {
-              title: 'Restore from WIF',
-              name: 'restore_from_wif',
-              action: 'create'
+              title: "Restore from WIF",
+              name: "restore_from_wif",
+              action: "create"
             },
             {
-              title: 'Restore from Mobile',
-              name: 'restore_from_mobile',
-              action: 'phonelink_lock'
+              title: "Restore from Mobile",
+              name: "restore_from_mobile",
+              action: "phonelink_lock"
             },
             {
-              title: 'Restore from Ledger',
-              name: 'restore_from_ledger',
-              action: 'flip_to_front'
+              title: "Restore from Ledger",
+              name: "restore_from_ledger",
+              action: "flip_to_front"
             }
           ]
         },
         {
-          action: 'account_balance_wallet',
-          title: 'Wallet Functions',
-          name: 'wallet',
+          action: "account_balance_wallet",
+          title: "Wallet Functions",
+          name: "wallet",
           active: false,
           items: [
             {
-              title: 'View Wallet Info',
-              name: 'view',
-              action: 'info'
-            },            
-            {
-              title: 'View Wallet Txs',
-              name: 'transactions',
-              action: 'list'
+              title: "View Wallet Info",
+              name: "view",
+              action: "info"
             },
             {
-              title: 'Send',
-              name: 'send',
-              action: 'redo'
+              title: "View Wallet Txs",
+              name: "transactions",
+              action: "list"
             },
             {
-              title: 'Safe Send',
-              name: 'safe_send',
-              action: 'security'
+              title: "Send",
+              name: "send",
+              action: "redo"
             },
             {
-              title: 'Request Payment',
-              name: 'request_payment',
-              action: 'undo'
+              title: "Safe Send",
+              name: "safe_send",
+              action: "security"
             },
             {
-              title: 'Dump as Key File',
-              name: 'dump_as_key_file',
-              action: 'cloud_download'
+              title: "Request Payment",
+              name: "request_payment",
+              action: "undo"
+            },
+            {
+              title: "Dump as Key File",
+              name: "dump_as_key_file",
+              action: "cloud_download"
             }
           ]
         },
         {
-          action: 'code',
-          title: 'Smart Contracts',
-          name: 'contract',
+          action: "code",
+          title: "Smart Contracts",
+          name: "contract",
           active: false,
           items: [
             {
-              title: 'Send to Contract',
-              name: 'send_to_contract',
-              action: 'play_circle_outline'
+              title: "Send to Contract",
+              name: "send_to_contract",
+              action: "play_circle_outline"
             },
             {
-              title: 'Call Contract',
-              name: 'call_contract',
-              action: 'pageview'
+              title: "Call Contract",
+              name: "call_contract",
+              action: "pageview"
             },
             {
-              title: 'Create Contract',
-              name: 'create_contract',
-              action: 'build'
+              title: "Create Contract",
+              name: "create_contract",
+              action: "build"
             }
           ]
         },
         {
-          action: 'settings',
-          title: 'Settings',
-          name: 'top_settings',
+          action: "settings",
+          title: "Settings",
+          name: "top_settings",
           active: false,
           items: [
             {
-              title: 'General',
-              name: 'settings',
-              action: 'list'
+              title: "General",
+              name: "settings",
+              action: "list"
             }
           ]
         }
-      ],
-      dapps: {   
-	  action: 'apps',
-          title: 'DApps',
-          name: 'dapps',
-          active: false,
-          items: [
-            {
-              title: 'myOffspring',
-              name: 'dapp_myoffspring',
-              image: 'images/myoffspring_logo_menu.png',
-	      btn: 'images/myoffspring_menu_btn.png'
-            },
-            {
-              title: 'TokenFarm',
-              name: 'create_token',
-              image: 'images/tokenfarm_logo_menu.png',
-              btn: 'images/tokenfarm_menu_btn.png'
-            },
-            {
-              title: 'CrypticMAG',
-              name: 'dapp_crypticmag',
-              image: 'images/crypticmag_logo_menu.png',
-              btn: 'images/crypticmag_menu_btn.png'
-            }
-          ] 
-      }
-    }
+      ]
+    };
   },
   computed: {
     isCurrent() {
-      return { [this.current]: true }
+      return { [this.current]: true };
     },
     notShow() {
       return {
-        restore_from_ledger: this.network !== 'mainnet',
-        view: this.mode === 'offline' || !this.wallet,
-        transactions: this.mode === 'offline' || !this.wallet,
-        wallet: this.mode === 'offline' && !this.wallet,
-        safe_send: this.mode === 'offline' && !this.wallet,
-        send: this.mode === 'offline' || !this.wallet,
+        restore_from_ledger: this.network !== "mainnet",
+        view: this.mode === "offline" || !this.wallet,
+        transactions: this.mode === "offline" || !this.wallet,
+        wallet: this.mode === "offline" && !this.wallet,
+        safe_send: this.mode === "offline" && !this.wallet,
+        send: this.mode === "offline" || !this.wallet,
         request_payment: !this.wallet,
         dump_as_key_file: !this.wallet || !this.wallet.getHasPrivKey(),
-        create_token: this.mode === 'offline' || !this.wallet,
-        contract: this.mode === 'offline' || !this.wallet,
-        create_contract: this.mode === 'offline' || !this.wallet,
-        send_to_contract: this.mode === 'offline' || !this.wallet,
-        call_contract: this.mode === 'offline' || !this.wallet,
-	dapp_myoffspring: this.mode === 'offline' || !this.wallet,
-	dapp_crypticmag: this.mode === 'offline' || !this.wallet,
-        dapps: this.mode === 'offline' || !this.wallet,
-      }
+        create_token: this.mode === "offline" || !this.wallet,
+        contract: this.mode === "offline" || !this.wallet,
+        create_contract: this.mode === "offline" || !this.wallet,
+        send_to_contract: this.mode === "offline" || !this.wallet,
+        call_contract: this.mode === "offline" || !this.wallet,
+        dapp_myoffspring: this.mode === "offline" || !this.wallet,
+        dapp_crypticmag: this.mode === "offline" || !this.wallet,
+        dapp_altproof: this.mode === "offline" || !this.wallet,
+        dapps: this.mode === "offline" || !this.wallet
+      };
     },
     headerClass() {
-      return this.mode === 'normal' ? (this.network === 'mainnet' ? 'indigo darken-3' : 'deep-purple darken-3') : 'orange'   
+      return this.mode === "normal"
+        ? this.network === "mainnet"
+          ? "indigo darken-3"
+          : "red darken-3"
+        : "blue-grey lighten-1";
     },
-    showLogoff(){
-      return !(this.mode === 'offline' || !this.wallet)
-    },
+    showLogoff() {
+      return !(this.mode === "offline" || !this.wallet);
+    }
   },
   components: {
     Notify,
@@ -370,67 +368,69 @@ export default {
     CreateToken,
     DappMyoffspring,
     DappCrypticmag,
+    DappAltProof,
     CreateContract,
     SendToContract,
     CallContract,
-    Config,
+    Config
   },
   methods: {
     setWallet() {
-      this.wallet = webWallet.getWallet()
-      this.wallet.init()
+      this.wallet = webWallet.getWallet();
+      this.wallet.init();
       if (this.wallet) {
-        if (this.mode === 'offline') {
-          this.current = 'request_payment'
-        }
-        else {
-          this.current = 'view'
+        if (this.mode === "offline") {
+          this.current = "request_payment";
+        } else {
+          this.current = "view";
         }
       }
     },
-    logoff(){
-      this.wallet = null
-      this.current = 'home'
-      this.logoff_dialog = false
+    logoff() {
+      this.wallet = null;
+      this.current = "home";
+      this.logoff_dialog = false;
     },
     changeView(name) {
-      this.current = name
+      this.current = name;
     },
     openDapp(name) {
-      if(this.mode === 'offline' || !this.wallet){
-        alert('You need to either import or create a new Wallet before using Dapps! Please go to the \"Add Wallet\" menu at the top-right corner of the page.')
-      }else{
+      if (this.mode === "offline" || !this.wallet) {
+        alert(
+          'You need to either import or create a new Wallet before using Dapps! Please go to the "Add Wallet" menu at the top-right corner of the page.'
+        );
+      } else {
         this.changeView(name);
       }
     },
     error(msg, isHtml = false, ttl = 10) {
-      this.addNotify(msg, 'error', isHtml, ttl)
+      this.addNotify(msg, "error", isHtml, ttl);
     },
     success(msg, isHtml = false, ttl = 10) {
-      this.addNotify(msg, 'success', isHtml, ttl)
+      this.addNotify(msg, "success", isHtml, ttl);
     },
     addNotify(msg, type, isHtml = false, ttl = 10) {
-      const notifyId = [msg, type].join('_')
+      const notifyId = [msg, type].join("_");
       const notify = {
-        msg: msg.split(' ').reduce((msg, current) => {
-          let tmsg = this.$t('common.notify.' + current)
-          tmsg = (tmsg === 'common.notify.' + current) ? ' ' + current : tmsg
-          return msg + tmsg
-        }, ''),
+        msg: msg.split(" ").reduce((msg, current) => {
+          let tmsg = this.$t("common.notify." + current);
+          tmsg = tmsg === "common.notify." + current ? " " + current : tmsg;
+          return msg + tmsg;
+        }, ""),
         type,
         show: true,
-        isHtml,
-      }
+        isHtml
+      };
       if (this.notifyList[notifyId] && this.notifyList[notifyId].timer) {
-        clearTimeout(this.notifyList[notifyId].timer)
+        clearTimeout(this.notifyList[notifyId].timer);
       }
-      Vue.set(this.notifyList, notifyId, notify)
+      Vue.set(this.notifyList, notifyId, notify);
       if (ttl > 0) {
         this.notifyList[notifyId].timer = setTimeout(() => {
-          Vue.delete(this.notifyList, notifyId)
-        }, ttl * 1000)
+          Vue.delete(this.notifyList, notifyId);
+        }, ttl * 1000);
       }
     }
   }
-}
+};
 </script>

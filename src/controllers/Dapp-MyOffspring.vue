@@ -3,7 +3,7 @@
     <v-container fluid grid-list-md>
       <v-flex xs6 offset-xs3>
         <v-card-title class="justify-center">
-          <span class="headline"><img src="images/myoffspring_logo.png"></span>
+          <span class="headline"><img src="~assets/images/myoffspring_logo.png"></span>
         </v-card-title>
       </v-flex>
     </v-container>
@@ -35,7 +35,7 @@
                 <v-card-text>
                   <div align="center">
                     <div>
-                      <img src="images/myoffspring_splash2.jpg" style="width: 50%;height: auto;">
+                      <img src="~assets/images/myoffspring_splash2.jpg" style="width: 50%;height: auto;">
                     </div>
                     <br><br>
                     <span class="display-1">Welcome to MyOffspring!</span>
@@ -242,15 +242,15 @@
                 </v-form>
               </v-card-text>
               <v-dialog v-model="execResultDialog" width="600px">
-                <v-card img="images/myoffspring_border.png">
+                <v-card img="~assets/images/myoffspring_border.png">
                   <v-card-text>
                     <v-container align-center grid-list-md text-md-center>
                       <v-layout row wrap>
                         <v-flex xs6>
-                          <img src="images/myoffspring_logo.png" style="width: auto; height: 40px;">
+                          <img src="~assets/images/myoffspring_logo.png" style="width: auto; height: 40px;">
                         </v-flex>
                         <v-flex xs6>
-                          <img src="images/logo_althash.png" style="width: auto; height: 40px;">
+                          <img src="~assets/images/logo_althash.png" style="width: auto; height: 40px;">
                         </v-flex>
                         <v-flex xs12>
                           <span class="font-weight-medium my-2 headline font-bold">
