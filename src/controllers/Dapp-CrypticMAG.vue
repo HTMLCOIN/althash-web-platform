@@ -11,7 +11,7 @@
      centered
      icons-and-text
      color="transparent"
-     slider-color="teal"
+     slider-color="deep-orange"
      v-model="active"
     >
       <v-tab
@@ -31,25 +31,25 @@
         <v-layout row>
           <v-flex xs12 sm6 offset-sm3>
             <br><br>
-	    <v-card>
+	           <v-card>
               <v-card-text>
-		<div align="center">
+		            <div align="center">
                   <div><img src="~assets/images/crypticmag_splash.jpg" style="height: auto; width: 75%;"></div>
                   <br><br>
                   <span class="display-1">Welcome to CypticMAG!</span>
-		  <br><br>
+		              <br><br>
                   <span class="subheading">
                     This application allows the redeeming of rewards found inside your Cryptic Magazine.
                     <br><br>
-		    To redeem your prize view the "redeem" tab, then enter the code found inside your magazine along with your destination wallet.
-		    <br><br>
-		    After you have entered in the code, review that the info is correct then press confirm.
-		    <br><br>
-		    We look forward to rewarding you again in the next edition.
-		    <br><br>
-		    Stay Tuned & Good Luck!
-		  </span>
-		  <br><br>
+            		    To redeem your prize view the "redeem" tab, then enter the code found inside your magazine along with your destination wallet.
+            		    <br><br>
+            		    After you have entered in the code, review that the info is correct then press confirm.
+            		    <br><br>
+            		    We look forward to rewarding you again in the next edition.
+            		    <br><br>
+            		    Stay Tuned & Good Luck!
+            		  </span>
+            		  <br><br>
                 </div>
               </v-card-text>
             </v-card>
@@ -63,53 +63,54 @@
           <v-container fluid grid-list-md>
             <v-flex xs6 offset-xs3>
               <v-card-text>
-                <v-form>
-                  <v-text-field
-                   label="Reward Code"
-                   v-model.trim="rewardCode"
-                   required
-                   box
-                  ></v-text-field>
-                  <v-text-field
-                   label="Destination Wallet Address"
-                   v-model.trim="destinationWalletAddress"
-		   box
-                  ></v-text-field>
-                  <br><br>
-                  <v-layout>
-                    <v-flex xs4>
-                      <v-text-field
-                       label="Gas Price (1e-8 HTML/gas)"
-                       v-model.trim="gasPrice"
-                       required
-		       box
-		       background-color="indigo lighten-3"
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-text-field
-                       label="Gas Limit"
-                       v-model.trim="gasLimit"
-                       required
-		       box
-                       background-color="indigo lighten-3"
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs4>
-                      <v-text-field
-                       label="Fee"
-                       v-model.trim="fee"
-                       required
-                       box
-		       background-color="indigo lighten-3"
-                      ></v-text-field>
-                    </v-flex>
-                  </v-layout>
-                </v-form>
+                <v-text-field
+                 label="Reward Code"
+                 v-model.trim="rewardCode"
+                 required
+                 outline
+                 background-color="orange"
+                ></v-text-field>
+                <v-text-field
+                 label="Destination Wallet Address"
+                 v-model.trim="destinationWalletAddress"
+	               outline
+                 background-color="orange"
+                ></v-text-field>
+                <br><br>
+                <v-layout>
+                  <v-flex xs4>
+                    <v-text-field
+                     label="Gas Price (1e-8 HTML/gas)"
+                     v-model.trim="gasPrice"
+                     required
+          		       outline
+          		       background-color="deep-orange"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs4>
+                    <v-text-field
+                     label="Gas Limit"
+                     v-model.trim="gasLimit"
+                     required
+	                   outline
+                     background-color="deep-orange"
+                    ></v-text-field>
+                  </v-flex>
+                  <v-flex xs4>
+                    <v-text-field
+                     label="Fee"
+                     v-model.trim="fee"
+                     required
+                     outline
+	                   background-color="deep-orange"
+                    ></v-text-field>
+                  </v-flex>
+                </v-layout>
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn class="success" dark @click="send" :disabled="notValid">{{ $t('common.confirm') }}</v-btn>
+                <v-btn class="success" @click="send" :disabled="notValid">{{ $t('common.confirm') }}</v-btn>
+                <v-spacer></v-spacer>
               </v-card-actions>
               <v-dialog v-model="confirmSendDialog" persistent max-width="50%">
                 <v-card>
@@ -122,7 +123,7 @@
                     <v-container grid-list-md>
                       <v-layout wrap>
                         <v-flex xs12>
-                          <v-text-field label="Raw Tx" v-model="rawTx" multi-line disabled></v-text-field>
+                          <v-textarea label="Raw Tx" v-model="rawTx" disabled></v-textarea>
                         </v-flex>
                       </v-layout>
                     </v-container>
@@ -140,6 +141,57 @@
         </v-card>
       </v-tab-item>
     </v-tabs>
+    <v-dialog v-model="txReceiptDialog" persistent width="600px">
+      <v-card color="white">
+        <v-container fluid grid-list-md>
+          <v-layout row wrap align-center text-xs-center v-if="this.awaitingTx">
+            <v-flex xs12>
+              <span class="title blue--text">
+                Transaction broadcasted to the <b>Althash Blockchain</b>!
+              </span>
+            </v-flex>
+            <v-flex xs12>
+              Awaiting confirmation from the network...
+            </v-flex>
+            <v-flex xs12>
+              <v-progress-linear :indeterminate="true" color="orange"></v-progress-linear>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap align-center text-xs-center v-if="this.txError">
+            <v-flex xs12>
+              <span class="red--text">
+                <p>
+                  <h1>Unsuccessful</h1>
+                </p>
+                <p> 
+                  This reward code has either been claimed or is invalid.
+                </p>
+              </span>
+            </v-flex>
+            <v-flex xs12>
+              <v-btn color="error" @click="txError = false; txReceiptDialog = false">
+                Close
+              </v-btn>
+            </v-flex>
+          </v-layout>
+          <v-layout row wrap align-center text-xs-center v-if="this.txConfirmed">
+            <v-flex xs12>
+              <span class="title blue--text">
+                <h1>Succesful!</h1>
+              </span>
+            </v-flex>
+            <v-flex xs12>
+              The reward was succesfully redeemed. Congrats!
+            </v-flex>
+            <v-flex xs12>
+              <v-btn color="warning" @click="txConfirmed = false; txReceiptDialog = false">
+                Close
+              </v-btn>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-dialog>
   </v-card>
 </template>
 
@@ -147,12 +199,16 @@
 import webWallet from 'libs/web-wallet'
 import abi from 'ethjs-abi'
 import server from 'libs/server'
-
+import axios from 'axios'
 import base58 from 'bs58'
 
 export default {
   data () {
     return {
+      txReceiptDialog: false,
+      awaitingTx: false,
+      txError: false,
+      txConfirmed: false,
       contractAddress: '8ef863bce3568898f293596b4638d00876bada86',
       abi: '',
       parsedAbi: null,
@@ -216,16 +272,41 @@ export default {
     },
 
     async confirmSend() {
+      
       this.sending = true
       try {
         const txId = await webWallet.getWallet().sendRawTx(this.rawTx)
-	this.confirmSendDialog = false
+        this.confirmSendDialog = false
         this.sending = false
         const txViewUrl = server.currentNode().getTxExplorerUrl(txId)
         this.$root.success(`Successful sent! You can follow the transaction on <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`, true, 0)
         this.$emit('send')
 
-	this.rewardCode = ''
+        this.txReceiptDialog = true;
+        this.awaitingTx = true;
+
+        const interval = setInterval(() => {
+
+          axios.get('https://explorer.htmlcoin.com/api/tx/' + txId)
+          .then(result=>{
+            console.log('Checking Tx...')
+
+            if(result.data.confirmations > 0) {
+              clearInterval(interval);
+              this.awaitingTx = false;
+
+              if(result.data.receipt[0].excepted != 'None') {
+                this.txError = true;
+              } else {
+                this.txConfirmed = true;
+              }
+            }
+
+          })
+          .catch(console.error)
+        }, 30*1000)
+
+        this.rewardCode = ''
         this.destinationWalletAddress = ''
 
       } catch (e) {

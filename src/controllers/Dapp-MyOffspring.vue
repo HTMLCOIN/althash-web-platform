@@ -69,17 +69,23 @@
                   label="Full Name"
                   v-model.trim="fullName"
                   required
-                  box
+                  outline
+                  background-color="teal"
+                  maxlength="200"
                   ></v-text-field>
                   <v-text-field
                   label="Mother's Full Name"
                   v-model.trim="motherFullName"
-                  box
+                  outline
+                  background-color="teal"
+                  maxlength="200"
                   ></v-text-field>
                   <v-text-field
                   label="Father's Full Name"
                   v-model.trim="fatherFullName"
-                  box
+                  outline
+                  background-color="teal"
+                  maxlength="200"
                   ></v-text-field>
                   <v-layout>
                     <v-flex xs6>
@@ -100,7 +106,8 @@
                         label="Date of Birth"
                         prepend-icon="event"
                         readonly
-                        box
+                        outline
+                        background-color="teal"
                         ></v-text-field>
                         <v-date-picker
                         ref="picker"
@@ -131,8 +138,9 @@
                         label="Time of Birth"
                         prepend-icon="access_time"
                         readonly
-                        box
-                        ></v-text-field>
+                        outline
+                        background-color="teal"
+                          ></v-text-field>
                         <v-time-picker
                         v-if="timePicker"
                         v-model="timeOfBirth"
@@ -146,7 +154,9 @@
                   <v-text-field
                   label="Place of Birth (Facility, City, State/Province, Country)"
                   v-model.trim="placeOfBirth"
-                  box
+                  outline
+                  background-color="teal"
+                  maxlength="200"
                   ></v-text-field>
                   <br><br>
                   <v-layout>
@@ -155,8 +165,8 @@
                       label="Gas Price (1e-8 HTML/gas)"
                       v-model.trim="gasPrice"
                       required
-                      box
-                      background-color="indigo lighten-3"
+                      outline
+                      background-color="indigo"
                       ></v-text-field>
                     </v-flex>
                     <v-flex xs4>
@@ -164,8 +174,8 @@
                       label="Gas Limit"
                       v-model.trim="gasLimit"
                       required
-                      box
-                      background-color="indigo lighten-3"
+                      outline
+                      background-color="indigo"
                       ></v-text-field>
                     </v-flex>
                     <v-flex xs4>
@@ -173,8 +183,8 @@
                       label="Fee"
                       v-model.trim="fee"
                       required
-                      box
-                      background-color="indigo lighten-3"
+                      outline
+                      background-color="indigo"
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -182,7 +192,8 @@
               </v-card-text>
               <v-card-actions>
                 <v-spacer></v-spacer>
-                <v-btn class="success" dark @click="send" :disabled="notValid">{{ $t('common.confirm') }}</v-btn>
+                <v-btn class="success" @click="send" :disabled="notValid">{{ $t('common.confirm') }}</v-btn>
+                <v-spacer></v-spacer>
               </v-card-actions>
               <v-dialog v-model="confirmSendDialog" persistent max-width="50%">
                 <v-card>
@@ -225,92 +236,145 @@
       </v-tab-item>
       <v-tab-item>
         <v-card flat>
-          <v-container fluid grid-list-md>
-            <v-flex xs6 offset-xs3>
-              <v-card-text>
-                <v-form>
+          <v-flex xs8 offset-xs2>
+            <v-container fluid grid-list-md align-center text-xs-center>
+              <v-layout row wrap>
+                <v-flex xs10>
                   <v-text-field
                   class="mx-3"
-                  flat
                   label="Hash ID"
-                  prepend-inner-icon="search"
-                  solo-inverted
                   v-model.trim="searchHashID"
-                  append-icon="send"
-                  @click:append="callTo"   
-                  ></v-text-field> 
-                </v-form>
-              </v-card-text>
-              <v-dialog v-model="execResultDialog" width="600px">
-                <v-card img="~assets/images/myoffspring_border.png">
-                  <v-card-text>
-                    <v-container align-center grid-list-md text-md-center>
-                      <v-layout row wrap>
-                        <v-flex xs6>
-                          <img src="~assets/images/myoffspring_logo.png" style="width: auto; height: 40px;">
-                        </v-flex>
-                        <v-flex xs6>
-                          <img src="~assets/images/logo_althash.png" style="width: auto; height: 40px;">
-                        </v-flex>
-                        <v-flex xs12>
-                          <span class="font-weight-medium my-2 headline font-bold">
-                            Digital Birth Certificate
-                          </span>
-                        </v-flex>
-                        <v-flex xs12>
-                          <v-text-field 
-                          label="Full Name" 
-                          v-model="resultFullName" 
-                          readonly
-                          ></v-text-field>
-                          <v-text-field 
-                          label="Mother's Full Name" 
-                          v-model="resultMotherFullName" 
-                          readonly
-                          ></v-text-field>
-                          <v-text-field 
-                          label="Father's Full Name" 
-                          v-model="resultFatherFullName" 
-                          readonly
-                          ></v-text-field>
-                          <v-layout>
-                            <v-flex xs6>
-                              <v-text-field 
-                              label="Date of Birth" 
-                              v-model="resultDateOfBirth" 
-                              readonly
-                              ></v-text-field>
-                            </v-flex>
-                            <v-flex xs6>
-                              <v-text-field 
-                              label="Time of Birth" 
-                              v-model="resultTimeOfBirth" 
-                              readonly
-                              ></v-text-field>
-                            </v-flex>
-                          </v-layout>
-                          <v-text-field 
-                          label="Place of Birth" 
-                          v-model="resultPlaceOfBirth" 
-                          readonly
-                          ></v-text-field>
-                          <p class="text-xs-center">
-                            <span class="caption">Hash ID: {{ searchHashID }}</span>
-                            <img :src="qr" style="width: 75px; height: auto;"/>
-                          </p>
-                        </v-flex>
-                      </v-layout>
-                    </v-container>
-                  </v-card-text>
-                </v-card>
-              </v-dialog>
-            </v-flex>
-          </v-container>
+                  append-icon="search"
+                  @click:append="openCertificate"
+                  outline
+                  background-color="teal"
+                  ></v-text-field>
+                </v-flex>
+                <v-flex xs2>
+                  <img src="~assets/images/scan_qrcode.png" class="cursor" @click="scanQrcode">
+                </v-flex>
+                <v-flex xs12>
+                  <p class="error">{{ error }}</p>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-flex>
         </v-card>
       </v-tab-item>
     </v-tabs>
+    <v-dialog v-model="execResultDialog" width="600px">
+      <span id="certificate">
+        <v-card class="modal-detail">
+          <v-card-text>
+            <v-container align-center grid-list-md>
+              <v-layout row wrap>
+                <v-flex xs6 text-md-center>
+                  <img src="~assets/images/myoffspring_logo.png" class="logo1">
+                </v-flex>
+                <v-flex xs6 text-md-center>
+                  <img src="~assets/images/logo_althash.png" class="logo2">
+                </v-flex>
+                <v-flex xs12 text-md-center>
+                  <span class="font-weight-medium my-2 headline font-bold" id="title">
+                    Digital Birth Certificate
+                  </span>
+                </v-flex>
+                <v-flex xs12>
+                  <p></p>
+                  <p>
+                    <b>Full Name:</b> {{ resultFullName }}
+                  </p>
+                  <p>
+                    <b>Mother's Full Name:</b> {{ resultMotherFullName }}
+                  </p>
+                  <p>
+                    <b>Father's Full Name:</b> {{ resultFatherFullName }}
+                  </p>
+                  <p>
+                    <b>Date of Birth:</b> {{ resultDateOfBirth }}
+                  </p>
+                  <p>
+                    <b>Time of Birth:</b> {{ resultTimeOfBirth }}
+                  </p>
+                  <p>
+                    <b>Place of Birth:</b> {{ resultPlaceOfBirth }}
+                  </p>
+                  <p class="text-xs-center">
+                    <span class="caption" id="certificate_id">Hash ID: {{ searchHashID }}</span>
+                    <img :src="qr" class="qr" id="qr"/>
+                    <br>
+                    <v-btn icon @click="print" id="btn">
+                      <v-icon>print</v-icon>
+                    </v-btn>
+                  </p>
+                </v-flex>
+              </v-layout>
+            </v-container>
+          </v-card-text>
+        </v-card>
+      </span>
+    </v-dialog>
+    <v-dialog v-model="qrScan" max-width="50%">
+      <v-container>
+        <v-layout>
+          <v-flex xs12 align-center text-xs-center>
+            <qrcode-stream :track="false" @decode="onDecode" @init="onInit" :camera="camera" v-if="qrComponent" />
+          </v-flex>
+        </v-layout>    
+      </v-container>
+    </v-dialog>
+    <v-dialog
+      v-model="loading"
+      hide-overlay
+      persistent
+      width="300"
+    >
+      <v-card
+        color="teal"
+        dark
+      >
+        <v-card-text>
+          Please stand by
+          <v-progress-linear
+            indeterminate
+            color="white"
+            class="mb-0"
+          ></v-progress-linear>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </v-card>
 </template>
+
+<style scoped>
+  .modal-detail {
+    background-image: url("~assets/images/myoffspring_border.png");
+  }
+
+  .logo1 {
+    width: auto; 
+    height: 40px;
+  }
+
+  .logo2 {
+    width: auto; 
+    height: 40px;
+  }
+
+  .cursor:hover {
+    cursor: pointer;
+  }
+
+  .error {
+    font-weight: bold;
+    color: red;
+  }
+
+  .qr {
+    width: 75px; 
+    height: auto;
+  }
+</style>
 
 <script>
   import webWallet from 'libs/web-wallet'
@@ -318,9 +382,13 @@
   import server from 'libs/server'
   import sha256 from 'js-sha256'
   import qrcode from 'qrcode'
+  import printd from 'printd'
+  import { QrcodeStream, QrcodeCapture } from 'vue-qrcode-reader'
+
   export default {
     data () {
       return {
+        loading: false,
         contractAddress: '0b0c37fa6d64078dac7cfa4ccc43529a615602a1',
         abi: '',
         parsedAbi: null,
@@ -338,6 +406,10 @@
         gasPrice: '40',
         gasLimit: '2500000',
         fee: '0.01',
+        error: null,
+        qrScan: false,
+        camera: false,
+        qrComponent: false,
         confirmSendDialog: false,
         execResultDialog: false,
         rawTx: 'loading...',
@@ -354,6 +426,10 @@
         resultPlaceOfBirth: 'loading...',
         qr: ''
       }
+    },
+    components:{
+      QrcodeStream,
+      QrcodeCapture
     },
     computed: {
       notValid: function() {
@@ -373,9 +449,103 @@
       },
       dateOfBirth_menu (val) {
         val && this.$nextTick(() => (this.$refs.picker.activePicker = 'YEAR'))
+      },
+      qrScan(val){
+        if(!val)
+          this.camera = false
       }
     },
     methods: {
+      print(){
+        const cssText = `
+          #title {
+            font-family: Arial, Helvetica, sans-serif;
+            font-weight: bold;
+            font-size: x-large;
+            text-align: center;                      
+            display: block;
+            padding: 20px;
+            margin-top: 120px;
+          }
+
+          p {
+            font-family: Arial, Helvetica, sans-serif;
+            margin-left: 50px;
+          }
+
+          #certificate_id {
+            font-family: Arial, Helvetica, sans-serif;
+            text-align: center;
+            display: block;
+            padding: 20px;
+          }
+
+          #qr {
+            margin-left: auto;
+            margin-right: auto;
+            padding: 10px;
+            width: 100px; 
+            height: auto;
+            display: block;
+          }
+
+          #btn {
+            display: none;
+          }
+
+          .logo1 {
+            float: left;
+            padding: 10px;
+            height: 20px;
+            width: auto;
+            margin-left: 25px;
+          }
+
+          .logo2 {
+            float: right;
+            padding: 10px;
+            height: 20px;
+            width: auto;
+            margin-right: 25px;
+          }
+        `
+
+        const d = new printd()
+
+        d.print( document.getElementById('certificate'), cssText );
+      },
+      scanQrcode(){
+        this.searchHashID = '';
+        this.qrComponent = true;
+        this.camera = true;
+        this.qrScan = true;
+      },
+
+      onDecode(certificateID) {
+        this.searchHashID = certificateID
+        this.camera = false;
+        this.qrScan = false;
+        this.openCertificate();
+      },
+      async onInit (promise) {
+        try {
+          await promise
+        } catch (error) {
+          if (error.name === 'NotAllowedError') {
+            this.error = "ERROR: you need to grant camera access permisson"
+          } else if (error.name === 'NotFoundError') {
+            this.error = "ERROR: no camera on this device"
+          } else if (error.name === 'NotSupportedError') {
+            this.error = "ERROR: secure context required (HTTPS, localhost)"
+          } else if (error.name === 'NotReadableError') {
+            this.error = "ERROR: is the camera already in use?"
+          } else if (error.name === 'OverconstrainedError') {
+            this.error = "ERROR: installed cameras are not suitable"
+          } else if (error.name === 'StreamApiNotSupportedError') {
+            this.error = "ERROR: Stream API is not supported in this browser"
+          }
+        }
+      },
       async send() {
         try {
           const abiJson = [{"constant": true, "inputs": [{"name": "hash", "type": "string"} ], "name": "getHeir", "outputs": [{"name": "result", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "hash", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "name": "newHeir", "outputs": [{"name": "result", "type": "string"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": false, "name": "hash", "type": "string"} ], "name": "heirEvent", "type": "event"} ]
@@ -421,8 +591,9 @@
           this.confirmSendDialog = false
         }
       },
-      async callTo() {
+      async openCertificate() {
         if(this.searchHashID != ''){
+          this.loading = true;
           try {
             const abiJson = [{"constant": true, "inputs": [{"name": "hash", "type": "string"} ], "name": "getHeir", "outputs": [{"name": "result", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "hash", "type": "string"}, {"name": "heirFullName", "type": "string"}, {"name": "motherFullName", "type": "string"}, {"name": "fatherFullName", "type": "string"}, {"name": "dateOfBirth", "type": "uint256"}, {"name": "timeOfBirth", "type": "uint256"}, {"name": "placeOfBirth", "type": "string"} ], "name": "newHeir", "outputs": [{"name": "result", "type": "string"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": false, "name": "hash", "type": "string"} ], "name": "heirEvent", "type": "event"} ]
             const encodedData = abi.encodeMethod(abiJson[0], [this.searchHashID]).substr(2)
@@ -455,6 +626,7 @@
                 formattedTimeOfBirth = '00:00'
               }
               this.resultStatus = decodedResult[0]
+              this.loading = false;
               if(this.resultStatus == 'Heir record found.'){
                 this.execResultDialog = true
                 this.resultFullName = decodedResult[1]
@@ -469,11 +641,13 @@
                 alert('Record not found!')
               }
             } catch (e) {
+              this.loading = false;
               this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e)
               alert(e.message || e)
               this.execResultDialog = false
             }
           } catch (e) {
+            this.loading = false;
             this.$root.error('Params error')
             this.$root.log.error('call_contract_encode_abi_error', e.stack || e.toString() || e)
             return false
