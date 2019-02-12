@@ -510,9 +510,11 @@
           }
         `
 
-        const d = new printd()
+        const d = new printd();
 
-        d.print( document.getElementById('certificate'), cssText );
+        const printCallback = ({ launchPrint }) => launchPrint();
+
+        d.print( document.getElementById('certificate'), cssText, printCallback );
       },
       scanQrcode(){
         this.searchHashID = '';
