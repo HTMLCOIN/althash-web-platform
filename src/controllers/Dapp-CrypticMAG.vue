@@ -177,11 +177,11 @@
           <v-layout row wrap align-center text-xs-center v-if="this.txConfirmed">
             <v-flex xs12>
               <span class="title blue--text">
-                <h1>Succesful!</h1>
+                <h1>Successful!</h1>
               </span>
             </v-flex>
             <v-flex xs12>
-              The reward was succesfully redeemed. Congrats!
+              The reward was successfully redeemed. Congrats!
             </v-flex>
             <v-flex xs12>
               <v-btn color="warning" @click="txConfirmed = false; txReceiptDialog = false">
@@ -248,9 +248,8 @@ export default {
 
 	const abiJson = [{"constant": true, "inputs": [], "name": "name", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_spender", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "approve", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalSupply", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_from", "type": "address"}, {"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transferFrom", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "decimals", "outputs": [{"name": "", "type": "uint8"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "rewardCode", "type": "string"} ], "name": "checkReward", "outputs": [{"name": "rewardType", "type": "uint256"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "valid", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "rewardType", "type": "uint256"} ], "name": "addRewards", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "balanceOf", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "destinationWallet", "type": "address"} ], "name": "myReward", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "contractBalance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "symbol", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"}, {"name": "", "type": "address"} ], "name": "allowance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": true, "name": "_from", "type": "address"}, {"indexed": true, "name": "_to", "type": "address"}, {"indexed": false, "name": "_value", "type": "uint256"} ], "name": "Transfer", "type": "event"} ]
 	
-	const hexAddress = '0x' + base58.decode(this.destinationWalletAddress).toString('hex').substr(2, 40)
-
-        const encodedData = abi.encodeMethod(abiJson[8], [this.rewardCode, hexAddress]).substr(2)
+  const hexAddress = '0x' + base58.decode(this.destinationWalletAddress).toString('hex').substr(2, 40)
+  const encodedData = abi.encodeMethod(abiJson[8], [this.rewardCode, hexAddress]).substr(2)
         
 	this.confirmSendDialog = true
         

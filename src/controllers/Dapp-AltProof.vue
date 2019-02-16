@@ -9,7 +9,7 @@
         </v-card-title>
       </v-flex>
     </v-container>
-    <v-tabs centered icons-and-text color="transparent" slider-color="teal" v-model="active">
+    <v-tabs centered icons-and-text color="transparent" slider-color="indigo darken-4" v-model="active">
       <v-tab ripple>Info
         <v-icon>info</v-icon>
       </v-tab>
@@ -78,12 +78,40 @@
                   <br>
                   <div class="text-xs-center">or</div>
                   <br>
-                  <v-textarea label="Text" v-model="text" :disabled="isFile" @keyup="textHash" box></v-textarea>
-                  <v-text-field label="File name:" v-model="fileName" v-if="isFile" disabled box></v-text-field>
-                  <v-text-field label="File size:" v-model="fileSize" v-if="isFile" disabled box></v-text-field>
+                  <v-textarea 
+                    label="Text" 
+                    v-model="text" 
+                    :readonly="isFile" 
+                    @keyup="textHash" 
+                    outline
+                    background-color="indigo"
+                  ></v-textarea>
+                  <v-text-field 
+                    label="File name:" 
+                    v-model="fileName" 
+                    v-if="isFile" 
+                    readonly 
+                    outline
+                    background-color="indigo"
+                  ></v-text-field>
+                  <v-text-field 
+                    label="File size:" 
+                    v-model="fileSize" 
+                    v-if="isFile" 
+                    readonly 
+                    outline
+                    background-color="indigo"
+                  ></v-text-field>
                   <br>
                   <br>
-                  <v-text-field label="Generated Hash:" v-model="hashID" disabled box></v-text-field>
+                  <v-text-field 
+                    label="Generated Hash:" 
+                    v-model="hashID" 
+                    readonly 
+                    outline
+                    background-color="indigo"
+                  >
+                  </v-text-field>
                   <br>
                   <br>
                   <v-layout>
@@ -92,8 +120,8 @@
                         label="Gas Price (1e-8 HTML/gas)"
                         v-model.trim="gasPrice"
                         required
-                        box
-                        background-color="indigo lighten-3"
+                        outline
+                        background-color="deep-purple darken-1"
                       ></v-text-field>
                     </v-flex>
                     <v-flex xs4>
@@ -101,8 +129,8 @@
                         label="Gas Limit"
                         v-model.trim="gasLimit"
                         required
-                        box
-                        background-color="indigo lighten-3"
+                        outline
+                        background-color="deep-purple darken-1"
                       ></v-text-field>
                     </v-flex>
                     <v-flex xs4>
@@ -110,8 +138,8 @@
                         label="Fee"
                         v-model.trim="fee"
                         required
-                        box
-                        background-color="indigo lighten-3"
+                        outline
+                        background-color="deep-purple darken-1"
                       ></v-text-field>
                     </v-flex>
                   </v-layout>
@@ -120,11 +148,11 @@
               <v-card-actions>
                 <v-spacer></v-spacer>
                 <v-btn
-                  class="success"
-                  dark
+                  class="info"
                   @click="send"
                   :disabled="notValid"
                 >{{ $t('common.confirm') }}</v-btn>
+                <v-spacer></v-spacer>
               </v-card-actions>
               <v-dialog v-model="confirmSendDialog" persistent max-width="50%">
                 <v-card>
@@ -235,20 +263,19 @@
                   <v-textarea
                     label="Text"
                     v-model="textSearch"
-                    :disabled="isFile"
+                    :readonly="isFile"
                     @keyup="textHashSearch"
-                    box
+                    outline
+                    background-color="indigo"
                   ></v-textarea>
                   <br><br>
                   <v-text-field
-                    class="mx-3"
-                    flat
                     label="Hash ID"
-                    prepend-inner-icon="search"
-                    solo-inverted
                     v-model.trim="searchHashID"
-                    append-icon="send"
-                    @click:append="callTo"
+                    append-icon="search"
+                    @click:append="getDocument"
+                    outline
+                    background-color="indigo"
                   ></v-text-field>
                 </v-form>
               </v-card-text>
@@ -296,6 +323,26 @@
         </v-card>
       </v-tab-item>
     </v-tabs>
+    <v-dialog
+      v-model="loading"
+      hide-overlay
+      persistent
+      width="300"
+    >
+      <v-card
+        color="indigo darken-1"
+        dark
+      >
+        <v-card-text>
+          Please stand by
+          <v-progress-linear
+            indeterminate
+            color="white"
+            class="mb-0"
+          ></v-progress-linear>
+        </v-card-text>
+      </v-card>
+    </v-dialog>
   </v-card>
 </template>
 
@@ -350,6 +397,7 @@ const contractAddress = config.getNetwork() == "mainnet" ? "5034f90f0fae1f0ab3c8
 export default {
   data() {
     return {
+      loading: false,
       abi: "",
       parsedAbi: null,
       method: null,
@@ -473,8 +521,9 @@ export default {
         this.confirmSendDialog = false;
       }
     },
-    async callTo() {
+    async getDocument() {
       if (this.searchHashID != "") {
+        this.loading = true;
         try {
           const encodedData = abi
             .encodeMethod(abiJson[0], [this.searchHashID])
@@ -488,6 +537,8 @@ export default {
 
             let stored = decodedResult[0];
 
+            this.loading = false;
+
             if (stored) {
               this.blockNumber = decodedResult[1].words[0]; 
               this.blockTimestamp = new Date(
@@ -499,6 +550,7 @@ export default {
               alert("Record not found!");
             }
           } catch (e) {
+            this.loading = false;
             this.$root.log.error(
               "call_contract_call_contract_error",
               e.stack || e.toString() || e
@@ -507,6 +559,7 @@ export default {
             this.execResultDialog = false;
           }
         } catch (e) {
+          this.loading = false;
           this.$root.error("Params error");
           this.$root.log.error(
             "call_contract_encode_abi_error",
@@ -597,7 +650,7 @@ export default {
 
       switch (cont) {
         case 0:
-          return sizeTemp.toFixed(2) + " Byte";
+          return sizeTemp.toFixed(2) + " Bytes";
         case 1:
           return sizeTemp.toFixed(2) + " KB";
         case 2:
