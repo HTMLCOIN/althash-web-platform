@@ -74,85 +74,100 @@
       </template>
       </v-tab-item>
       <v-tab-item>
-        <v-tabs
-         centered
-         color="transparent"
-         slider-color="teal"
-         v-model="buyactive"
-        >
-          <v-tab
-           ripple
-          >
-            From bank
-          </v-tab>
-          <v-tab
-           ripple      
-          >
-            From users
-          </v-tab>
-          <v-tab-item>
-            <v-card flat>
-              <v-flex xs6 offset-xs3>
-                <v-container fluid grid-list-md align-center text-xs-center>
-                  <v-layout row wrap>
-                    <v-flex xs12>
-                      Current price per token: <b>1 HTML</b>
-                    </v-flex>
-                    <v-flex xs12>
-                      <v-text-field
-                       label="How much to spend"
-                       v-model.trim="buyFromBankAmount"
-                       outline
-                       suffix="HTML"
-                       background-color="blue-grey darken-3"
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs12>
-                      <v-spacer></v-spacer>
-                      <v-btn class="success" @click="buyFromBank">Buy!</v-btn>
-                      <v-spacer></v-spacer>              
-                    </v-flex>
-                  </v-layout>
-                </v-container>
+        <v-container fluid grid-list-lg align-center text-xs-center>
+          <v-flex xs8 offset-xs2>
+            <v-layout row wrap>
+              <v-flex xs6 text-xs-right>
+                <v-btn
+                  fab
+                  color="info"
+                  @click="buyBank = true; buyUsers = false"
+                  :disabled="buyBank"
+                >
+                  <v-icon dark>account_balance</v-icon>
+                </v-btn>
               </v-flex>
-            </v-card>
-          </v-tab-item>
-          <v-tab-item>
-            <v-card flat>
-              <v-flex xs6 offset-xs3>
-                <v-container fluid grid-list-md align-center text-xs-center>
-                  <v-layout row wrap>
-                    <v-flex xs12>
-                      <v-text-field
-                       label="Who to buy from"
-                       v-model.trim="buyFromUserAddress"
-                       outline
-                       background-color="blue-grey darken-3"
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs12>
-                      Current price per token: <b>2 HTML</b>
-                    </v-flex>
-                    <v-flex xs12>
-                      <v-text-field
-                       label="How much to spend"
-                       v-model.trim="buyFromUserAmount"
-                       outline
-                       suffix="HTML"
-                       background-color="blue-grey darken-3"
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs12>
-                      <v-spacer></v-spacer>
-                      <v-btn class="success" @click="buyFromUser">Buy!</v-btn>
-                      <v-spacer></v-spacer>              
-                    </v-flex>
-                  </v-layout>
-                </v-container>
+              <v-flex xs6 text-xs-left>
+                <v-btn
+                  fab
+                  color="error"
+                  @click="buyBank = false; buyUsers = true"
+                  :disabled="buyUsers"
+                >
+                  <v-icon dark>assessment</v-icon>
+                </v-btn>
               </v-flex>
-            </v-card>
-          </v-tab-item>
-        </v-tabs>
+              <v-flex xs12 v-if="buyBank">
+                <v-card flat>
+                  <v-flex xs12>
+                    <span class="title font-weight-bold">FROM BANK</span>
+                  </v-flex>
+                  <v-flex xs8 offset-xs2>
+                    <v-container fluid grid-list-md align-center text-xs-center>
+                      <v-layout row wrap>
+                        <v-flex xs12>
+                          Current price per token: <b>1 HTML</b>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-text-field
+                           label="How much to spend"
+                           v-model.trim="buyFromBankAmount"
+                           outline
+                           suffix="HTML"
+                           background-color="blue-grey darken-3"
+                          ></v-text-field>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-spacer></v-spacer>
+                          <v-btn class="success" @click="buyFromBank">Buy!</v-btn>
+                          <v-spacer></v-spacer>              
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                  </v-flex>
+                </v-card>
+              </v-flex>
+              <v-flex xs12 v-if="buyUsers">
+                <v-card flat>
+                   <v-flex xs12>
+                    <span class="title font-weight-bold">FROM MARKET</span>
+                  </v-flex>
+                  <v-flex xs8 offset-xs2>
+                    <v-container fluid grid-list-md align-center text-xs-center>
+                      <v-layout row wrap>
+                        <v-flex xs12>
+                          <v-text-field
+                           label="Who to buy from"
+                           v-model.trim="buyFromUserAddress"
+                           outline
+                           background-color="blue-grey darken-3"
+                          ></v-text-field>
+                        </v-flex>
+                        <v-flex xs12>
+                          Current price per token: <b>2 HTML</b>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-text-field
+                           label="How much to spend"
+                           v-model.trim="buyFromUserAmount"
+                           outline
+                           suffix="HTML"
+                           background-color="blue-grey darken-3"
+                          ></v-text-field>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-spacer></v-spacer>
+                          <v-btn class="success" @click="buyFromUser">Buy!</v-btn>
+                          <v-spacer></v-spacer>              
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                  </v-flex>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-container>
       </v-tab-item>
       <v-tab-item>
         <v-card flat>
@@ -187,80 +202,149 @@
         </v-card>
       </v-tab-item>
       <v-tab-item>
-        <v-tabs
-         centered
-         color="transparent"
-         slider-color="teal"
-         v-model="playactive"
-        >
-          <v-tab
-           ripple
-          >
-            Lottery
-          </v-tab>
-          <v-tab
-           ripple      
-          >
-            Up For Grabs
-          </v-tab>
-          <v-tab-item>
-            <v-card flat>
-              <v-flex xs6 offset-xs3>
-                <v-container fluid grid-list-md align-center text-xs-center>
-                  <v-layout row wrap>
-                    <v-flex xs6>
-                      <v-text-field
-                       label="Your bet"
-                       v-model.trim="lotteryBet"
-                       outline
-                       suffix="BIFP"
-                       background-color="teal darken-4"
-                       hint="Below 100 BIFP: Token Lottery; Above 100 BIFP: HTMLCoin Lottery."
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs6>
-                      <v-text-field
-                       label="Your lucky number"
-                       v-model.trim="lotteryLuckyNumber"
-                       outline
-                       background-color="teal darken-4"
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs12>
-                      <v-spacer></v-spacer>
-                      <v-btn class="success" @click="playLottery">I'm feeling lucky!</v-btn>
-                      <v-spacer></v-spacer>              
-                    </v-flex>
-                  </v-layout>
-                </v-container>
+        <v-container fluid grid-list-lg align-center text-xs-center>
+          <v-flex xs8 offset-xs2>
+            <v-layout row wrap>
+              <v-flex xs6 text-xs-right>
+                <v-btn
+                  fab
+                  color="success"
+                  @click="playLottery = true; playUpForGrabs = false"
+                  :disabled="playLottery"
+                >
+                  <v-icon dark>monetization_on</v-icon>
+                </v-btn>
               </v-flex>
-            </v-card>
-          </v-tab-item>
-          <v-tab-item>
-            <v-card flat>
-              <v-flex xs6 offset-xs3>
-                <v-container fluid grid-list-md align-center text-xs-center>
-                  <v-layout row wrap>
-                    <v-flex xs12>
-                      <v-text-field
-                       label="How much to play"
-                       v-model.trim="upForGrabsBet"
-                       outline
-                       background-color="teal darken-4"
-                       suffix="BIFP"
-                      ></v-text-field>
-                    </v-flex>
-                    <v-flex xs12>
-                      <v-spacer></v-spacer>
-                      <v-btn class="success" @click="buyFromUser">The cookie is mine!</v-btn>
-                      <v-spacer></v-spacer>              
-                    </v-flex>
-                  </v-layout>
-                </v-container>
+              <v-flex xs6 text-xs-left>
+                <v-btn
+                  fab
+                  color="warning"
+                  @click="playLottery = false; playUpForGrabs = true"
+                  :disabled="playUpForGrabs"
+                >
+                  <v-icon dark>directions_run</v-icon>
+                </v-btn>
               </v-flex>
-            </v-card>
-          </v-tab-item>
-        </v-tabs>
+              <v-flex xs12 v-if="playLottery">
+                <v-layout row wrap>
+                  <v-flex xs12>
+                    <div class="py-3 display-2 font-weight-light">LOTTERY</div>
+                  </v-flex>
+                  <v-flex xs6>
+                    <v-card color="blue-grey" class="py-3 white--text" height="100%">
+                      <v-layout row wrap>
+                        <v-flex xs4 align-center>
+                          <img src="~/assets/images/BIFP_menu_btn.png" style="width: 75%; max-width: 85px; height: auto; max-height: 85px;">
+                        </v-flex>
+                        <v-flex xs8>
+                          <v-layout row wrap>
+                            <v-flex xs12>
+                              <span class="title font-weight-black">BIFP Lottery</span>
+                            </v-flex>
+                            <v-flex xs12>
+                              Status: <span class="subheading font-weight-bold green--text">On</span>
+                            </v-flex>
+                            <v-flex xs12>
+                              Prize: <span class="subheading font-weight-bold">1,000 BIFP*</span>
+                            </v-flex>
+                            <v-flex>
+                              Bets between <b>0 and 100 BIFP</b>
+                            </v-flex>
+                          </v-layout>
+                        </v-flex>
+                      </v-layout>
+                    </v-card>
+                  </v-flex>
+                  <v-flex xs6>
+                    <v-card color="blue darken-1" class="py-3 white--text" height="100%">
+                      <v-layout row wrap>
+                        <v-flex xs4 align-center>
+                          <img src="~/assets/images/logo_htmlcoin.png" style="width: 75%; max-width: 64px; height: auto; max-height: 85px;">
+                        </v-flex>
+                        <v-flex xs8>
+                          <v-layout row wrap>
+                            <v-flex xs12>
+                              <span class="title font-weight-black">HTMLCoin Lottery</span>
+                            </v-flex>
+                            <v-flex xs12>
+                              Status: <span class="subheading font-weight-bold green--text">On</span>
+                            </v-flex>
+                            <v-flex xs12>
+                              Prize: <span class="subheading font-weight-bold">100,000 HTML*</span>
+                            </v-flex>
+                            <v-flex>
+                              Bets between <b>100 and 1000 BIFP</b>
+                            </v-flex>
+                          </v-layout>
+                        </v-flex>
+                      </v-layout>
+                    </v-card>
+                  </v-flex>
+                  <v-flex xs8 offset-xs2>
+                    <v-container fluid grid-list-md align-center text-xs-center>
+                      <v-layout row wrap>
+                        <v-flex xs6>
+                          <v-text-field
+                           label="Your bet"
+                           v-model.trim="lotteryBet"
+                           outline
+                           suffix="BIFP"
+                           background-color="teal darken-4"
+                          ></v-text-field>
+                        </v-flex>
+                        <v-flex xs6>
+                          <v-text-field
+                           label="Your lucky number"
+                           v-model.trim="lotteryLuckyNumber"
+                           outline
+                           background-color="teal darken-4"
+                          ></v-text-field>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-spacer></v-spacer>
+                          <v-btn class="success" @click="runLottery">I'm feeling lucky!</v-btn>
+                          <v-spacer></v-spacer>              
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                  </v-flex>
+                  <v-flex xs12>
+                    <v-spacer></v-spacer>
+                    <span class="caption">* Prize pots are subject to constant fluctuation as several players run for the same prize, simultaneously and asynchronously. Such changes may not be reflected on this page.</span>
+                    <v-spacer></v-spacer>              
+                  </v-flex>
+                </v-layout>
+              </v-flex>
+              <v-flex xs12 v-if="playUpForGrabs">
+                <v-card flat>
+                  <v-flex xs12>
+                    <span class="display-2 font-weight-light">UP FOR GRABS</span>
+                  </v-flex>
+                  <v-flex xs8 offset-xs2>
+                    <v-container fluid grid-list-md align-center text-xs-center>
+                      <v-layout row wrap>
+                        <v-flex xs12>
+                          <v-text-field
+                           label="How much to play"
+                           v-model.trim="upForGrabsBet"
+                           outline
+                           background-color="teal darken-4"
+                           suffix="BIFP"
+                          ></v-text-field>
+                        </v-flex>
+                        <v-flex xs12>
+                          <v-spacer></v-spacer>
+                          <v-btn class="success" @click="buyFromUser">The cookie is mine!</v-btn>
+                          <v-spacer></v-spacer>              
+                        </v-flex>
+                      </v-layout>
+                    </v-container>
+                  </v-flex>
+                </v-card>
+              </v-flex>
+            </v-layout>
+          </v-flex>
+        </v-container>
       </v-tab-item>
     </v-tabs>
     <v-dialog v-model="confirmSendDialog" persistent max-width="50%">
@@ -288,7 +372,7 @@
       </v-card>
     </v-dialog>
     <v-dialog v-model="txReceiptDialog" persistent width="600px">
-      <v-card color="white">
+      <v-card color="blue-grey lighten-5">
         <v-container fluid grid-list-md>
           <v-layout row wrap align-center text-xs-center v-if="this.awaitingTx">
             <v-flex xs12>
@@ -322,29 +406,30 @@
           </v-layout>
           <v-layout row wrap align-center text-xs-center v-if="this.txConfirmed">
             <v-flex xs12 v-if="this.lotteryWin">
-              <span class="title green--text">
-                <h1>WIN!</h1>
-              </span>
-              <p>
+              <img src="~/assets/images/biffy_win.png">
+              <br><br>
+              <p class="display-1 font-weight-bold">
                 You have just won {{ this.lotteryRewardAmount }} {{ this.lotteryType }}!
               </p>
               <p>
                 Are you sure you haven't seen any almanac around?
               </p>
             </v-flex>
-            <v-flex xs12 v-else>  
-              <span class="title orange--text">
-                <h1>Not this time, McFly...</h1>
-              </span>
-              <p>
-                Your "lucky" number was {{ this.lotteryLuckyNumber }}, but the drawn number was {{ this.drawnNumber }}.
+            <v-flex xs12 v-else>
+              <img src="~/assets/images/biffy_manure.jpg">
+              <br><br>  
+              <p class="display-1 font-weight-bold orange--text">
+                Not this time, McFly...
               </p>
               <p>
-                Better luck next time!
+                Your "lucky" number was <b>{{ this.lotteryLuckyNumber }}</b>, but the drawn number was <b>{{ this.drawnNumber }}</b>.
+              </p>
+              <p>
+                So why don't you make like a tree... and get outta here?!
               </p>
             </v-flex>
             <v-flex xs12>
-              <v-btn color="error" @click="txConfirmed = false; txReceiptDialog = false">
+              <v-btn flat class="grey--text" @click="txConfirmed = false; txReceiptDialog = false">
                 Close
               </v-btn>
             </v-flex>
@@ -375,8 +460,11 @@ export default {
     return {
       wallet: webWallet.getWallet(),
       active: 0,
-      buyactive: 0,
-      playactive: 0,
+      buyBank: true,
+      buyUsers: false,
+      playLottery: true,
+      playUpForGrabs: false,
+      checkResults: false,
       lotteryBet: '',
       lotteryLuckyNumber: '',
       lotteryID: '',
@@ -400,18 +488,57 @@ export default {
       sending: false
     }
   },
+  watch: {
+    checkResults: async function(val) {
+      if(val){
+        try{
+          var decodedResult = await this.callContractFunction(
+            contractAddress, 
+            abiJson, 
+            'checkLotteryResults', 
+            [this.lotteryID]
+          );                     
+
+          this.drawnNumber = decodedResult[4].toString();
+
+          if(decodedResult[5].toString() == 'true'){
+            this.lotteryRewardAmount = parseInt(decodedResult[6]) / 100000000;
+            if(decodedResult[1].toString() == '1'){
+              this.lotteryType = 'BIFP';
+            } else {
+              this.lotteryType = 'HTML';
+            }
+
+            this.lotteryWin = true;
+          } else {
+            this.lotteryWin = false;
+          }
+
+          this.checkResults = false;
+          this.txConfirmed = true;
+
+        } catch (e) {
+            this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e);
+            alert(e.message || e);
+            this.execResultDialog = false;
+        }
+      }
+    }
+  },
   methods: {
-    async playLottery() {
+    async runLottery() {
       try {
         this.lotteryID = sha256(this.wallet.info.address + Date.now());
+
+        const playedAmount = this.lotteryBet * 100000000;
 
         const encodedData = this.encodeContractSendFunction(
           abiJson, 
           'BIFP_playLottery', 
           [
-            this.lotteryBet,
+            playedAmount,
             this.lotteryLuckyNumber,
-            lotteryID
+            this.lotteryID
           ]
         );
 
@@ -448,9 +575,11 @@ export default {
         this.txReceiptDialog = true;
         this.awaitingTx = true;
 
+        var apiURL = config.getNetwork() == "mainnet" ? 'https://explorer.htmlcoin.com/api/tx/' : 'https://testnet.htmlcoin.com/api/tx/';
+
         const interval = setInterval(() => {
 
-          axios.get('https://explorer.htmlcoin.com/api/tx/' + txId)
+          axios.get(apiURL + txId)
           .then(result=>{
             console.log('Checking Tx...')
 
@@ -461,7 +590,7 @@ export default {
               if(result.data.receipt[0].excepted != 'None') {
                 this.txError = true;
               } else {
-                var checkResults = true;                
+                this.checkResults = true;            
               }
             }
 
@@ -469,47 +598,12 @@ export default {
           .catch(console.error)
         }, 30*1000)
 
-        if(checkResults){
-          this.lotteryWin = await this.checkLotteryResults();
-          this.txConfirmed = true;
-        }
-
       } catch (e) {
         alert(e.message || e)
         this.$root.log.error('send_to_contract_post_raw_tx_error', e.response || e.stack || e.toString() || e)
         this.confirmSendDialog = false
       }
     },
-
-    async checkLotteryResults(){
-      try{
-        var decodedResult = await this.callContractFunction(
-          contractAddress, 
-          abiJson, 
-          'checkLotteryResults', 
-          [this.lotteryID]
-        );                     
-
-        if(decodedResult[5].toString() == 'true'){
-          this.drawnNumber = decodedResult[4].toString();
-          this.lotteryRewardAmount = decodedResult[6].toString();
-          if(recodedResult[1].toString() == '1')
-            this.lotteryType = 'BIFP';
-          else
-            this.lotteryType = 'HTML';
-
-          return true;
-        } else {
-          return false;
-        }
-
-      } catch (e) {
-          this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e);
-          alert(e.message || e);
-          this.execResultDialog = false;
-      } 
-    },
-
 
     findIndexByName(abiJson, name){
       return abiJson.findIndex(function(item){
