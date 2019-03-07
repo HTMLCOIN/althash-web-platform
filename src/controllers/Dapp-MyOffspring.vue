@@ -217,7 +217,7 @@
                           </v-btn>
                         </v-flex>
                         <v-flex xs12>
-                          <v-text-field label="Raw Tx" v-model="rawTx" multi-line disabled></v-text-field>
+                          <v-textarea label="Raw Tx" v-model="rawTx" disabled></v-text-field>
                         </v-flex>
                       </v-layout>
                     </v-container>

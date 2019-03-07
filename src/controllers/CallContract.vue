@@ -50,7 +50,7 @@
           <v-container grid-list-md>
             <v-layout wrap>
               <v-flex xs12>
-                <v-text-field label="Result" v-model="result" multi-line disabled></v-text-field>
+                <v-textarea label="Result" v-model="result" disabled></v-text-field>
               </v-flex>
             </v-layout>
           </v-container>
