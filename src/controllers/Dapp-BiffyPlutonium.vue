@@ -700,22 +700,22 @@ const abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "t
               ]
             );
 
-            this.confirmSendLotteryDialog = true
+            this.confirmSendLotteryDialog = true;
 
             try {
-              this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee)
+              this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
             } catch (e) {
-              this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e)
-              alert(e.message || e)
-              this.confirmSendLotteryDialog = false
-              return false
+              this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e);
+              alert(e.message || e);
+              this.confirmSendLotteryDialog = false;
+              return false;
             }
-              this.canSend = true
+              this.canSend = true;
           } catch (e) {
-            this.$root.error('Params error')
-            this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e)
-            this.confirmSendLotteryDialog = false
-            return false
+            this.$root.error('Params error');
+            this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e);
+            this.confirmSendLotteryDialog = false;
+            return false;
           }
         } else {
           const htmlcoinLowerFeeThreshold = this.tokenLotteryFeeThreshold + 1;

@@ -163,6 +163,17 @@ module.exports = {"_args":[["bigi@1.4.2","/var/www/html/althash-web-platform"]],
 
 /***/ }),
 
+/***/ "1XNJ":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('call_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":""},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"ABI","required":"","multiLine":""},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","single-line":"","bottom":""},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e()],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.callTo}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.execResultDialog),callback:function ($$v) {_vm.execResultDialog=$$v},expression:"execResultDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('call_contract.result'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Result","disabled":""},model:{value:(_vm.result),callback:function ($$v) {_vm.result=$$v},expression:"result"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.execResultDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "1Yb/":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -215,6 +226,17 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('div',[_c('v-btn',{attrs:{"color":_vm.color,"download":_vm.downloadName,"href":_vm.href,"target":"_blank"},on:{"click":_vm.doneClick}},[_vm._t("default",[_vm._v(_vm._s(_vm.$t('file_creator.download')))])],2)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
+/***/ "2ZwC":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("4quz")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"blue-grey"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Info\n        "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Buy\n        "),_c('v-icon',[_vm._v("add_shopping_cart")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Sell\n        "),_c('v-icon',[_vm._v("attach_money")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Play\n        "),_c('v-icon',[_vm._v("casino")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('div',[_c('img',{staticStyle:{"height":"auto","width":"25%"},attrs:{"src":__webpack_require__("U8Q/")}})]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("This is heavy, Doc!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                    Going straight to the point: Do not expect any commitment from us.\n                    "),_c('br'),_c('br'),_vm._v("\n            \t\t    Yeah, that's right. We're here just for the fun!\n            \t\t    "),_c('br'),_c('br'),_vm._v("\n            \t\t    Please feel home and browse around. You may have great surprises in our lotteries!\n                    "),_c('br'),_c('br'),_c('br'),_c('br'),_vm._v(" "),_c('small',[_c('b',[_vm._v("Disclaimer")]),_vm._v(" "),_c('br'),_vm._v("\n                      HTMLCoin Foundation has reviewed and approved this application's code, having Althash Web Platform as a proud host, however the Foundation is not responsible for any funds transacted within this application scope.\n                      "),_c('br'),_vm._v("\n                      By using this application you agree on this terms.\n                    ")])]),_vm._v(" "),_c('br'),_c('br')])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-container',{attrs:{"fluid":"","grid-list-lg":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":"","text-xs-right":""}},[_c('v-btn',{attrs:{"fab":"","color":"info","disabled":_vm.buyBank},on:{"click":function($event){_vm.buyBank = true; _vm.buyUsers = false}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("account_balance")])],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","text-xs-left":""}},[_c('v-btn',{attrs:{"fab":"","color":"error","disabled":_vm.buyUsers},on:{"click":function($event){_vm.buyBank = false; _vm.buyUsers = true}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("assessment")])],1)],1),_vm._v(" "),(_vm.buyBank)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-bold"},[_vm._v("FROM BANK")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                          Current price per token: "),_c('b',[_vm._v("1 HTML")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"How much to spend","outline":"","suffix":"HTML","background-color":"blue-grey darken-3"},model:{value:(_vm.buyFromBankAmount),callback:function ($$v) {_vm.buyFromBankAmount=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"buyFromBankAmount"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",on:{"click":_vm.buyFromBank}},[_vm._v("Buy!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1):_vm._e(),_vm._v(" "),(_vm.buyUsers)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-bold"},[_vm._v("FROM MARKET")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Who to buy from","outline":"","background-color":"blue-grey darken-3"},model:{value:(_vm.buyFromUserAddress),callback:function ($$v) {_vm.buyFromUserAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"buyFromUserAddress"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                          Current price per token: "),_c('b',[_vm._v("2 HTML")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"How much to spend","outline":"","suffix":"HTML","background-color":"blue-grey darken-3"},model:{value:(_vm.buyFromUserAmount),callback:function ($$v) {_vm.buyFromUserAmount=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"buyFromUserAmount"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",on:{"click":_vm.buyFromUser}},[_vm._v("Buy!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Price per token","outline":"","suffix":"HTML","background-color":"blue-grey darken-3"},model:{value:(_vm.sellPricePerToken),callback:function ($$v) {_vm.sellPricePerToken=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"sellPricePerToken"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Token quantity","outline":"","background-color":"blue-grey darken-3"},model:{value:(_vm.sellTokenQty),callback:function ($$v) {_vm.sellTokenQty=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"sellTokenQty"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",on:{"click":_vm.sell}},[_vm._v("Sell!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-tab-item',[_c('v-container',{attrs:{"fluid":"","grid-list-lg":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":"","text-xs-right":""}},[_c('v-btn',{attrs:{"fab":"","color":"success","disabled":_vm.playLottery},on:{"click":function($event){_vm.playLottery = true; _vm.playUpForGrabs = false}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("monetization_on")])],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","text-xs-left":""}},[_c('v-btn',{attrs:{"fab":"","color":"warning","disabled":_vm.playUpForGrabs},on:{"click":function($event){_vm.playLottery = false; _vm.playUpForGrabs = true}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("directions_run")])],1)],1),_vm._v(" "),(_vm.playLottery)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('div',{staticClass:"py-3 display-2 font-weight-light"},[_vm._v("LOTTERY")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-card',{staticClass:"py-3 white--text",attrs:{"color":"blue-grey","height":"100%"}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":"","align-center":""}},[_c('img',{staticStyle:{"width":"75%","max-width":"85px","height":"auto","max-height":"85px"},attrs:{"src":__webpack_require__("owsU")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-black"},[_vm._v("BIFP Lottery")])]),_vm._v(" "),(this.tokenLotteryStatus == 'On')?_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Status: "),_c('span',{staticClass:"subheading font-weight-bold green--text"},[_vm._v("On")])]):_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Status: "),_c('span',{staticClass:"subheading font-weight-bold red--text"},[_vm._v("Off")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Max Prize: "),_c('span',{staticClass:"subheading font-weight-bold"},[_vm._v(_vm._s((Math.round(this.tokenLotteryPrize * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}))+" BIFP*")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Bets between "),_c('b',[_vm._v("0 and "+_vm._s(this.tokenLotteryFeeThreshold)+" BIFP")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Lucky number between "),_c('b',[_vm._v("0 and "+_vm._s(this.tokenLotteryPot))])])],1)],1)],1)],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-card',{staticClass:"py-3 white--text",attrs:{"color":"blue darken-1","height":"100%"}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":"","align-center":""}},[_c('img',{staticStyle:{"width":"75%","max-width":"64px","height":"auto","max-height":"85px"},attrs:{"src":__webpack_require__("aR/i")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-black"},[_vm._v("HTMLCoin Lottery")])]),_vm._v(" "),(this.htmlcoinLotteryStatus == 'On')?_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Status: "),_c('span',{staticClass:"subheading font-weight-bold green--text"},[_vm._v("On")])]):_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Status: "),_c('span',{staticClass:"subheading font-weight-bold red--text"},[_vm._v("Off")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Max Prize: "),_c('span',{staticClass:"subheading font-weight-bold"},[_vm._v(_vm._s((Math.round(this.htmlcoinLotteryPrize * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}))+" HTML*")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Bets between "),_c('b',[_vm._v(_vm._s(this.tokenLotteryFeeThreshold + 1)+" and "+_vm._s(this.htmlcoinLotteryFeeThreshold)+" BIFP")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Lucky number between "),_c('b',[_vm._v("0 and "+_vm._s(this.htmlcoinLotteryPot))])])],1)],1)],1)],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":"","text-xs-center":""}},[_c('span',{staticClass:"title"},[_vm._v("The more BIFP you bet, the higher your prize!")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Your bet","outline":"","suffix":"BIFP","background-color":"teal darken-4"},model:{value:(_vm.lotteryBet),callback:function ($$v) {_vm.lotteryBet=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"lotteryBet"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Your lucky number","outline":"","background-color":"teal darken-4"},model:{value:(_vm.lotteryLuckyNumber),callback:function ($$v) {_vm.lotteryLuckyNumber=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"lotteryLuckyNumber"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.lotteryNotValid},on:{"click":_vm.runLottery}},[_vm._v("I'm feeling lucky!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('span',{staticClass:"caption"},[_vm._v("* Prize pots are subject to constant fluctuation as several players run for the same prize, simultaneously and asynchronously. Such changes may not be reflected on this page.")]),_vm._v(" "),_c('v-spacer')],1)],1)],1):_vm._e(),_vm._v(" "),(_vm.playUpForGrabs)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"display-2 font-weight-light"},[_vm._v("UP FOR GRABS")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"How much to play","outline":"","background-color":"teal darken-4","suffix":"BIFP"},model:{value:(_vm.upForGrabsBet),callback:function ($$v) {_vm.upForGrabsBet=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"upForGrabsBet"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.ufgNotValid},on:{"click":_vm.runUpForGrabs}},[_vm._v("The cookie is mine!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1):_vm._e()],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendLotteryDialog),callback:function ($$v) {_vm.confirmSendLotteryDialog=$$v},expression:"confirmSendLotteryDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n            "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n          ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSendLottery}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendLotteryDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","width":"600px"},model:{value:(_vm.txLotteryReceiptDialog),callback:function ($$v) {_vm.txLotteryReceiptDialog=$$v},expression:"txLotteryReceiptDialog"}},[_c('v-card',{attrs:{"color":"blue-grey lighten-5"}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[(this.awaitingLotteryTx)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title blue--text"},[_vm._v("\n                Transaction broadcasted to the "),_c('b',[_vm._v("Althash Blockchain")]),_vm._v("!\n              ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n              Awaiting confirmation from the network...\n            ")]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-progress-linear',{attrs:{"indeterminate":true,"color":"blue"}})],1)],1):_vm._e(),_vm._v(" "),(this.txError)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"red--text"},[_c('p'),_c('h1',[_vm._v("Unsuccessful")]),_vm._v(" "),_c('p'),_vm._v(" "),_c('p',[_vm._v(" \n                  There was an error while running your transaction.\n                ")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{attrs:{"color":"error"},on:{"click":function($event){_vm.txError = false; _vm.txLotteryReceiptDialog = false}}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e(),_vm._v(" "),(this.txLotteryConfirmed)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[(this.lotteryWin)?_c('v-flex',{attrs:{"xs12":""}},[(this.lotteryType != 'UFG')?_c('span',[_c('img',{attrs:{"src":__webpack_require__("+D9K")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold"},[_vm._v("\n                  You have just won "+_vm._s(this.lotteryRewardAmount)+" "+_vm._s(this.lotteryType)+"!\n                ")]),_vm._v(" "),_c('p',[_vm._v("\n                  Are you sure you haven't seen any almanac around?\n                ")])]):_c('span',[_c('img',{attrs:{"src":__webpack_require__("gj2+")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"title"},[_vm._v("\n                  Well, well... We have here the fastest draw in the west.\n                ")]),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold"},[_vm._v("\n                  You have just won "+_vm._s(this.lotteryRewardAmount)+" BIFP!\n                ")]),_vm._v(" "),_c('p',[_vm._v("\n                  Now get outta here, or I'll hunt you down and shoot you like a duck!\n                ")])])]):_c('v-flex',{attrs:{"xs12":""}},[(this.lotteryType != 'UFG')?_c('span',[_c('img',{attrs:{"src":__webpack_require__("t7Gd")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold orange--text"},[_vm._v("\n                  Not this time, McFly...\n                ")]),_vm._v(" "),_c('p',[_vm._v("\n                  Your \"lucky\" number was "),_c('b',[_vm._v(_vm._s(this.lotteryLuckyNumber))]),_vm._v(", but the drawn number was "),_c('b',[_vm._v(_vm._s(this.drawnNumber))]),_vm._v(".\n                ")]),_vm._v(" "),_c('p',[_vm._v("\n                  So why don't you make like a tree... and get outta here?!\n                ")])]):_c('span',[_c('img',{attrs:{"src":__webpack_require__("AbdW")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold orange--text"},[_vm._v("\n                  Not this time, Mr. Eastwood...\n                ")]),_vm._v(" "),_c('p',[_vm._v("\n                  Some other punk has been quicker than you.\n                  "),_c('br'),_vm._v("\n                  Next time try seven o'clock. I do my killin' before breakfast!\n                ")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{staticClass:"grey--text",attrs:{"flat":""},on:{"click":function($event){_vm.txLotteryConfirmed = false; _vm.txLotteryReceiptDialog = false}}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e()],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendBuyDialog),callback:function ($$v) {_vm.confirmSendBuyDialog=$$v},expression:"confirmSendBuyDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n            "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n          ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSendBuy}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendBuyDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","width":"600px"},model:{value:(_vm.txBuyReceiptDialog),callback:function ($$v) {_vm.txBuyReceiptDialog=$$v},expression:"txBuyReceiptDialog"}},[_c('v-card',{attrs:{"color":"blue-grey lighten-5"}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[(this.awaitingBuyTx)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title blue--text"},[_vm._v("\n                Transaction broadcasted to the "),_c('b',[_vm._v("Althash Blockchain")]),_vm._v("!\n              ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n              Awaiting confirmation from the network...\n            ")]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-progress-linear',{attrs:{"indeterminate":true,"color":"blue"}})],1)],1):_vm._e(),_vm._v(" "),(this.txError)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"red--text"},[_c('p'),_c('h1',[_vm._v("Unsuccessful")]),_vm._v(" "),_c('p'),_vm._v(" "),_c('p',[_vm._v(" \n                  There was an error while running your transaction.\n                ")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{attrs:{"color":"error"},on:{"click":function($event){_vm.txError = false; _vm.txBuyReceiptDialog = false}}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e(),_vm._v(" "),(this.txBuyConfirmed)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('p',{staticClass:"title font-weight-bold"},[_vm._v("\n                Purchase successful!\n              ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{staticClass:"grey--text",attrs:{"flat":""},on:{"click":function($event){_vm.txBuyConfirmed = false; _vm.txBuyReceiptDialog = false}}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e()],1)],1)],1)],1)}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -285,6 +307,17 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "4Em+":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("gaNr")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"green"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Info\n        "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        New Token\n        "),_c('v-icon',[_vm._v("local_florist")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to TokenFarm!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                  This application allows you to create your own HRC-20 Token on "),_c('b',[_vm._v("AltHash")]),_vm._v(" blockchain, in just a few seconds!\n                  "),_c('br'),_c('br'),_vm._v("\n                  To create a new Token, just click on \"New Token\" menu item, and fill in the details.\n                  "),_c('br'),_c('br'),_vm._v("\n\t\t  After the Transaction is confirmed, you will be able to find your token on the \"View Wallet Info\" option in \"Wallet Functions\" menu. You might need to refresh the browser and re-import your wallet before seeing your Tokens.\n                  "),_c('br'),_c('br')])])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":this.$t('create_token.name'),"required":"","box":""},model:{value:(_vm.name),callback:function ($$v) {_vm.name=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"name"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.symbol'),"required":"","box":""},model:{value:(_vm.symbol),callback:function ($$v) {_vm.symbol=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"symbol"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.decimal'),"required":"","box":""},model:{value:(_vm.decimal),callback:function ($$v) {_vm.decimal=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"decimal"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.total_supply'),"required":"","box":""},model:{value:(_vm.totalSupply),callback:function ($$v) {_vm.totalSupply=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"totalSupply"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                      "+_vm._s(_vm.$t('create_token.confirm'))+"\n                    ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)],1)],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -572,17 +605,6 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAABVCAYAAAA4
 
 /***/ }),
 
-/***/ "5X/h":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send.send_tokens')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Address","required":""},model:{value:(_vm.address),callback:function ($$v) {_vm.address=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"address"}}),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs9":""}},[_c('v-text-field',{attrs:{"label":"Amount","required":""},model:{value:(_vm.amount),callback:function ($$v) {_vm.amount=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"amount"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs3":""}},[_c('v-select',{attrs:{"items":_vm.tokens,"bottom":""},scopedSlots:_vm._u([{key:"item",fn:function(data){return [_c('v-list-tile-content',[_c('v-list-tile-title',[_vm._v("\n                 "+_vm._s(data.item.text)+_vm._s(data.item.name ? '(' + data.item.name + ')' : '')+"\n                ")]),_vm._v(" "),_c('v-list-tile-sub-title',[_vm._v("\n                 "+_vm._s(data.item.address)+"\n               ")])],1)]}}]),model:{value:(_vm.symbol),callback:function ($$v) {_vm.symbol=$$v},expression:"symbol"}})],1)],1),_vm._v(" "),(_vm.symbol !== 'HTML')?_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=$$v},expression:"gasPrice"}}):_vm._e(),_vm._v(" "),(_vm.symbol !== 'HTML')?_c('v-text-field',{attrs:{"label":"Gas Limit"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=$$v},expression:"gasLimit"}}):_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmAddressDialog),callback:function ($$v) {_vm.confirmAddressDialog=$$v},expression:"confirmAddressDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send.enter_address')))])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Address"},model:{value:(_vm.repeatAddress),callback:function ($$v) {_vm.repeatAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"repeatAddress"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmAddress}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.confirmAddressDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))])],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send.going_to_send'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.amount)+_vm._s(this.symbol))]),_vm._v("\n          "+_vm._s(_vm.$t('send.to_address'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.address))]),_vm._v("\n          "+_vm._s(_vm.$t('common.question_mark'))+"\n        ")],1)]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v("\n          "+_vm._s(_vm.$t('common.confirm'))+"\n        ")]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v("\n          "+_vm._s(_vm.$t('common.cancel'))+"\n        ")]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.addTokenDialog),callback:function ($$v) {_vm.addTokenDialog=$$v},expression:"addTokenDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          Token\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":_vm.$t('send.token_address'),"disabled":_vm.addTokenStep === 2},model:{value:(_vm.addTokenAddress),callback:function ($$v) {_vm.addTokenAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenAddress"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[(_vm.addTokenStep === 2)?_c('v-text-field',{attrs:{"label":"Name","disabled":""},model:{value:(_vm.addTokenName),callback:function ($$v) {_vm.addTokenName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenName"}}):_vm._e()],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[(_vm.addTokenStep === 2)?_c('v-text-field',{attrs:{"label":"Symbol","disabled":""},model:{value:(_vm.addTokenSymbol),callback:function ($$v) {_vm.addTokenSymbol=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenSymbol"}}):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),(_vm.addTokenStep === 1)?_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":"","loading":_vm.addTokenLoading},on:{"click":_vm.searchAddToken}},[_vm._v("\n          "+_vm._s(_vm.$t('common.search'))+"\n        ")]):_vm._e(),_vm._v(" "),(_vm.addTokenStep === 2)?_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmAddToken}},[_vm._v("\n          "+_vm._s(_vm.$t('common.confirm'))+"\n        ")]):_vm._e(),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.addTokenDialog = false}}},[_vm._v("\n          "+_vm._s(_vm.$t('common.cancel'))+"\n        ")]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "5hal":
 /***/ (function(module, exports) {
 
@@ -640,6 +662,13 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOwAAAAyCAYAAABf
     return this.get('mode', 'normal');
   }
 });
+
+/***/ }),
+
+/***/ "6ATI":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -1291,20 +1320,13 @@ module.exports = ["abandon","ability","able","about","above","absent","absorb","
 
 /***/ }),
 
-/***/ "9WOO":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "9Z0V":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Send_vue__ = __webpack_require__("L5P4");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aa3e28b2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Send_vue__ = __webpack_require__("5X/h");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2ae4bf6b_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Send_vue__ = __webpack_require__("a/BK");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -1321,7 +1343,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Send_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aa3e28b2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Send_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2ae4bf6b_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Send_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -1669,6 +1691,13 @@ var Ledger = function () {
 /***/ (function(module, exports) {
 
 module.exports = ["abaisser","abandon","abdiquer","abeille","abolir","aborder","aboutir","aboyer","abrasif","abreuver","abriter","abroger","abrupt","absence","absolu","absurde","abusif","abyssal","académie","acajou","acarien","accabler","accepter","acclamer","accolade","accroche","accuser","acerbe","achat","acheter","aciduler","acier","acompte","acquérir","acronyme","acteur","actif","actuel","adepte","adéquat","adhésif","adjectif","adjuger","admettre","admirer","adopter","adorer","adoucir","adresse","adroit","adulte","adverbe","aérer","aéronef","affaire","affecter","affiche","affreux","affubler","agacer","agencer","agile","agiter","agrafer","agréable","agrume","aider","aiguille","ailier","aimable","aisance","ajouter","ajuster","alarmer","alchimie","alerte","algèbre","algue","aliéner","aliment","alléger","alliage","allouer","allumer","alourdir","alpaga","altesse","alvéole","amateur","ambigu","ambre","aménager","amertume","amidon","amiral","amorcer","amour","amovible","amphibie","ampleur","amusant","analyse","anaphore","anarchie","anatomie","ancien","anéantir","angle","angoisse","anguleux","animal","annexer","annonce","annuel","anodin","anomalie","anonyme","anormal","antenne","antidote","anxieux","apaiser","apéritif","aplanir","apologie","appareil","appeler","apporter","appuyer","aquarium","aqueduc","arbitre","arbuste","ardeur","ardoise","argent","arlequin","armature","armement","armoire","armure","arpenter","arracher","arriver","arroser","arsenic","artériel","article","aspect","asphalte","aspirer","assaut","asservir","assiette","associer","assurer","asticot","astre","astuce","atelier","atome","atrium","atroce","attaque","attentif","attirer","attraper","aubaine","auberge","audace","audible","augurer","aurore","automne","autruche","avaler","avancer","avarice","avenir","averse","aveugle","aviateur","avide","avion","aviser","avoine","avouer","avril","axial","axiome","badge","bafouer","bagage","baguette","baignade","balancer","balcon","baleine","balisage","bambin","bancaire","bandage","banlieue","bannière","banquier","barbier","baril","baron","barque","barrage","bassin","bastion","bataille","bateau","batterie","baudrier","bavarder","belette","bélier","belote","bénéfice","berceau","berger","berline","bermuda","besace","besogne","bétail","beurre","biberon","bicycle","bidule","bijou","bilan","bilingue","billard","binaire","biologie","biopsie","biotype","biscuit","bison","bistouri","bitume","bizarre","blafard","blague","blanchir","blessant","blinder","blond","bloquer","blouson","bobard","bobine","boire","boiser","bolide","bonbon","bondir","bonheur","bonifier","bonus","bordure","borne","botte","boucle","boueux","bougie","boulon","bouquin","bourse","boussole","boutique","boxeur","branche","brasier","brave","brebis","brèche","breuvage","bricoler","brigade","brillant","brioche","brique","brochure","broder","bronzer","brousse","broyeur","brume","brusque","brutal","bruyant","buffle","buisson","bulletin","bureau","burin","bustier","butiner","butoir","buvable","buvette","cabanon","cabine","cachette","cadeau","cadre","caféine","caillou","caisson","calculer","calepin","calibre","calmer","calomnie","calvaire","camarade","caméra","camion","campagne","canal","caneton","canon","cantine","canular","capable","caporal","caprice","capsule","capter","capuche","carabine","carbone","caresser","caribou","carnage","carotte","carreau","carton","cascade","casier","casque","cassure","causer","caution","cavalier","caverne","caviar","cédille","ceinture","céleste","cellule","cendrier","censurer","central","cercle","cérébral","cerise","cerner","cerveau","cesser","chagrin","chaise","chaleur","chambre","chance","chapitre","charbon","chasseur","chaton","chausson","chavirer","chemise","chenille","chéquier","chercher","cheval","chien","chiffre","chignon","chimère","chiot","chlorure","chocolat","choisir","chose","chouette","chrome","chute","cigare","cigogne","cimenter","cinéma","cintrer","circuler","cirer","cirque","citerne","citoyen","citron","civil","clairon","clameur","claquer","classe","clavier","client","cligner","climat","clivage","cloche","clonage","cloporte","cobalt","cobra","cocasse","cocotier","coder","codifier","coffre","cogner","cohésion","coiffer","coincer","colère","colibri","colline","colmater","colonel","combat","comédie","commande","compact","concert","conduire","confier","congeler","connoter","consonne","contact","convexe","copain","copie","corail","corbeau","cordage","corniche","corpus","correct","cortège","cosmique","costume","coton","coude","coupure","courage","couteau","couvrir","coyote","crabe","crainte","cravate","crayon","créature","créditer","crémeux","creuser","crevette","cribler","crier","cristal","critère","croire","croquer","crotale","crucial","cruel","crypter","cubique","cueillir","cuillère","cuisine","cuivre","culminer","cultiver","cumuler","cupide","curatif","curseur","cyanure","cycle","cylindre","cynique","daigner","damier","danger","danseur","dauphin","débattre","débiter","déborder","débrider","débutant","décaler","décembre","déchirer","décider","déclarer","décorer","décrire","décupler","dédale","déductif","déesse","défensif","défiler","défrayer","dégager","dégivrer","déglutir","dégrafer","déjeuner","délice","déloger","demander","demeurer","démolir","dénicher","dénouer","dentelle","dénuder","départ","dépenser","déphaser","déplacer","déposer","déranger","dérober","désastre","descente","désert","désigner","désobéir","dessiner","destrier","détacher","détester","détourer","détresse","devancer","devenir","deviner","devoir","diable","dialogue","diamant","dicter","différer","digérer","digital","digne","diluer","dimanche","diminuer","dioxyde","directif","diriger","discuter","disposer","dissiper","distance","divertir","diviser","docile","docteur","dogme","doigt","domaine","domicile","dompter","donateur","donjon","donner","dopamine","dortoir","dorure","dosage","doseur","dossier","dotation","douanier","double","douceur","douter","doyen","dragon","draper","dresser","dribbler","droiture","duperie","duplexe","durable","durcir","dynastie","éblouir","écarter","écharpe","échelle","éclairer","éclipse","éclore","écluse","école","économie","écorce","écouter","écraser","écrémer","écrivain","écrou","écume","écureuil","édifier","éduquer","effacer","effectif","effigie","effort","effrayer","effusion","égaliser","égarer","éjecter","élaborer","élargir","électron","élégant","éléphant","élève","éligible","élitisme","éloge","élucider","éluder","emballer","embellir","embryon","émeraude","émission","emmener","émotion","émouvoir","empereur","employer","emporter","emprise","émulsion","encadrer","enchère","enclave","encoche","endiguer","endosser","endroit","enduire","énergie","enfance","enfermer","enfouir","engager","engin","englober","énigme","enjamber","enjeu","enlever","ennemi","ennuyeux","enrichir","enrobage","enseigne","entasser","entendre","entier","entourer","entraver","énumérer","envahir","enviable","envoyer","enzyme","éolien","épaissir","épargne","épatant","épaule","épicerie","épidémie","épier","épilogue","épine","épisode","épitaphe","époque","épreuve","éprouver","épuisant","équerre","équipe","ériger","érosion","erreur","éruption","escalier","espadon","espèce","espiègle","espoir","esprit","esquiver","essayer","essence","essieu","essorer","estime","estomac","estrade","étagère","étaler","étanche","étatique","éteindre","étendoir","éternel","éthanol","éthique","ethnie","étirer","étoffer","étoile","étonnant","étourdir","étrange","étroit","étude","euphorie","évaluer","évasion","éventail","évidence","éviter","évolutif","évoquer","exact","exagérer","exaucer","exceller","excitant","exclusif","excuse","exécuter","exemple","exercer","exhaler","exhorter","exigence","exiler","exister","exotique","expédier","explorer","exposer","exprimer","exquis","extensif","extraire","exulter","fable","fabuleux","facette","facile","facture","faiblir","falaise","fameux","famille","farceur","farfelu","farine","farouche","fasciner","fatal","fatigue","faucon","fautif","faveur","favori","fébrile","féconder","fédérer","félin","femme","fémur","fendoir","féodal","fermer","féroce","ferveur","festival","feuille","feutre","février","fiasco","ficeler","fictif","fidèle","figure","filature","filetage","filière","filleul","filmer","filou","filtrer","financer","finir","fiole","firme","fissure","fixer","flairer","flamme","flasque","flatteur","fléau","flèche","fleur","flexion","flocon","flore","fluctuer","fluide","fluvial","folie","fonderie","fongible","fontaine","forcer","forgeron","formuler","fortune","fossile","foudre","fougère","fouiller","foulure","fourmi","fragile","fraise","franchir","frapper","frayeur","frégate","freiner","frelon","frémir","frénésie","frère","friable","friction","frisson","frivole","froid","fromage","frontal","frotter","fruit","fugitif","fuite","fureur","furieux","furtif","fusion","futur","gagner","galaxie","galerie","gambader","garantir","gardien","garnir","garrigue","gazelle","gazon","géant","gélatine","gélule","gendarme","général","génie","genou","gentil","géologie","géomètre","géranium","germe","gestuel","geyser","gibier","gicler","girafe","givre","glace","glaive","glisser","globe","gloire","glorieux","golfeur","gomme","gonfler","gorge","gorille","goudron","gouffre","goulot","goupille","gourmand","goutte","graduel","graffiti","graine","grand","grappin","gratuit","gravir","grenat","griffure","griller","grimper","grogner","gronder","grotte","groupe","gruger","grutier","gruyère","guépard","guerrier","guide","guimauve","guitare","gustatif","gymnaste","gyrostat","habitude","hachoir","halte","hameau","hangar","hanneton","haricot","harmonie","harpon","hasard","hélium","hématome","herbe","hérisson","hermine","héron","hésiter","heureux","hiberner","hibou","hilarant","histoire","hiver","homard","hommage","homogène","honneur","honorer","honteux","horde","horizon","horloge","hormone","horrible","houleux","housse","hublot","huileux","humain","humble","humide","humour","hurler","hydromel","hygiène","hymne","hypnose","idylle","ignorer","iguane","illicite","illusion","image","imbiber","imiter","immense","immobile","immuable","impact","impérial","implorer","imposer","imprimer","imputer","incarner","incendie","incident","incliner","incolore","indexer","indice","inductif","inédit","ineptie","inexact","infini","infliger","informer","infusion","ingérer","inhaler","inhiber","injecter","injure","innocent","inoculer","inonder","inscrire","insecte","insigne","insolite","inspirer","instinct","insulter","intact","intense","intime","intrigue","intuitif","inutile","invasion","inventer","inviter","invoquer","ironique","irradier","irréel","irriter","isoler","ivoire","ivresse","jaguar","jaillir","jambe","janvier","jardin","jauger","jaune","javelot","jetable","jeton","jeudi","jeunesse","joindre","joncher","jongler","joueur","jouissif","journal","jovial","joyau","joyeux","jubiler","jugement","junior","jupon","juriste","justice","juteux","juvénile","kayak","kimono","kiosque","label","labial","labourer","lacérer","lactose","lagune","laine","laisser","laitier","lambeau","lamelle","lampe","lanceur","langage","lanterne","lapin","largeur","larme","laurier","lavabo","lavoir","lecture","légal","léger","légume","lessive","lettre","levier","lexique","lézard","liasse","libérer","libre","licence","licorne","liège","lièvre","ligature","ligoter","ligue","limer","limite","limonade","limpide","linéaire","lingot","lionceau","liquide","lisière","lister","lithium","litige","littoral","livreur","logique","lointain","loisir","lombric","loterie","louer","lourd","loutre","louve","loyal","lubie","lucide","lucratif","lueur","lugubre","luisant","lumière","lunaire","lundi","luron","lutter","luxueux","machine","magasin","magenta","magique","maigre","maillon","maintien","mairie","maison","majorer","malaxer","maléfice","malheur","malice","mallette","mammouth","mandater","maniable","manquant","manteau","manuel","marathon","marbre","marchand","mardi","maritime","marqueur","marron","marteler","mascotte","massif","matériel","matière","matraque","maudire","maussade","mauve","maximal","méchant","méconnu","médaille","médecin","méditer","méduse","meilleur","mélange","mélodie","membre","mémoire","menacer","mener","menhir","mensonge","mentor","mercredi","mérite","merle","messager","mesure","métal","météore","méthode","métier","meuble","miauler","microbe","miette","mignon","migrer","milieu","million","mimique","mince","minéral","minimal","minorer","minute","miracle","miroiter","missile","mixte","mobile","moderne","moelleux","mondial","moniteur","monnaie","monotone","monstre","montagne","monument","moqueur","morceau","morsure","mortier","moteur","motif","mouche","moufle","moulin","mousson","mouton","mouvant","multiple","munition","muraille","murène","murmure","muscle","muséum","musicien","mutation","muter","mutuel","myriade","myrtille","mystère","mythique","nageur","nappe","narquois","narrer","natation","nation","nature","naufrage","nautique","navire","nébuleux","nectar","néfaste","négation","négliger","négocier","neige","nerveux","nettoyer","neurone","neutron","neveu","niche","nickel","nitrate","niveau","noble","nocif","nocturne","noirceur","noisette","nomade","nombreux","nommer","normatif","notable","notifier","notoire","nourrir","nouveau","novateur","novembre","novice","nuage","nuancer","nuire","nuisible","numéro","nuptial","nuque","nutritif","obéir","objectif","obliger","obscur","observer","obstacle","obtenir","obturer","occasion","occuper","océan","octobre","octroyer","octupler","oculaire","odeur","odorant","offenser","officier","offrir","ogive","oiseau","oisillon","olfactif","olivier","ombrage","omettre","onctueux","onduler","onéreux","onirique","opale","opaque","opérer","opinion","opportun","opprimer","opter","optique","orageux","orange","orbite","ordonner","oreille","organe","orgueil","orifice","ornement","orque","ortie","osciller","osmose","ossature","otarie","ouragan","ourson","outil","outrager","ouvrage","ovation","oxyde","oxygène","ozone","paisible","palace","palmarès","palourde","palper","panache","panda","pangolin","paniquer","panneau","panorama","pantalon","papaye","papier","papoter","papyrus","paradoxe","parcelle","paresse","parfumer","parler","parole","parrain","parsemer","partager","parure","parvenir","passion","pastèque","paternel","patience","patron","pavillon","pavoiser","payer","paysage","peigne","peintre","pelage","pélican","pelle","pelouse","peluche","pendule","pénétrer","pénible","pensif","pénurie","pépite","péplum","perdrix","perforer","période","permuter","perplexe","persil","perte","peser","pétale","petit","pétrir","peuple","pharaon","phobie","phoque","photon","phrase","physique","piano","pictural","pièce","pierre","pieuvre","pilote","pinceau","pipette","piquer","pirogue","piscine","piston","pivoter","pixel","pizza","placard","plafond","plaisir","planer","plaque","plastron","plateau","pleurer","plexus","pliage","plomb","plonger","pluie","plumage","pochette","poésie","poète","pointe","poirier","poisson","poivre","polaire","policier","pollen","polygone","pommade","pompier","ponctuel","pondérer","poney","portique","position","posséder","posture","potager","poteau","potion","pouce","poulain","poumon","pourpre","poussin","pouvoir","prairie","pratique","précieux","prédire","préfixe","prélude","prénom","présence","prétexte","prévoir","primitif","prince","prison","priver","problème","procéder","prodige","profond","progrès","proie","projeter","prologue","promener","propre","prospère","protéger","prouesse","proverbe","prudence","pruneau","psychose","public","puceron","puiser","pulpe","pulsar","punaise","punitif","pupitre","purifier","puzzle","pyramide","quasar","querelle","question","quiétude","quitter","quotient","racine","raconter","radieux","ragondin","raideur","raisin","ralentir","rallonge","ramasser","rapide","rasage","ratisser","ravager","ravin","rayonner","réactif","réagir","réaliser","réanimer","recevoir","réciter","réclamer","récolter","recruter","reculer","recycler","rédiger","redouter","refaire","réflexe","réformer","refrain","refuge","régalien","région","réglage","régulier","réitérer","rejeter","rejouer","relatif","relever","relief","remarque","remède","remise","remonter","remplir","remuer","renard","renfort","renifler","renoncer","rentrer","renvoi","replier","reporter","reprise","reptile","requin","réserve","résineux","résoudre","respect","rester","résultat","rétablir","retenir","réticule","retomber","retracer","réunion","réussir","revanche","revivre","révolte","révulsif","richesse","rideau","rieur","rigide","rigoler","rincer","riposter","risible","risque","rituel","rival","rivière","rocheux","romance","rompre","ronce","rondin","roseau","rosier","rotatif","rotor","rotule","rouge","rouille","rouleau","routine","royaume","ruban","rubis","ruche","ruelle","rugueux","ruiner","ruisseau","ruser","rustique","rythme","sabler","saboter","sabre","sacoche","safari","sagesse","saisir","salade","salive","salon","saluer","samedi","sanction","sanglier","sarcasme","sardine","saturer","saugrenu","saumon","sauter","sauvage","savant","savonner","scalpel","scandale","scélérat","scénario","sceptre","schéma","science","scinder","score","scrutin","sculpter","séance","sécable","sécher","secouer","sécréter","sédatif","séduire","seigneur","séjour","sélectif","semaine","sembler","semence","séminal","sénateur","sensible","sentence","séparer","séquence","serein","sergent","sérieux","serrure","sérum","service","sésame","sévir","sevrage","sextuple","sidéral","siècle","siéger","siffler","sigle","signal","silence","silicium","simple","sincère","sinistre","siphon","sirop","sismique","situer","skier","social","socle","sodium","soigneux","soldat","soleil","solitude","soluble","sombre","sommeil","somnoler","sonde","songeur","sonnette","sonore","sorcier","sortir","sosie","sottise","soucieux","soudure","souffle","soulever","soupape","source","soutirer","souvenir","spacieux","spatial","spécial","sphère","spiral","stable","station","sternum","stimulus","stipuler","strict","studieux","stupeur","styliste","sublime","substrat","subtil","subvenir","succès","sucre","suffixe","suggérer","suiveur","sulfate","superbe","supplier","surface","suricate","surmener","surprise","sursaut","survie","suspect","syllabe","symbole","symétrie","synapse","syntaxe","système","tabac","tablier","tactile","tailler","talent","talisman","talonner","tambour","tamiser","tangible","tapis","taquiner","tarder","tarif","tartine","tasse","tatami","tatouage","taupe","taureau","taxer","témoin","temporel","tenaille","tendre","teneur","tenir","tension","terminer","terne","terrible","tétine","texte","thème","théorie","thérapie","thorax","tibia","tiède","timide","tirelire","tiroir","tissu","titane","titre","tituber","toboggan","tolérant","tomate","tonique","tonneau","toponyme","torche","tordre","tornade","torpille","torrent","torse","tortue","totem","toucher","tournage","tousser","toxine","traction","trafic","tragique","trahir","train","trancher","travail","trèfle","tremper","trésor","treuil","triage","tribunal","tricoter","trilogie","triomphe","tripler","triturer","trivial","trombone","tronc","tropical","troupeau","tuile","tulipe","tumulte","tunnel","turbine","tuteur","tutoyer","tuyau","tympan","typhon","typique","tyran","ubuesque","ultime","ultrason","unanime","unifier","union","unique","unitaire","univers","uranium","urbain","urticant","usage","usine","usuel","usure","utile","utopie","vacarme","vaccin","vagabond","vague","vaillant","vaincre","vaisseau","valable","valise","vallon","valve","vampire","vanille","vapeur","varier","vaseux","vassal","vaste","vecteur","vedette","végétal","véhicule","veinard","véloce","vendredi","vénérer","venger","venimeux","ventouse","verdure","vérin","vernir","verrou","verser","vertu","veston","vétéran","vétuste","vexant","vexer","viaduc","viande","victoire","vidange","vidéo","vignette","vigueur","vilain","village","vinaigre","violon","vipère","virement","virtuose","virus","visage","viseur","vision","visqueux","visuel","vital","vitesse","viticole","vitrine","vivace","vivipare","vocation","voguer","voile","voisin","voiture","volaille","volcan","voltiger","volume","vorace","vortex","voter","vouloir","voyage","voyelle","wagon","xénon","yacht","zèbre","zénith","zeste","zoologie"]
+
+/***/ }),
+
+/***/ "AbdW":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/images/biffy_ufg_manure.e48142b.jpg";
 
 /***/ }),
 
@@ -4515,7 +4544,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["default"](__WEBPACK_IMPORTED_MODULE_4_App
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CallContract_vue__ = __webpack_require__("EGFZ");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0f45e594_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CallContract_vue__ = __webpack_require__("c6Ri");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_111a5454_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CallContract_vue__ = __webpack_require__("1XNJ");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -4532,7 +4561,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CallContract_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0f45e594_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CallContract_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_111a5454_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CallContract_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4544,26 +4573,15 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ "Nm8Y":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("gaNr")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"green"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Info\n        "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        New Token\n        "),_c('v-icon',[_vm._v("local_florist")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to TokenFarm!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                  This application allows you to create your own HRC-20 Token on "),_c('b',[_vm._v("AltHash")]),_vm._v(" blockchain, in just a few seconds!\n                  "),_c('br'),_c('br'),_vm._v("\n                  To create a new Token, just click on \"New Token\" menu item, and fill in the details.\n                  "),_c('br'),_c('br'),_vm._v("\n\t\t  After the Transaction is confirmed, you will be able to find your token on the \"View Wallet Info\" option in \"Wallet Functions\" menu. You might need to refresh the browser and re-import your wallet before seeing your Tokens.\n                  "),_c('br'),_c('br')])])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":this.$t('create_token.name'),"required":"","box":""},model:{value:(_vm.name),callback:function ($$v) {_vm.name=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"name"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.symbol'),"required":"","box":""},model:{value:(_vm.symbol),callback:function ($$v) {_vm.symbol=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"symbol"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.decimal'),"required":"","box":""},model:{value:(_vm.decimal),callback:function ($$v) {_vm.decimal=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"decimal"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.total_supply'),"required":"","box":""},model:{value:(_vm.totalSupply),callback:function ($$v) {_vm.totalSupply=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"totalSupply"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                      "+_vm._s(_vm.$t('create_token.confirm'))+"\n                    ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)],1)],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "NysP":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_MyOffspring_vue__ = __webpack_require__("U877");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2f929878_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_MyOffspring_vue__ = __webpack_require__("qpBf");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_597f0242_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_MyOffspring_vue__ = __webpack_require__("eN9x");
 function injectStyle (ssrContext) {
-  __webpack_require__("9WOO")
+  __webpack_require__("6ATI")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -4576,12 +4594,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-2f929878"
+var __vue_scopeId__ = "data-v-597f0242"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_MyOffspring_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2f929878_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_MyOffspring_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_597f0242_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_MyOffspring_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4674,7 +4692,7 @@ var Component = normalizeComponent(
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateContract_vue__ = __webpack_require__("cAXN");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_babaa078_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateContract_vue__ = __webpack_require__("vyTM");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1354a92a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateContract_vue__ = __webpack_require__("VdHc");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -4691,7 +4709,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateContract_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_babaa078_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateContract_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1354a92a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateContract_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4820,7 +4838,7 @@ var Component = normalizeComponent(
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateToken_vue__ = __webpack_require__("Zwtj");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ef10798_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateToken_vue__ = __webpack_require__("Nm8Y");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6963f476_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateToken_vue__ = __webpack_require__("4Em+");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -4837,7 +4855,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateToken_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ef10798_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateToken_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6963f476_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateToken_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -5312,6 +5330,122 @@ var Component = normalizeComponent(
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -5321,11 +5455,9 @@ var Component = normalizeComponent(
 
 
 
-var contractAddress = __WEBPACK_IMPORTED_MODULE_5_libs_config__["a" /* default */].getNetwork() == "mainnet" ? "0" : "0a80f2e06289aea9b8140babd94ccf2fb01c55bc";
+var contractAddress = __WEBPACK_IMPORTED_MODULE_5_libs_config__["a" /* default */].getNetwork() == "mainnet" ? "0" : "b4105a90e69fe89a580e8aead4a4ae0f4d3ff77d";
 
-var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "type": "address"} ], "name": "change_j", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "name", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "BIFP_getCuts", "outputs": [{"name": "BiffCutSetting", "type": "uint256"}, {"name": "JCutSetting", "type": "uint256"}, {"name": "PCutSetting", "type": "uint256"}, {"name": "NCutSetting", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_spender", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "approve", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "new_n", "type": "address"} ], "name": "change_n", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalSupply", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setTokenLotteryChances", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "_seller", "type": "address"} ], "name": "BIFP_buyTokensFrom", "outputs": [{"name": "numOfTokensPurchased", "type": "uint256"} ], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "_from", "type": "address"}, {"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transferFrom", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setTokenLotteryFeeThreshold", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "_seller", "type": "address"} ], "name": "BIFP_whatsForSale", "outputs": [{"name": "numTokensBeingSold", "type": "uint256"}, {"name": "priceOfEachToken", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "decimals", "outputs": [{"name": "", "type": "uint8"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "lotteryID", "type": "string"} ], "name": "checkLotteryResults", "outputs": [{"name": "_player", "type": "address"}, {"name": "_lotteryType", "type": "uint8"}, {"name": "_playedAmount", "type": "uint256"}, {"name": "_luckyNumber", "type": "uint256"}, {"name": "_drawnNumber", "type": "uint256"}, {"name": "_win", "type": "bool"}, {"name": "_rewardAmount", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getHtmlcoinLotteryChances", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryOn", "outputs": [{"name": "", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "who", "type": "uint256"}, {"name": "fakeAmount", "type": "uint256"} ], "name": "BIFP_testFeeAndCuts", "outputs": [{"name": "feeCollected", "type": "uint256"}, {"name": "biffGot", "type": "uint256"}, {"name": "jGot", "type": "uint256"}, {"name": "pGot", "type": "uint256"}, {"name": "nGot", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "player", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "playedAmount", "type": "uint256"}, {"name": "lotteryID", "type": "string"} ], "name": "BIFP_upForGrabs", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "standard", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "b", "type": "uint256"}, {"name": "j", "type": "uint256"}, {"name": "p", "type": "uint256"}, {"name": "n", "type": "uint256"} ], "name": "BIFP_setFeeCuts", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "f", "type": "uint256"} ], "name": "BIFP_setSellerIsOwnerFeePercent", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "bool"} ], "name": "switchTokenLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "tokensForSale", "outputs": [{"name": "numTokensForSale", "type": "uint256"}, {"name": "pricePerToken", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "balanceOf", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [], "name": "confirmOwnershipTransfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "new_p", "type": "address"} ], "name": "change_p", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "potentialOwner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryChances", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setHtmlcoinLotteryChances", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "prizeName", "type": "string"} ], "name": "getPrizeBalance", "outputs": [{"name": "prizeBalance", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "BIFP_addToTokenPrize", "outputs": [{"name": "newBalance", "type": "uint256"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "symbol", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "prizeName", "type": "string"}, {"name": "newAmount", "type": "uint256"} ], "name": "setPrizeBalance", "outputs": [{"name": "prizePrevBalance", "type": "uint256"}, {"name": "prizeNewBalance", "type": "uint256"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryChances", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [], "name": "BIFP_buyTokens", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [], "name": "BIFP_addToHtmlPrize", "outputs": [{"name": "newBalance", "type": "uint256"} ], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [], "name": "BIFP_getFees", "outputs": [{"name": "feeOwnerSetting", "type": "uint256"}, {"name": "feeSellerSetting", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setHtmlcoinLotteryFeeThreshold", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "amount", "type": "uint256"} ], "name": "BIFP_loadUpForGrabs", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "f", "type": "uint256"} ], "name": "BIFP_setSellerFeePercent", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "bool"} ], "name": "switchHtmlcoinLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "getTokenLotteryChances", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryOn", "outputs": [{"name": "", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "playedAmount", "type": "uint256"}, {"name": "luckyNumber", "type": "uint256"}, {"name": "lotteryID", "type": "string"} ], "name": "BIFP_playLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"}, {"name": "", "type": "address"} ], "name": "allowance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "quantity", "type": "uint256"}, {"name": "htmlPrice", "type": "uint256"} ], "name": "BIFP_setSell", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "newOwner", "type": "address"} ], "name": "transferOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": true, "name": "_from", "type": "address"}, {"indexed": true, "name": "_to", "type": "address"}, {"indexed": false, "name": "_value", "type": "uint256"} ], "name": "Transfer", "type": "event"} ]');
-
-/* harmony default export */ __webpack_exports__["a"] = ({
+var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "type": "address"} ], "name": "change_j", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "name", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "BIFP_getCuts", "outputs": [{"name": "BiffCutSetting", "type": "uint256"}, {"name": "JCutSetting", "type": "uint256"}, {"name": "PCutSetting", "type": "uint256"}, {"name": "NCutSetting", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_spender", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "approve", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "new_n", "type": "address"} ], "name": "change_n", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "getTokenLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalSupply", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_seller", "type": "address"} ], "name": "BIFP_buyTokensFrom", "outputs": [{"name": "numOfTokensPurchased", "type": "uint256"} ], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "_from", "type": "address"}, {"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transferFrom", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setTokenLotteryFeeThreshold", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "_seller", "type": "address"} ], "name": "BIFP_whatsForSale", "outputs": [{"name": "numTokensBeingSold", "type": "uint256"}, {"name": "priceOfEachToken", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "decimals", "outputs": [{"name": "", "type": "uint8"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "lotteryID", "type": "string"} ], "name": "checkLotteryResults", "outputs": [{"name": "_player", "type": "address"}, {"name": "_lotteryType", "type": "uint8"}, {"name": "_playedAmount", "type": "uint256"}, {"name": "_luckyNumber", "type": "uint256"}, {"name": "_drawnNumber", "type": "uint256"}, {"name": "_win", "type": "bool"}, {"name": "_rewardAmount", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getHtmlcoinLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setHtmlcoinLotteryPot", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryOn", "outputs": [{"name": "", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getTokenLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "who", "type": "uint256"}, {"name": "fakeAmount", "type": "uint256"} ], "name": "BIFP_testFeeAndCuts", "outputs": [{"name": "feeCollected", "type": "uint256"}, {"name": "biffGot", "type": "uint256"}, {"name": "jGot", "type": "uint256"}, {"name": "pGot", "type": "uint256"}, {"name": "nGot", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "player", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "playedAmount", "type": "uint256"}, {"name": "lotteryID", "type": "string"} ], "name": "BIFP_upForGrabs", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "standard", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "b", "type": "uint256"}, {"name": "j", "type": "uint256"}, {"name": "p", "type": "uint256"}, {"name": "n", "type": "uint256"} ], "name": "BIFP_setFeeCuts", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "f", "type": "uint256"} ], "name": "BIFP_setSellerIsOwnerFeePercent", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "bool"} ], "name": "switchTokenLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "tokensForSale", "outputs": [{"name": "numTokensForSale", "type": "uint256"}, {"name": "pricePerToken", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "balanceOf", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [], "name": "confirmOwnershipTransfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "new_p", "type": "address"} ], "name": "change_p", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "potentialOwner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "prizeName", "type": "string"} ], "name": "getPrizeBalance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "BIFP_addToTokenPrize", "outputs": [{"name": "newBalance", "type": "uint256"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getHtmlcoinLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "symbol", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "prizeName", "type": "string"}, {"name": "newAmount", "type": "uint256"} ], "name": "setPrizeBalance", "outputs": [{"name": "prizePrevBalance", "type": "uint256"}, {"name": "prizeNewBalance", "type": "uint256"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setTokenLotteryPot", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [], "name": "BIFP_buyTokens", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [], "name": "BIFP_addToHtmlPrize", "outputs": [{"name": "newBalance", "type": "uint256"} ], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [], "name": "BIFP_getFees", "outputs": [{"name": "feeOwnerSetting", "type": "uint256"}, {"name": "feeSellerSetting", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setHtmlcoinLotteryFeeThreshold", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "amount", "type": "uint256"} ], "name": "BIFP_loadUpForGrabs", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "f", "type": "uint256"} ], "name": "BIFP_setSellerFeePercent", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "bool"} ], "name": "switchHtmlcoinLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryOn", "outputs": [{"name": "", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "playedAmount", "type": "uint256"}, {"name": "luckyNumber", "type": "uint256"}, {"name": "lotteryID", "type": "string"} ], "name": "BIFP_playLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"}, {"name": "", "type": "address"} ], "name": "allowance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "quantity", "type": "uint256"}, {"name": "htmlPrice", "type": "uint256"} ], "name": "BIFP_setSell", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "newOwner", "type": "address"} ], "name": "transferOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": true, "name": "_from", "type": "address"}, {"indexed": true, "name": "_to", "type": "address"}, {"indexed": false, "name": "_value", "type": "uint256"} ], "name": "Transfer", "type": "event"} ]');/* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
       wallet: __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet(),
@@ -5334,7 +5466,8 @@ var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "typ
       buyUsers: false,
       playLottery: true,
       playUpForGrabs: false,
-      checkResults: false,
+      checkLotteryResults: false,
+      checkBuyResults: false,
       lotteryBet: '',
       lotteryLuckyNumber: '',
       lotteryID: '',
@@ -5342,25 +5475,46 @@ var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "typ
       drawnNumber: '',
       lotteryRewardAmount: '',
       lotteryType: '',
-      txReceiptDialog: false,
-      awaitingTx: false,
+      tokenLotteryStatus: '',
+      htmlcoinLotteryStatus: '',
+      tokenLotteryPrize: '',
+      htmlcoinLotteryPrize: '',
+      tokenLotteryFeeThreshold: 0,
+      htmlcoinLotteryFeeThreshold: 0,
+      tokenLotteryPot: 0,
+      htmlcoinLotteryPot: 0,
+      upForGrabsBet: '',
+      buyFromBankAmount: '',
+      txLotteryReceiptDialog: false,
+      txBuyReceiptDialog: false,
+      awaitingLotteryTx: false,
+      awaitingBuyTx: false,
       txError: false,
-      txConfirmed: false,
+      txLotteryConfirmed: false,
+      txBuyConfirmed: false,
       parsedAbi: null,
       method: null,
       gasPrice: '40',
       gasLimit: '2500000',
       fee: '0.01',
-      confirmSendDialog: false,
-      execResultDialog: false,
+      confirmSendLotteryDialog: false,
+      confirmSendBuyDialog: false,
       rawTx: 'loading...',
       canSend: false,
       sending: false
     };
   },
 
+  computed: {
+    lotteryNotValid: function lotteryNotValid() {
+      return !(/^[0-9]+$/.test(this.lotteryBet) && /^[0-9]+$/.test(this.lotteryLuckyNumber));
+    },
+    ufgNotValid: function ufgNotValid() {
+      return !/^[0-9]+$/.test(this.upForGrabsBet);
+    }
+  },
   watch: {
-    checkResults: function () {
+    checkLotteryResults: function () {
       var _ref = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(val) {
         var decodedResult;
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
@@ -5368,7 +5522,7 @@ var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "typ
             switch (_context.prev = _context.next) {
               case 0:
                 if (!val) {
-                  _context.next = 16;
+                  _context.next = 29;
                   break;
                 }
 
@@ -5382,46 +5536,65 @@ var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "typ
 
                 this.drawnNumber = decodedResult[4].toString();
 
-                if (decodedResult[5].toString() == 'true') {
-                  this.lotteryRewardAmount = parseInt(decodedResult[6]) / 100000000;
-                  if (decodedResult[1].toString() == '1') {
-                    this.lotteryType = 'BIFP';
-                  } else {
-                    this.lotteryType = 'HTML';
-                  }
-
-                  this.lotteryWin = true;
-                } else {
-                  this.lotteryWin = false;
+                if (!(decodedResult[5].toString() == 'true')) {
+                  _context.next = 20;
+                  break;
                 }
 
-                this.checkResults = false;
-                this.txConfirmed = true;
-
-                _context.next = 16;
+                this.lotteryRewardAmount = parseInt(decodedResult[6]) / 100000000;
+                _context.t0 = decodedResult[1].toString();
+                _context.next = _context.t0 === '1' ? 11 : _context.t0 === '2' ? 13 : _context.t0 === '3' ? 15 : 17;
                 break;
 
               case 11:
-                _context.prev = 11;
-                _context.t0 = _context['catch'](1);
+                this.lotteryType = 'BIFP';
+                return _context.abrupt('break', 17);
 
-                this.$root.log.error('call_contract_call_contract_error', _context.t0.stack || _context.t0.toString() || _context.t0);
-                alert(_context.t0.message || _context.t0);
-                this.execResultDialog = false;
+              case 13:
+                this.lotteryType = 'HTML';
+                return _context.abrupt('break', 17);
 
-              case 16:
+              case 15:
+                this.lotteryType = 'UFG';
+                return _context.abrupt('break', 17);
+
+              case 17:
+
+                this.lotteryWin = true;
+                _context.next = 21;
+                break;
+
+              case 20:
+                this.lotteryWin = false;
+
+              case 21:
+
+                this.checkLotteryResults = false;
+                this.txLotteryConfirmed = true;
+
+                _context.next = 29;
+                break;
+
+              case 25:
+                _context.prev = 25;
+                _context.t1 = _context['catch'](1);
+
+                this.$root.log.error('call_contract_call_contract_error', _context.t1.stack || _context.t1.toString() || _context.t1);
+                alert(_context.t1.message || _context.t1);
+
+              case 29:
               case 'end':
                 return _context.stop();
             }
           }
-        }, _callee, this, [[1, 11]]);
+        }, _callee, this, [[1, 25]]);
       }));
 
-      function checkResults(_x) {
+      function checkLotteryResults(_x) {
         return _ref.apply(this, arguments);
       }
 
-      return checkResults;
+      return checkLotteryResults;
     }()
   },
   methods: {
@@ -5429,12 +5602,23 @@ var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "typ
       var _this = this;
 
       return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
-        var playedAmount, encodedData;
+        var playedAmount, encodedData, htmlcoinLowerFeeThreshold;
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
-                _context2.prev = 0;
+                if (!(parseInt(_this.lotteryLuckyNumber) >= 0 && parseInt(_this.lotteryBet) > 0)) {
+                  _context2.next = 34;
+                  break;
+                }
+
+                if (!(parseInt(_this.lotteryBet) <= _this.tokenLotteryFeeThreshold && parseInt(_this.lotteryLuckyNumber) <= _this.tokenLotteryPot || parseInt(_this.lotteryBet) > _this.tokenLotteryFeeThreshold && parseInt(_this.lotteryBet) <= _this.htmlcoinLotteryFeeThreshold && parseInt(_this.lotteryLuckyNumber) <= _this.htmlcoinLotteryPot)) {
+                  _context2.next = 30;
+                  break;
+                }
+
+                _context2.prev = 2;
+
 
                 _this.lotteryID = __WEBPACK_IMPORTED_MODULE_8_js_sha256___default()(_this.wallet.info.address + Date.now());
 
@@ -5442,75 +5626,164 @@ var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "typ
                 encodedData = _this.encodeContractSendFunction(abiJson, 'BIFP_playLottery', [playedAmount, _this.lotteryLuckyNumber, _this.lotteryID]);
 
 
-                _this.confirmSendDialog = true;
+                _this.confirmSendLotteryDialog = true;
 
-                _context2.prev = 5;
-                _context2.next = 8;
+                _context2.prev = 7;
+                _context2.next = 10;
                 return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(contractAddress, encodedData, _this.gasLimit, _this.gasPrice, _this.fee);
 
-              case 8:
+              case 10:
                 _this.rawTx = _context2.sent;
-                _context2.next = 17;
+                _context2.next = 19;
                 break;
 
-              case 11:
-                _context2.prev = 11;
-                _context2.t0 = _context2['catch'](5);
+              case 13:
+                _context2.prev = 13;
+                _context2.t0 = _context2['catch'](7);
 
                 _this.$root.log.error('send_to_generate_tx_error', _context2.t0.stack || _context2.t0.toString() || _context2.t0);
                 alert(_context2.t0.message || _context2.t0);
-                _this.confirmSendDialog = false;
+                _this.confirmSendLotteryDialog = false;
                 return _context2.abrupt('return', false);
 
-              case 17:
+              case 19:
                 _this.canSend = true;
-                _context2.next = 26;
+                _context2.next = 28;
                 break;
 
-              case 20:
-                _context2.prev = 20;
-                _context2.t1 = _context2['catch'](0);
+              case 22:
+                _context2.prev = 22;
+                _context2.t1 = _context2['catch'](2);
 
                 _this.$root.error('Params error');
                 _this.$root.log.error('send_to_contract_encode_abi_error', _context2.t1.stack || _context2.t1.toString() || _context2.t1);
-                _this.confirmSendDialog = false;
+                _this.confirmSendLotteryDialog = false;
                 return _context2.abrupt('return', false);
 
-              case 26:
+              case 28:
+                _context2.next = 32;
+                break;
+
+              case 30:
+                htmlcoinLowerFeeThreshold = _this.tokenLotteryFeeThreshold + 1;
+
+
+                alert('Wrong bet or lucky number!\n\nBIFP Lottery:\n  * Bets between 0 and ' + _this.tokenLotteryFeeThreshold + ' BIFP\n  * Lucky numbers between 0 and ' + _this.tokenLotteryPot + '\n\nHTMLCoin Lottery:\n  * Bets between ' + htmlcoinLowerFeeThreshold + ' and ' + _this.htmlcoinLotteryFeeThreshold + ' BIFP\n  * Lucky numbers between 0 and ' + _this.htmlcoinLotteryPot);
+
+              case 32:
+                _context2.next = 35;
+                break;
+
+              case 34:
+                alert('Your bet must be higher than 0 and your lucky number must equal or higher than 0!');
+
+              case 35:
               case 'end':
                 return _context2.stop();
             }
           }
-        }, _callee2, _this, [[0, 20], [5, 11]]);
+        }, _callee2, _this, [[2, 22], [7, 13]]);
       }))();
     },
-    confirmSend: function confirmSend() {
+    runUpForGrabs: function runUpForGrabs() {
       var _this2 = this;
 
       return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee3() {
-        var txId, txViewUrl, apiURL, interval;
+        var playedAmount, encodedData;
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
           while (1) {
             switch (_context3.prev = _context3.next) {
               case 0:
+                if (!(parseInt(_this2.upForGrabsBet) >= 0)) {
+                  _context3.next = 29;
+                  break;
+                }
 
-                _this2.sending = true;
                 _context3.prev = 1;
-                _context3.next = 4;
-                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().sendRawTx(_this2.rawTx);
+
+
+                _this2.lotteryID = __WEBPACK_IMPORTED_MODULE_8_js_sha256___default()(_this2.wallet.info.address + Date.now());
+
+                playedAmount = _this2.upForGrabsBet * 100000000;
+                encodedData = _this2.encodeContractSendFunction(abiJson, 'BIFP_upForGrabs', [playedAmount, _this2.lotteryID]);
+
+
+                _this2.confirmSendLotteryDialog = true;
+
+                _context3.prev = 6;
+                _context3.next = 9;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(contractAddress, encodedData, _this2.gasLimit, _this2.gasPrice, _this2.fee);
+
+              case 9:
+                _this2.rawTx = _context3.sent;
+                _context3.next = 18;
+                break;
+
+              case 12:
+                _context3.prev = 12;
+                _context3.t0 = _context3['catch'](6);
+
+                _this2.$root.log.error('send_to_generate_tx_error', _context3.t0.stack || _context3.t0.toString() || _context3.t0);
+                alert(_context3.t0.message || _context3.t0);
+                _this2.confirmSendLotteryDialog = false;
+                return _context3.abrupt('return', false);
+
+              case 18:
+                _this2.canSend = true;
+                _context3.next = 27;
+                break;
+
+              case 21:
+                _context3.prev = 21;
+                _context3.t1 = _context3['catch'](1);
+
+                _this2.$root.error('Params error');
+                _this2.$root.log.error('send_to_contract_encode_abi_error', _context3.t1.stack || _context3.t1.toString() || _context3.t1);
+                _this2.confirmSendLotteryDialog = false;
+                return _context3.abrupt('return', false);
+
+              case 27:
+                _context3.next = 30;
+                break;
+
+              case 29:
+                alert('The amount played must be higher than 0 BIFP!');
+
+              case 30:
+              case 'end':
+                return _context3.stop();
+            }
+          }
+        }, _callee3, _this2, [[1, 21], [6, 12]]);
+      }))();
+    },
+    confirmSendLottery: function confirmSendLottery() {
+      var _this3 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee4() {
+        var txId, txViewUrl, apiURL, interval;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+
+                _this3.sending = true;
+                _context4.prev = 1;
+                _context4.next = 4;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().sendRawTx(_this3.rawTx);
 
               case 4:
-                txId = _context3.sent;
+                txId = _context4.sent;
 
-                _this2.confirmSendDialog = false;
-                _this2.sending = false;
+                _this3.confirmSendLotteryDialog = false;
+                _this3.sending = false;
                 txViewUrl = __WEBPACK_IMPORTED_MODULE_4_libs_server__["a" /* default */].currentNode().getTxExplorerUrl(txId);
 
-                _this2.$root.success('Successful sent! You can follow the transaction on <a href="' + txViewUrl + '" target="_blank">' + txViewUrl + '</a>', true, 0);
-                _this2.$emit('send');
+                _this3.$root.success('Successful sent! You can follow the transaction on <a href="' + txViewUrl + '" target="_blank">' + txViewUrl + '</a>', true, 0);
+                _this3.$emit('send');
 
-                _this2.txReceiptDialog = true;
-                _this2.awaitingTx = true;
+                _this3.txLotteryReceiptDialog = true;
+                _this3.awaitingLotteryTx = true;
 
                 apiURL = __WEBPACK_IMPORTED_MODULE_5_libs_config__["a" /* default */].getNetwork() == "mainnet" ? 'https://explorer.htmlcoin.com/api/tx/' : 'https://testnet.htmlcoin.com/api/tx/';
                 interval = setInterval(function () {
@@ -5520,33 +5793,266 @@ var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "typ
 
                     if (result.data.confirmations > 0) {
                       clearInterval(interval);
-                      _this2.awaitingTx = false;
+                      _this3.awaitingLotteryTx = false;
 
                       if (result.data.receipt[0].excepted != 'None') {
-                        _this2.txError = true;
+                        _this3.txError = true;
                       } else {
-                        _this2.checkResults = true;
+                        _this3.checkLotteryResults = true;
                       }
                     }
                   }).catch(console.error);
-                }, 30 * 1000);
-                _context3.next = 21;
+                }, 15 * 1000);
+                _context4.next = 21;
                 break;
 
               case 16:
-                _context3.prev = 16;
-                _context3.t0 = _context3['catch'](1);
+                _context4.prev = 16;
+                _context4.t0 = _context4['catch'](1);
 
-                alert(_context3.t0.message || _context3.t0);
-                _this2.$root.log.error('send_to_contract_post_raw_tx_error', _context3.t0.response || _context3.t0.stack || _context3.t0.toString() || _context3.t0);
-                _this2.confirmSendDialog = false;
+                alert(_context4.t0.message || _context4.t0);
+                _this3.$root.log.error('send_to_contract_post_raw_tx_error', _context4.t0.response || _context4.t0.stack || _context4.t0.toString() || _context4.t0);
+                _this3.confirmSendLotteryDialog = false;
 
               case 21:
               case 'end':
-                return _context3.stop();
+                return _context4.stop();
             }
           }
-        }, _callee3, _this2, [[1, 16]]);
+        }, _callee4, _this3, [[1, 16]]);
+      }))();
+    },
+    buyFromBank: function buyFromBank() {
+      var _this4 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee5() {
+        var buyAmount, encodedData;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                if (!(parseInt(_this4.buyFromBankAmount) >= 0)) {
+                  _context5.next = 28;
+                  break;
+                }
+
+                _context5.prev = 1;
+                buyAmount = _this4.buyFromBankAmount * 100000000;
+                encodedData = _this4.encodeContractSendFunction(abiJson, 'BIFP_buyTokens', []);
+
+
+                _this4.confirmSendBuyDialog = true;
+
+                _context5.prev = 5;
+                _context5.next = 8;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(contractAddress, encodedData, _this4.gasLimit, _this4.gasPrice, _this4.fee);
+
+              case 8:
+                _this4.rawTx = _context5.sent;
+                _context5.next = 17;
+                break;
+
+              case 11:
+                _context5.prev = 11;
+                _context5.t0 = _context5['catch'](5);
+
+                _this4.$root.log.error('send_to_generate_tx_error', _context5.t0.stack || _context5.t0.toString() || _context5.t0);
+                alert(_context5.t0.message || _context5.t0);
+                _this4.confirmSendBuyDialog = false;
+                return _context5.abrupt('return', false);
+
+              case 17:
+                _this4.canSend = true;
+                _context5.next = 26;
+                break;
+
+              case 20:
+                _context5.prev = 20;
+                _context5.t1 = _context5['catch'](1);
+
+                _this4.$root.error('Params error');
+                _this4.$root.log.error('send_to_contract_encode_abi_error', _context5.t1.stack || _context5.t1.toString() || _context5.t1);
+                _this4.confirmSendBuyDialog = false;
+                return _context5.abrupt('return', false);
+
+              case 26:
+                _context5.next = 29;
+                break;
+
+              case 28:
+                alert('The buying amount must be higher than 0 HTML!');
+
+              case 29:
+              case 'end':
+                return _context5.stop();
+            }
+          }
+        }, _callee5, _this4, [[1, 20], [5, 11]]);
+      }))();
+    },
+    confirmSendBuy: function confirmSendBuy() {
+      var _this5 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee6() {
+        var txId, txViewUrl, apiURL, interval;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+
+                _this5.sending = true;
+                _context6.prev = 1;
+                _context6.next = 4;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().sendRawTx(_this5.rawTx);
+
+              case 4:
+                txId = _context6.sent;
+
+                _this5.confirmSendBuyDialog = false;
+                _this5.sending = false;
+                txViewUrl = __WEBPACK_IMPORTED_MODULE_4_libs_server__["a" /* default */].currentNode().getTxExplorerUrl(txId);
+
+                _this5.$root.success('Successful sent! You can follow the transaction on <a href="' + txViewUrl + '" target="_blank">' + txViewUrl + '</a>', true, 0);
+                _this5.$emit('send');
+
+                _this5.txBuyReceiptDialog = true;
+                _this5.awaitingBuyTx = true;
+
+                apiURL = __WEBPACK_IMPORTED_MODULE_5_libs_config__["a" /* default */].getNetwork() == "mainnet" ? 'https://explorer.htmlcoin.com/api/tx/' : 'https://testnet.htmlcoin.com/api/tx/';
+                interval = setInterval(function () {
+
+                  __WEBPACK_IMPORTED_MODULE_6_axios___default.a.get(apiURL + txId).then(function (result) {
+                    console.log('Checking Tx...');
+
+                    if (result.data.confirmations > 0) {
+                      clearInterval(interval);
+                      _this5.awaitingBuyTx = false;
+
+                      if (result.data.receipt[0].excepted != 'None') {
+                        _this5.txError = true;
+                      } else {
+                        _this5.txBuyConfirmed = true;
+                      }
+                    }
+                  }).catch(console.error);
+                }, 15 * 1000);
+                _context6.next = 21;
+                break;
+
+              case 16:
+                _context6.prev = 16;
+                _context6.t0 = _context6['catch'](1);
+
+                alert(_context6.t0.message || _context6.t0);
+                _this5.$root.log.error('send_to_contract_post_raw_tx_error', _context6.t0.response || _context6.t0.stack || _context6.t0.toString() || _context6.t0);
+                _this5.confirmSendBuyDialog = false;
+
+              case 21:
+              case 'end':
+                return _context6.stop();
+            }
+          }
+        }, _callee6, _this5, [[1, 16]]);
+      }))();
+    },
+    getLotteriesData: function getLotteriesData() {
+      var _this6 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee7() {
+        var decodedResult;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                _context7.prev = 0;
+                _context7.next = 3;
+                return _this6.callContractFunction(contractAddress, abiJson, 'tokenLotteryOn', []);
+
+              case 3:
+                decodedResult = _context7.sent;
+
+
+                decodedResult[0].toString() == 'true' ? _this6.tokenLotteryStatus = 'On' : _this6.tokenLotteryStatus = 'Off';
+
+                _context7.next = 7;
+                return _this6.callContractFunction(contractAddress, abiJson, 'htmlcoinLotteryOn', []);
+
+              case 7:
+                decodedResult = _context7.sent;
+
+
+                decodedResult[0].toString() == 'true' ? _this6.htmlcoinLotteryStatus = 'On' : _this6.htmlcoinLotteryStatus = 'Off';
+
+                _context7.next = 11;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getPrizeBalance', ['tokenLottery']);
+
+              case 11:
+                decodedResult = _context7.sent;
+
+
+                _this6.tokenLotteryPrize = parseInt(decodedResult[0]) / 100000000;
+
+                _context7.next = 15;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getPrizeBalance', ['htmlcoinLottery']);
+
+              case 15:
+                decodedResult = _context7.sent;
+
+
+                _this6.htmlcoinLotteryPrize = parseInt(decodedResult[0]) / 100000000;
+
+                _context7.next = 19;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getTokenLotteryFeeThreshold', []);
+
+              case 19:
+                decodedResult = _context7.sent;
+
+
+                _this6.tokenLotteryFeeThreshold = parseInt(decodedResult[0]) / 100000000;
+
+                _context7.next = 23;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getHtmlcoinLotteryFeeThreshold', []);
+
+              case 23:
+                decodedResult = _context7.sent;
+
+
+                _this6.htmlcoinLotteryFeeThreshold = parseInt(decodedResult[0]) / 100000000;
+
+                _context7.next = 27;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getTokenLotteryPot', []);
+
+              case 27:
+                decodedResult = _context7.sent;
+
+
+                _this6.tokenLotteryPot = parseInt(decodedResult[0]);
+
+                _context7.next = 31;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getHtmlcoinLotteryPot', []);
+
+              case 31:
+                decodedResult = _context7.sent;
+
+
+                _this6.htmlcoinLotteryPot = parseInt(decodedResult[0]);
+
+                _context7.next = 39;
+                break;
+
+              case 35:
+                _context7.prev = 35;
+                _context7.t0 = _context7['catch'](0);
+
+                _this6.$root.log.error('call_contract_call_contract_error', _context7.t0.stack || _context7.t0.toString() || _context7.t0);
+                alert(_context7.t0.message || _context7.t0);
+
+              case 39:
+              case 'end':
+                return _context7.stop();
+            }
+          }
+        }, _callee7, _this6, [[0, 35]]);
       }))();
     },
     findIndexByName: function findIndexByName(abiJson, name) {
@@ -5555,31 +6061,31 @@ var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "typ
       });
     },
     callContractFunction: function callContractFunction(contractAddress, abiJson, functionName, params) {
-      var _this3 = this;
+      var _this7 = this;
 
-      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee4() {
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee8() {
         var encodedData, encodedResult;
-        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee4$(_context4) {
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee8$(_context8) {
           while (1) {
-            switch (_context4.prev = _context4.next) {
+            switch (_context8.prev = _context8.next) {
               case 0:
-                encodedData = __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.encodeMethod(abiJson[_this3.findIndexByName(abiJson, functionName)], params).substr(2);
-                _context4.next = 3;
+                encodedData = __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.encodeMethod(abiJson[_this7.findIndexByName(abiJson, functionName)], params).substr(2);
+                _context8.next = 3;
                 return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().callContract(contractAddress, encodedData);
 
               case 3:
-                encodedResult = _context4.sent;
+                encodedResult = _context8.sent;
 
                 encodedResult = '0x' + encodedResult;
 
-                return _context4.abrupt('return', __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.decodeMethod(abiJson[_this3.findIndexByName(abiJson, functionName)], encodedResult));
+                return _context8.abrupt('return', __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.decodeMethod(abiJson[_this7.findIndexByName(abiJson, functionName)], encodedResult));
 
               case 6:
               case 'end':
-                return _context4.stop();
+                return _context8.stop();
             }
           }
-        }, _callee4, _this3);
+        }, _callee8, _this7);
       }))();
     },
     encodeContractSendFunction: function encodeContractSendFunction(abiJson, functionName, params) {
@@ -5593,6 +6099,10 @@ var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "typ
     onCopyError: function onCopyError() {
       this.$root.error('copy fail');
     }
+  },
+
+  mounted: function mounted() {
+    this.getLotteriesData();
   }
 });
 
@@ -6631,6 +7141,17 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "VdHc":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('create_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Byte Code","multiLine":"","required":""},model:{value:(_vm.code),callback:function ($$v) {_vm.code=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"code"}}),_vm._v(" "),_c('a',{staticStyle:{"float":"right"},attrs:{"href":"https://remix.ethereum.org","target":"_blank"}},[_vm._v(_vm._s(_vm.$t('create_contract.compiler')))]),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('create_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -8025,6 +8546,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUkAAAAtCAYAAAAj
 
 /***/ }),
 
+/***/ "a/BK":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send.send_tokens')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Address","required":""},model:{value:(_vm.address),callback:function ($$v) {_vm.address=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"address"}}),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs9":""}},[_c('v-text-field',{attrs:{"label":"Amount","required":""},model:{value:(_vm.amount),callback:function ($$v) {_vm.amount=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"amount"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs3":""}},[_c('v-select',{attrs:{"items":_vm.tokens,"bottom":""},scopedSlots:_vm._u([{key:"item",fn:function(data){return [_c('v-list-tile-content',[_c('v-list-tile-title',[_vm._v("\n                 "+_vm._s(data.item.text)+_vm._s(data.item.name ? '(' + data.item.name + ')' : '')+"\n                ")]),_vm._v(" "),_c('v-list-tile-sub-title',[_vm._v("\n                 "+_vm._s(data.item.address)+"\n               ")])],1)]}}]),model:{value:(_vm.symbol),callback:function ($$v) {_vm.symbol=$$v},expression:"symbol"}})],1)],1),_vm._v(" "),(_vm.symbol !== 'HTML')?_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=$$v},expression:"gasPrice"}}):_vm._e(),_vm._v(" "),(_vm.symbol !== 'HTML')?_c('v-text-field',{attrs:{"label":"Gas Limit"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=$$v},expression:"gasLimit"}}):_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmAddressDialog),callback:function ($$v) {_vm.confirmAddressDialog=$$v},expression:"confirmAddressDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send.enter_address')))])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Address"},model:{value:(_vm.repeatAddress),callback:function ($$v) {_vm.repeatAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"repeatAddress"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmAddress}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.confirmAddressDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))])],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send.going_to_send'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.amount)+_vm._s(this.symbol))]),_vm._v("\n          "+_vm._s(_vm.$t('send.to_address'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.address))]),_vm._v("\n          "+_vm._s(_vm.$t('common.question_mark'))+"\n        ")],1)]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v("\n          "+_vm._s(_vm.$t('common.confirm'))+"\n        ")]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v("\n          "+_vm._s(_vm.$t('common.cancel'))+"\n        ")]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.addTokenDialog),callback:function ($$v) {_vm.addTokenDialog=$$v},expression:"addTokenDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          Token\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":_vm.$t('send.token_address'),"disabled":_vm.addTokenStep === 2},model:{value:(_vm.addTokenAddress),callback:function ($$v) {_vm.addTokenAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenAddress"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[(_vm.addTokenStep === 2)?_c('v-text-field',{attrs:{"label":"Name","disabled":""},model:{value:(_vm.addTokenName),callback:function ($$v) {_vm.addTokenName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenName"}}):_vm._e()],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[(_vm.addTokenStep === 2)?_c('v-text-field',{attrs:{"label":"Symbol","disabled":""},model:{value:(_vm.addTokenSymbol),callback:function ($$v) {_vm.addTokenSymbol=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenSymbol"}}):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),(_vm.addTokenStep === 1)?_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":"","loading":_vm.addTokenLoading},on:{"click":_vm.searchAddToken}},[_vm._v("\n          "+_vm._s(_vm.$t('common.search'))+"\n        ")]):_vm._e(),_vm._v(" "),(_vm.addTokenStep === 2)?_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmAddToken}},[_vm._v("\n          "+_vm._s(_vm.$t('common.confirm'))+"\n        ")]):_vm._e(),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.addTokenDialog = false}}},[_vm._v("\n          "+_vm._s(_vm.$t('common.cancel'))+"\n        ")]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "a2ct":
 /***/ (function(module, exports) {
 
@@ -8052,7 +8584,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABkCAYAAADO
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SendToContract_vue__ = __webpack_require__("6dsK");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e42a83a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__ = __webpack_require__("coaj");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0ed759e2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__ = __webpack_require__("rgae");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -8069,7 +8601,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SendToContract_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e42a83a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0ed759e2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -8379,17 +8911,6 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
-/***/ "c6Ri":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('call_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":""},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"ABI","required":"","multiLine":""},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","single-line":"","bottom":""},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e()],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.callTo}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.execResultDialog),callback:function ($$v) {_vm.execResultDialog=$$v},expression:"execResultDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('call_contract.result'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Result","multi-line":"","disabled":""},model:{value:(_vm.result),callback:function ($$v) {_vm.result=$$v},expression:"result"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.execResultDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "cAXN":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -8647,17 +9168,6 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
-
-/***/ }),
-
-/***/ "coaj":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send_to_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":""},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"ABI","required":"","multiLine":""},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","single-line":"","bottom":""},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -9083,6 +9593,17 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
+/***/ "eN9x":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("RLpJ")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"teal"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Info\n      "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      New\n      "),_c('v-icon',[_vm._v("child_care")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Check\n      "),_c('v-icon',[_vm._v("search")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('div',[_c('img',{staticStyle:{"width":"50%","height":"auto"},attrs:{"src":__webpack_require__("TGXn")}})]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to MyOffspring!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                    This application allows you to register your children and create a Birth Certificate for them in the "),_c('b',[_vm._v("AltHash")]),_vm._v(" blockchain.\n                    "),_c('br'),_c('br'),_vm._v("\n                    To create a new record, just click on \"New\" menu item, and fill in the details about the birth of your heir.\n                    "),_c('br'),_c('br'),_vm._v(" "),_c('b',[_vm._v("Take note of the hash code generated, as it will be the unique identifier for the birth registration.")]),_vm._v(" "),_c('br'),_c('br'),_vm._v("\n                    Once the transaction is confirmed, the registration is complete and you can verify it through the menu item \"Check\".\n                    "),_c('br'),_c('br'),_vm._v("\n                    MyOffspring was developed based on suggestions given by our Communities Manager, "),_c('b',[_vm._v("Heitor Guimarães")]),_vm._v(", supported by the Community member "),_c('b',[_vm._v("Karol Pyla")]),_vm._v(", who wanted to register his son, "),_c('b',[_vm._v("Julek")]),_vm._v(", on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!\n                  ")]),_vm._v(" "),_c('br'),_c('br')])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Full Name","required":"","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.fullName),callback:function ($$v) {_vm.fullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fullName"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Mother's Full Name","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.motherFullName),callback:function ($$v) {_vm.motherFullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"motherFullName"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Father's Full Name","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.fatherFullName),callback:function ($$v) {_vm.fatherFullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fatherFullName"}}),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs6":""}},[_c('v-menu',{ref:"dateOfBirth_menu",attrs:{"close-on-content-click":false,"nudge-right":40,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","min-width":"290px"},model:{value:(_vm.dateOfBirth_menu),callback:function ($$v) {_vm.dateOfBirth_menu=$$v},expression:"dateOfBirth_menu"}},[_c('v-text-field',{attrs:{"slot":"activator","label":"Date of Birth","prepend-icon":"event","readonly":"","outline":"","background-color":"teal"},slot:"activator",model:{value:(_vm.dateOfBirth),callback:function ($$v) {_vm.dateOfBirth=$$v},expression:"dateOfBirth"}}),_vm._v(" "),_c('v-date-picker',{ref:"picker",attrs:{"max":new Date().toISOString().substr(0, 10),"min":"1900-01-01"},on:{"change":_vm.dateOfBirth_save},model:{value:(_vm.dateOfBirth),callback:function ($$v) {_vm.dateOfBirth=$$v},expression:"dateOfBirth"}})],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-menu',{ref:"timeOfBirth_menu",attrs:{"close-on-content-click":false,"nudge-right":40,"return-value":_vm.timeOfBirth,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","max-width":"290px","min-width":"290px"},on:{"update:returnValue":function($event){_vm.timeOfBirth=$event}},model:{value:(_vm.timePicker),callback:function ($$v) {_vm.timePicker=$$v},expression:"timePicker"}},[_c('v-text-field',{attrs:{"slot":"activator","label":"Time of Birth","prepend-icon":"access_time","readonly":"","outline":"","background-color":"teal"},slot:"activator",model:{value:(_vm.timeOfBirth),callback:function ($$v) {_vm.timeOfBirth=$$v},expression:"timeOfBirth"}}),_vm._v(" "),(_vm.timePicker)?_c('v-time-picker',{attrs:{"full-width":"","format":"24hr"},on:{"change":_vm.timeOfBirth_save},model:{value:(_vm.timeOfBirth),callback:function ($$v) {_vm.timeOfBirth=$$v},expression:"timeOfBirth"}}):_vm._e()],1)],1)],1),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Place of Birth (Facility, City, State/Province, Country)","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.placeOfBirth),callback:function ($$v) {_vm.placeOfBirth=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"placeOfBirth"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                  "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n                  ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('b',[_vm._v("Please store the ID below in a safe place, as it is the unique ID for this Birth registration.")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs10":""}},[_c('v-text-field',{attrs:{"label":"Hash ID","disabled":""},model:{value:(_vm.hashID),callback:function ($$v) {_vm.hashID=$$v},expression:"hashID"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('v-btn',{directives:[{name:"clipboard",rawName:"v-clipboard:copy",value:(_vm.hashID),expression:"hashID",arg:"copy"},{name:"clipboard",rawName:"v-clipboard:success",value:(_vm.onCopySucc),expression:"onCopySucc",arg:"success"},{name:"clipboard",rawName:"v-clipboard:error",value:(_vm.onCopyError),expression:"onCopyError",arg:"error"}],staticClass:"mt-3",attrs:{"small":"","color":"cyan"}},[_vm._v("\n                          "+_vm._s(_vm.$t('common.copy'))+"\n                        ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs10":""}},[_c('v-text-field',{staticClass:"mx-3",attrs:{"label":"Hash ID","append-icon":"search","outline":"","background-color":"teal"},on:{"click:append":_vm.openCertificate},model:{value:(_vm.searchHashID),callback:function ($$v) {_vm.searchHashID=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"searchHashID"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('img',{staticClass:"cursor",attrs:{"src":__webpack_require__("igel")},on:{"click":_vm.scanQrcode}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('p',{staticClass:"error"},[_vm._v(_vm._s(_vm.error))])])],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"width":"600px"},model:{value:(_vm.execResultDialog),callback:function ($$v) {_vm.execResultDialog=$$v},expression:"execResultDialog"}},[_c('span',{attrs:{"id":"certificate"}},[_c('v-card',{staticClass:"modal-detail"},[_c('v-card-text',[_c('v-container',{attrs:{"align-center":"","grid-list-md":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":"","text-md-center":""}},[_c('img',{staticClass:"logo1",attrs:{"src":__webpack_require__("RLpJ")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","text-md-center":""}},[_c('img',{staticClass:"logo2",attrs:{"src":__webpack_require__("2Gzf")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":"","text-md-center":""}},[_c('span',{staticClass:"font-weight-medium my-2 headline font-bold",attrs:{"id":"title"}},[_vm._v("\n                  Digital Birth Certificate\n                ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('p'),_vm._v(" "),_c('p',[_c('b',[_vm._v("Full Name:")]),_vm._v(" "+_vm._s(_vm.resultFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Mother's Full Name:")]),_vm._v(" "+_vm._s(_vm.resultMotherFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Father's Full Name:")]),_vm._v(" "+_vm._s(_vm.resultFatherFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Date of Birth:")]),_vm._v(" "+_vm._s(_vm.resultDateOfBirth)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Time of Birth:")]),_vm._v(" "+_vm._s(_vm.resultTimeOfBirth)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Place of Birth:")]),_vm._v(" "+_vm._s(_vm.resultPlaceOfBirth)+"\n                ")]),_vm._v(" "),_c('p',{staticClass:"text-xs-center"},[_c('span',{staticClass:"caption",attrs:{"id":"certificate_id"}},[_vm._v("Hash ID: "+_vm._s(_vm.searchHashID))]),_vm._v(" "),_c('img',{staticClass:"qr",attrs:{"src":_vm.qr,"id":"qr"}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('v-btn',{attrs:{"icon":"","id":"btn"},on:{"click":_vm.print}},[_c('v-icon',[_vm._v("print")])],1)],1)])],1)],1)],1)],1)],1)]),_vm._v(" "),_c('v-dialog',{attrs:{"max-width":"50%"},model:{value:(_vm.qrScan),callback:function ($$v) {_vm.qrScan=$$v},expression:"qrScan"}},[_c('v-container',[_c('v-layout',[_c('v-flex',{attrs:{"xs12":"","align-center":"","text-xs-center":""}},[(_vm.qrComponent)?_c('qrcode-stream',{attrs:{"track":false,"camera":_vm.camera},on:{"decode":_vm.onDecode,"init":_vm.onInit}}):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"hide-overlay":"","persistent":"","width":"300"},model:{value:(_vm.loading),callback:function ($$v) {_vm.loading=$$v},expression:"loading"}},[_c('v-card',{attrs:{"color":"teal","dark":""}},[_c('v-card-text',[_vm._v("\n        Please stand by\n        "),_c('v-progress-linear',{staticClass:"mb-0",attrs:{"indeterminate":"","color":"white"}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "ejIc":
 /***/ (function(module, exports) {
 
@@ -9500,6 +10021,13 @@ module.exports = __webpack_require__.p + "static/images/tokenfarm_logo21.05ba613
 
 /***/ }),
 
+/***/ "gj2+":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/images/biffy_ufg_win.9072f3e.jpg";
+
+/***/ }),
+
 /***/ "glbK":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -9898,17 +10426,6 @@ var messages = {
 
 /***/ }),
 
-/***/ "qpBf":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("RLpJ")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"teal"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Info\n      "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      New\n      "),_c('v-icon',[_vm._v("child_care")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Check\n      "),_c('v-icon',[_vm._v("search")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('div',[_c('img',{staticStyle:{"width":"50%","height":"auto"},attrs:{"src":__webpack_require__("TGXn")}})]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to MyOffspring!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                    This application allows you to register your children and create a Birth Certificate for them in the "),_c('b',[_vm._v("AltHash")]),_vm._v(" blockchain.\n                    "),_c('br'),_c('br'),_vm._v("\n                    To create a new record, just click on \"New\" menu item, and fill in the details about the birth of your heir.\n                    "),_c('br'),_c('br'),_vm._v(" "),_c('b',[_vm._v("Take note of the hash code generated, as it will be the unique identifier for the birth registration.")]),_vm._v(" "),_c('br'),_c('br'),_vm._v("\n                    Once the transaction is confirmed, the registration is complete and you can verify it through the menu item \"Check\".\n                    "),_c('br'),_c('br'),_vm._v("\n                    MyOffspring was developed based on suggestions given by our Communities Manager, "),_c('b',[_vm._v("Heitor Guimarães")]),_vm._v(", supported by the Community member "),_c('b',[_vm._v("Karol Pyla")]),_vm._v(", who wanted to register his son, "),_c('b',[_vm._v("Julek")]),_vm._v(", on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!\n                  ")]),_vm._v(" "),_c('br'),_c('br')])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Full Name","required":"","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.fullName),callback:function ($$v) {_vm.fullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fullName"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Mother's Full Name","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.motherFullName),callback:function ($$v) {_vm.motherFullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"motherFullName"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Father's Full Name","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.fatherFullName),callback:function ($$v) {_vm.fatherFullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fatherFullName"}}),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs6":""}},[_c('v-menu',{ref:"dateOfBirth_menu",attrs:{"close-on-content-click":false,"nudge-right":40,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","min-width":"290px"},model:{value:(_vm.dateOfBirth_menu),callback:function ($$v) {_vm.dateOfBirth_menu=$$v},expression:"dateOfBirth_menu"}},[_c('v-text-field',{attrs:{"slot":"activator","label":"Date of Birth","prepend-icon":"event","readonly":"","outline":"","background-color":"teal"},slot:"activator",model:{value:(_vm.dateOfBirth),callback:function ($$v) {_vm.dateOfBirth=$$v},expression:"dateOfBirth"}}),_vm._v(" "),_c('v-date-picker',{ref:"picker",attrs:{"max":new Date().toISOString().substr(0, 10),"min":"1900-01-01"},on:{"change":_vm.dateOfBirth_save},model:{value:(_vm.dateOfBirth),callback:function ($$v) {_vm.dateOfBirth=$$v},expression:"dateOfBirth"}})],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-menu',{ref:"timeOfBirth_menu",attrs:{"close-on-content-click":false,"nudge-right":40,"return-value":_vm.timeOfBirth,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","max-width":"290px","min-width":"290px"},on:{"update:returnValue":function($event){_vm.timeOfBirth=$event}},model:{value:(_vm.timePicker),callback:function ($$v) {_vm.timePicker=$$v},expression:"timePicker"}},[_c('v-text-field',{attrs:{"slot":"activator","label":"Time of Birth","prepend-icon":"access_time","readonly":"","outline":"","background-color":"teal"},slot:"activator",model:{value:(_vm.timeOfBirth),callback:function ($$v) {_vm.timeOfBirth=$$v},expression:"timeOfBirth"}}),_vm._v(" "),(_vm.timePicker)?_c('v-time-picker',{attrs:{"full-width":"","format":"24hr"},on:{"change":_vm.timeOfBirth_save},model:{value:(_vm.timeOfBirth),callback:function ($$v) {_vm.timeOfBirth=$$v},expression:"timeOfBirth"}}):_vm._e()],1)],1)],1),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Place of Birth (Facility, City, State/Province, Country)","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.placeOfBirth),callback:function ($$v) {_vm.placeOfBirth=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"placeOfBirth"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                  "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n                  ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('b',[_vm._v("Please store the ID below in a safe place, as it is the unique ID for this Birth registration.")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs10":""}},[_c('v-text-field',{attrs:{"label":"Hash ID","disabled":""},model:{value:(_vm.hashID),callback:function ($$v) {_vm.hashID=$$v},expression:"hashID"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('v-btn',{directives:[{name:"clipboard",rawName:"v-clipboard:copy",value:(_vm.hashID),expression:"hashID",arg:"copy"},{name:"clipboard",rawName:"v-clipboard:success",value:(_vm.onCopySucc),expression:"onCopySucc",arg:"success"},{name:"clipboard",rawName:"v-clipboard:error",value:(_vm.onCopyError),expression:"onCopyError",arg:"error"}],staticClass:"mt-3",attrs:{"small":"","color":"cyan"}},[_vm._v("\n                          "+_vm._s(_vm.$t('common.copy'))+"\n                        ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs10":""}},[_c('v-text-field',{staticClass:"mx-3",attrs:{"label":"Hash ID","append-icon":"search","outline":"","background-color":"teal"},on:{"click:append":_vm.openCertificate},model:{value:(_vm.searchHashID),callback:function ($$v) {_vm.searchHashID=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"searchHashID"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('img',{staticClass:"cursor",attrs:{"src":__webpack_require__("igel")},on:{"click":_vm.scanQrcode}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('p',{staticClass:"error"},[_vm._v(_vm._s(_vm.error))])])],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"width":"600px"},model:{value:(_vm.execResultDialog),callback:function ($$v) {_vm.execResultDialog=$$v},expression:"execResultDialog"}},[_c('span',{attrs:{"id":"certificate"}},[_c('v-card',{staticClass:"modal-detail"},[_c('v-card-text',[_c('v-container',{attrs:{"align-center":"","grid-list-md":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":"","text-md-center":""}},[_c('img',{staticClass:"logo1",attrs:{"src":__webpack_require__("RLpJ")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","text-md-center":""}},[_c('img',{staticClass:"logo2",attrs:{"src":__webpack_require__("2Gzf")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":"","text-md-center":""}},[_c('span',{staticClass:"font-weight-medium my-2 headline font-bold",attrs:{"id":"title"}},[_vm._v("\n                  Digital Birth Certificate\n                ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('p'),_vm._v(" "),_c('p',[_c('b',[_vm._v("Full Name:")]),_vm._v(" "+_vm._s(_vm.resultFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Mother's Full Name:")]),_vm._v(" "+_vm._s(_vm.resultMotherFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Father's Full Name:")]),_vm._v(" "+_vm._s(_vm.resultFatherFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Date of Birth:")]),_vm._v(" "+_vm._s(_vm.resultDateOfBirth)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Time of Birth:")]),_vm._v(" "+_vm._s(_vm.resultTimeOfBirth)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Place of Birth:")]),_vm._v(" "+_vm._s(_vm.resultPlaceOfBirth)+"\n                ")]),_vm._v(" "),_c('p',{staticClass:"text-xs-center"},[_c('span',{staticClass:"caption",attrs:{"id":"certificate_id"}},[_vm._v("Hash ID: "+_vm._s(_vm.searchHashID))]),_vm._v(" "),_c('img',{staticClass:"qr",attrs:{"src":_vm.qr,"id":"qr"}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('v-btn',{attrs:{"icon":"","id":"btn"},on:{"click":_vm.print}},[_c('v-icon',[_vm._v("print")])],1)],1)])],1)],1)],1)],1)],1)]),_vm._v(" "),_c('v-dialog',{attrs:{"max-width":"50%"},model:{value:(_vm.qrScan),callback:function ($$v) {_vm.qrScan=$$v},expression:"qrScan"}},[_c('v-container',[_c('v-layout',[_c('v-flex',{attrs:{"xs12":"","align-center":"","text-xs-center":""}},[(_vm.qrComponent)?_c('qrcode-stream',{attrs:{"track":false,"camera":_vm.camera},on:{"decode":_vm.onDecode,"init":_vm.onInit}}):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"hide-overlay":"","persistent":"","width":"300"},model:{value:(_vm.loading),callback:function ($$v) {_vm.loading=$$v},expression:"loading"}},[_c('v-card',{attrs:{"color":"teal","dark":""}},[_c('v-card-text',[_vm._v("\n        Please stand by\n        "),_c('v-progress-linear',{staticClass:"mb-0",attrs:{"indeterminate":"","color":"white"}})],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "qvsf":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -9986,7 +10503,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_BiffyPlutonium_vue__ = __webpack_require__("Rz30");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_34dd881c_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_BiffyPlutonium_vue__ = __webpack_require__("wRaC");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_25ba1d74_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_BiffyPlutonium_vue__ = __webpack_require__("2ZwC");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -10003,7 +10520,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_BiffyPlutonium_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_34dd881c_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_BiffyPlutonium_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_25ba1d74_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_BiffyPlutonium_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -10221,6 +10738,17 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
+/***/ "rgae":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send_to_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":""},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"ABI","required":"","multiLine":""},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","single-line":"","bottom":""},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "t7Gd":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -10314,32 +10842,10 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ "vyTM":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('create_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Byte Code","multiLine":"","required":""},model:{value:(_vm.code),callback:function ($$v) {_vm.code=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"code"}}),_vm._v(" "),_c('a',{staticStyle:{"float":"right"},attrs:{"href":"https://remix.ethereum.org","target":"_blank"}},[_vm._v(_vm._s(_vm.$t('create_contract.compiler')))]),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('create_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "wOSG":
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8AXHiAAAf50lEQVR42u2dCVgT19rHcava2r232+292la73N7v9t72s1ZlCUtYEggkEJLMTEJYRQEBKeLWYl2vtS6lLp8iIogskZBMsLi0FrVK0eKCYDIBl9uqrXWpta6ocL73BEZTxK2ChOv5P895Hp7MmZkz5/zmfd9z5pyDkxMR0X+TkE7ew6yXvWAupQbdS6plmYF7V4mfRE5O3f4r6gWe45Ah6IlaVj7wXuqFMypffCDBOsiqnqsrZZZzrPqne0lWk/oIZ6Tn1RsUr6J0p+5duU7Sofz1hYpXrSZqLmdijtxT3ZiY/AcSLPxGARQGSOheE8cyly0svYIzyl/vqpYLl9tqUr0BL0k2fp57rxP1OgJWuySmAeAqqC+TvdQV66MGLC7H0qvxc7TPy0bAQu2VoDIvW4104fdrxE92pbrYo5P/mTNRUBfM1XasCwJWuyaAiyulV9dmi57vEvVQHPyPOhO9DmKiK+38khGw2j8xl8ByGa1gCRy5DmoN8n+C+6uwtjNUBKyOA6vJyjINnJEq3uugbrFWrxgM5dxRZ3N/UF4CVlcA67rlqmNVSx0p5sJDIpyJHgyW6mtw240d9ewErA4FC1cwDW6RyuR0AS+nd/I4V9WSd3tZVisFHMts6kioCFj3AazmgJ65CIAt3buGegWhzhnnwlBxxlB3gKr8fjwzAet+gNUCl4WlPt+l8/vT/X5WnU7ew2pQ+FmwpbpPz0vAul9gNY/Qn7MYqDnWfP9n7uuz6pW+nJHZWWdSXyVg/ReChZOFpc9DzLXMUiJ9+n48p1mvlFpZuhru3Xh/XyICFrr/ibnAGaiCY7nej3TkM1oMKhVnpOs64xkJWJ0Cli3mumAxUjlVMU69OuDxunEsNRIs1f66+2ypCFidDVbzIOpFgCu3Ms/vsfZ6Ljyksa8klIF47iBcv7EjBj8JWA4N1rWA/gIHMReedHivz3QoW9CHK1ExAFNd5z8XAQt1eoLeIgT0c+t18j88FFEN8ZrFoNRaWOaAIzwTAcsRwGq2XKetLJVeXSJ99q6fJUvyqJVVRkOg/p/Ocn0ELAcFy9YYJuYXi4GeWauT3/GUm6ol/g9bDIoYAOqgo0BFwHIwsHjLZSmh5pYvFPS7baDu5NSdM9BjbYG6wz0HAQs5IFxnOJaaf6vyl6c79bQYqMkcSx93zGcgYCGHTCxzljMwiyrmDu3buuzgKvsBUFPB9Z10JPdHwOoKYDVPuTlvNtBZlXn0Y9d7f+pHOCM1BazaieZxKkctOwELOTZczAVrKfM50jn1KC8X9ISe3zQI8n9z/HITsNpnFL0DXRIO6DmDahYE6lM5E/1bh34NaKdnIWC1T8MfhHSyg+FqwJ+AOhIqzognJDI/toeLJWC1x1QYE/WBxaj6GGIihw2m7yCea+CMqtVmo2pae6wvJGC1y8CmOvKATv44BNXTwVWd74pgAVCr9hUHv2UxqVQELAcCyzYMsE7+FH7jwZ1c6TqWirlsNVI55jxZf9w5IGA5IFi2GQaGoCcsJapUiFfOODxYLHPJYqSyD+qp/rZBVwKW44JlayCdvJ/FyITjOe6OCxbAY6SW4e2XnFp2yCFgOThYWHjasdlAJeKelmNaKzrLYggaYL/tEgGrC4B1bTqLUTWuOaB3hN5i89J/SwmVu7sgaMAN3x8JWF0DLKyjJv+HweV8AA36c+fCxTThT0QWI11YV6J4s80P2wSsrgMWD5fFRE/sVLhY9UUAvOhmUBGwHA0sVn0O4ij6dvfbu4p60spSkzsDrjo8Ys/SOkuJ4rVbTsUhYDkGWNDrO2thqYJao/xvd3LPKp3X4xaDKuW+zqFibVtYFpqLgwfdrnwErE4HqzlegVSwr1j11t1saFueLeizj1VG1JmYXzvcUgEgeO3i/mJq0B2VjYDV6WDhgUVjre7OLNUNDZju1BMvfgAX1aFwQRkzrcWyV+64XASszgML79UJlmplTUHgX5zuYevtwzp5XwuriAFXdaYDAvXLZgO9zGJQDrgr4AlYnWixIF45usT/4fYow6FyQR+zSam2Lf1qz23BjXRujd2IOgHLgcHClspSQuW1dznwknirUalol95iy3bgLZ9p7t5FE7DuL1jNU4GpzFrd7Zdk/RFV6Ib2tRqoeM7IHP5jWzjaZn1egPOLzHcYqBOwOh0s5iT+XzkQqD/VkeWxrbwxqJJsq5nvCi7cQ2XOcUaqyFqseuNeykDAui9gQYOZmGOQ/m3WMy/cjzLVZwzsva9EGQtu8fs7dYscjqlK6EL8jwDu9f4ErA4HyzZOdZgzUFPq9fR9/d84yBZz0XFw/2N31IBG1apDpnuzVASs+wIWtlT0MQurTMf/eq4zynZ47tC+eD8GcIs/3TJQZ5kcTid/ub3uS8DqMLBs8cpJjlVO+iO7vrSnbHtd6ZUSKNPRtj7TmI107t2OUxGwOgsslrloNigS6+1WHnem8CJVrkTl8Tu3iJdmGamcmsI/NqRAwLrfYNlcCxVTq/vbQ45UTrzxf10JJTMbmR9t5TQyOZY2JukRsBwOLNtCzTNcCR3rqGWtz/DrbdYr1ZyBntcRloqA1c5gAVAGK0v/YDGoErBlcHrARcBqB+GxKXB9cywlqrAKnbyvExEBqz2Et8CuZeUDq9d37Cb+BCwiAhYBi4iARUTAIiJgEbCICFhEBCwiAhYBi4iARUTAIiJgEbCICFhEBCwiAhYBi4iARUTAIiJgEbCICFhEBCwiAhYBi4iARUTAIiJgEbCI7hWsdEFPM6tQ4m0xCVhE7SaEnLrVlyoFzbsK3pvVImAR/R4uvPFbMeVlYZlKvJ89AYuoXV2i1Uh5cSyzqRmuu9/NmYBF1KZ0OnkPi4H25li66o8E8wQsolvGXPsMtB+H3eJdbhNOwCK6NVxOTt04fehwCOgrCFhE7Q6XtTj4DXCJ393xNuEELKI71UG9rL+VZQ4SsIjaXdW6gJctRmb77WIuAhbRXcuql77NsdRGvC04AYuoXWOuWp38PYuB2cDdBC4CFtEflrlE5cax9HrOxFwgYBG1L1ws/b6VpU0Qc10kYBG1q/Ya5O+C5VpnP0JPwCJqF+0rDn7LaqK/ImARtbuqcuR/Bbf4BQGLqN1lyZE+bTZSJgIWUfsH9HrmBc5AJ5GaICIiIiIiIiIiIiIiIiIiIup4IYS6IXT22dP/+fJflq/Gv9b6X/vC8YcuXTrx2pkf9/ic3L9Jap+OV+t8OWPE6zf7x+Xnz59/4eLpQ24/WzdKD+9eJdpr0r5RX+bXu3W+y5cvv3fi4DcBJ+u/DDxcudDdrJe9cOHChZfO/lTrfvrQlsDr9ywPOm5mxUe3pL/DsZJH23iW7ujy+f89fmCbuHVZr6X6rwOtpcnvHdDJHz937tzzvx41ex3bty7Q+mWaM5c1/NFb1FP3CxdOvXTiwIb/NRdTg9KdnLoTelopISHhsQ8//DAiKChom0AgOD18+PAmSEjo5Y6Uwd6Xl8+O5vbomQ+rlvg/HBER8XZgYOB3+HhbyUfo3vTBSOmZrYXxJWZW+356+vUKz8vL6+/s7HwV5wtT+qJtBTG7OCPlbl+W0aNHS/lrRatFjZW6keX1JuYdX1/fBa6urlfauqe7wBXFagMvFmcwVbvztUL+ZYDnegnud+5mZcXJy8O1qbZ05IEvVyYJ1Gr1MvybLECI1i5RNtYZlUPsitZtwoQJL8A14/39/Xe4ubn9xteTt9AT0SG+l5bNjtq9s4hJrpj7gP9LZJ1O91BcXJwrAPU1NJqtwZ2dhzdBwn9f4SvOxXk4Kl4Uc55jlZOgQodC3h9seZsb5+qwYcMu4wSNaDsHzkdxEQFNm3Kiyjm9YjCeIMffEzcKPlfk64kWTqVPc6WaRNQCH5TlLR8fnwP4uETk0aRfEPm9xUBpa2pqnhOJRHoeBjdXF+Ti4oLvh+97rZyBYg9UskB1Ym8xJcLXVCgUb0J5z7XkvQali4szvsYV/HukOvhSXam6YvTIsHelUulOfDxGE4g2ZtPH95dSg3C5MjIyekdFRQklEskmuN4Vvp5a6uja/cU+7k15c7U/WwyqFJ3OqceD6vJ6jRkzRgGW4GdcKQI3F6RWii8xci+zp8DZ4ObmovP29t4OlX8xIcznyv61I3VV+YJn3N3d3cCq/eLq4oI0cs+mUInbdudhw/KhgfMAOD0cO8HDOGusBO3VM1Pw/6Hm7xsaGjqVb+APRvijamNUDmeUvDhu3LgnQ0JCVmIAXF2Go8nJQefr18YsOF4u7wfW1AXAslnJ4EA/NC4+6GxggDhXJPLNhfKt9vDwqIVjjfj4zPE0+q6QYQ/r5H21Wu2AgICA5dJASZ5I5FPF3zc2LADFaCWVQRLxymnjo1aYWWYMlMsLoD6Lj0/5IBRVFISV1Orkz0M99QDgI+D+p3krHqYQX1LJPKvd3YbroTqKxGLxdlcX5yvjRvn/sn99fMb2HOnTD6y1GjVqlDdUFrYOTb7enk3jE4J+Wb8iKWfP6jDvdK2gDwDSc968ef+EPHO35lILcJyTnp7eXS6XS+DYJR+hB8qdJW/cXayMTo9592G4ZE+wRg/LZLKp8FZfxI3wUaIE7ShQF1kMygH8fQGSwZ6enhdaXB3asDx8T22J2iM8PHwknHcclwfcWmNVkWZrTYniTXxOdHS0Fl6AH/E586aMQLUGzSaEdD3wqmUoUx8ASAnX/B4f9xf7os05zMWafNVzfCxUWVn2mFwe/BEPVsnCsKa6tSNkqCqmF36mJUtieoF7D8FQA6ho+SeaJm5tbDKGMzU11R/AOYstVFCAsHFKqurw+uWjlu0sYFyS5S9hl9fzu++++7vYz3vRphzmw2o9/dIDC1VWVtYrAEEZdiUe7q5o2b/VDVXFkR/vKpC82IZle4gPxnNzcx+BRk7DjR8g8kRFc+VXLKXKENzAfH5wFwPBgthc5cSEQFRZoGVrWflAO6D7gYvaanNd/kKUM5s+vWpe2CKwFjuhPI1iXwHAFnHKalIFYReKGx4sZypYQ1usZFgyEu0zMhPsywhQ/g3ylPHgfL2cRvAi9OePx8bGPgvP+zk+FiAWotJFyt/2lyj+zh+Hl+UhOD8CWz14yVDep4pLdSaN/9KlC14DqHbh83yFbmjJDObHHbqocftL1M+25QF08gfU/WGVl5f3DA4OngjW4RdcYVNTFYgzRazZXnJ78w1v7/NgHdbg8xiFCJUupn7Dm2jY54EG+jt2hzj+mpIsQTuLNMutOvmf+eMxMTG9oAOA4USuECuljpQ2xkVIfsEuF8dOS6arrtax9FRU1RyA40YH9/sxQNfg6eGONueGN9asVg6zvydYyXcA5s34muHqYLRtlfrHvavET9qB9woAX4KPx0XK0NfZao4zqV/mjwO8/WiaxhatSS71QfoM5SncqQD3OAN+awA3h6aNVV2o1muz6nXyP5HuXhvSaDRPw9tfADFRo1TiB40Qdr6mUPrmnZwL7uY1Ly8vW6wRFy5G6zKZ76ylzNt2vcveKpVqOe754Rhrdlpg4z6j5oND2YI+9sMZ8fHxHtd7ZW7IA3p1+O/JKUoM4pbD6+RP2VmTfvASzMHWJBCs5OYVyvMWQ9AAe4sKoEYCzKfwNRZPY1B1sXqR/TAGwP42wGmLsSYkSNG2lZqv7GEH6J4DV2vrHIQpfLBF+95iZIYBrNiyNgb5e6Ht+dofODZ0OCHoJsrMzHwX4okt+O0cExuMavT0ASe7XtutBEHsEL4HNGNCOLJumbvu1P4vFeeOmb3mfPJxMPQuDbgXBmChpOiApm35EV/sM6nean0dpVI5wM/Pb7d9t18VEoDWZzLHdxcqBtvnLSsre1WtVhfj+4YzQaiKTTtzqn6j/Neje73W6FdKoLe2AIA/go+HBPqgNYuo3+pNaje8sQd/DYZhXCCIx/EbmpUmRdsLmCxLieaahR45cuQrkMfWG02KlqDyFZpvj9XqKHiJ9uPrRtJiZDaqrRXLfJ4iBN1EYKnEkMy4EsfHyzBYe+/w1O7wZouvddkBHnARV3GchhP8hlMj/N2kpQKa1maNsJj1Sqn9OJbdMEdfACKB78m5ujpDXKNCNcVMIioX9LTPS1GUO1iTWv6+0GNsar7n8JbUPMQhg96ibkHkbxZTVLi9tcK9OnBzIfwLMW9iEPQa6YnQ4+vH5wH3Ppgvy0dJAF5R+IpwlUcK1NMx/NsI6GRYTWpzW4O5RNfdgh/EM7aGSh4RjIcDDqL0248ag0vqAbFM5K0GG/H4VRQjulyWFVPBsVTgLS7XDSwbLoetez8pWYm25mk3cEblDZ0HiAfDoMwNbd4PkqeHW2NIkPf5nNka6/6ymDB7t9sSU/YbO3ZsOh/TLZ8Z2mgxaVR4kzX+uXCvsrn8zmjOhOCmutKYsXSohIHy/YR/jwCLxbFqK8BILNbNlJGR8S9wCzjQbfLz9ULl2ZrLB43KITfp0XSzC3Afgt7VZ80j3c4oUCxo8BG6HXR3F/zEj6b7CF3RHkP0QX6Y4FZgQZwnwmDhwcosW2NrEw6Va38HRX19fW9wryk8SDJ/d+Tt5Vbv5uZaDZBU+/t571mRMXZblT5uKmeSv2zv/ux7hBCEF+HztepQtCYz8iRecGrfmQCLNh4flwaKUN68sLMWI02dPXv2TXCF9c315IG+Wak9ajZSovJWFpXoejzxJFiAHGhU2whyOO2PNmQxB0wLae9j69OfPVad+whA9CxU+JDP0kf47syj38fDCXiMKiQkpMLWQEofVJap5fZvSJaOH58WDUHuUdwAeJA151PtrzV6ZgLSyR+6WRng+j2hsVV4FNvPxwOt+lTeYC2lFa0bDSzJE+AGZ9iCfC93xC7WNBza8qHbkSNfPX348LqnDpXPe+J27gme9S9CodA22p8QGYi+ytZ+y7Gqf/DHIdbrDS7e9ilHKfNGus+oQ+DCxbiTAcfWNbt3bIn9r5gWM1s3ZUcJj1Z9+gyup8TExOegxzlsdnq8R32JaugDDRYeMIyMjJTD22jl44oojbQxNTaAG6UNWhgqE08JDAxYCJW6Mz5KfuybXHW1uTh40IwZM/4EcP2K84/S+qFNuWHr4c3+H7geHhTN4T+ZQOM0bszW7rKuVrrcrAyzZs16NCwszDYCLw3wQrp58vNWlhG3jseg9/gi3DML51MrxBDcq47uZ5mBd/O8YrH4FXjWQ7ZR+TQ5qmVjcuvtBjHxCwPudkvziLwIbcoJ34F7hC0vIQMvzS/8l4lwyr8hdWTgnhGawIxQmWSKWCz6P5FIVBOpkR+pKgqrqtbJX3/Q4XoIKi2u5XNO080/KHugr3MikYWlZPPnzx/M/z4mWoR2FYVl8mM6KSkpeDTdFo/gAdfpqfLz+8tiP8czBtq6P8Q8L2o0mo02qNUBaF2m+ojVeCOIYDXfgB7sVzhffIQ/2rhctcusp/rfzbO6u7u/DmU7i8eiZqcFoFq9apb9GBdYq0chNLB91orXeqMtudQXdS2uHLtieAknwUvWcKvYEqdv8mMvciUq5oF3iVVVVY9DbMFA8GqAt/qifSXhD8SJ0UGnp6RIy7YWxqTiTzJpaWkam0vy9ECfTlQ1cKz2Q9Qy4o7dBriEifz5IRKvpsJ5zAEcqyC7UXlearX6TbAUp5q79wHgntTltUb6b63zwTWHSKXS/bbvdykyVJHPGPH3u7uxzgsWLMCxXKOnhytakC5FUKZx+FONXXD/d4DvavO3SxHCg6A1rOQ5/nhlZeVj4JKjIQz4AtzqWft6CvT3RuPi5b9OGh1g/HZ17Oi9xbJXSLDVErjGxcX1h3hneGpqaoSPUJiSlhydPHuiJnzRxyq39Znql01L/PF3QCcIot+D7ncKxEQp/zedTjCbFO/YX2vJkiXP4OM4eQhcU2aPkyVZTSrntoJdAOtZcJ1jcN5JibKUbwsj/La2MZ8Kx0fgxhJwvpmpQSmVBbR36wD/VsKfg6Kiot7F5wsFzimLJwel1LPKf9m73KSkpFf4cqfG+qRYSrWC1nPQ4Nl6gVt+GToCArC0URKxOGVCSnTyrHGUevmc6GEbl1H9y1v1RomuW7BeAsGAPtnZ6X3wx1l046BpzwEDBvTBKSPBr3dblog/jpNWK+iDbt6D6sbnwx+8+a5/W2Nnd5jvVurBXyM7XdBHd2O5rx3XwvPfqteHLTPuHQsEAls9VS2J6UXIISIiIiIiIiIiIiIiIiLqcOEPwW19DL5VFx7y3252Rbf09D+2bq+ioqKvXO71eHKy/KnseUlPVOiS+95N+YgcQDExMQ9/Mm1McD3L+N4hVH0+/ijNz7SImV13kxkROp3ucZM+e/AuY6Lkbkbdc3JyXktOTs4UCATlzs7OFa6uLpWeHm4Vk5Lp8q350fMf6EUPXU35+fn/oEJEJ7YVRHxT32pkvrXUavUjFEXFTB4btn/jCs0W+xkHduD1wLMg4qND6suWMpvrDNQ/7wDWF5VK5QIvL68jrq6uDXgKNqSmlm+ijW5uLo2KIOHFb1ePrqu3mz5D5MCaOXNmmrvABU1Okl60lkZ+XtXyOai1wJL0DQ4OjoOGPjc9Vd5UbRix+CCreq51PplM1l8oFBZJA/2RLkN9zswywlvdf+HChYN9fHx28LM2nJ1tU174xbdXeMgSY2RNlavo6vJswROk1bqGK7TN1/L3dUeZ0xWnrSbNB633ccBTZuRyeSI/JXnuRNnV+tLw+Nbf5/Dq4/Dw8CiwPLaZBYunKNA+Q3hKlelGWHGcNmXKlCF+fn5bm2dYuCF5kOeVnIyUfXUbJnxq20+itnbgyJEjP5EGeG8vXaj8qr5Q8SppsS6g7OzsPvZ7K8RHBjVtyYv9plancua/z40fP/5PiYmJE/BSLtsyen9vtOIT6ozFxKhaXw8vj/f19d3JX2/62GC8CCK/ukT6bBuW6i9g3XLxTFZPDwH65MOoS1VFEV/sunGpVo8MP7/e9Rl+vZETCeC7hKZNm9bffkqJm5srmjRaenVzjjrHYtAOgIZ/CdzffHd39/N8HoVUiArnqQ5bDOoA+2tptdo+ECfNsAc1OSYIlWfTN8zHwrNRpVIp7eHh8TNe4DE+IRhVrApbg5d3Nfc4Ue/jteX9jh//fTpcAb3DdLJDjMNLo9G813rym0TkhRZ8HHpKv0Azx99PuAJ+u2B/HC+x/3J52B5zqyAaYrXBEFudss+rkIlQ2RLq1N5i1Rv2edPS0v4KAX4eXkUtDRAidjF1rsZAe+PhiaSkpBckEskUiNE+CZZKfpe2FcZNrykMIu7Q0cVPBPQAV6SmZNeBCPJCkbTfWQjqbZPp1Er/a8fitL5o80r1Wvu1hwDDEwDD2pYtkZBcKmrZqsgNFcynrlbr6RD7cS/oWbpCwI7n3KNpaWq0vShqHb/aZ9KkSSI+kLdPfr5CvDjistX0e0iJHFDR0dGLbbNPfdzRgqlhV2PDRJfstjqypUjaBxVkxJy6vtuMGFWXRGbax0JxcXExOFYSgCsdGy+/8u9ximtW7rPJDNq9WrPKbrJfd09PT384ZnOvWbM0yLpmxEf8msGEhISZbU0jDgn0Rt/kqk5X5fs/Q1rOwQXuaE+z+3NHa5dFHMmcFW4UiUQ/Nu9H5YImJNFN65cqK+dNHbmAt0DTPgi+zJVqPuSXnkFP8FWIlQ7wm3Asnqr4aca40AqwSLap06OjAtG3+fR/dhuC+GGC7sOGDQvkXezi6Rq0rzR2Zn0Zbds2ae3atYLMRXNjshfPHTVn5sf/Dg0Jtk1zHhUugTiM/p7PR+SgggD5aYDndPNueB5oR1HUrm05mqEA1mSBm9vFcQmKxq2rNFVgSf4aEaFdaANQ7AUWhj5uZelo/joQsC9qWVVts3TYfbq6DG/gF3zIArzA0ih/q9X5/5UfZoAOgYjfiSZllAJtWRlmtrbMPccDrHhmLEJVveLiYv0DAgIO2vaIGBOCdhQwldW53o+Q1nNgQeOC4Rhma9zQQI+mujURX+FGi4iIeH1skjZ9c45mRX2ezPYJRaVS2eInrUqMKlcn7sOLQPHv8+fPF0KP8YdbrRrC6/u+zqabqgtD37ezlO+LxWIMTJObqzPKn0OhPavplEPlv9+IBDoDUQC/Lc6bNykE7SpSZ5Al810gcAdLc8G23c84TYOFpXJulhca2OaOIlRCVJmv+cZsYt7Bu/kBHEa8iBZfI0gsuCJwcz7k5upyECcXF+dTfBCOd5PZq6c+56/HsuyjWq12Ar/ZG15+Nn+y5sIXSzWL0xMl/wgLU7w6ZvRokUwmW8cDqsvQNFpM4ao25r8TOZJCQkLw4tMGbDGWzWTOmI2qj27iMh+DeOkSdnOxam+0W6f+Ynuh5jWwbHEQW/3YvH4woKmuLHrH4YqFA09wxhdPWkv/HB3OTPL09LAtlk0aocT7TRxeEuPUy86F/guvWgaXeOn6EjYhClP6N8iCxCfcBYKr/N6jCqnwyppFKgtnpF8nLefgUqvVq/BKaE93F7Q5L+Y4Z6TotvKtXLlSyLu0hHAfVGtQF0xMCXPlN02TSoSobKn6F7zE3f68rKwsP7lcbtvIxM/bDe0sUqO9q66v4cOuLioqSgBWqVAgEJxs7U7xfqmyAGFjDOP7Q84nzOpaQ2QAWa7VBSSRSLDFKvHycDFuL9JmWfWKt9vKFxsbK4VYzOjq6mL8KFFWYmU18aHBgSJwYzn494mJIcYaPT2j9Xk//PDDi2AV03EeCOiNFSspY+sFrhguvN13YGBgArjbpZ6enquhTMagAD+DKkSUP2Oc8rMNy7RqPMZF5mN1EeGFpUOHDh3oOmTIoG8LlANuFhSnpKQ8MwTyCIWugwqXpL5aXxaO94Ow/YbTZ5OCB1nzVc+04UK7gyV6ns+3YXnwoJv16HDe8ePHPw1W9GVwjYPmpicP1GdGvVSfRz+WTj7hEBERERER/bfr/wFjh1WlEl3bgAAAAABJRU5ErkJggg=="
-
-/***/ }),
-
-/***/ "wRaC":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("4quz")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"blue-grey"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Info\n        "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Buy\n        "),_c('v-icon',[_vm._v("add_shopping_cart")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Sell\n        "),_c('v-icon',[_vm._v("attach_money")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Play\n        "),_c('v-icon',[_vm._v("casino")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('div',[_c('img',{staticStyle:{"height":"auto","width":"25%"},attrs:{"src":__webpack_require__("U8Q/")}})]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("This is heavy, Doc!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                    Going straight to the point: Do not expect any commitment from us.\n                    "),_c('br'),_c('br'),_vm._v("\n            \t\t    Yeah, that's right. We're here just for the fun!\n            \t\t    "),_c('br'),_c('br'),_vm._v("\n            \t\t    Please feel home and browse around. You may have great surprises in our lotteries!\n                    "),_c('br'),_c('br'),_c('br'),_c('br'),_vm._v(" "),_c('small',[_c('b',[_vm._v("Disclaimer")]),_vm._v(" "),_c('br'),_vm._v("\n                      HTMLCoin Foundation has reviewed and approved this application's code, having Althash Web Platform as a proud host, however the Foundation is not responsible for any funds transacted within this application scope.\n                      "),_c('br'),_vm._v("\n                      By using this application you agree on this terms.\n                    ")])]),_vm._v(" "),_c('br'),_c('br')])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-container',{attrs:{"fluid":"","grid-list-lg":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":"","text-xs-right":""}},[_c('v-btn',{attrs:{"fab":"","color":"info","disabled":_vm.buyBank},on:{"click":function($event){_vm.buyBank = true; _vm.buyUsers = false}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("account_balance")])],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","text-xs-left":""}},[_c('v-btn',{attrs:{"fab":"","color":"error","disabled":_vm.buyUsers},on:{"click":function($event){_vm.buyBank = false; _vm.buyUsers = true}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("assessment")])],1)],1),_vm._v(" "),(_vm.buyBank)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-bold"},[_vm._v("FROM BANK")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                          Current price per token: "),_c('b',[_vm._v("1 HTML")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"How much to spend","outline":"","suffix":"HTML","background-color":"blue-grey darken-3"},model:{value:(_vm.buyFromBankAmount),callback:function ($$v) {_vm.buyFromBankAmount=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"buyFromBankAmount"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",on:{"click":_vm.buyFromBank}},[_vm._v("Buy!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1):_vm._e(),_vm._v(" "),(_vm.buyUsers)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-bold"},[_vm._v("FROM MARKET")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Who to buy from","outline":"","background-color":"blue-grey darken-3"},model:{value:(_vm.buyFromUserAddress),callback:function ($$v) {_vm.buyFromUserAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"buyFromUserAddress"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                          Current price per token: "),_c('b',[_vm._v("2 HTML")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"How much to spend","outline":"","suffix":"HTML","background-color":"blue-grey darken-3"},model:{value:(_vm.buyFromUserAmount),callback:function ($$v) {_vm.buyFromUserAmount=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"buyFromUserAmount"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",on:{"click":_vm.buyFromUser}},[_vm._v("Buy!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Price per token","outline":"","suffix":"HTML","background-color":"blue-grey darken-3"},model:{value:(_vm.sellPricePerToken),callback:function ($$v) {_vm.sellPricePerToken=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"sellPricePerToken"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Token quantity","outline":"","background-color":"blue-grey darken-3"},model:{value:(_vm.sellTokenQty),callback:function ($$v) {_vm.sellTokenQty=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"sellTokenQty"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",on:{"click":_vm.sell}},[_vm._v("Sell!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-tab-item',[_c('v-container',{attrs:{"fluid":"","grid-list-lg":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":"","text-xs-right":""}},[_c('v-btn',{attrs:{"fab":"","color":"success","disabled":_vm.playLottery},on:{"click":function($event){_vm.playLottery = true; _vm.playUpForGrabs = false}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("monetization_on")])],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","text-xs-left":""}},[_c('v-btn',{attrs:{"fab":"","color":"warning","disabled":_vm.playUpForGrabs},on:{"click":function($event){_vm.playLottery = false; _vm.playUpForGrabs = true}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("directions_run")])],1)],1),_vm._v(" "),(_vm.playLottery)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('div',{staticClass:"py-3 display-2 font-weight-light"},[_vm._v("LOTTERY")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-card',{staticClass:"py-3 white--text",attrs:{"color":"blue-grey","height":"100%"}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":"","align-center":""}},[_c('img',{staticStyle:{"width":"75%","max-width":"85px","height":"auto","max-height":"85px"},attrs:{"src":__webpack_require__("owsU")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-black"},[_vm._v("BIFP Lottery")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Status: "),_c('span',{staticClass:"subheading font-weight-bold green--text"},[_vm._v("On")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Prize: "),_c('span',{staticClass:"subheading font-weight-bold"},[_vm._v("1,000 BIFP*")])]),_vm._v(" "),_c('v-flex',[_vm._v("\n                              Bets between "),_c('b',[_vm._v("0 and 100 BIFP")])])],1)],1)],1)],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-card',{staticClass:"py-3 white--text",attrs:{"color":"blue darken-1","height":"100%"}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":"","align-center":""}},[_c('img',{staticStyle:{"width":"75%","max-width":"64px","height":"auto","max-height":"85px"},attrs:{"src":__webpack_require__("aR/i")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-black"},[_vm._v("HTMLCoin Lottery")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Status: "),_c('span',{staticClass:"subheading font-weight-bold green--text"},[_vm._v("On")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                              Prize: "),_c('span',{staticClass:"subheading font-weight-bold"},[_vm._v("100,000 HTML*")])]),_vm._v(" "),_c('v-flex',[_vm._v("\n                              Bets between "),_c('b',[_vm._v("100 and 1000 BIFP")])])],1)],1)],1)],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Your bet","outline":"","suffix":"BIFP","background-color":"teal darken-4"},model:{value:(_vm.lotteryBet),callback:function ($$v) {_vm.lotteryBet=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"lotteryBet"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Your lucky number","outline":"","background-color":"teal darken-4"},model:{value:(_vm.lotteryLuckyNumber),callback:function ($$v) {_vm.lotteryLuckyNumber=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"lotteryLuckyNumber"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",on:{"click":_vm.runLottery}},[_vm._v("I'm feeling lucky!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('span',{staticClass:"caption"},[_vm._v("* Prize pots are subject to constant fluctuation as several players run for the same prize, simultaneously and asynchronously. Such changes may not be reflected on this page.")]),_vm._v(" "),_c('v-spacer')],1)],1)],1):_vm._e(),_vm._v(" "),(_vm.playUpForGrabs)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"display-2 font-weight-light"},[_vm._v("UP FOR GRABS")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"How much to play","outline":"","background-color":"teal darken-4","suffix":"BIFP"},model:{value:(_vm.upForGrabsBet),callback:function ($$v) {_vm.upForGrabsBet=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"upForGrabsBet"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",on:{"click":_vm.buyFromUser}},[_vm._v("The cookie is mine!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1):_vm._e()],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n            "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n          ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","width":"600px"},model:{value:(_vm.txReceiptDialog),callback:function ($$v) {_vm.txReceiptDialog=$$v},expression:"txReceiptDialog"}},[_c('v-card',{attrs:{"color":"blue-grey lighten-5"}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[(this.awaitingTx)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title blue--text"},[_vm._v("\n                Transaction broadcasted to the "),_c('b',[_vm._v("Althash Blockchain")]),_vm._v("!\n              ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n              Awaiting confirmation from the network...\n            ")]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-progress-linear',{attrs:{"indeterminate":true,"color":"blue"}})],1)],1):_vm._e(),_vm._v(" "),(this.txError)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"red--text"},[_c('p'),_c('h1',[_vm._v("Unsuccessful")]),_vm._v(" "),_c('p'),_vm._v(" "),_c('p',[_vm._v(" \n                  There was an error while running your transaction.\n                ")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{attrs:{"color":"error"},on:{"click":function($event){_vm.txError = false; _vm.txReceiptDialog = false}}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e(),_vm._v(" "),(this.txConfirmed)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[(this.lotteryWin)?_c('v-flex',{attrs:{"xs12":""}},[_c('img',{attrs:{"src":__webpack_require__("+D9K")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold"},[_vm._v("\n                You have just won "+_vm._s(this.lotteryRewardAmount)+" "+_vm._s(this.lotteryType)+"!\n              ")]),_vm._v(" "),_c('p',[_vm._v("\n                Are you sure you haven't seen any almanac around?\n              ")])]):_c('v-flex',{attrs:{"xs12":""}},[_c('img',{attrs:{"src":__webpack_require__("t7Gd")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold orange--text"},[_vm._v("\n                Not this time, McFly...\n              ")]),_vm._v(" "),_c('p',[_vm._v("\n                Your \"lucky\" number was "),_c('b',[_vm._v(_vm._s(this.lotteryLuckyNumber))]),_vm._v(", but the drawn number was "),_c('b',[_vm._v(_vm._s(this.drawnNumber))]),_vm._v(".\n              ")]),_vm._v(" "),_c('p',[_vm._v("\n                So why don't you make like a tree... and get outta here?!\n              ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{staticClass:"grey--text",attrs:{"flat":""},on:{"click":function($event){_vm.txConfirmed = false; _vm.txReceiptDialog = false}}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e()],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -11116,4 +11622,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.d4550aab4787332dd9fb.js.map
+//# sourceMappingURL=app.64c3c6b031146ef6df19.js.map
