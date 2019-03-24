@@ -95293,9 +95293,9 @@ function selectTxs(unspentTransactions, amount, fee) {
         var tx = matureList[i]
         findTotal = findTotal.plus(tx.value)
         find[find.length] = tx
-        if (findTotal.greaterThanOrEqualTo(value)) break
+        if (findTotal.isGreaterThanOrEqualTo(value)) break
     }
-    if (value.greaterThan(findTotal)) {
+    if (value.isGreaterThan(findTotal)) {
         throw new Error('You do not have enough HTML to send')
     }
     return find
@@ -95348,7 +95348,7 @@ function buildPubKeyHashTransaction(keyPair, to, amount, fee, utxoList) {
 function buildCreateContractTransaction(keyPair, code, gasLimit, gasPrice, fee, utxoList) {
     var from = keyPair.getAddress()
     var amount = 0
-    fee = new BigNumber(gasLimit).times(gasPrice).div(1e8).add(fee).toNumber()
+    fee = new BigNumber(gasLimit).times(gasPrice).div(1e8).plus(fee).toNumber()
     var inputs = selectTxs(utxoList, amount, fee)
     var tx = new bitcoinjs.TransactionBuilder(keyPair.network)
     var totalValue = new BigNumber(0)
@@ -95390,7 +95390,7 @@ function buildCreateContractTransaction(keyPair, code, gasLimit, gasPrice, fee, 
 function buildSendToContractTransaction(keyPair, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList) {
     var from = keyPair.getAddress()
     var amount = 0
-    fee = new BigNumber(gasLimit).times(gasPrice).div(1e8).add(fee).toNumber()
+    fee = new BigNumber(gasLimit).times(gasPrice).div(1e8).plus(fee).toNumber()
     var inputs = selectTxs(utxoList, amount, fee)
     var tx = new bitcoinjs.TransactionBuilder(keyPair.network)
     var totalValue = new BigNumber(0)
@@ -99523,4 +99523,4 @@ exports.default = function (self, call) {
 /***/ })
 
 });
-//# sourceMappingURL=vendor.a8d7133bbd2a691463c0.js.map
+//# sourceMappingURL=vendor.7816889171b50c6a2742.js.map
