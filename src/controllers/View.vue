@@ -90,7 +90,7 @@ export default {
         { label: 'unconfirmed_balance', name: 'unconfirmedBalance' },
       ],
       wallet: webWallet.getWallet(),
-      showPriv: false,
+      showPriv: false
     }
   },
   props: ['view'],
@@ -116,6 +116,7 @@ export default {
     },
     async refreshWallet(){
       this.wallet.setInfo()
+      this.wallet.setHrc20()
     }
   }
 }

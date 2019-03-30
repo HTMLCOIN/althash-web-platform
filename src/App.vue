@@ -33,13 +33,13 @@
           <img src="~assets/images/crypticmag_menu_btn.png" style="height:35px;width:auto;">
         </v-btn>
       </v-menu>
-      <v-menu bottom open-on-hover offset-y
+      <!--v-menu bottom open-on-hover offset-y
               nudge-width="100"              
               key="biffyPlutonium" >
         <v-btn icon large dark slot="activator" @click="openDapp('dapp_biffyplutonium')">
           <img src="~assets/images/BIFP_menu_btn.png" style="height:35px;width:auto;">
         </v-btn>
-      </v-menu>
+      </v-menu-->
       <v-spacer></v-spacer>
       <v-tooltip bottom>
         <v-btn icon dark slot="activator" @click="changeView('home')">
