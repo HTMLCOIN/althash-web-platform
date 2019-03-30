@@ -33,6 +33,13 @@
           <img src="~assets/images/crypticmag_menu_btn.png" style="height:35px;width:auto;">
         </v-btn>
       </v-menu>
+      <!--v-menu bottom open-on-hover offset-y
+              nudge-width="100"              
+              key="biffyPlutonium" >
+        <v-btn icon large dark slot="activator" @click="openDapp('dapp_biffyplutonium')">
+          <img src="~assets/images/BIFP_menu_btn.png" style="height:35px;width:auto;">
+        </v-btn>
+      </v-menu-->
       <v-spacer></v-spacer>
       <v-tooltip bottom>
         <v-btn icon dark slot="activator" @click="changeView('home')">
@@ -99,6 +106,7 @@
               <dapp-myoffspring v-if="isCurrent['dapp_myoffspring']"></dapp-myoffspring>
               <dapp-crypticmag v-if="isCurrent['dapp_crypticmag']"></dapp-crypticmag>
               <dapp-alt-proof v-if="isCurrent['dapp_altproof']"></dapp-alt-proof>
+              <dapp-biffy-plutonium v-if="isCurrent['dapp_biffyplutonium']"></dapp-biffy-plutonium>
               <config v-if="isCurrent['settings']"></config>
             </v-flex>
           </v-layout>
@@ -168,6 +176,7 @@ import CreateToken from "controllers/CreateToken";
 import DappMyoffspring from "controllers/Dapp-MyOffspring";
 import DappCrypticmag from "controllers/Dapp-CrypticMAG";
 import DappAltProof from "controllers/Dapp-AltProof";
+import DappBiffyPlutonium from "controllers/Dapp-BiffyPlutonium";
 import CreateContract from "controllers/CreateContract";
 import SendToContract from "controllers/SendToContract.vue";
 import CallContract from "controllers/CallContract.vue";
@@ -334,6 +343,7 @@ export default {
         dapp_myoffspring: this.mode === "offline" || !this.wallet,
         dapp_crypticmag: this.mode === "offline" || !this.wallet,
         dapp_altproof: this.mode === "offline" || !this.wallet,
+        dapp_biffyplutonium: this.mode === "offline" || !this.wallet,
         dapps: this.mode === "offline" || !this.wallet
       };
     },
@@ -369,6 +379,7 @@ export default {
     DappMyoffspring,
     DappCrypticmag,
     DappAltProof,
+    DappBiffyPlutonium,
     CreateContract,
     SendToContract,
     CallContract,

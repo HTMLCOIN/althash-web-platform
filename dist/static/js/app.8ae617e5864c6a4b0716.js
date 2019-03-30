@@ -1,5 +1,12 @@
 webpackJsonp([1],{
 
+/***/ "+D9K":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/images/biffy_win.583c0bf.png";
+
+/***/ }),
+
 /***/ "+Udk":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -149,21 +156,21 @@ module.exports = {"secp128r1":{"p":"fffffffdffffffffffffffffffffffff","a":"fffff
 
 /***/ }),
 
-/***/ "14ga":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"light":""}},[_c('v-toolbar',{class:_vm.headerClass,attrs:{"app":"","fixed":"","height":"82px","clipped-left":""}},[_c('span',{staticClass:"title"},[_c('span',{staticClass:"text"},[_c('img',{staticClass:"cursor",attrs:{"src":__webpack_require__("XXFI"),"alt":"Althash Web Platform Logo"},on:{"click":function($event){_vm.changeView('home')}}})])]),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('v-menu',{key:"myOffspring",attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":"100"}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":"","dark":""},on:{"click":function($event){_vm.openDapp('dapp_myoffspring')}},slot:"activator"},[_c('img',{staticStyle:{"height":"35px","width":"auto"},attrs:{"src":__webpack_require__("a4SW")}})])],1),_vm._v(" "),_c('v-menu',{key:"TokenFarm",attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":"100"}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":"","dark":""},on:{"click":function($event){_vm.openDapp('create_token')}},slot:"activator"},[_c('img',{staticStyle:{"height":"35px","width":"auto"},attrs:{"src":__webpack_require__("GzeU")}})])],1),_vm._v(" "),_c('v-menu',{key:"AltProof",attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":"100"}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":"","dark":""},on:{"click":function($event){_vm.openDapp('dapp_altproof')}},slot:"activator"},[_c('img',{staticStyle:{"height":"35px","width":"auto"},attrs:{"src":__webpack_require__("ib+S")}})])],1),_vm._v(" "),_c('v-menu',{key:"CrypticMAG",attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":"100"}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":"","dark":""},on:{"click":function($event){_vm.openDapp('dapp_crypticmag')}},slot:"activator"},[_c('img',{staticStyle:{"height":"35px","width":"auto"},attrs:{"src":__webpack_require__("5EIY")}})])],1),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('v-tooltip',{attrs:{"bottom":""}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","dark":""},on:{"click":function($event){_vm.changeView('home')}},slot:"activator"},[_c('v-icon',[_vm._v("home")])],1),_vm._v(" "),_c('span',[_vm._v("Home")])],1),_vm._v(" "),_vm._l((_vm.items),function(item){return _c('v-menu',{directives:[{name:"show",rawName:"v-show",value:(!_vm.notShow[item.name]),expression:"!notShow[item.name]"}],key:item.title,attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":100}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","dark":""},slot:"activator"},[_c('v-icon',[_vm._v(_vm._s(item.action))])],1),_vm._v(" "),_c('v-list',{attrs:{"subheader":""}},[_c('v-subheader',[_vm._v(_vm._s(item.title))]),_vm._v(" "),_vm._l((item.items),function(subItem){return _c('v-list-tile',{directives:[{name:"show",rawName:"v-show",value:(!_vm.notShow[subItem.name]),expression:"!notShow[subItem.name]"}],key:subItem.title,on:{"click":function($event){_vm.changeView(subItem.name)}}},[_c('v-list-tile-content',[_c('v-list-tile-title',{staticClass:"body-2"},[_vm._v(_vm._s(subItem.title))])],1),_vm._v(" "),_c('v-list-tile-action',[_c('v-icon',[_vm._v(_vm._s(subItem.action))])],1)],1)})],2)],1)}),_vm._v(" "),_c('v-tooltip',{directives:[{name:"show",rawName:"v-show",value:(_vm.showLogoff),expression:"showLogoff"}],attrs:{"bottom":""}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","dark":""},on:{"click":function($event){$event.stopPropagation();_vm.logoff_dialog = true}},slot:"activator"},[_c('v-icon',[_vm._v("power_settings_new")])],1),_vm._v(" "),_c('span',[_vm._v("Log off")])],1)],2),_vm._v(" "),_c('main',[_c('v-content',[_c('v-container',{attrs:{"fluid":"","fill-height":"","justify-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs10":"","offset-xs1":""}},[_c('home',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['home']),expression:"isCurrent['home']"}],on:{"openDapp":_vm.openDapp}}),_vm._v(" "),_c('create-wallet',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['create']),expression:"isCurrent['create']"}],attrs:{"view":_vm.isCurrent['create']},on:{"created":_vm.setWallet}}),_vm._v(" "),_c('create-mnemonic',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['create_from_mnemonic']),expression:"isCurrent['create_from_mnemonic']"}],attrs:{"view":_vm.isCurrent['create_from_mnemonic']},on:{"created":_vm.setWallet}}),_vm._v(" "),_c('restore-wallet',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['restore_from_mnemonic']),expression:"isCurrent['restore_from_mnemonic']"}],on:{"restored":_vm.setWallet}}),_vm._v(" "),_c('restore-wif',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['restore_from_wif']),expression:"isCurrent['restore_from_wif']"}],on:{"restored":_vm.setWallet}}),_vm._v(" "),_c('restore-mobile',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['restore_from_mobile']),expression:"isCurrent['restore_from_mobile']"}],on:{"restored":_vm.setWallet}}),_vm._v(" "),_c('restore-key-file',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['restore_from_key_file']),expression:"isCurrent['restore_from_key_file']"}],on:{"restored":_vm.setWallet}}),_vm._v(" "),(_vm.isCurrent['restore_from_ledger'])?_c('restore-ledger',{on:{"restored":_vm.setWallet}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['view'])?_c('view-wallet',{attrs:{"view":_vm.isCurrent['view']}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['transactions'])?_c('view-tx',{attrs:{"view":_vm.isCurrent['transactions']}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['safe_send'])?_c('safe-send',{on:{"send":_vm.setWallet}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['send'])?_c('send',{on:{"send":_vm.setWallet}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['request_payment'])?_c('request-payment'):_vm._e(),_vm._v(" "),(_vm.isCurrent['dump_as_key_file'])?_c('dump-key-file'):_vm._e(),_vm._v(" "),(_vm.isCurrent['create_contract'])?_c('create-contract'):_vm._e(),_vm._v(" "),(_vm.isCurrent['send_to_contract'])?_c('send-to-contract'):_vm._e(),_vm._v(" "),(_vm.isCurrent['call_contract'])?_c('call-contract'):_vm._e(),_vm._v(" "),(_vm.isCurrent['create_token'])?_c('create-token'):_vm._e(),_vm._v(" "),(_vm.isCurrent['dapp_myoffspring'])?_c('dapp-myoffspring'):_vm._e(),_vm._v(" "),(_vm.isCurrent['dapp_crypticmag'])?_c('dapp-crypticmag'):_vm._e(),_vm._v(" "),(_vm.isCurrent['dapp_altproof'])?_c('dapp-alt-proof'):_vm._e(),_vm._v(" "),(_vm.isCurrent['settings'])?_c('config'):_vm._e()],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"max-width":"290"},model:{value:(_vm.logoff_dialog),callback:function ($$v) {_vm.logoff_dialog=$$v},expression:"logoff_dialog"}},[_c('v-card',[_c('v-card-title',{staticClass:"headline"},[_vm._v("Log off?")]),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{attrs:{"color":"red darken-1","flat":"flat"},on:{"click":function($event){_vm.logoff_dialog = false}}},[_vm._v("\n            No\n          ")]),_vm._v(" "),_c('v-btn',{attrs:{"color":"green darken-1","flat":"flat"},on:{"click":_vm.logoff}},[_vm._v("\n            Yes\n          ")])],1)],1)],1),_vm._v(" "),_c('notify'),_vm._v(" "),_c('warning')],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "1QQ/":
 /***/ (function(module, exports) {
 
-module.exports = {"_from":"bigi@^1.4.0","_id":"bigi@1.4.2","_inBundle":false,"_integrity":"sha1-nGZalfiLiwj8Bc/XMfVhhZ1yWCU=","_location":"/bigi","_phantomChildren":{},"_requested":{"type":"range","registry":true,"raw":"bigi@^1.4.0","name":"bigi","escapedName":"bigi","rawSpec":"^1.4.0","saveSpec":null,"fetchSpec":"^1.4.0"},"_requiredBy":["/bitcoinjs-lib","/ecurve"],"_resolved":"https://registry.npmjs.org/bigi/-/bigi-1.4.2.tgz","_shasum":"9c665a95f88b8b08fc05cfd731f561859d725825","_spec":"bigi@^1.4.0","_where":"/var/www/html/althash-web-platform/node_modules/bitcoinjs-lib","bugs":{"url":"https://github.com/cryptocoinjs/bigi/issues"},"bundleDependencies":false,"dependencies":{},"deprecated":false,"description":"Big integers.","devDependencies":{"coveralls":"^2.11.2","istanbul":"^0.3.5","jshint":"^2.5.1","mocha":"^2.1.0","mochify":"^2.1.0"},"homepage":"https://github.com/cryptocoinjs/bigi#readme","keywords":["cryptography","math","bitcoin","arbitrary","precision","arithmetic","big","integer","int","number","biginteger","bigint","bignumber","decimal","float"],"main":"./lib/index.js","name":"bigi","repository":{"url":"git+https://github.com/cryptocoinjs/bigi.git","type":"git"},"scripts":{"browser-test":"mochify --wd -R spec","coverage":"istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js","coveralls":"npm run-script coverage && node ./node_modules/.bin/coveralls < coverage/lcov.info","jshint":"jshint --config jshint.json lib/*.js ; true","test":"_mocha -- test/*.js","unit":"mocha"},"testling":{"files":"test/*.js","harness":"mocha","browsers":["ie/9..latest","firefox/latest","chrome/latest","safari/6.0..latest","iphone/6.0..latest","android-browser/4.2..latest"]},"version":"1.4.2"}
+module.exports = {"_args":[["bigi@1.4.2","/var/www/html/althash-web-platform"]],"_development":true,"_from":"bigi@1.4.2","_id":"bigi@1.4.2","_inBundle":false,"_integrity":"sha1-nGZalfiLiwj8Bc/XMfVhhZ1yWCU=","_location":"/bigi","_phantomChildren":{},"_requested":{"type":"version","registry":true,"raw":"bigi@1.4.2","name":"bigi","escapedName":"bigi","rawSpec":"1.4.2","saveSpec":null,"fetchSpec":"1.4.2"},"_requiredBy":["/bitcoinjs-lib","/ecurve","/htmlcoinjs-lib/bitcoinjs-lib"],"_resolved":"https://registry.npmjs.org/bigi/-/bigi-1.4.2.tgz","_spec":"1.4.2","_where":"/var/www/html/althash-web-platform","bugs":{"url":"https://github.com/cryptocoinjs/bigi/issues"},"dependencies":{},"description":"Big integers.","devDependencies":{"coveralls":"^2.11.2","istanbul":"^0.3.5","jshint":"^2.5.1","mocha":"^2.1.0","mochify":"^2.1.0"},"homepage":"https://github.com/cryptocoinjs/bigi#readme","keywords":["cryptography","math","bitcoin","arbitrary","precision","arithmetic","big","integer","int","number","biginteger","bigint","bignumber","decimal","float"],"main":"./lib/index.js","name":"bigi","repository":{"url":"git+https://github.com/cryptocoinjs/bigi.git","type":"git"},"scripts":{"browser-test":"mochify --wd -R spec","coverage":"istanbul cover ./node_modules/.bin/_mocha -- --reporter list test/*.js","coveralls":"npm run-script coverage && node ./node_modules/.bin/coveralls < coverage/lcov.info","jshint":"jshint --config jshint.json lib/*.js ; true","test":"_mocha -- test/*.js","unit":"mocha"},"testling":{"files":"test/*.js","harness":"mocha","browsers":["ie/9..latest","firefox/latest","chrome/latest","safari/6.0..latest","iphone/6.0..latest","android-browser/4.2..latest"]},"version":"1.4.2"}
+
+/***/ }),
+
+/***/ "1XNJ":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('call_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":""},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"ABI","required":"","multiLine":""},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","single-line":"","bottom":""},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e()],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.callTo}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.execResultDialog),callback:function ($$v) {_vm.execResultDialog=$$v},expression:"execResultDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('call_contract.result'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Result","disabled":""},model:{value:(_vm.result),callback:function ($$v) {_vm.result=$$v},expression:"result"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.execResultDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -292,10 +299,28 @@ var Component = normalizeComponent(
 
 /***/ }),
 
+/***/ "4Em+":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("gaNr")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"green"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Info\n        "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        New Token\n        "),_c('v-icon',[_vm._v("local_florist")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to TokenFarm!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                  This application allows you to create your own HRC-20 Token on "),_c('b',[_vm._v("AltHash")]),_vm._v(" blockchain, in just a few seconds!\n                  "),_c('br'),_c('br'),_vm._v("\n                  To create a new Token, just click on \"New Token\" menu item, and fill in the details.\n                  "),_c('br'),_c('br'),_vm._v("\n\t\t  After the Transaction is confirmed, you will be able to find your token on the \"View Wallet Info\" option in \"Wallet Functions\" menu. You might need to refresh the browser and re-import your wallet before seeing your Tokens.\n                  "),_c('br'),_c('br')])])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":this.$t('create_token.name'),"required":"","box":""},model:{value:(_vm.name),callback:function ($$v) {_vm.name=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"name"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.symbol'),"required":"","box":""},model:{value:(_vm.symbol),callback:function ($$v) {_vm.symbol=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"symbol"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.decimal'),"required":"","box":""},model:{value:(_vm.decimal),callback:function ($$v) {_vm.decimal=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"decimal"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.total_supply'),"required":"","box":""},model:{value:(_vm.totalSupply),callback:function ($$v) {_vm.totalSupply=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"totalSupply"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                      "+_vm._s(_vm.$t('create_token.confirm'))+"\n                    ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)],1)],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "4Vh3":
 /***/ (function(module, exports) {
 
 module.exports = {"modp1":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a63a3620ffffffffffffffff"},"modp2":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece65381ffffffffffffffff"},"modp5":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca237327ffffffffffffffff"},"modp14":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aacaa68ffffffffffffffff"},"modp15":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a93ad2caffffffffffffffff"},"modp16":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c934063199ffffffffffffffff"},"modp17":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dcc4024ffffffffffffffff"},"modp18":{"gen":"02","prime":"ffffffffffffffffc90fdaa22168c234c4c6628b80dc1cd129024e088a67cc74020bbea63b139b22514a08798e3404ddef9519b3cd3a431b302b0a6df25f14374fe1356d6d51c245e485b576625e7ec6f44c42e9a637ed6b0bff5cb6f406b7edee386bfb5a899fa5ae9f24117c4b1fe649286651ece45b3dc2007cb8a163bf0598da48361c55d39a69163fa8fd24cf5f83655d23dca3ad961c62f356208552bb9ed529077096966d670c354e4abc9804f1746c08ca18217c32905e462e36ce3be39e772c180e86039b2783a2ec07a28fb5c55df06f4c52c9de2bcbf6955817183995497cea956ae515d2261898fa051015728e5a8aaac42dad33170d04507a33a85521abdf1cba64ecfb850458dbef0a8aea71575d060c7db3970f85a6e1e4c7abf5ae8cdb0933d71e8c94e04a25619dcee3d2261ad2ee6bf12ffa06d98a0864d87602733ec86a64521f2b18177b200cbbe117577a615d6c770988c0bad946e208e24fa074e5ab3143db5bfce0fd108e4b82d120a92108011a723c12a787e6d788719a10bdba5b2699c327186af4e23c1a946834b6150bda2583e9ca2ad44ce8dbbbc2db04de8ef92e8efc141fbecaa6287c59474e6bc05d99b2964fa090c3a2233ba186515be7ed1f612970cee2d7afb81bdd762170481cd0069127d5b05aa993b4ea988d8fddc186ffb7dc90a6c08f4df435c93402849236c3fab4d27c7026c1d4dcb2602646dec9751e763dba37bdf8ff9406ad9e530ee5db382f413001aeb06a53ed9027d831179727b0865a8918da3edbebcf9b14ed44ce6cbaced4bb1bdb7f1447e6cc254b332051512bd7af426fb8f401378cd2bf5983ca01c64b92ecf032ea15d1721d03f482d7ce6e74fef6d55e702f46980c82b5a84031900b1c9e59e7c97fbec7e8f323a97a7e36cc88be0f1d45b7ff585ac54bd407b22b4154aacc8f6d7ebf48e1d814cc5ed20f8037e0a79715eef29be32806a1d58bb7c5da76f550aa3d8a1fbff0eb19ccb1a313d55cda56c9ec2ef29632387fe8d76e3c0468043e8f663f4860ee12bf2d5b0b7474d6e694f91e6dbe115974a3926f12fee5e438777cb6a932df8cd8bec4d073b931ba3bc832b68d9dd300741fa7bf8afc47ed2576f6936ba424663aab639c5ae4f5683423b4742bf1c978238f16cbe39d652de3fdb8befc848ad922222e04a4037c0713eb57a81a23f0c73473fc646cea306b4bcbc8862f8385ddfa9d4b7fa2c087e879683303ed5bdd3a062b3cf5b3a278a66d2a13f83f44f82ddf310ee074ab6a364597e899a0255dc164f31cc50846851df9ab48195ded7ea1b1d510bd7ee74d73faf36bc31ecfa268359046f4eb879f924009438b481c6cd7889a002ed5ee382bc9190da6fc026e479558e4475677e9aa9e3050e2765694dfc81f56e880b96e7160c980dd98edd3dfffffffffffffffff"}}
+
+/***/ }),
+
+/***/ "4quz":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/images/logo_BIFP_150.2242100.png";
 
 /***/ }),
 
@@ -569,17 +594,6 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAABVCAYAAAA4
 
 /***/ }),
 
-/***/ "5X/h":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send.send_tokens')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Address","required":""},model:{value:(_vm.address),callback:function ($$v) {_vm.address=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"address"}}),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs9":""}},[_c('v-text-field',{attrs:{"label":"Amount","required":""},model:{value:(_vm.amount),callback:function ($$v) {_vm.amount=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"amount"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs3":""}},[_c('v-select',{attrs:{"items":_vm.tokens,"bottom":""},scopedSlots:_vm._u([{key:"item",fn:function(data){return [_c('v-list-tile-content',[_c('v-list-tile-title',[_vm._v("\n                 "+_vm._s(data.item.text)+_vm._s(data.item.name ? '(' + data.item.name + ')' : '')+"\n                ")]),_vm._v(" "),_c('v-list-tile-sub-title',[_vm._v("\n                 "+_vm._s(data.item.address)+"\n               ")])],1)]}}]),model:{value:(_vm.symbol),callback:function ($$v) {_vm.symbol=$$v},expression:"symbol"}})],1)],1),_vm._v(" "),(_vm.symbol !== 'HTML')?_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=$$v},expression:"gasPrice"}}):_vm._e(),_vm._v(" "),(_vm.symbol !== 'HTML')?_c('v-text-field',{attrs:{"label":"Gas Limit"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=$$v},expression:"gasLimit"}}):_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmAddressDialog),callback:function ($$v) {_vm.confirmAddressDialog=$$v},expression:"confirmAddressDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send.enter_address')))])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Address"},model:{value:(_vm.repeatAddress),callback:function ($$v) {_vm.repeatAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"repeatAddress"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmAddress}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.confirmAddressDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))])],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send.going_to_send'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.amount)+_vm._s(this.symbol))]),_vm._v("\n          "+_vm._s(_vm.$t('send.to_address'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.address))]),_vm._v("\n          "+_vm._s(_vm.$t('common.question_mark'))+"\n        ")],1)]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v("\n          "+_vm._s(_vm.$t('common.confirm'))+"\n        ")]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v("\n          "+_vm._s(_vm.$t('common.cancel'))+"\n        ")]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.addTokenDialog),callback:function ($$v) {_vm.addTokenDialog=$$v},expression:"addTokenDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          Token\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":_vm.$t('send.token_address'),"disabled":_vm.addTokenStep === 2},model:{value:(_vm.addTokenAddress),callback:function ($$v) {_vm.addTokenAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenAddress"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[(_vm.addTokenStep === 2)?_c('v-text-field',{attrs:{"label":"Name","disabled":""},model:{value:(_vm.addTokenName),callback:function ($$v) {_vm.addTokenName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenName"}}):_vm._e()],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[(_vm.addTokenStep === 2)?_c('v-text-field',{attrs:{"label":"Symbol","disabled":""},model:{value:(_vm.addTokenSymbol),callback:function ($$v) {_vm.addTokenSymbol=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenSymbol"}}):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),(_vm.addTokenStep === 1)?_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":"","loading":_vm.addTokenLoading},on:{"click":_vm.searchAddToken}},[_vm._v("\n          "+_vm._s(_vm.$t('common.search'))+"\n        ")]):_vm._e(),_vm._v(" "),(_vm.addTokenStep === 2)?_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmAddToken}},[_vm._v("\n          "+_vm._s(_vm.$t('common.confirm'))+"\n        ")]):_vm._e(),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.addTokenDialog = false}}},[_vm._v("\n          "+_vm._s(_vm.$t('common.cancel'))+"\n        ")]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "5hal":
 /***/ (function(module, exports) {
 
@@ -637,6 +651,13 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOwAAAAyCAYAAABf
     return this.get('mode', 'normal');
   }
 });
+
+/***/ }),
+
+/***/ "6ATI":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -862,7 +883,7 @@ module.exports = {"aes-128-ecb":{"cipher":"AES","key":128,"iv":0,"mode":"ECB","t
       var _this2 = this;
 
       return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
-        var txId;
+        var txId, txViewUrl;
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
@@ -877,25 +898,27 @@ module.exports = {"aes-128-ecb":{"cipher":"AES","key":128,"iv":0,"mode":"ECB","t
 
                 _this2.confirmSendDialog = false;
                 _this2.sending = false;
-                _this2.$root.success('Successful send. You can view at ' + __WEBPACK_IMPORTED_MODULE_4_libs_server__["a" /* default */].currentNode().getTxExplorerUrl(txId));
+                txViewUrl = __WEBPACK_IMPORTED_MODULE_4_libs_server__["a" /* default */].currentNode().getTxExplorerUrl(txId);
+
+                _this2.$root.success('Successful sent! You can follow the transaction on <a href="' + txViewUrl + '" target="_blank">' + txViewUrl + '</a>', true, 0);
                 _this2.$emit('send');
-                _context2.next = 16;
+                _context2.next = 17;
                 break;
 
-              case 11:
-                _context2.prev = 11;
+              case 12:
+                _context2.prev = 12;
                 _context2.t0 = _context2['catch'](1);
 
                 alert(_context2.t0.message || _context2.t0);
                 _this2.$root.log.error('send_to_contract_post_raw_tx_error', _context2.t0.response || _context2.t0.stack || _context2.t0.toString() || _context2.t0);
                 _this2.confirmSendDialog = false;
 
-              case 16:
+              case 17:
               case 'end':
                 return _context2.stop();
             }
           }
-        }, _callee2, _this2, [[1, 11]]);
+        }, _callee2, _this2, [[1, 12]]);
       }))();
     }
   }
@@ -1126,17 +1149,6 @@ __WEBPACK_IMPORTED_MODULE_0_vue__["default"].use(__WEBPACK_IMPORTED_MODULE_1_vue
 
 /***/ }),
 
-/***/ "8x3+":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('view.title')))]),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('v-tooltip',{attrs:{"bottom":""}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":""},on:{"click":_vm.refreshWallet},slot:"activator"},[_c('v-icon',{attrs:{"large":"","color":"blue accent-4"}},[_vm._v("\n\t  refresh\n\t  ")])],1),_vm._v(" "),_c('span',[_vm._v("Refresh")])],1),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-card-text',[_vm._l((_vm.infoLabel),function(item,i){return _c('v-layout',{key:i},[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v("\n            "+_vm._s(_vm.$t('common.info.' + item.label))+"\n          ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"outline":"","readonly":"","single-line":""},model:{value:(_vm.info[item.name]),callback:function ($$v) {_vm.$set(_vm.info, item.name, $$v)},expression:"info[item.name]"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[(item.copy)?_c('v-btn',{directives:[{name:"clipboard",rawName:"v-clipboard:copy",value:(_vm.info[item.name]),expression:"info[item.name]",arg:"copy"},{name:"clipboard",rawName:"v-clipboard:success",value:(_vm.onCopySucc),expression:"onCopySucc",arg:"success"},{name:"clipboard",rawName:"v-clipboard:error",value:(_vm.onCopyError),expression:"onCopyError",arg:"error"}],staticClass:"mt-3",attrs:{"small":"","color":"cyan"}},[_vm._v("\n            "+_vm._s(_vm.$t('common.copy'))+"\n          ")]):_vm._e()],1)],1)}),_vm._v(" "),(_vm.privKey !== null)?_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v("\n            "+_vm._s(_vm.$t('common.info.priv_key'))+"\n          ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"outline":"","readonly":"","single-line":"","type":_vm.showPriv ? 'text' : 'password',"append-icon":_vm.showPriv ? 'visibility_off' : 'visibility'},on:{"click:append":function($event){_vm.showPriv = !_vm.showPriv}},model:{value:(_vm.privKey),callback:function ($$v) {_vm.privKey=$$v},expression:"privKey"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.showPriv),expression:"showPriv"},{name:"clipboard",rawName:"v-clipboard:copy",value:(_vm.privKey),expression:"privKey",arg:"copy"},{name:"clipboard",rawName:"v-clipboard:success",value:(_vm.onCopySucc),expression:"onCopySucc",arg:"success"},{name:"clipboard",rawName:"v-clipboard:error",value:(_vm.onCopyError),expression:"onCopyError",arg:"error"}],staticClass:"mt-3",attrs:{"small":"","color":"cyan"}},[_vm._v("\n            "+_vm._s(_vm.$t('common.copy'))+"\n          ")])],1)],1):_vm._e(),_vm._v(" "),(_vm.wallet.info.hrc20.length > 0)?_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v("\n            HRC20 Tokens\n          ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},_vm._l((_vm.wallet.info.hrc20),function(token,i){return _c('v-card',{key:i,staticStyle:{"border-bottom":"2px solid #000","padding":"15px 10px"},attrs:{"flat":"","tile":"","dark":"","color":'light-blue darken-'+(i%2+3)}},[_c('v-layout',[_c('v-flex',{attrs:{"xs5":""}},[_vm._v(_vm._s(token.contract.name))]),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_vm._v(_vm._s(token.amount / Math.pow(10, token.contract.decimals))+" "+_vm._s(token.contract.symbol))]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('span',{class:_vm.caption},[_vm._v(_vm._s(token.contract.contract_address))])])],1)],1)}))],1):_vm._e()],2)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "90T0":
 /***/ (function(module, exports, __webpack_require__) {
 
@@ -1288,20 +1300,13 @@ module.exports = ["abandon","ability","able","about","above","absent","absorb","
 
 /***/ }),
 
-/***/ "9WOO":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
-
-/***/ }),
-
 /***/ "9Z0V":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Send_vue__ = __webpack_require__("L5P4");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aa3e28b2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Send_vue__ = __webpack_require__("5X/h");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2ae4bf6b_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Send_vue__ = __webpack_require__("a/BK");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -1318,7 +1323,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Send_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_aa3e28b2_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Send_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2ae4bf6b_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Send_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -1666,6 +1671,13 @@ var Ledger = function () {
 /***/ (function(module, exports) {
 
 module.exports = ["abaisser","abandon","abdiquer","abeille","abolir","aborder","aboutir","aboyer","abrasif","abreuver","abriter","abroger","abrupt","absence","absolu","absurde","abusif","abyssal","académie","acajou","acarien","accabler","accepter","acclamer","accolade","accroche","accuser","acerbe","achat","acheter","aciduler","acier","acompte","acquérir","acronyme","acteur","actif","actuel","adepte","adéquat","adhésif","adjectif","adjuger","admettre","admirer","adopter","adorer","adoucir","adresse","adroit","adulte","adverbe","aérer","aéronef","affaire","affecter","affiche","affreux","affubler","agacer","agencer","agile","agiter","agrafer","agréable","agrume","aider","aiguille","ailier","aimable","aisance","ajouter","ajuster","alarmer","alchimie","alerte","algèbre","algue","aliéner","aliment","alléger","alliage","allouer","allumer","alourdir","alpaga","altesse","alvéole","amateur","ambigu","ambre","aménager","amertume","amidon","amiral","amorcer","amour","amovible","amphibie","ampleur","amusant","analyse","anaphore","anarchie","anatomie","ancien","anéantir","angle","angoisse","anguleux","animal","annexer","annonce","annuel","anodin","anomalie","anonyme","anormal","antenne","antidote","anxieux","apaiser","apéritif","aplanir","apologie","appareil","appeler","apporter","appuyer","aquarium","aqueduc","arbitre","arbuste","ardeur","ardoise","argent","arlequin","armature","armement","armoire","armure","arpenter","arracher","arriver","arroser","arsenic","artériel","article","aspect","asphalte","aspirer","assaut","asservir","assiette","associer","assurer","asticot","astre","astuce","atelier","atome","atrium","atroce","attaque","attentif","attirer","attraper","aubaine","auberge","audace","audible","augurer","aurore","automne","autruche","avaler","avancer","avarice","avenir","averse","aveugle","aviateur","avide","avion","aviser","avoine","avouer","avril","axial","axiome","badge","bafouer","bagage","baguette","baignade","balancer","balcon","baleine","balisage","bambin","bancaire","bandage","banlieue","bannière","banquier","barbier","baril","baron","barque","barrage","bassin","bastion","bataille","bateau","batterie","baudrier","bavarder","belette","bélier","belote","bénéfice","berceau","berger","berline","bermuda","besace","besogne","bétail","beurre","biberon","bicycle","bidule","bijou","bilan","bilingue","billard","binaire","biologie","biopsie","biotype","biscuit","bison","bistouri","bitume","bizarre","blafard","blague","blanchir","blessant","blinder","blond","bloquer","blouson","bobard","bobine","boire","boiser","bolide","bonbon","bondir","bonheur","bonifier","bonus","bordure","borne","botte","boucle","boueux","bougie","boulon","bouquin","bourse","boussole","boutique","boxeur","branche","brasier","brave","brebis","brèche","breuvage","bricoler","brigade","brillant","brioche","brique","brochure","broder","bronzer","brousse","broyeur","brume","brusque","brutal","bruyant","buffle","buisson","bulletin","bureau","burin","bustier","butiner","butoir","buvable","buvette","cabanon","cabine","cachette","cadeau","cadre","caféine","caillou","caisson","calculer","calepin","calibre","calmer","calomnie","calvaire","camarade","caméra","camion","campagne","canal","caneton","canon","cantine","canular","capable","caporal","caprice","capsule","capter","capuche","carabine","carbone","caresser","caribou","carnage","carotte","carreau","carton","cascade","casier","casque","cassure","causer","caution","cavalier","caverne","caviar","cédille","ceinture","céleste","cellule","cendrier","censurer","central","cercle","cérébral","cerise","cerner","cerveau","cesser","chagrin","chaise","chaleur","chambre","chance","chapitre","charbon","chasseur","chaton","chausson","chavirer","chemise","chenille","chéquier","chercher","cheval","chien","chiffre","chignon","chimère","chiot","chlorure","chocolat","choisir","chose","chouette","chrome","chute","cigare","cigogne","cimenter","cinéma","cintrer","circuler","cirer","cirque","citerne","citoyen","citron","civil","clairon","clameur","claquer","classe","clavier","client","cligner","climat","clivage","cloche","clonage","cloporte","cobalt","cobra","cocasse","cocotier","coder","codifier","coffre","cogner","cohésion","coiffer","coincer","colère","colibri","colline","colmater","colonel","combat","comédie","commande","compact","concert","conduire","confier","congeler","connoter","consonne","contact","convexe","copain","copie","corail","corbeau","cordage","corniche","corpus","correct","cortège","cosmique","costume","coton","coude","coupure","courage","couteau","couvrir","coyote","crabe","crainte","cravate","crayon","créature","créditer","crémeux","creuser","crevette","cribler","crier","cristal","critère","croire","croquer","crotale","crucial","cruel","crypter","cubique","cueillir","cuillère","cuisine","cuivre","culminer","cultiver","cumuler","cupide","curatif","curseur","cyanure","cycle","cylindre","cynique","daigner","damier","danger","danseur","dauphin","débattre","débiter","déborder","débrider","débutant","décaler","décembre","déchirer","décider","déclarer","décorer","décrire","décupler","dédale","déductif","déesse","défensif","défiler","défrayer","dégager","dégivrer","déglutir","dégrafer","déjeuner","délice","déloger","demander","demeurer","démolir","dénicher","dénouer","dentelle","dénuder","départ","dépenser","déphaser","déplacer","déposer","déranger","dérober","désastre","descente","désert","désigner","désobéir","dessiner","destrier","détacher","détester","détourer","détresse","devancer","devenir","deviner","devoir","diable","dialogue","diamant","dicter","différer","digérer","digital","digne","diluer","dimanche","diminuer","dioxyde","directif","diriger","discuter","disposer","dissiper","distance","divertir","diviser","docile","docteur","dogme","doigt","domaine","domicile","dompter","donateur","donjon","donner","dopamine","dortoir","dorure","dosage","doseur","dossier","dotation","douanier","double","douceur","douter","doyen","dragon","draper","dresser","dribbler","droiture","duperie","duplexe","durable","durcir","dynastie","éblouir","écarter","écharpe","échelle","éclairer","éclipse","éclore","écluse","école","économie","écorce","écouter","écraser","écrémer","écrivain","écrou","écume","écureuil","édifier","éduquer","effacer","effectif","effigie","effort","effrayer","effusion","égaliser","égarer","éjecter","élaborer","élargir","électron","élégant","éléphant","élève","éligible","élitisme","éloge","élucider","éluder","emballer","embellir","embryon","émeraude","émission","emmener","émotion","émouvoir","empereur","employer","emporter","emprise","émulsion","encadrer","enchère","enclave","encoche","endiguer","endosser","endroit","enduire","énergie","enfance","enfermer","enfouir","engager","engin","englober","énigme","enjamber","enjeu","enlever","ennemi","ennuyeux","enrichir","enrobage","enseigne","entasser","entendre","entier","entourer","entraver","énumérer","envahir","enviable","envoyer","enzyme","éolien","épaissir","épargne","épatant","épaule","épicerie","épidémie","épier","épilogue","épine","épisode","épitaphe","époque","épreuve","éprouver","épuisant","équerre","équipe","ériger","érosion","erreur","éruption","escalier","espadon","espèce","espiègle","espoir","esprit","esquiver","essayer","essence","essieu","essorer","estime","estomac","estrade","étagère","étaler","étanche","étatique","éteindre","étendoir","éternel","éthanol","éthique","ethnie","étirer","étoffer","étoile","étonnant","étourdir","étrange","étroit","étude","euphorie","évaluer","évasion","éventail","évidence","éviter","évolutif","évoquer","exact","exagérer","exaucer","exceller","excitant","exclusif","excuse","exécuter","exemple","exercer","exhaler","exhorter","exigence","exiler","exister","exotique","expédier","explorer","exposer","exprimer","exquis","extensif","extraire","exulter","fable","fabuleux","facette","facile","facture","faiblir","falaise","fameux","famille","farceur","farfelu","farine","farouche","fasciner","fatal","fatigue","faucon","fautif","faveur","favori","fébrile","féconder","fédérer","félin","femme","fémur","fendoir","féodal","fermer","féroce","ferveur","festival","feuille","feutre","février","fiasco","ficeler","fictif","fidèle","figure","filature","filetage","filière","filleul","filmer","filou","filtrer","financer","finir","fiole","firme","fissure","fixer","flairer","flamme","flasque","flatteur","fléau","flèche","fleur","flexion","flocon","flore","fluctuer","fluide","fluvial","folie","fonderie","fongible","fontaine","forcer","forgeron","formuler","fortune","fossile","foudre","fougère","fouiller","foulure","fourmi","fragile","fraise","franchir","frapper","frayeur","frégate","freiner","frelon","frémir","frénésie","frère","friable","friction","frisson","frivole","froid","fromage","frontal","frotter","fruit","fugitif","fuite","fureur","furieux","furtif","fusion","futur","gagner","galaxie","galerie","gambader","garantir","gardien","garnir","garrigue","gazelle","gazon","géant","gélatine","gélule","gendarme","général","génie","genou","gentil","géologie","géomètre","géranium","germe","gestuel","geyser","gibier","gicler","girafe","givre","glace","glaive","glisser","globe","gloire","glorieux","golfeur","gomme","gonfler","gorge","gorille","goudron","gouffre","goulot","goupille","gourmand","goutte","graduel","graffiti","graine","grand","grappin","gratuit","gravir","grenat","griffure","griller","grimper","grogner","gronder","grotte","groupe","gruger","grutier","gruyère","guépard","guerrier","guide","guimauve","guitare","gustatif","gymnaste","gyrostat","habitude","hachoir","halte","hameau","hangar","hanneton","haricot","harmonie","harpon","hasard","hélium","hématome","herbe","hérisson","hermine","héron","hésiter","heureux","hiberner","hibou","hilarant","histoire","hiver","homard","hommage","homogène","honneur","honorer","honteux","horde","horizon","horloge","hormone","horrible","houleux","housse","hublot","huileux","humain","humble","humide","humour","hurler","hydromel","hygiène","hymne","hypnose","idylle","ignorer","iguane","illicite","illusion","image","imbiber","imiter","immense","immobile","immuable","impact","impérial","implorer","imposer","imprimer","imputer","incarner","incendie","incident","incliner","incolore","indexer","indice","inductif","inédit","ineptie","inexact","infini","infliger","informer","infusion","ingérer","inhaler","inhiber","injecter","injure","innocent","inoculer","inonder","inscrire","insecte","insigne","insolite","inspirer","instinct","insulter","intact","intense","intime","intrigue","intuitif","inutile","invasion","inventer","inviter","invoquer","ironique","irradier","irréel","irriter","isoler","ivoire","ivresse","jaguar","jaillir","jambe","janvier","jardin","jauger","jaune","javelot","jetable","jeton","jeudi","jeunesse","joindre","joncher","jongler","joueur","jouissif","journal","jovial","joyau","joyeux","jubiler","jugement","junior","jupon","juriste","justice","juteux","juvénile","kayak","kimono","kiosque","label","labial","labourer","lacérer","lactose","lagune","laine","laisser","laitier","lambeau","lamelle","lampe","lanceur","langage","lanterne","lapin","largeur","larme","laurier","lavabo","lavoir","lecture","légal","léger","légume","lessive","lettre","levier","lexique","lézard","liasse","libérer","libre","licence","licorne","liège","lièvre","ligature","ligoter","ligue","limer","limite","limonade","limpide","linéaire","lingot","lionceau","liquide","lisière","lister","lithium","litige","littoral","livreur","logique","lointain","loisir","lombric","loterie","louer","lourd","loutre","louve","loyal","lubie","lucide","lucratif","lueur","lugubre","luisant","lumière","lunaire","lundi","luron","lutter","luxueux","machine","magasin","magenta","magique","maigre","maillon","maintien","mairie","maison","majorer","malaxer","maléfice","malheur","malice","mallette","mammouth","mandater","maniable","manquant","manteau","manuel","marathon","marbre","marchand","mardi","maritime","marqueur","marron","marteler","mascotte","massif","matériel","matière","matraque","maudire","maussade","mauve","maximal","méchant","méconnu","médaille","médecin","méditer","méduse","meilleur","mélange","mélodie","membre","mémoire","menacer","mener","menhir","mensonge","mentor","mercredi","mérite","merle","messager","mesure","métal","météore","méthode","métier","meuble","miauler","microbe","miette","mignon","migrer","milieu","million","mimique","mince","minéral","minimal","minorer","minute","miracle","miroiter","missile","mixte","mobile","moderne","moelleux","mondial","moniteur","monnaie","monotone","monstre","montagne","monument","moqueur","morceau","morsure","mortier","moteur","motif","mouche","moufle","moulin","mousson","mouton","mouvant","multiple","munition","muraille","murène","murmure","muscle","muséum","musicien","mutation","muter","mutuel","myriade","myrtille","mystère","mythique","nageur","nappe","narquois","narrer","natation","nation","nature","naufrage","nautique","navire","nébuleux","nectar","néfaste","négation","négliger","négocier","neige","nerveux","nettoyer","neurone","neutron","neveu","niche","nickel","nitrate","niveau","noble","nocif","nocturne","noirceur","noisette","nomade","nombreux","nommer","normatif","notable","notifier","notoire","nourrir","nouveau","novateur","novembre","novice","nuage","nuancer","nuire","nuisible","numéro","nuptial","nuque","nutritif","obéir","objectif","obliger","obscur","observer","obstacle","obtenir","obturer","occasion","occuper","océan","octobre","octroyer","octupler","oculaire","odeur","odorant","offenser","officier","offrir","ogive","oiseau","oisillon","olfactif","olivier","ombrage","omettre","onctueux","onduler","onéreux","onirique","opale","opaque","opérer","opinion","opportun","opprimer","opter","optique","orageux","orange","orbite","ordonner","oreille","organe","orgueil","orifice","ornement","orque","ortie","osciller","osmose","ossature","otarie","ouragan","ourson","outil","outrager","ouvrage","ovation","oxyde","oxygène","ozone","paisible","palace","palmarès","palourde","palper","panache","panda","pangolin","paniquer","panneau","panorama","pantalon","papaye","papier","papoter","papyrus","paradoxe","parcelle","paresse","parfumer","parler","parole","parrain","parsemer","partager","parure","parvenir","passion","pastèque","paternel","patience","patron","pavillon","pavoiser","payer","paysage","peigne","peintre","pelage","pélican","pelle","pelouse","peluche","pendule","pénétrer","pénible","pensif","pénurie","pépite","péplum","perdrix","perforer","période","permuter","perplexe","persil","perte","peser","pétale","petit","pétrir","peuple","pharaon","phobie","phoque","photon","phrase","physique","piano","pictural","pièce","pierre","pieuvre","pilote","pinceau","pipette","piquer","pirogue","piscine","piston","pivoter","pixel","pizza","placard","plafond","plaisir","planer","plaque","plastron","plateau","pleurer","plexus","pliage","plomb","plonger","pluie","plumage","pochette","poésie","poète","pointe","poirier","poisson","poivre","polaire","policier","pollen","polygone","pommade","pompier","ponctuel","pondérer","poney","portique","position","posséder","posture","potager","poteau","potion","pouce","poulain","poumon","pourpre","poussin","pouvoir","prairie","pratique","précieux","prédire","préfixe","prélude","prénom","présence","prétexte","prévoir","primitif","prince","prison","priver","problème","procéder","prodige","profond","progrès","proie","projeter","prologue","promener","propre","prospère","protéger","prouesse","proverbe","prudence","pruneau","psychose","public","puceron","puiser","pulpe","pulsar","punaise","punitif","pupitre","purifier","puzzle","pyramide","quasar","querelle","question","quiétude","quitter","quotient","racine","raconter","radieux","ragondin","raideur","raisin","ralentir","rallonge","ramasser","rapide","rasage","ratisser","ravager","ravin","rayonner","réactif","réagir","réaliser","réanimer","recevoir","réciter","réclamer","récolter","recruter","reculer","recycler","rédiger","redouter","refaire","réflexe","réformer","refrain","refuge","régalien","région","réglage","régulier","réitérer","rejeter","rejouer","relatif","relever","relief","remarque","remède","remise","remonter","remplir","remuer","renard","renfort","renifler","renoncer","rentrer","renvoi","replier","reporter","reprise","reptile","requin","réserve","résineux","résoudre","respect","rester","résultat","rétablir","retenir","réticule","retomber","retracer","réunion","réussir","revanche","revivre","révolte","révulsif","richesse","rideau","rieur","rigide","rigoler","rincer","riposter","risible","risque","rituel","rival","rivière","rocheux","romance","rompre","ronce","rondin","roseau","rosier","rotatif","rotor","rotule","rouge","rouille","rouleau","routine","royaume","ruban","rubis","ruche","ruelle","rugueux","ruiner","ruisseau","ruser","rustique","rythme","sabler","saboter","sabre","sacoche","safari","sagesse","saisir","salade","salive","salon","saluer","samedi","sanction","sanglier","sarcasme","sardine","saturer","saugrenu","saumon","sauter","sauvage","savant","savonner","scalpel","scandale","scélérat","scénario","sceptre","schéma","science","scinder","score","scrutin","sculpter","séance","sécable","sécher","secouer","sécréter","sédatif","séduire","seigneur","séjour","sélectif","semaine","sembler","semence","séminal","sénateur","sensible","sentence","séparer","séquence","serein","sergent","sérieux","serrure","sérum","service","sésame","sévir","sevrage","sextuple","sidéral","siècle","siéger","siffler","sigle","signal","silence","silicium","simple","sincère","sinistre","siphon","sirop","sismique","situer","skier","social","socle","sodium","soigneux","soldat","soleil","solitude","soluble","sombre","sommeil","somnoler","sonde","songeur","sonnette","sonore","sorcier","sortir","sosie","sottise","soucieux","soudure","souffle","soulever","soupape","source","soutirer","souvenir","spacieux","spatial","spécial","sphère","spiral","stable","station","sternum","stimulus","stipuler","strict","studieux","stupeur","styliste","sublime","substrat","subtil","subvenir","succès","sucre","suffixe","suggérer","suiveur","sulfate","superbe","supplier","surface","suricate","surmener","surprise","sursaut","survie","suspect","syllabe","symbole","symétrie","synapse","syntaxe","système","tabac","tablier","tactile","tailler","talent","talisman","talonner","tambour","tamiser","tangible","tapis","taquiner","tarder","tarif","tartine","tasse","tatami","tatouage","taupe","taureau","taxer","témoin","temporel","tenaille","tendre","teneur","tenir","tension","terminer","terne","terrible","tétine","texte","thème","théorie","thérapie","thorax","tibia","tiède","timide","tirelire","tiroir","tissu","titane","titre","tituber","toboggan","tolérant","tomate","tonique","tonneau","toponyme","torche","tordre","tornade","torpille","torrent","torse","tortue","totem","toucher","tournage","tousser","toxine","traction","trafic","tragique","trahir","train","trancher","travail","trèfle","tremper","trésor","treuil","triage","tribunal","tricoter","trilogie","triomphe","tripler","triturer","trivial","trombone","tronc","tropical","troupeau","tuile","tulipe","tumulte","tunnel","turbine","tuteur","tutoyer","tuyau","tympan","typhon","typique","tyran","ubuesque","ultime","ultrason","unanime","unifier","union","unique","unitaire","univers","uranium","urbain","urticant","usage","usine","usuel","usure","utile","utopie","vacarme","vaccin","vagabond","vague","vaillant","vaincre","vaisseau","valable","valise","vallon","valve","vampire","vanille","vapeur","varier","vaseux","vassal","vaste","vecteur","vedette","végétal","véhicule","veinard","véloce","vendredi","vénérer","venger","venimeux","ventouse","verdure","vérin","vernir","verrou","verser","vertu","veston","vétéran","vétuste","vexant","vexer","viaduc","viande","victoire","vidange","vidéo","vignette","vigueur","vilain","village","vinaigre","violon","vipère","virement","virtuose","virus","visage","viseur","vision","visqueux","visuel","vital","vitesse","viticole","vitrine","vivace","vivipare","vocation","voguer","voile","voisin","voiture","volaille","volcan","voltiger","volume","vorace","vortex","voter","vouloir","voyage","voyelle","wagon","xénon","yacht","zèbre","zénith","zeste","zoologie"]
+
+/***/ }),
+
+/***/ "AbdW":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/images/biffy_ufg_manure.e48142b.jpg";
 
 /***/ }),
 
@@ -2571,7 +2583,7 @@ var contractAddress = __WEBPACK_IMPORTED_MODULE_8_libs_config__["a" /* default *
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_View_vue__ = __webpack_require__("KuJL");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78804bda_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_View_vue__ = __webpack_require__("8x3+");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6c6515ef_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_View_vue__ = __webpack_require__("NsOB");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -2588,7 +2600,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_View_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_78804bda_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_View_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6c6515ef_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_View_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -2640,6 +2652,28 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,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"
+
+/***/ }),
+
+/***/ "DMrH":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send_to_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":""},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"ABI","required":"","multiLine":""},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","single-line":"","bottom":""},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
+/***/ "DiSS":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("4quz")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"blue-grey"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Info\n      "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Play\n      "),_c('v-icon',[_vm._v("casino")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Sell\n      "),_c('v-icon',[_vm._v("attach_money")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('div',[_c('img',{staticStyle:{"height":"auto","width":"25%"},attrs:{"src":__webpack_require__("U8Q/")}})]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("This is heavy, Doc!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                  Going straight to the point: Do not expect any commitment from us.\n                  "),_c('br'),_c('br'),_vm._v("\n                  Yeah, that's right. We're here just for the fun!\n                  "),_c('br'),_c('br'),_vm._v("\n                  Please feel home and browse around. You may have great surprises in our lotteries!\n                  "),_c('br'),_c('br'),_c('br'),_c('br'),_vm._v(" "),_c('small',[_c('b',[_vm._v("Disclaimer")]),_vm._v(" "),_c('br'),_vm._v("\n                    HTMLCoin Foundation has reviewed and approved this application's code, having Althash Web Platform as a proud host, however the Foundation is not responsible for any funds transacted within this application scope.\n                    "),_c('br'),_vm._v("\n                    By using this application you agree on this terms.\n                  ")])]),_vm._v(" "),_c('br'),_c('br')])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-container',{attrs:{"fluid":"","grid-list-lg":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":"","text-xs-right":""}},[_c('v-btn',{attrs:{"fab":"","color":"success","disabled":_vm.playLottery},on:{"click":function($event){_vm.playLottery = true; _vm.playUpForGrabs = false}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("monetization_on")])],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","text-xs-left":""}},[_c('v-btn',{attrs:{"fab":"","color":"warning","disabled":_vm.playUpForGrabs},on:{"click":function($event){_vm.playLottery = false; _vm.playUpForGrabs = true}}},[_c('v-icon',{attrs:{"dark":""}},[_vm._v("directions_run")])],1)],1),_vm._v(" "),(_vm.playLottery)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('div',{staticClass:"py-3 display-2 font-weight-light"},[_vm._v("LOTTERY")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-card',{staticClass:"py-3 white--text",attrs:{"color":"blue-grey","height":"100%"}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":"","align-center":""}},[_c('img',{staticStyle:{"width":"75%","max-width":"85px","height":"auto","max-height":"85px"},attrs:{"src":__webpack_require__("owsU")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-black"},[_vm._v("BIFP Lottery")])]),_vm._v(" "),(this.tokenLotteryStatus == 'On')?_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Status: "),_c('span',{staticClass:"subheading font-weight-bold green--text"},[_vm._v("On")])]):_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Status: "),_c('span',{staticClass:"subheading font-weight-bold red--text"},[_vm._v("Off")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Max Prize: "),_c('span',{staticClass:"subheading font-weight-bold"},[_vm._v(_vm._s((Math.round(this.tokenLotteryPrize * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}))+" BIFP*")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Bets between "),_c('b',[_vm._v("1 and "+_vm._s(this.tokenLotteryFeeThreshold)+" BIFP")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Lucky number between "),_c('b',[_vm._v("0 and "+_vm._s(this.tokenLotteryPot))])])],1)],1)],1)],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-card',{staticClass:"py-3 white--text",attrs:{"color":"blue darken-1","height":"100%"}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs4":"","align-center":""}},[_c('img',{staticStyle:{"width":"75%","max-width":"64px","height":"auto","max-height":"85px"},attrs:{"src":__webpack_require__("aR/i")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title font-weight-black"},[_vm._v("HTMLCoin Lottery")])]),_vm._v(" "),(this.htmlcoinLotteryStatus == 'On')?_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Status: "),_c('span',{staticClass:"subheading font-weight-bold green--text"},[_vm._v("On")])]):_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Status: "),_c('span',{staticClass:"subheading font-weight-bold red--text"},[_vm._v("Off")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Max Prize: "),_c('span',{staticClass:"subheading font-weight-bold"},[_vm._v(_vm._s((Math.round(this.htmlcoinLotteryPrize * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}))+" HTML*")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Bets between "),_c('b',[_vm._v(_vm._s(this.tokenLotteryFeeThreshold + 1)+" and "+_vm._s(this.htmlcoinLotteryFeeThreshold)+" BIFP")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n                            Lucky number between "),_c('b',[_vm._v("0 and "+_vm._s(this.htmlcoinLotteryPot))])])],1)],1)],1)],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":"","text-xs-center":""}},[_c('span',{staticClass:"title"},[_vm._v("The more BIFP you bet, the higher is your prize!")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Your bet","outline":"","suffix":"BIFP","background-color":"teal darken-4"},model:{value:(_vm.lotteryBet),callback:function ($$v) {_vm.lotteryBet=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"lotteryBet"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Your lucky number","outline":"","background-color":"teal darken-4"},model:{value:(_vm.lotteryLuckyNumber),callback:function ($$v) {_vm.lotteryLuckyNumber=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"lotteryLuckyNumber"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.lotteryNotValid},on:{"click":_vm.runLottery}},[_vm._v("I'm feeling lucky!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('span',{staticClass:"caption"},[_vm._v("* Prize pots are subject to constant fluctuation as several players run for the same prize, simultaneously and asynchronously. Such changes may not be reflected on this page.")]),_vm._v(" "),_c('v-spacer')],1)],1)],1):_vm._e(),_vm._v(" "),(_vm.playUpForGrabs)?_c('v-flex',{attrs:{"xs12":""}},[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"display-2 font-weight-light"},[_vm._v("UP FOR GRABS")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"How much to play","outline":"","background-color":"teal darken-4","suffix":"BIFP"},model:{value:(_vm.upForGrabsBet),callback:function ($$v) {_vm.upForGrabsBet=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"upForGrabsBet"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.ufgNotValid},on:{"click":_vm.runUpForGrabs}},[_vm._v("The cookie is mine!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Token quantity","outline":"","suffix":"BIFP","background-color":"blue-grey darken-3"},model:{value:(_vm.sellTokenQty),callback:function ($$v) {_vm.sellTokenQty=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"sellTokenQty"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-text-field',{attrs:{"label":"Price per token","outline":"","suffix":"HTML","background-color":"blue-grey darken-3"},model:{value:(_vm.sellPricePerToken),callback:function ($$v) {_vm.sellPricePerToken=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"sellPricePerToken"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.sellNotValid},on:{"click":_vm.setSell}},[_vm._v("Put for Sale!")]),_vm._v(" "),_c('v-spacer')],1)],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendLotteryDialog),callback:function ($$v) {_vm.confirmSendLotteryDialog=$$v},expression:"confirmSendLotteryDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSendLottery}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendLotteryDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","width":"600px"},model:{value:(_vm.txLotteryReceiptDialog),callback:function ($$v) {_vm.txLotteryReceiptDialog=$$v},expression:"txLotteryReceiptDialog"}},[_c('v-card',{attrs:{"color":"blue-grey lighten-5"}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[(this.awaitingLotteryTx)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title blue--text"},[_vm._v("\n              Transaction broadcasted to the "),_c('b',[_vm._v("Althash Blockchain")]),_vm._v("!\n            ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n            Awaiting confirmation from the network...\n          ")]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-progress-linear',{attrs:{"indeterminate":true,"color":"blue"}})],1)],1):_vm._e(),_vm._v(" "),(this.txError)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"red--text"},[_c('p'),_c('h1',[_vm._v("Unsuccessful")]),_vm._v(" "),_c('p'),_vm._v(" "),_c('p',[_vm._v(" \n                There was an error while running your transaction.\n              ")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{attrs:{"color":"error"},on:{"click":_vm.closeDialog}},[_vm._v("\n              Close\n            ")])],1)],1):_vm._e(),_vm._v(" "),(this.txLotteryConfirmed)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[(this.lotteryWin)?_c('v-flex',{attrs:{"xs12":""}},[(this.lotteryType != 'UFG')?_c('span',[_c('img',{attrs:{"src":__webpack_require__("+D9K")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold"},[_vm._v("\n                You have just won "+_vm._s(this.lotteryRewardAmount)+" "+_vm._s(this.lotteryType)+"!\n              ")]),_vm._v(" "),_c('p',[_vm._v("\n                Are you sure you haven't seen any almanac around?\n              ")])]):_c('span',[_c('img',{attrs:{"src":__webpack_require__("gj2+")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"title"},[_vm._v("\n                Well, well... We have here the fastest draw in the west.\n              ")]),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold"},[_vm._v("\n                You have just won "+_vm._s(this.lotteryRewardAmount)+" BIFP!\n              ")]),_vm._v(" "),_c('p',[_vm._v("\n                Now get outta here, or I'll hunt you down and shoot you like a duck!\n              ")])])]):_c('v-flex',{attrs:{"xs12":""}},[(this.lotteryType != 'UFG')?_c('span',[_c('img',{attrs:{"src":__webpack_require__("t7Gd")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold orange--text"},[_vm._v("\n                Not this time, McFly...\n              ")]),_vm._v(" "),_c('p',[_vm._v("\n                Your \"lucky\" number was "),_c('b',[_vm._v(_vm._s(this.lotteryLuckyNumber))]),_vm._v(", but the drawn number was "),_c('b',[_vm._v(_vm._s(this.drawnNumber))]),_vm._v(".\n              ")]),_vm._v(" "),_c('p',[_vm._v("\n                So why don't you make like a tree... and get outta here?!\n              ")])]):_c('span',[_c('img',{attrs:{"src":__webpack_require__("AbdW")}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('p',{staticClass:"display-1 font-weight-bold orange--text"},[_vm._v("\n                Not this time, Mr. Eastwood...\n              ")]),_vm._v(" "),_c('p',[_vm._v("\n                Some other punk has been quicker than you.\n                "),_c('br'),_vm._v("\n                Next time try seven o'clock. I do my killin' before breakfast!\n              ")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{staticClass:"grey--text",attrs:{"flat":""},on:{"click":_vm.closeDialog}},[_vm._v("\n              Close\n            ")])],1)],1):_vm._e()],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"hide-overlay":"","persistent":"","width":"300"},model:{value:(_vm.loading),callback:function ($$v) {_vm.loading=$$v},expression:"loading"}},[_c('v-card',{attrs:{"color":"blue","dark":""}},[_c('v-card-text',[_c('b',[_vm._v("Loading info...")]),_vm._v(" "),_c('v-progress-linear',{staticClass:"mb-0",attrs:{"indeterminate":"","color":"white"}})],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -2834,13 +2868,6 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8
     }
   }
 });
-
-/***/ }),
-
-/***/ "EIVs":
-/***/ (function(module, exports) {
-
-// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -3127,6 +3154,17 @@ function validateBip39Mnemonic(mnemonic) {
 
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('safe_send.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-alert',{attrs:{"color":"info","value":"true"}},[_vm._v(_vm._s(_vm.$t('safe_send.info')))]),_vm._v(" "),_c('v-stepper',{attrs:{"non-linear":"","vertical":""},model:{value:(_vm.step),callback:function ($$v) {_vm.step=$$v},expression:"step"}},[_c('v-stepper-step',{attrs:{"step":"1","editable":""}},[_vm._v("Generate Base Info (At online computer)")]),_vm._v(" "),_c('v-stepper-content',{attrs:{"step":"1"}},[(_vm.mode === 'offline')?[_c('v-alert',{attrs:{"color":"info","value":"true"}},[_vm._v(_vm._s(_vm.$t('safe_send.info1_offline')))]),_vm._v(" "),_c('v-btn',{attrs:{"color":"success"},nativeOn:{"click":function($event){_vm.step = 2}}},[_vm._v(_vm._s(_vm.$t('common.next')))])]:[_c('v-alert',{attrs:{"color":"info","value":"true"}},[_vm._v(_vm._s(_vm.$t('safe_send.info1_online')))]),_vm._v(" "),_c('v-text-field',{attrs:{"label":"From Address","required":""},model:{value:(_vm.fromAddress),callback:function ($$v) {_vm.fromAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fromAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"To Address","required":""},model:{value:(_vm.toAddress),callback:function ($$v) {_vm.toAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"toAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Amount","required":""},model:{value:(_vm.amount),callback:function ($$v) {_vm.amount=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"amount"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}}),_vm._v(" "),_c('v-btn',{attrs:{"color":"success","disabled":_vm.notValid},nativeOn:{"click":function($event){_vm.confirmAddressDialog = true}}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])]],2),_vm._v(" "),_c('v-stepper-step',{attrs:{"step":"2","editable":""}},[_vm._v("Generate Tx (At offline computer)")]),_vm._v(" "),_c('v-stepper-content',{attrs:{"step":"2"}},[(_vm.mode === 'offline')?[_c('v-alert',{attrs:{"color":"info","value":"true"}},[_vm._v(_vm._s(_vm.$t('safe_send.info2_offline')))]),_vm._v(" "),(!_vm.fileParsed)?[_c('file-reader',{attrs:{"color":"info"},on:{"upload":_vm.handleFile}})]:_vm._e(),_vm._v(" "),(_vm.fileParsed)?[_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v(_vm._s(_vm.$t('safe_send.from_address')))])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"disabled":""},model:{value:(_vm.fromAddress),callback:function ($$v) {_vm.fromAddress=$$v},expression:"fromAddress"}})],1)],1),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v(_vm._s(_vm.$t('safe_send.to_address')))])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"disabled":""},model:{value:(_vm.toAddress),callback:function ($$v) {_vm.toAddress=$$v},expression:"toAddress"}})],1)],1),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v(_vm._s(_vm.$t('safe_send.amount')))])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"disabled":""},model:{value:(_vm.amount),callback:function ($$v) {_vm.amount=$$v},expression:"amount"}})],1)],1),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v(_vm._s(_vm.$t('safe_send.fee')))])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"disabled":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=$$v},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-btn',{attrs:{"color":"success"},nativeOn:{"click":function($event){_vm.confirmAddressDialog = true}}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])]:_vm._e()]:[_c('v-alert',{attrs:{"color":"info","value":"true"}},[_vm._v(_vm._s(_vm.$t('safe_send.info2_online')))]),_vm._v(" "),_c('v-btn',{attrs:{"color":"success"},nativeOn:{"click":function($event){_vm.step = 3}}},[_vm._v(_vm._s(_vm.$t('common.next')))])]],2),_vm._v(" "),_c('v-stepper-step',{attrs:{"step":"3","editable":""}},[_vm._v("Broadcast Tx (At online computer)")]),_vm._v(" "),_c('v-stepper-content',{attrs:{"step":"3"}},[(_vm.mode === 'offline')?[_c('v-alert',{attrs:{"color":"info","value":"true"}},[_vm._v(_vm._s(_vm.$t('safe_send.info3_offline')))])]:[_c('v-alert',{attrs:{"color":"info","value":"true"}},[_vm._v(_vm._s(_vm.$t('safe_send.info3_online')))]),_vm._v(" "),(!_vm.fileParsed)?[_c('file-reader',{attrs:{"color":"info"},on:{"upload":_vm.handleFile}})]:_vm._e(),_vm._v(" "),(_vm.fileParsed)?[_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v(_vm._s(_vm.$t('safe_send.from_address')))])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"disabled":""},model:{value:(_vm.fromAddress),callback:function ($$v) {_vm.fromAddress=$$v},expression:"fromAddress"}})],1)],1),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v(_vm._s(_vm.$t('safe_send.to_address')))])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"disabled":""},model:{value:(_vm.toAddress),callback:function ($$v) {_vm.toAddress=$$v},expression:"toAddress"}})],1)],1),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v(_vm._s(_vm.$t('safe_send.amount')))])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"disabled":""},model:{value:(_vm.amount),callback:function ($$v) {_vm.amount=$$v},expression:"amount"}})],1)],1),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v(_vm._s(_vm.$t('safe_send.fee')))])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"disabled":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=$$v},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-btn',{attrs:{"color":"success"},nativeOn:{"click":function($event){_vm.confirmAddressDialog = true}}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])]:_vm._e()]],2)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmAddressDialog),callback:function ($$v) {_vm.confirmAddressDialog=$$v},expression:"confirmAddressDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send.enter_address')))])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"To Address"},model:{value:(_vm.repeatToAddress),callback:function ($$v) {_vm.repeatToAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"repeatToAddress"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmAddress}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.confirmAddressDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))])],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send.going_to_send'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.amount)+"HTML")]),_vm._v("\n          "+_vm._s(_vm.$t('send.to_address'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.toAddress))]),_vm._v("\n          "+_vm._s(_vm.$t('common.question_mark'))+"\n        ")],1)]),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))])],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
+/***/ "GxaI":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-app',{attrs:{"light":""}},[_c('v-toolbar',{class:_vm.headerClass,attrs:{"app":"","fixed":"","height":"82px","clipped-left":""}},[_c('span',{staticClass:"title"},[_c('span',{staticClass:"text"},[_c('img',{staticClass:"cursor",attrs:{"src":__webpack_require__("XXFI"),"alt":"Althash Web Platform Logo"},on:{"click":function($event){_vm.changeView('home')}}})])]),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('v-menu',{key:"myOffspring",attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":"100"}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":"","dark":""},on:{"click":function($event){_vm.openDapp('dapp_myoffspring')}},slot:"activator"},[_c('img',{staticStyle:{"height":"35px","width":"auto"},attrs:{"src":__webpack_require__("a4SW")}})])],1),_vm._v(" "),_c('v-menu',{key:"TokenFarm",attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":"100"}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":"","dark":""},on:{"click":function($event){_vm.openDapp('create_token')}},slot:"activator"},[_c('img',{staticStyle:{"height":"35px","width":"auto"},attrs:{"src":__webpack_require__("GzeU")}})])],1),_vm._v(" "),_c('v-menu',{key:"AltProof",attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":"100"}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":"","dark":""},on:{"click":function($event){_vm.openDapp('dapp_altproof')}},slot:"activator"},[_c('img',{staticStyle:{"height":"35px","width":"auto"},attrs:{"src":__webpack_require__("ib+S")}})])],1),_vm._v(" "),_c('v-menu',{key:"CrypticMAG",attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":"100"}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":"","dark":""},on:{"click":function($event){_vm.openDapp('dapp_crypticmag')}},slot:"activator"},[_c('img',{staticStyle:{"height":"35px","width":"auto"},attrs:{"src":__webpack_require__("5EIY")}})])],1),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('v-tooltip',{attrs:{"bottom":""}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","dark":""},on:{"click":function($event){_vm.changeView('home')}},slot:"activator"},[_c('v-icon',[_vm._v("home")])],1),_vm._v(" "),_c('span',[_vm._v("Home")])],1),_vm._v(" "),_vm._l((_vm.items),function(item){return _c('v-menu',{directives:[{name:"show",rawName:"v-show",value:(!_vm.notShow[item.name]),expression:"!notShow[item.name]"}],key:item.title,attrs:{"bottom":"","open-on-hover":"","offset-y":"","nudge-width":100}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","dark":""},slot:"activator"},[_c('v-icon',[_vm._v(_vm._s(item.action))])],1),_vm._v(" "),_c('v-list',{attrs:{"subheader":""}},[_c('v-subheader',[_vm._v(_vm._s(item.title))]),_vm._v(" "),_vm._l((item.items),function(subItem){return _c('v-list-tile',{directives:[{name:"show",rawName:"v-show",value:(!_vm.notShow[subItem.name]),expression:"!notShow[subItem.name]"}],key:subItem.title,on:{"click":function($event){_vm.changeView(subItem.name)}}},[_c('v-list-tile-content',[_c('v-list-tile-title',{staticClass:"body-2"},[_vm._v(_vm._s(subItem.title))])],1),_vm._v(" "),_c('v-list-tile-action',[_c('v-icon',[_vm._v(_vm._s(subItem.action))])],1)],1)})],2)],1)}),_vm._v(" "),_c('v-tooltip',{directives:[{name:"show",rawName:"v-show",value:(_vm.showLogoff),expression:"showLogoff"}],attrs:{"bottom":""}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","dark":""},on:{"click":function($event){$event.stopPropagation();_vm.logoff_dialog = true}},slot:"activator"},[_c('v-icon',[_vm._v("power_settings_new")])],1),_vm._v(" "),_c('span',[_vm._v("Log off")])],1)],2),_vm._v(" "),_c('main',[_c('v-content',[_c('v-container',{attrs:{"fluid":"","fill-height":"","justify-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs10":"","offset-xs1":""}},[_c('home',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['home']),expression:"isCurrent['home']"}],on:{"openDapp":_vm.openDapp}}),_vm._v(" "),_c('create-wallet',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['create']),expression:"isCurrent['create']"}],attrs:{"view":_vm.isCurrent['create']},on:{"created":_vm.setWallet}}),_vm._v(" "),_c('create-mnemonic',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['create_from_mnemonic']),expression:"isCurrent['create_from_mnemonic']"}],attrs:{"view":_vm.isCurrent['create_from_mnemonic']},on:{"created":_vm.setWallet}}),_vm._v(" "),_c('restore-wallet',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['restore_from_mnemonic']),expression:"isCurrent['restore_from_mnemonic']"}],on:{"restored":_vm.setWallet}}),_vm._v(" "),_c('restore-wif',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['restore_from_wif']),expression:"isCurrent['restore_from_wif']"}],on:{"restored":_vm.setWallet}}),_vm._v(" "),_c('restore-mobile',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['restore_from_mobile']),expression:"isCurrent['restore_from_mobile']"}],on:{"restored":_vm.setWallet}}),_vm._v(" "),_c('restore-key-file',{directives:[{name:"show",rawName:"v-show",value:(_vm.isCurrent['restore_from_key_file']),expression:"isCurrent['restore_from_key_file']"}],on:{"restored":_vm.setWallet}}),_vm._v(" "),(_vm.isCurrent['restore_from_ledger'])?_c('restore-ledger',{on:{"restored":_vm.setWallet}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['view'])?_c('view-wallet',{attrs:{"view":_vm.isCurrent['view']}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['transactions'])?_c('view-tx',{attrs:{"view":_vm.isCurrent['transactions']}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['safe_send'])?_c('safe-send',{on:{"send":_vm.setWallet}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['send'])?_c('send',{on:{"send":_vm.setWallet}}):_vm._e(),_vm._v(" "),(_vm.isCurrent['request_payment'])?_c('request-payment'):_vm._e(),_vm._v(" "),(_vm.isCurrent['dump_as_key_file'])?_c('dump-key-file'):_vm._e(),_vm._v(" "),(_vm.isCurrent['create_contract'])?_c('create-contract'):_vm._e(),_vm._v(" "),(_vm.isCurrent['send_to_contract'])?_c('send-to-contract'):_vm._e(),_vm._v(" "),(_vm.isCurrent['call_contract'])?_c('call-contract'):_vm._e(),_vm._v(" "),(_vm.isCurrent['create_token'])?_c('create-token'):_vm._e(),_vm._v(" "),(_vm.isCurrent['dapp_myoffspring'])?_c('dapp-myoffspring'):_vm._e(),_vm._v(" "),(_vm.isCurrent['dapp_crypticmag'])?_c('dapp-crypticmag'):_vm._e(),_vm._v(" "),(_vm.isCurrent['dapp_altproof'])?_c('dapp-alt-proof'):_vm._e(),_vm._v(" "),(_vm.isCurrent['dapp_biffyplutonium'])?_c('dapp-biffy-plutonium'):_vm._e(),_vm._v(" "),(_vm.isCurrent['settings'])?_c('config'):_vm._e()],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"max-width":"290"},model:{value:(_vm.logoff_dialog),callback:function ($$v) {_vm.logoff_dialog=$$v},expression:"logoff_dialog"}},[_c('v-card',[_c('v-card-title',{staticClass:"headline"},[_vm._v("Log off?")]),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{attrs:{"color":"red darken-1","flat":"flat"},on:{"click":function($event){_vm.logoff_dialog = false}}},[_vm._v("\n            No\n          ")]),_vm._v(" "),_c('v-btn',{attrs:{"color":"green darken-1","flat":"flat"},on:{"click":_vm.logoff}},[_vm._v("\n            Yes\n          ")])],1)],1)],1),_vm._v(" "),_c('notify'),_vm._v(" "),_c('warning')],1)}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -3672,8 +3710,9 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
             switch (_context.prev = _context.next) {
               case 0:
                 _this.wallet.setInfo();
+                _this.wallet.setHrc20();
 
-              case 1:
+              case 2:
               case 'end':
                 return _context.stop();
             }
@@ -4321,9 +4360,9 @@ module.exports = ["abaco","abbaglio","abbinato","abete","abisso","abolire","abra
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__ = __webpack_require__("xJD8");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_214e12b4_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__("14ga");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_38e47f16_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__ = __webpack_require__("GxaI");
 function injectStyle (ssrContext) {
-  __webpack_require__("EIVs")
+  __webpack_require__("MftP")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -4341,7 +4380,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_App_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_214e12b4_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_38e47f16_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_App_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4385,6 +4424,13 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "MftP":
+/***/ (function(module, exports) {
+
+// removed by extract-text-webpack-plugin
 
 /***/ }),
 
@@ -4501,7 +4547,7 @@ new __WEBPACK_IMPORTED_MODULE_0_vue__["default"](__WEBPACK_IMPORTED_MODULE_4_App
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CallContract_vue__ = __webpack_require__("EGFZ");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0f45e594_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CallContract_vue__ = __webpack_require__("c6Ri");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_111a5454_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CallContract_vue__ = __webpack_require__("1XNJ");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -4518,7 +4564,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CallContract_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_0f45e594_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CallContract_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_111a5454_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CallContract_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4530,11 +4576,11 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ "Nm8Y":
+/***/ "NsOB":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("gaNr")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"green"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Info\n        "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        New Token\n        "),_c('v-icon',[_vm._v("local_florist")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to TokenFarm!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                  This application allows you to create your own HRC-20 Token on "),_c('b',[_vm._v("AltHash")]),_vm._v(" blockchain, in just a few seconds!\n                  "),_c('br'),_c('br'),_vm._v("\n                  To create a new Token, just click on \"New Token\" menu item, and fill in the details.\n                  "),_c('br'),_c('br'),_vm._v("\n\t\t  After the Transaction is confirmed, you will be able to find your token on the \"View Wallet Info\" option in \"Wallet Functions\" menu. You might need to refresh the browser and re-import your wallet before seeing your Tokens.\n                  "),_c('br'),_c('br')])])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":this.$t('create_token.name'),"required":"","box":""},model:{value:(_vm.name),callback:function ($$v) {_vm.name=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"name"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.symbol'),"required":"","box":""},model:{value:(_vm.symbol),callback:function ($$v) {_vm.symbol=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"symbol"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.decimal'),"required":"","box":""},model:{value:(_vm.decimal),callback:function ($$v) {_vm.decimal=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"decimal"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":_vm.$t('create_token.total_supply'),"required":"","box":""},model:{value:(_vm.totalSupply),callback:function ($$v) {_vm.totalSupply=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"totalSupply"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","box":"","background-color":"indigo lighten-3"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                      "+_vm._s(_vm.$t('create_token.confirm'))+"\n                    ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)],1)],1)],1)],1)],1)}
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('view.title')))]),_vm._v(" "),_c('v-spacer'),_vm._v(" "),_c('v-tooltip',{attrs:{"bottom":""}},[_c('v-btn',{attrs:{"slot":"activator","icon":"","large":""},on:{"click":_vm.refreshWallet},slot:"activator"},[_c('v-icon',{attrs:{"large":"","color":"blue accent-4"}},[_vm._v("\n\t  refresh\n\t  ")])],1),_vm._v(" "),_c('span',[_vm._v("Refresh")])],1),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-card-text',[_vm._l((_vm.infoLabel),function(item,i){return _c('v-layout',{key:i},[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v("\n            "+_vm._s(_vm.$t('common.info.' + item.label))+"\n          ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"outline":"","readonly":"","single-line":""},model:{value:(_vm.info[item.name]),callback:function ($$v) {_vm.$set(_vm.info, item.name, $$v)},expression:"info[item.name]"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[(item.copy)?_c('v-btn',{directives:[{name:"clipboard",rawName:"v-clipboard:copy",value:(_vm.info[item.name]),expression:"info[item.name]",arg:"copy"},{name:"clipboard",rawName:"v-clipboard:success",value:(_vm.onCopySucc),expression:"onCopySucc",arg:"success"},{name:"clipboard",rawName:"v-clipboard:error",value:(_vm.onCopyError),expression:"onCopyError",arg:"error"}],staticClass:"mt-3",attrs:{"small":"","color":"cyan"}},[_vm._v("\n            "+_vm._s(_vm.$t('common.copy'))+"\n          ")]):_vm._e()],1)],1)}),_vm._v(" "),(_vm.privKey !== null)?_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v("\n            "+_vm._s(_vm.$t('common.info.priv_key'))+"\n          ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_c('v-text-field',{attrs:{"outline":"","readonly":"","single-line":"","type":_vm.showPriv ? 'text' : 'password',"append-icon":_vm.showPriv ? 'visibility_off' : 'visibility'},on:{"click:append":function($event){_vm.showPriv = !_vm.showPriv}},model:{value:(_vm.privKey),callback:function ($$v) {_vm.privKey=$$v},expression:"privKey"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.showPriv),expression:"showPriv"},{name:"clipboard",rawName:"v-clipboard:copy",value:(_vm.privKey),expression:"privKey",arg:"copy"},{name:"clipboard",rawName:"v-clipboard:success",value:(_vm.onCopySucc),expression:"onCopySucc",arg:"success"},{name:"clipboard",rawName:"v-clipboard:error",value:(_vm.onCopyError),expression:"onCopyError",arg:"error"}],staticClass:"mt-3",attrs:{"small":"","color":"cyan"}},[_vm._v("\n            "+_vm._s(_vm.$t('common.copy'))+"\n          ")])],1)],1):_vm._e(),_vm._v(" "),(_vm.wallet.info.hrc20.length > 0)?_c('v-layout',[_c('v-flex',{attrs:{"xs3":""}},[_c('v-subheader',[_vm._v("\n            HRC20 Tokens\n          ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},_vm._l((_vm.wallet.info.hrc20),function(token,i){return _c('v-card',{key:i,staticStyle:{"border-bottom":"2px solid #000","padding":"15px 10px"},attrs:{"flat":"","tile":"","dark":"","color":'light-blue darken-'+(i%2+3)}},[_c('v-layout',[_c('v-flex',{attrs:{"xs5":""}},[_vm._v(_vm._s(token.contract.name))]),_vm._v(" "),_c('v-flex',{attrs:{"xs7":""}},[_vm._v(_vm._s(token.amount / Math.pow(10, token.contract.decimals))+" "+_vm._s(token.contract.symbol))]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('span',{class:_vm.caption},[_vm._v(_vm._s(token.contract.contract_address))])])],1)],1)}))],1):_vm._e()],2)],1)}
 var staticRenderFns = []
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
@@ -4547,9 +4593,9 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_MyOffspring_vue__ = __webpack_require__("U877");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2f929878_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_MyOffspring_vue__ = __webpack_require__("qpBf");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_597f0242_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_MyOffspring_vue__ = __webpack_require__("eN9x");
 function injectStyle (ssrContext) {
-  __webpack_require__("9WOO")
+  __webpack_require__("6ATI")
 }
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
@@ -4562,12 +4608,12 @@ var __vue_template_functional__ = false
 /* styles */
 var __vue_styles__ = injectStyle
 /* scopeId */
-var __vue_scopeId__ = "data-v-2f929878"
+var __vue_scopeId__ = "data-v-597f0242"
 /* moduleIdentifier (server only) */
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_MyOffspring_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2f929878_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_MyOffspring_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_597f0242_hasScoped_true_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_MyOffspring_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4660,7 +4706,7 @@ var Component = normalizeComponent(
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateContract_vue__ = __webpack_require__("cAXN");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_babaa078_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateContract_vue__ = __webpack_require__("vyTM");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1354a92a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateContract_vue__ = __webpack_require__("VdHc");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -4677,7 +4723,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateContract_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_babaa078_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateContract_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1354a92a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateContract_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4806,7 +4852,7 @@ var Component = normalizeComponent(
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateToken_vue__ = __webpack_require__("Zwtj");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ef10798_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateToken_vue__ = __webpack_require__("Nm8Y");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6963f476_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateToken_vue__ = __webpack_require__("4Em+");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -4823,7 +4869,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_CreateToken_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_5ef10798_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateToken_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_6963f476_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_CreateToken_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -4832,6 +4878,1452 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "Rz30":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__ = __webpack_require__("Xxa5");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator__ = __webpack_require__("exGp");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__ = __webpack_require__("G2dt");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethjs_abi__ = __webpack_require__("sVTA");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ethjs_abi__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_libs_server__ = __webpack_require__("yDAo");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_libs_config__ = __webpack_require__("6+u4");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_axios__ = __webpack_require__("mtWM");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_bs58__ = __webpack_require__("ZDUk");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_bs58___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_bs58__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_js_sha256__ = __webpack_require__("BUS2");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_8_js_sha256___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_8_js_sha256__);
+
+
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
+
+
+
+
+
+
+
+var contractAddress = __WEBPACK_IMPORTED_MODULE_5_libs_config__["a" /* default */].getNetwork() == "mainnet" ? "0" : "9aedd68bb2635995097627331b49c473136343cb";
+
+var abiJson = JSON.parse('[{"constant": false, "inputs": [{"name": "new_j", "type": "address"} ], "name": "change_j", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "name", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "BIFP_getCuts", "outputs": [{"name": "BiffCutSetting", "type": "uint256"}, {"name": "JCutSetting", "type": "uint256"}, {"name": "PCutSetting", "type": "uint256"}, {"name": "NCutSetting", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_spender", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "approve", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "_from", "type": "address"}, {"name": "_to", "type": "address"} ], "name": "feeTransfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "new_n", "type": "address"} ], "name": "change_n", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "getTokenLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalSupply", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_seller", "type": "address"} ], "name": "BIFP_buyTokensFrom", "outputs": [{"name": "numOfTokensPurchased", "type": "uint256"} ], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "_from", "type": "address"}, {"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transferFrom", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setTokenLotteryFeeThreshold", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "_seller", "type": "address"} ], "name": "BIFP_whatsForSale", "outputs": [{"name": "numTokensBeingSold", "type": "uint256"}, {"name": "priceOfEachToken", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "decimals", "outputs": [{"name": "", "type": "uint8"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "get_j", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "lotteryID", "type": "string"} ], "name": "checkLotteryResults", "outputs": [{"name": "_player", "type": "address"}, {"name": "_lotteryType", "type": "uint8"}, {"name": "_playedAmount", "type": "uint256"}, {"name": "_luckyNumber", "type": "uint256"}, {"name": "_drawnNumber", "type": "uint256"}, {"name": "_win", "type": "bool"}, {"name": "_rewardAmount", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getHtmlcoinLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setHtmlcoinLotteryPot", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryOn", "outputs": [{"name": "", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getTokenLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "who", "type": "uint256"}, {"name": "fakeAmount", "type": "uint256"} ], "name": "BIFP_testFeeAndCuts", "outputs": [{"name": "feeCollected", "type": "uint256"}, {"name": "biffGot", "type": "uint256"}, {"name": "jGot", "type": "uint256"}, {"name": "pGot", "type": "uint256"}, {"name": "nGot", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "player", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "feeBalances", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "playedAmount", "type": "uint256"}, {"name": "lotteryID", "type": "string"} ], "name": "BIFP_upForGrabs", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "standard", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "b", "type": "uint256"}, {"name": "j", "type": "uint256"}, {"name": "p", "type": "uint256"}, {"name": "n", "type": "uint256"} ], "name": "BIFP_setFeeCuts", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [], "name": "feeWithdraw", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "f", "type": "uint256"} ], "name": "BIFP_setSellerIsOwnerFeePercent", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "bool"} ], "name": "switchTokenLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "tokensForSale", "outputs": [{"name": "numTokensForSale", "type": "uint256"}, {"name": "pricePerToken", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "balanceOf", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [], "name": "confirmOwnershipTransfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "new_p", "type": "address"} ], "name": "change_p", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "potentialOwner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "prizeName", "type": "string"} ], "name": "getPrizeBalance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "BIFP_addToTokenPrize", "outputs": [{"name": "newBalance", "type": "uint256"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getHtmlcoinLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "symbol", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "prizeName", "type": "string"}, {"name": "newAmount", "type": "uint256"} ], "name": "setPrizeBalance", "outputs": [{"name": "prizePrevBalance", "type": "uint256"}, {"name": "prizeNewBalance", "type": "uint256"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setTokenLotteryPot", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [], "name": "BIFP_buyTokens", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [], "name": "BIFP_addToHtmlPrize", "outputs": [{"name": "newBalance", "type": "uint256"} ], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [], "name": "BIFP_getFees", "outputs": [{"name": "feeOwnerSetting", "type": "uint256"}, {"name": "feeSellerSetting", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setHtmlcoinLotteryFeeThreshold", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "amount", "type": "uint256"} ], "name": "BIFP_loadUpForGrabs", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "f", "type": "uint256"} ], "name": "BIFP_setSellerFeePercent", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "bool"} ], "name": "switchHtmlcoinLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryOn", "outputs": [{"name": "", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "get_n", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "playedAmount", "type": "uint256"}, {"name": "luckyNumber", "type": "uint256"}, {"name": "lotteryID", "type": "string"} ], "name": "BIFP_playLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"}, {"name": "", "type": "address"} ], "name": "allowance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "quantity", "type": "uint256"}, {"name": "htmlPrice", "type": "uint256"} ], "name": "BIFP_setSell", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "get_p", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "newOwner", "type": "address"} ], "name": "transferOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": true, "name": "_from", "type": "address"}, {"indexed": true, "name": "_to", "type": "address"}, {"indexed": false, "name": "_value", "type": "uint256"} ], "name": "Transfer", "type": "event"} ]');
+/* harmony default export */ __webpack_exports__["a"] = ({
+  data: function data() {
+    return {
+      userTokenBalance: '0',
+      loading: false,
+      wallet: __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet(),
+      active: 0,
+      buyBank: true,
+      buyUsers: false,
+      playLottery: true,
+      playUpForGrabs: false,
+      checkLotteryResults: false,
+      checkBuyResults: false,
+      lotteryBet: '',
+      lotteryLuckyNumber: '',
+      lotteryID: '',
+      lotteryWin: false,
+      drawnNumber: '',
+      lotteryRewardAmount: '',
+      lotteryType: '',
+      tokenLotteryStatus: '',
+      htmlcoinLotteryStatus: '',
+      tokenLotteryPrize: '',
+      htmlcoinLotteryPrize: '',
+      tokenLotteryFeeThreshold: 0,
+      htmlcoinLotteryFeeThreshold: 0,
+      tokenLotteryPot: 0,
+      htmlcoinLotteryPot: 0,
+      upForGrabsBet: '',
+      buyFromBankAmount: '',
+      txLotteryReceiptDialog: false,
+      txBuyReceiptDialog: false,
+      awaitingLotteryTx: false,
+      awaitingBuyTx: false,
+      txError: false,
+      txLotteryConfirmed: false,
+      txBuyConfirmed: false,
+      sellPricePerToken: '',
+      sellTokenQty: '',
+      gasPrice: '40',
+      gasLimit: '2500000',
+      fee: '0.01',
+      confirmSendLotteryDialog: false,
+      confirmSendBuyDialog: false,
+      confirmSendDialog: false,
+      rawTx: 'loading...',
+      canSend: false,
+      sending: false
+    };
+  },
+
+  computed: {
+    lotteryNotValid: function lotteryNotValid() {
+      return !(/^[0-9]+$/.test(this.lotteryBet) && /^[0-9]+$/.test(this.lotteryLuckyNumber));
+    },
+    ufgNotValid: function ufgNotValid() {
+      return !/^[0-9]+$/.test(this.upForGrabsBet);
+    },
+    sellNotValid: function sellNotValid() {
+      return !(/^[0-9]+$/.test(this.sellPricePerToken) && /^[0-9]+$/.test(this.sellTokenQty));
+    }
+  },
+  watch: {
+    checkLotteryResults: function () {
+      var _ref = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee(val) {
+        var decodedResult;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
+          while (1) {
+            switch (_context.prev = _context.next) {
+              case 0:
+                if (!val) {
+                  _context.next = 29;
+                  break;
+                }
+
+                _context.prev = 1;
+                _context.next = 4;
+                return this.callContractFunction(contractAddress, abiJson, 'checkLotteryResults', [this.lotteryID]);
+
+              case 4:
+                decodedResult = _context.sent;
+
+
+                this.drawnNumber = decodedResult[4].toString();
+
+                if (!(decodedResult[5].toString() == 'true')) {
+                  _context.next = 20;
+                  break;
+                }
+
+                this.lotteryRewardAmount = parseInt(decodedResult[6]) / 100000000;
+                _context.t0 = decodedResult[1].toString();
+                _context.next = _context.t0 === '1' ? 11 : _context.t0 === '2' ? 13 : _context.t0 === '3' ? 15 : 17;
+                break;
+
+              case 11:
+                this.lotteryType = 'BIFP';
+                return _context.abrupt('break', 17);
+
+              case 13:
+                this.lotteryType = 'HTML';
+                return _context.abrupt('break', 17);
+
+              case 15:
+                this.lotteryType = 'UFG';
+                return _context.abrupt('break', 17);
+
+              case 17:
+
+                this.lotteryWin = true;
+                _context.next = 21;
+                break;
+
+              case 20:
+                this.lotteryWin = false;
+
+              case 21:
+
+                this.checkLotteryResults = false;
+                this.txLotteryConfirmed = true;
+
+                _context.next = 29;
+                break;
+
+              case 25:
+                _context.prev = 25;
+                _context.t1 = _context['catch'](1);
+
+                this.$root.log.error('call_contract_call_contract_error', _context.t1.stack || _context.t1.toString() || _context.t1);
+                alert(_context.t1.message || _context.t1);
+
+              case 29:
+              case 'end':
+                return _context.stop();
+            }
+          }
+        }, _callee, this, [[1, 25]]);
+      }));
+
+      function checkLotteryResults(_x) {
+        return _ref.apply(this, arguments);
+      }
+
+      return checkLotteryResults;
+    }()
+  },
+  methods: {
+    closeDialog: function closeDialog() {
+      this.txLotteryConfirmed = false;
+      this.txLotteryReceiptDialog = false;
+      this.txError = false;
+      this.getData();
+    },
+    runLottery: function runLottery() {
+      var _this = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
+        var playedAmount, encodedData, htmlcoinLowerFeeThreshold;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
+          while (1) {
+            switch (_context2.prev = _context2.next) {
+              case 0:
+                if (!(parseInt(_this.userTokenBalance) >= parseInt(_this.lotteryBet))) {
+                  _context2.next = 38;
+                  break;
+                }
+
+                if (!(parseInt(_this.lotteryLuckyNumber) >= 0 && parseInt(_this.lotteryBet) > 0)) {
+                  _context2.next = 35;
+                  break;
+                }
+
+                if (!(parseInt(_this.lotteryBet) <= _this.tokenLotteryFeeThreshold && parseInt(_this.lotteryLuckyNumber) <= _this.tokenLotteryPot || parseInt(_this.lotteryBet) > _this.tokenLotteryFeeThreshold && parseInt(_this.lotteryBet) <= _this.htmlcoinLotteryFeeThreshold && parseInt(_this.lotteryLuckyNumber) <= _this.htmlcoinLotteryPot)) {
+                  _context2.next = 31;
+                  break;
+                }
+
+                _context2.prev = 3;
+
+
+                _this.lotteryID = __WEBPACK_IMPORTED_MODULE_8_js_sha256___default()(_this.wallet.info.address + Date.now());
+
+                playedAmount = _this.lotteryBet * 100000000;
+                encodedData = _this.encodeContractSendFunction(abiJson, 'BIFP_playLottery', [playedAmount, _this.lotteryLuckyNumber, _this.lotteryID]);
+
+
+                _this.confirmSendLotteryDialog = true;
+
+                _context2.prev = 8;
+                _context2.next = 11;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(contractAddress, encodedData, _this.gasLimit, _this.gasPrice, _this.fee);
+
+              case 11:
+                _this.rawTx = _context2.sent;
+                _context2.next = 20;
+                break;
+
+              case 14:
+                _context2.prev = 14;
+                _context2.t0 = _context2['catch'](8);
+
+                _this.$root.log.error('send_to_generate_tx_error', _context2.t0.stack || _context2.t0.toString() || _context2.t0);
+                alert(_context2.t0.message || _context2.t0);
+                _this.confirmSendLotteryDialog = false;
+                return _context2.abrupt('return', false);
+
+              case 20:
+                _this.canSend = true;
+                _context2.next = 29;
+                break;
+
+              case 23:
+                _context2.prev = 23;
+                _context2.t1 = _context2['catch'](3);
+
+                _this.$root.error('Params error');
+                _this.$root.log.error('send_to_contract_encode_abi_error', _context2.t1.stack || _context2.t1.toString() || _context2.t1);
+                _this.confirmSendLotteryDialog = false;
+                return _context2.abrupt('return', false);
+
+              case 29:
+                _context2.next = 33;
+                break;
+
+              case 31:
+                htmlcoinLowerFeeThreshold = _this.tokenLotteryFeeThreshold + 1;
+
+
+                alert('Wrong bet or lucky number!\n\nBIFP Lottery:\n  * Bets between 1 and ' + _this.tokenLotteryFeeThreshold + ' BIFP\n  * Lucky numbers between 0 and ' + _this.tokenLotteryPot + '\n\nHTMLCoin Lottery:\n  * Bets between ' + htmlcoinLowerFeeThreshold + ' and ' + _this.htmlcoinLotteryFeeThreshold + ' BIFP\n  * Lucky numbers between 0 and ' + _this.htmlcoinLotteryPot);
+
+              case 33:
+                _context2.next = 36;
+                break;
+
+              case 35:
+                alert('Your bet must be higher than 0 and your lucky number must equal or higher than 0!');
+
+              case 36:
+                _context2.next = 39;
+                break;
+
+              case 38:
+                alert('You do not have enough BIFP to play! Go get some!');
+
+              case 39:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, _this, [[3, 23], [8, 14]]);
+      }))();
+    },
+    runUpForGrabs: function runUpForGrabs() {
+      var _this2 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee3() {
+        var playedAmount, encodedData;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+                if (!(parseInt(_this2.userTokenBalance) >= parseInt(_this2.upForGrabsBet))) {
+                  _context3.next = 33;
+                  break;
+                }
+
+                if (!(parseInt(_this2.upForGrabsBet) >= 0)) {
+                  _context3.next = 30;
+                  break;
+                }
+
+                _context3.prev = 2;
+
+
+                _this2.lotteryID = __WEBPACK_IMPORTED_MODULE_8_js_sha256___default()(_this2.wallet.info.address + Date.now());
+
+                playedAmount = _this2.upForGrabsBet * 100000000;
+                encodedData = _this2.encodeContractSendFunction(abiJson, 'BIFP_upForGrabs', [playedAmount, _this2.lotteryID]);
+
+
+                _this2.confirmSendLotteryDialog = true;
+
+                _context3.prev = 7;
+                _context3.next = 10;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(contractAddress, encodedData, _this2.gasLimit, _this2.gasPrice, _this2.fee);
+
+              case 10:
+                _this2.rawTx = _context3.sent;
+                _context3.next = 19;
+                break;
+
+              case 13:
+                _context3.prev = 13;
+                _context3.t0 = _context3['catch'](7);
+
+                _this2.$root.log.error('send_to_generate_tx_error', _context3.t0.stack || _context3.t0.toString() || _context3.t0);
+                alert(_context3.t0.message || _context3.t0);
+                _this2.confirmSendLotteryDialog = false;
+                return _context3.abrupt('return', false);
+
+              case 19:
+                _this2.canSend = true;
+                _context3.next = 28;
+                break;
+
+              case 22:
+                _context3.prev = 22;
+                _context3.t1 = _context3['catch'](2);
+
+                _this2.$root.error('Params error');
+                _this2.$root.log.error('send_to_contract_encode_abi_error', _context3.t1.stack || _context3.t1.toString() || _context3.t1);
+                _this2.confirmSendLotteryDialog = false;
+                return _context3.abrupt('return', false);
+
+              case 28:
+                _context3.next = 31;
+                break;
+
+              case 30:
+                alert('The amount played must be higher than 0 BIFP!');
+
+              case 31:
+                _context3.next = 34;
+                break;
+
+              case 33:
+                alert('You do not have enough BIFP to play! Go get some!');
+
+              case 34:
+              case 'end':
+                return _context3.stop();
+            }
+          }
+        }, _callee3, _this2, [[2, 22], [7, 13]]);
+      }))();
+    },
+    confirmSendLottery: function confirmSendLottery() {
+      var _this3 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee4() {
+        var txId, txViewUrl, apiURL, interval;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+
+                _this3.sending = true;
+                _context4.prev = 1;
+                _context4.next = 4;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().sendRawTx(_this3.rawTx);
+
+              case 4:
+                txId = _context4.sent;
+
+                _this3.confirmSendLotteryDialog = false;
+                _this3.sending = false;
+                txViewUrl = __WEBPACK_IMPORTED_MODULE_4_libs_server__["a" /* default */].currentNode().getTxExplorerUrl(txId);
+
+                _this3.$root.success('Successful sent! You can follow the transaction on <a href="' + txViewUrl + '" target="_blank">' + txViewUrl + '</a>', true, 0);
+                _this3.$emit('send');
+
+                _this3.txLotteryReceiptDialog = true;
+                _this3.awaitingLotteryTx = true;
+
+                apiURL = __WEBPACK_IMPORTED_MODULE_5_libs_config__["a" /* default */].getNetwork() == "mainnet" ? 'https://explorer.htmlcoin.com/api/tx/' : 'https://testnet.htmlcoin.com/api/tx/';
+                interval = setInterval(function () {
+
+                  __WEBPACK_IMPORTED_MODULE_6_axios___default.a.get(apiURL + txId).then(function (result) {
+                    console.log('Checking Tx...');
+
+                    if (result.data.confirmations > 0) {
+                      clearInterval(interval);
+                      _this3.awaitingLotteryTx = false;
+
+                      if (result.data.receipt[0].excepted != 'None') {
+                        _this3.txError = true;
+                      } else {
+                        _this3.checkLotteryResults = true;
+                      }
+                    }
+                  }).catch(console.error);
+                }, 15 * 1000);
+                _context4.next = 21;
+                break;
+
+              case 16:
+                _context4.prev = 16;
+                _context4.t0 = _context4['catch'](1);
+
+                alert(_context4.t0.message || _context4.t0);
+                _this3.$root.log.error('send_to_contract_post_raw_tx_error', _context4.t0.response || _context4.t0.stack || _context4.t0.toString() || _context4.t0);
+                _this3.confirmSendLotteryDialog = false;
+
+              case 21:
+              case 'end':
+                return _context4.stop();
+            }
+          }
+        }, _callee4, _this3, [[1, 16]]);
+      }))();
+    },
+    setSell: function setSell() {
+      var _this4 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee5() {
+        var sellQtyPrecision, sellPricePrecision, encodedData;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee5$(_context5) {
+          while (1) {
+            switch (_context5.prev = _context5.next) {
+              case 0:
+                if (!(parseInt(_this4.userTokenBalance) >= parseInt(_this4.sellTokenQty))) {
+                  _context5.next = 33;
+                  break;
+                }
+
+                if (!(parseInt(_this4.sellTokenQty) >= 0)) {
+                  _context5.next = 30;
+                  break;
+                }
+
+                _context5.prev = 2;
+
+                // Bringing the numbers to the precision used by the Smart Contract
+                sellQtyPrecision = parseInt(_this4.sellTokenQty) * 100000000;
+                sellPricePrecision = parseInt(_this4.sellPricePerToken) * 100000000;
+                encodedData = _this4.encodeContractSendFunction(abiJson, 'BIFP_setSell', [sellQtyPrecision, sellPricePrecision]);
+
+
+                _this4.confirmSendDialog = true;
+
+                _context5.prev = 7;
+                _context5.next = 10;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(contractAddress, encodedData, _this4.gasLimit, _this4.gasPrice, _this4.fee);
+
+              case 10:
+                _this4.rawTx = _context5.sent;
+                _context5.next = 19;
+                break;
+
+              case 13:
+                _context5.prev = 13;
+                _context5.t0 = _context5['catch'](7);
+
+                _this4.$root.log.error('send_to_generate_tx_error', _context5.t0.stack || _context5.t0.toString() || _context5.t0);
+                alert(_context5.t0.message || _context5.t0);
+                _this4.confirmSendDialog = false;
+                return _context5.abrupt('return', false);
+
+              case 19:
+                _this4.canSend = true;
+                _context5.next = 28;
+                break;
+
+              case 22:
+                _context5.prev = 22;
+                _context5.t1 = _context5['catch'](2);
+
+                _this4.$root.error('Params error');
+                _this4.$root.log.error('send_to_contract_encode_abi_error', _context5.t1.stack || _context5.t1.toString() || _context5.t1);
+                _this4.confirmSendDialog = false;
+                return _context5.abrupt('return', false);
+
+              case 28:
+                _context5.next = 31;
+                break;
+
+              case 30:
+                alert('The quantity must be higher than 0 BIFP!');
+
+              case 31:
+                _context5.next = 34;
+                break;
+
+              case 33:
+                alert('You do not have enough BIFP to sell! Go get some!');
+
+              case 34:
+              case 'end':
+                return _context5.stop();
+            }
+          }
+        }, _callee5, _this4, [[2, 22], [7, 13]]);
+      }))();
+    },
+    confirmSend: function confirmSend() {
+      var _this5 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee6() {
+        var txId, txViewUrl;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee6$(_context6) {
+          while (1) {
+            switch (_context6.prev = _context6.next) {
+              case 0:
+
+                _this5.sending = true;
+                _context6.prev = 1;
+                _context6.next = 4;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().sendRawTx(_this5.rawTx);
+
+              case 4:
+                txId = _context6.sent;
+
+                _this5.confirmSendDialog = false;
+                _this5.sending = false;
+                txViewUrl = __WEBPACK_IMPORTED_MODULE_4_libs_server__["a" /* default */].currentNode().getTxExplorerUrl(txId);
+
+                _this5.$root.success('Successful sent! You can follow the transaction on <a href="' + txViewUrl + '" target="_blank">' + txViewUrl + '</a>', true, 0);
+
+                _context6.next = 16;
+                break;
+
+              case 11:
+                _context6.prev = 11;
+                _context6.t0 = _context6['catch'](1);
+
+                alert(_context6.t0.message || _context6.t0);
+                _this5.$root.log.error('send_to_contract_post_raw_tx_error', _context6.t0.response || _context6.t0.stack || _context6.t0.toString() || _context6.t0);
+                _this5.confirmSendDialog = false;
+
+              case 16:
+              case 'end':
+                return _context6.stop();
+            }
+          }
+        }, _callee6, _this5, [[1, 11]]);
+      }))();
+    },
+    getData: function getData() {
+      var _this6 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee7() {
+        var decodedResult, i;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee7$(_context7) {
+          while (1) {
+            switch (_context7.prev = _context7.next) {
+              case 0:
+                _this6.loading = true;
+
+                _context7.prev = 1;
+                _context7.next = 4;
+                return _this6.callContractFunction(contractAddress, abiJson, 'tokenLotteryOn', []);
+
+              case 4:
+                decodedResult = _context7.sent;
+
+
+                decodedResult[0].toString() == 'true' ? _this6.tokenLotteryStatus = 'On' : _this6.tokenLotteryStatus = 'Off';
+
+                _context7.next = 8;
+                return _this6.callContractFunction(contractAddress, abiJson, 'htmlcoinLotteryOn', []);
+
+              case 8:
+                decodedResult = _context7.sent;
+
+
+                decodedResult[0].toString() == 'true' ? _this6.htmlcoinLotteryStatus = 'On' : _this6.htmlcoinLotteryStatus = 'Off';
+
+                _context7.next = 12;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getPrizeBalance', ['tokenLottery']);
+
+              case 12:
+                decodedResult = _context7.sent;
+
+
+                _this6.tokenLotteryPrize = parseInt(decodedResult[0]) / 100000000;
+
+                _context7.next = 16;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getPrizeBalance', ['htmlcoinLottery']);
+
+              case 16:
+                decodedResult = _context7.sent;
+
+
+                _this6.htmlcoinLotteryPrize = parseInt(decodedResult[0]) / 100000000;
+
+                _context7.next = 20;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getTokenLotteryFeeThreshold', []);
+
+              case 20:
+                decodedResult = _context7.sent;
+
+
+                _this6.tokenLotteryFeeThreshold = parseInt(decodedResult[0]) / 100000000;
+
+                _context7.next = 24;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getHtmlcoinLotteryFeeThreshold', []);
+
+              case 24:
+                decodedResult = _context7.sent;
+
+
+                _this6.htmlcoinLotteryFeeThreshold = parseInt(decodedResult[0]) / 100000000;
+
+                _context7.next = 28;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getTokenLotteryPot', []);
+
+              case 28:
+                decodedResult = _context7.sent;
+
+
+                _this6.tokenLotteryPot = parseInt(decodedResult[0]);
+
+                _context7.next = 32;
+                return _this6.callContractFunction(contractAddress, abiJson, 'getHtmlcoinLotteryPot', []);
+
+              case 32:
+                decodedResult = _context7.sent;
+
+
+                _this6.htmlcoinLotteryPot = parseInt(decodedResult[0]);
+
+                for (i = 0; i < _this6.wallet.info.hrc20.length; i++) {
+                  if (_this6.wallet.info.hrc20[i].contract.contract_address == contractAddress) {
+                    _this6.userTokenBalance = parseInt(_this6.wallet.info.hrc20[i].amount) / 100000000;
+                  }
+                }
+
+                _context7.next = 42;
+                break;
+
+              case 37:
+                _context7.prev = 37;
+                _context7.t0 = _context7['catch'](1);
+
+                _this6.loading = false;
+                _this6.$root.log.error('call_contract_call_contract_error', _context7.t0.stack || _context7.t0.toString() || _context7.t0);
+                alert(_context7.t0.message || _context7.t0);
+
+              case 42:
+
+                _this6.loading = false;
+
+              case 43:
+              case 'end':
+                return _context7.stop();
+            }
+          }
+        }, _callee7, _this6, [[1, 37]]);
+      }))();
+    },
+    findIndexByName: function findIndexByName(abiJson, name) {
+      return abiJson.findIndex(function (item) {
+        return item.name === name;
+      });
+    },
+    callContractFunction: function callContractFunction(contractAddress, abiJson, functionName, params) {
+      var _this7 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee8() {
+        var encodedData, encodedResult;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee8$(_context8) {
+          while (1) {
+            switch (_context8.prev = _context8.next) {
+              case 0:
+                encodedData = __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.encodeMethod(abiJson[_this7.findIndexByName(abiJson, functionName)], params).substr(2);
+                _context8.next = 3;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().callContract(contractAddress, encodedData);
+
+              case 3:
+                encodedResult = _context8.sent;
+
+                encodedResult = '0x' + encodedResult;
+
+                return _context8.abrupt('return', __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.decodeMethod(abiJson[_this7.findIndexByName(abiJson, functionName)], encodedResult));
+
+              case 6:
+              case 'end':
+                return _context8.stop();
+            }
+          }
+        }, _callee8, _this7);
+      }))();
+    },
+    encodeContractSendFunction: function encodeContractSendFunction(abiJson, functionName, params) {
+      return __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.encodeMethod(abiJson[this.findIndexByName(abiJson, functionName)], params).substr(2);
+    },
+
+
+    onCopySucc: function onCopySucc() {
+      this.$root.success('copy success');
+    },
+    onCopyError: function onCopyError() {
+      this.$root.error('copy fail');
+    }
+
+    /*
+    async buyFromBank() {
+       if(parseInt(this.buyFromBankAmount) >= 0) {
+      
+        try {
+           const buyAmount = this.buyFromBankAmount * 100000000;
+           const encodedData = this.encodeContractSendFunction(
+            abiJson, 
+            'BIFP_buyTokens', 
+            []
+          );
+           this.confirmSendBuyDialog = true;
+           try {
+            this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
+          } catch (e) {
+            this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e);
+            alert(e.message || e);
+            this.confirmSendBuyDialog = false;
+            return false;
+          }
+            this.canSend = true;
+        } catch (e) {
+          this.$root.error('Params error');
+          this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e);
+          this.confirmSendBuyDialog = false;
+          return false;
+        }
+       
+      } else {
+        alert('The buying amount must be higher than 0 HTML!');
+      }
+    },
+     async confirmSendBuy() {
+      
+      this.sending = true;
+      try {
+        const txId = await webWallet.getWallet().sendRawTx(this.rawTx);
+        this.confirmSendBuyDialog = false;
+        this.sending = false;
+        const txViewUrl = server.currentNode().getTxExplorerUrl(txId);
+        this.$root.success(`Successful sent! You can follow the transaction on <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`, true, 0);
+         this.txBuyReceiptDialog = true;
+        this.awaitingBuyTx = true;
+         var apiURL = config.getNetwork() == "mainnet" ? 'https://explorer.htmlcoin.com/api/tx/' : 'https://testnet.htmlcoin.com/api/tx/';
+         const interval = setInterval(() => {
+           axios.get(apiURL + txId)
+          .then(result=>{
+            console.log('Checking Tx...')
+             if(result.data.confirmations > 0) {
+              clearInterval(interval);
+              this.awaitingBuyTx = false;
+               if(result.data.receipt[0].excepted != 'None') {
+                this.txError = true;
+              } else {
+                this.txBuyConfirmed = true;
+              }
+            }
+           })
+          .catch(console.error)
+        }, 15*1000)
+       } catch (e) {
+        alert(e.message || e);
+        this.$root.log.error('send_to_contract_post_raw_tx_error', e.response || e.stack || e.toString() || e);
+        this.confirmSendBuyDialog = false;
+      }
+    },
+     async confirmOwnershipTransfer() {
+      
+      try {
+         const encodedData = this.encodeContractSendFunction(
+          abiJson, 
+          'confirmOwnershipTransfer',
+          []
+        );
+         this.confirmSendDialog = true;
+         try {
+          this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
+        } catch (e) {
+          this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e);
+          alert(e.message || e);
+          this.confirmSendDialog = false;
+          return false;
+        }
+          this.canSend = true;
+      } catch (e) {
+        this.$root.error('Params error');
+        this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e);
+        this.confirmSendDialog = false;
+        return false;
+      }
+    },
+    */
+
+  },
+
+  mounted: function mounted() {
+    this.getData();
+  }
+});
 
 /***/ }),
 
@@ -5829,6 +7321,13 @@ var Component = normalizeComponent(
 
 /***/ }),
 
+/***/ "U8Q/":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/images/biffy_plutonium_splash.f14e206.jpg";
+
+/***/ }),
+
 /***/ "Uzv/":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -5861,6 +7360,17 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
+
+/***/ }),
+
+/***/ "VdHc":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('create_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Byte Code","multiLine":"","required":""},model:{value:(_vm.code),callback:function ($$v) {_vm.code=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"code"}}),_vm._v(" "),_c('a',{staticStyle:{"float":"right"},attrs:{"href":"https://remix.ethereum.org","target":"_blank"}},[_vm._v(_vm._s(_vm.$t('create_contract.compiler')))]),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('create_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -7255,6 +8765,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAUkAAAAtCAYAAAAj
 
 /***/ }),
 
+/***/ "a/BK":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send.send_tokens')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Address","required":""},model:{value:(_vm.address),callback:function ($$v) {_vm.address=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"address"}}),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs9":""}},[_c('v-text-field',{attrs:{"label":"Amount","required":""},model:{value:(_vm.amount),callback:function ($$v) {_vm.amount=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"amount"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs3":""}},[_c('v-select',{attrs:{"items":_vm.tokens,"bottom":""},scopedSlots:_vm._u([{key:"item",fn:function(data){return [_c('v-list-tile-content',[_c('v-list-tile-title',[_vm._v("\n                 "+_vm._s(data.item.text)+_vm._s(data.item.name ? '(' + data.item.name + ')' : '')+"\n                ")]),_vm._v(" "),_c('v-list-tile-sub-title',[_vm._v("\n                 "+_vm._s(data.item.address)+"\n               ")])],1)]}}]),model:{value:(_vm.symbol),callback:function ($$v) {_vm.symbol=$$v},expression:"symbol"}})],1)],1),_vm._v(" "),(_vm.symbol !== 'HTML')?_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=$$v},expression:"gasPrice"}}):_vm._e(),_vm._v(" "),(_vm.symbol !== 'HTML')?_c('v-text-field',{attrs:{"label":"Gas Limit"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=$$v},expression:"gasLimit"}}):_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmAddressDialog),callback:function ($$v) {_vm.confirmAddressDialog=$$v},expression:"confirmAddressDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send.enter_address')))])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Address"},model:{value:(_vm.repeatAddress),callback:function ($$v) {_vm.repeatAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"repeatAddress"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmAddress}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.confirmAddressDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))])],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send.going_to_send'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.amount)+_vm._s(this.symbol))]),_vm._v("\n          "+_vm._s(_vm.$t('send.to_address'))+"\n          "),_c('v-chip',{attrs:{"label":""}},[_vm._v(_vm._s(this.address))]),_vm._v("\n          "+_vm._s(_vm.$t('common.question_mark'))+"\n        ")],1)]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v("\n          "+_vm._s(_vm.$t('common.confirm'))+"\n        ")]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v("\n          "+_vm._s(_vm.$t('common.cancel'))+"\n        ")]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.addTokenDialog),callback:function ($$v) {_vm.addTokenDialog=$$v},expression:"addTokenDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          Token\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":_vm.$t('send.token_address'),"disabled":_vm.addTokenStep === 2},model:{value:(_vm.addTokenAddress),callback:function ($$v) {_vm.addTokenAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenAddress"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[(_vm.addTokenStep === 2)?_c('v-text-field',{attrs:{"label":"Name","disabled":""},model:{value:(_vm.addTokenName),callback:function ($$v) {_vm.addTokenName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenName"}}):_vm._e()],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[(_vm.addTokenStep === 2)?_c('v-text-field',{attrs:{"label":"Symbol","disabled":""},model:{value:(_vm.addTokenSymbol),callback:function ($$v) {_vm.addTokenSymbol=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"addTokenSymbol"}}):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),(_vm.addTokenStep === 1)?_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":"","loading":_vm.addTokenLoading},on:{"click":_vm.searchAddToken}},[_vm._v("\n          "+_vm._s(_vm.$t('common.search'))+"\n        ")]):_vm._e(),_vm._v(" "),(_vm.addTokenStep === 2)?_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmAddToken}},[_vm._v("\n          "+_vm._s(_vm.$t('common.confirm'))+"\n        ")]):_vm._e(),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.addTokenDialog = false}}},[_vm._v("\n          "+_vm._s(_vm.$t('common.cancel'))+"\n        ")]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "a2ct":
 /***/ (function(module, exports) {
 
@@ -7282,7 +8803,7 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAEsAAABkCAYAAADO
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SendToContract_vue__ = __webpack_require__("6dsK");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e42a83a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__ = __webpack_require__("coaj");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_26b4ede6_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__ = __webpack_require__("DMrH");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -7299,7 +8820,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SendToContract_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_3e42a83a_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_26b4ede6_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -7609,17 +9130,6 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
-/***/ "c6Ri":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('call_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":""},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"ABI","required":"","multiLine":""},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","single-line":"","bottom":""},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e()],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.callTo}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.execResultDialog),callback:function ($$v) {_vm.execResultDialog=$$v},expression:"execResultDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('call_contract.result'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Result","multi-line":"","disabled":""},model:{value:(_vm.result),callback:function ($$v) {_vm.result=$$v},expression:"result"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"blue--text darken-1",attrs:{"flat":""},nativeOn:{"click":function($event){_vm.execResultDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "cAXN":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -7877,17 +9387,6 @@ var Component = normalizeComponent(
 
 /* harmony default export */ __webpack_exports__["a"] = (Component.exports);
 
-
-/***/ }),
-
-/***/ "coaj":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('send_to_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":""},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"ABI","required":"","multiLine":""},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","single-line":"","bottom":""},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -8313,6 +9812,17 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
+/***/ "eN9x":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("RLpJ")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"teal"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Info\n      "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      New\n      "),_c('v-icon',[_vm._v("child_care")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Check\n      "),_c('v-icon',[_vm._v("search")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('div',[_c('img',{staticStyle:{"width":"50%","height":"auto"},attrs:{"src":__webpack_require__("TGXn")}})]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to MyOffspring!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                    This application allows you to register your children and create a Birth Certificate for them in the "),_c('b',[_vm._v("AltHash")]),_vm._v(" blockchain.\n                    "),_c('br'),_c('br'),_vm._v("\n                    To create a new record, just click on \"New\" menu item, and fill in the details about the birth of your heir.\n                    "),_c('br'),_c('br'),_vm._v(" "),_c('b',[_vm._v("Take note of the hash code generated, as it will be the unique identifier for the birth registration.")]),_vm._v(" "),_c('br'),_c('br'),_vm._v("\n                    Once the transaction is confirmed, the registration is complete and you can verify it through the menu item \"Check\".\n                    "),_c('br'),_c('br'),_vm._v("\n                    MyOffspring was developed based on suggestions given by our Communities Manager, "),_c('b',[_vm._v("Heitor Guimarães")]),_vm._v(", supported by the Community member "),_c('b',[_vm._v("Karol Pyla")]),_vm._v(", who wanted to register his son, "),_c('b',[_vm._v("Julek")]),_vm._v(", on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!\n                  ")]),_vm._v(" "),_c('br'),_c('br')])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Full Name","required":"","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.fullName),callback:function ($$v) {_vm.fullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fullName"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Mother's Full Name","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.motherFullName),callback:function ($$v) {_vm.motherFullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"motherFullName"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Father's Full Name","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.fatherFullName),callback:function ($$v) {_vm.fatherFullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fatherFullName"}}),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs6":""}},[_c('v-menu',{ref:"dateOfBirth_menu",attrs:{"close-on-content-click":false,"nudge-right":40,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","min-width":"290px"},model:{value:(_vm.dateOfBirth_menu),callback:function ($$v) {_vm.dateOfBirth_menu=$$v},expression:"dateOfBirth_menu"}},[_c('v-text-field',{attrs:{"slot":"activator","label":"Date of Birth","prepend-icon":"event","readonly":"","outline":"","background-color":"teal"},slot:"activator",model:{value:(_vm.dateOfBirth),callback:function ($$v) {_vm.dateOfBirth=$$v},expression:"dateOfBirth"}}),_vm._v(" "),_c('v-date-picker',{ref:"picker",attrs:{"max":new Date().toISOString().substr(0, 10),"min":"1900-01-01"},on:{"change":_vm.dateOfBirth_save},model:{value:(_vm.dateOfBirth),callback:function ($$v) {_vm.dateOfBirth=$$v},expression:"dateOfBirth"}})],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-menu',{ref:"timeOfBirth_menu",attrs:{"close-on-content-click":false,"nudge-right":40,"return-value":_vm.timeOfBirth,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","max-width":"290px","min-width":"290px"},on:{"update:returnValue":function($event){_vm.timeOfBirth=$event}},model:{value:(_vm.timePicker),callback:function ($$v) {_vm.timePicker=$$v},expression:"timePicker"}},[_c('v-text-field',{attrs:{"slot":"activator","label":"Time of Birth","prepend-icon":"access_time","readonly":"","outline":"","background-color":"teal"},slot:"activator",model:{value:(_vm.timeOfBirth),callback:function ($$v) {_vm.timeOfBirth=$$v},expression:"timeOfBirth"}}),_vm._v(" "),(_vm.timePicker)?_c('v-time-picker',{attrs:{"full-width":"","format":"24hr"},on:{"change":_vm.timeOfBirth_save},model:{value:(_vm.timeOfBirth),callback:function ($$v) {_vm.timeOfBirth=$$v},expression:"timeOfBirth"}}):_vm._e()],1)],1)],1),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Place of Birth (Facility, City, State/Province, Country)","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.placeOfBirth),callback:function ($$v) {_vm.placeOfBirth=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"placeOfBirth"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                  "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n                  ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('b',[_vm._v("Please store the ID below in a safe place, as it is the unique ID for this Birth registration.")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs10":""}},[_c('v-text-field',{attrs:{"label":"Hash ID","disabled":""},model:{value:(_vm.hashID),callback:function ($$v) {_vm.hashID=$$v},expression:"hashID"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('v-btn',{directives:[{name:"clipboard",rawName:"v-clipboard:copy",value:(_vm.hashID),expression:"hashID",arg:"copy"},{name:"clipboard",rawName:"v-clipboard:success",value:(_vm.onCopySucc),expression:"onCopySucc",arg:"success"},{name:"clipboard",rawName:"v-clipboard:error",value:(_vm.onCopyError),expression:"onCopyError",arg:"error"}],staticClass:"mt-3",attrs:{"small":"","color":"cyan"}},[_vm._v("\n                          "+_vm._s(_vm.$t('common.copy'))+"\n                        ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs10":""}},[_c('v-text-field',{staticClass:"mx-3",attrs:{"label":"Hash ID","append-icon":"search","outline":"","background-color":"teal"},on:{"click:append":_vm.openCertificate},model:{value:(_vm.searchHashID),callback:function ($$v) {_vm.searchHashID=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"searchHashID"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('img',{staticClass:"cursor",attrs:{"src":__webpack_require__("igel")},on:{"click":_vm.scanQrcode}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('p',{staticClass:"error"},[_vm._v(_vm._s(_vm.error))])])],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"width":"600px"},model:{value:(_vm.execResultDialog),callback:function ($$v) {_vm.execResultDialog=$$v},expression:"execResultDialog"}},[_c('span',{attrs:{"id":"certificate"}},[_c('v-card',{staticClass:"modal-detail"},[_c('v-card-text',[_c('v-container',{attrs:{"align-center":"","grid-list-md":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":"","text-md-center":""}},[_c('img',{staticClass:"logo1",attrs:{"src":__webpack_require__("RLpJ")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","text-md-center":""}},[_c('img',{staticClass:"logo2",attrs:{"src":__webpack_require__("2Gzf")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":"","text-md-center":""}},[_c('span',{staticClass:"font-weight-medium my-2 headline font-bold",attrs:{"id":"title"}},[_vm._v("\n                  Digital Birth Certificate\n                ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('p'),_vm._v(" "),_c('p',[_c('b',[_vm._v("Full Name:")]),_vm._v(" "+_vm._s(_vm.resultFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Mother's Full Name:")]),_vm._v(" "+_vm._s(_vm.resultMotherFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Father's Full Name:")]),_vm._v(" "+_vm._s(_vm.resultFatherFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Date of Birth:")]),_vm._v(" "+_vm._s(_vm.resultDateOfBirth)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Time of Birth:")]),_vm._v(" "+_vm._s(_vm.resultTimeOfBirth)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Place of Birth:")]),_vm._v(" "+_vm._s(_vm.resultPlaceOfBirth)+"\n                ")]),_vm._v(" "),_c('p',{staticClass:"text-xs-center"},[_c('span',{staticClass:"caption",attrs:{"id":"certificate_id"}},[_vm._v("Hash ID: "+_vm._s(_vm.searchHashID))]),_vm._v(" "),_c('img',{staticClass:"qr",attrs:{"src":_vm.qr,"id":"qr"}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('v-btn',{attrs:{"icon":"","id":"btn"},on:{"click":_vm.print}},[_c('v-icon',[_vm._v("print")])],1)],1)])],1)],1)],1)],1)],1)]),_vm._v(" "),_c('v-dialog',{attrs:{"max-width":"50%"},model:{value:(_vm.qrScan),callback:function ($$v) {_vm.qrScan=$$v},expression:"qrScan"}},[_c('v-container',[_c('v-layout',[_c('v-flex',{attrs:{"xs12":"","align-center":"","text-xs-center":""}},[(_vm.qrComponent)?_c('qrcode-stream',{attrs:{"track":false,"camera":_vm.camera},on:{"decode":_vm.onDecode,"init":_vm.onInit}}):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"hide-overlay":"","persistent":"","width":"300"},model:{value:(_vm.loading),callback:function ($$v) {_vm.loading=$$v},expression:"loading"}},[_c('v-card',{attrs:{"color":"teal","dark":""}},[_c('v-card-text',[_vm._v("\n        Please stand by\n        "),_c('v-progress-linear',{staticClass:"mb-0",attrs:{"indeterminate":"","color":"white"}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "ejIc":
 /***/ (function(module, exports) {
 
@@ -8730,6 +10240,13 @@ module.exports = __webpack_require__.p + "static/images/tokenfarm_logo21.05ba613
 
 /***/ }),
 
+/***/ "gj2+":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/images/biffy_ufg_win.9072f3e.jpg";
+
+/***/ }),
+
 /***/ "glbK":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -8840,6 +10357,13 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ (function(module, exports) {
 
 module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAMIAAAAyCAYAAAAOcwQoAAATrUlEQVR42u2dCVgT57qAse09Xc7xni7ntD1dvD493rbX20VFkoDV4nEFAkJC6tYqSjYUUFvbKi70tNalRQKoVSpkm8QFUSFBpXVBNhUIoCxSoYBYUQoiKsiazJzvjwkMIRtIRPvM9zzfM2Tmn39+Jt873/LPTJycBknGL8beovPlcoZAce3DFYea/SJymtmi/DK2qGCTr6hwpBMllPzRxSVAMoYmkCtcBYomV6GCcF2i1PlszrrrH11A+Eflt7Gj8tN8owrYzrGa/6LOFiV/OPkHM/YZGhcLcxVgbXoAjEoGoVvztWyRZv/UzZq/OhHEMOrsUfLIy1s+8cNpgYqFDIE8B0IhvBcEFkG4p+yogusskWadz5asV6gzSckjK84BknfpAizLVSBv7wOAHSDcgyG/ix2Vd9VHlDufw0l4nDqrlDwy8j5P9iaNK9/C4GMtFgEAdQtS4l6rDusW/qBpm729ELcEg0E7WaK8g95bLzA8Yo4+SZ1lSh5aGc3Z8Rc6T76aLpCXM4SYzhoE3qsP6XYdr8BTy5rwk1WteHLpbfyLAxU4xzoMyEPU+0Xm/+genvY36oxT8lDJSHfJU2MXy1zpAkWeNeNHOnXFft0qaY4251oHUXyT6KWFDTpCcq4eD9hdhHO2WfcQrKj8FlZUQaBveOGz1DdAyZDLOK7UGfIAGXiBZmsATAzeq1u+M1t3qLBed+EGjptCQNaMK+14zMlafN4P53Eb3qHDP6rgpN9WDccjpoIKlygZAi8QIHmKxpN9yxBgnWarQSSdtuKA9oDmuq6oEcdBCWsQIC1q1C/x3Lou/Iv95bh/jHXvwI7O1/qJNCp9uZUSSh6EoPkA50DJPPACeQyhwkYecFi3OfGCNqe2A7dl/Ja0oF5HKDU38OV7LuEf2QiX2CLIH0R5a2ZEljxPfVOUOEzAA7xJFyoiAIBWawB8sFSpWy3J7Tpd2YzbCoPs1ZxrXbj4bD0+d8d529WlqHwNM0JDJdOUOEamfHpgr1uQot5SKDQxZK9uzoZjXQm517UX7AiBBqLZVzvwf6su6yzlD+zoApwtymv32ZS+1ZkfS92mQcngi+eapPoZqw61TV6+D90n1OtWCZ+wpK4fT1Rq86536hwBQO/qEo6ry5p1qxN/1fWqLkUV6Hy/y2ry/urYXY81SWVTv1SNoL41SgZdvNYk6bzWJhOea5Lx6V8eanYLUja6CRXapTGnWwt+1xKOBsBUIewidmbUaT+KKdT5RebeYf77WAMaGxojjLXDc13Su9S3RokDPILByAwKHqIzYOuJpqzLrV0PGoKeChNORByt7PBar24jj00/vrDDY6hvjRKHg4B046HiRlTq7JcBX60jys4qiXL1SqJy3zy9Vqg+I8rOKPTb+gvD0Ys3cf8NR3EKBEqGDITYU1W37DLY+jai9OJZokL9OVG92424HOtiVqtjGURF8nLiYnE6UXyj0y4QTlTcIeZv+ZmgQKBk6EA4WXXHNgStxKXjm4iq+EkWATDVqnh3ojxlFVF87aZNEE4CCB9/N0QguIc/oS8rBykXIaUJ5TNoC2QvUNZCgdBbr90CL7DSbgB6ewcXvXewBUN/QbB1P5SpMriYu2kfowPjnqcFyhYyBFhZn/YCRQudh8nGcWXvIVDMjYEuUHp27yPAcp3Cwx8jb9fP3POxcNiuRW3oAqxpPF+6qGd/xUZ7x0/jybeS+4bxJevHKcR0qB9YNczc/wfb0rv/J57Mg7ydIAgPwn6pAX3Hkl3Btud0Ot1tY2P4+1vCxgNZsD3CyvFwkBroRwZ/00H7lNFhWyGpcT0sxlg4ztOwPYncef9B+L2FKE/9akAQ9MBAA8/wBXiV9ocGhNF82Qg6H0u1NbPO4GO1NB4W3F8QSBB0Gdu48LGg0ZyEPw0mCPdgUNyl8RULhxgEoYkVF8DilfsAgSxgIcRn1kBA7IGKzcEH6xaCtt0XCGUXThDVP7reFwhG/eWMjCi2MEnXfxCw9t6q7CIZjtZ0u0ugdBLJSJ8FQ7rcY8QKLYOvuEwTYtEAxzownizY3uv+KxcetqQ/IDB48vmwf4exf/A8gr779wJB2/d/6lGAcbMlEAzHuDOOK2HcJwjtVrQCdLQFgx4ORvmTSV8doDP7AYLWzDG7EFOkNjQrIOj76OzsdCO3aW1tfQ3Wt5qS1T8QIDmu3DtnUCBAWrl3NlHy2zWH5AhgwNt6whpMZandKI+YJ8E4tpOMqJMukK9Fz2GQmg0bz8WmQSjzi7Edna/4TR8m2QIBwigYyyL4bLyTt53BU6xxMvNkHhkEGPMx5EXsDXFNQUDQwnjTRsz74bmBgtDS0vLyQMJt2NXZcNU2GjRu8Aoqe0EAo06ExZ9I2x4D9YP1DaQ2ShsgoGNegcXrhj6eAZWZczH9AuFi4VF9jD9YIFTH0omL51OHFARnvuRtiKurewwc2+bkbP42jrGLFKOhrxZSLL7eFgguAjkLQpWb3SGNUBmO4DMfWg0eCEbPA3nNngcNAhjkLqMdwt+psGwyfO4EHTsQEEhtEklDRIb/mDUQDH19D4vHQacAGLfvD4RGHVFxeOmgQWDU8iNhQwoCnavwNyavDIG88d0g5XNWDY6P7e4xauy0JRCgr7zxgYoJAEGtYV0rgy/fYnXM5NAIDNaFJ/1/1yXYKFN15mP/sAYC2XN1h3HggR4ECOjqC8bWYgyHurq6JhpgMF6h9yKjHAgIyOhhfQppiHnkHMAkWT5DCoFqYRyTYV2u0UvB3+cNoVY/QbjeRFTKmYMOQqXMa2hB4MnXkxLh0+Tk1ZyM50oXGHMFaH/FMgjYTTD8OpJB1o4XysbaCwLyPAz0eKwAu9RHhdhuayC48OWhEN4lk/qqGS9U0voLAhjLcVikmNPbt28/b8GYt5C6yAJ9AtSN1Of1jo6O9wYQGqEruoBciQL5wUpo9CXoflJOUUPaVg7KN+Qd/QOh5HI1USWdMeggIDU3yfagQKDxseiesEiutnV3K50rm2Ws/EC/v1sMjcxVnATyOCcnzuN2eQSr/WDHrIEAiXnAhMXxwwHEAiO00Hfpu/Pi3xisqtHdu3f7VIAgEX0djLHMeNWFq/AMkpFmk3KGFfdZNSIMIc6bVkAIgUTZGdo1m+yKvMQkUM8BgVBaVQEgTHMMCHUtQ+kRVpMS4LOW4vducATywG6PIFRU2gIBxnEOzUEYxtEJx1tprsZvxiM0MPiK47DvT32Ur9hgCwS0ziVQMpPek6QjGH6Gfs87CgRYPdsYjoAB1sJiOug0pGCksSQjzrFQ1oywE4JqWPjbKJ+GoHVarZZrgA9JF7TZZDjWwEBANf+SilLiYkkmUaY5TFxKiyEqkoKJqrgP+z2hViWeQvyayCcu/fwt8UtWHHgE7RAmy5iXce4APZz01pxtr9joN4HU7xFrIND5ssSXPpH/GYzxZ1I15w6Dp5xqCwQ0p4H21VeXTNWp90SdJRD04PLkK8iVJPI8iR0gjAB90pxaSJLVJnX8LpJqydvAW/xrgCD8Avp3C8fvAwISAOeAYV0p6Gt2g8DfdurrnGtVE7OvlE0/W1Pic+63Snb+9frZhQ0d84saCQEYaljRDSIGlvuLGnWniqvKy8s0ye3lqeFEpZLdqyqEyq0oIQaDbyktSrtUfOVqOiTeB2HfuPM3dJvP32hfXdDQ+Knm+tUlObUVgedqq+ecvVrjveP4xQU+61XXHA3CuEBsFBhIeXcCzMeOjebEPW8eGqkXw/B6S3R1RxNilnMERalxBvod7u6XwNsUkipKZ0YHJjzvqKoRGQTDuZCTJ/IckSxD3P+O6SSVNQGjzauo6P1yBks5AlzVl5B2RVCx+gMCmm8AvQzKJq2zDcJqbHWNJNO7SJzlUyrO9L4ozmSWSrK8i0A18FkNGinJ8AyQZAeMKbp16zlNbeuIogbCuej3tm9Kfqu9WpabQFw6tp4o/SUfL6qpSS2uu7P4wk3inYJrbf+TULDRVXZmvkCa4R0Zn+GtEmcx80yPJc7yLo48GlDK+mZvm6NBQFdYVM0xqb8njOWISVcdYhiNL5uHcgJSn2XvC2Wv2juh5sLb8yEKd7rLmgL5PtMQyVEgOH8iGwGJ/QVHgkC+ZQEMsgQWO82okhzhgFeYZg8IsHzKpFqUb5wbsBMENAcxjlytsguEdXs+JyRZPnYpGG+dOMNLGpfB9JVme/zzSMmRl8FrbADD33Wmtvrt2JMe/4zL8PCF7WIw8t/s7Tc69ROCs0Hh8NAIyRv82L+CoZzoddUUYDdpAuwg7BtHJ8XVhqS3Dk2w9eteI3Qjn0D2TW9jxILJE2v9ucUCDF9pLwh6EAWKSaiS5QgQICkdAyDcMV6xTQ3c5BjZpEOg+YYn7KwavWaYHDPK9+Q5BGsgWBiHbRA+l629GJ/JPByfwVTCFVuq10zvA7DuBLpai9OZd/oAkeWjA4+RtStz+vvhae5PSDJ9ONA+AfRX2KerT/sM7zvxmd4lAMdx6A/1LRNnMKVwTAUcKzFCHXDmgXgE4wzzIvHfYZ9dxjkFSwpX8kIaV/6vgdx0N2q+4r/pQiyVNK4r47hK5wcBgr70y1MsJr+kYTBAQEkv6FpSDpBFNm5TgTDH03C7BUp6f4XFq/aAEA7nEj6vNEzK6as/0Nc8h4LgEXb4a+S2wwmnxzgJnMfdw92fQMvwcKfuLzY2zf1tcaZnKBhuGhj6zfh0r73yn6a/uDtzpjsYckmP0Xvj8LkDwGiC5Wm0z+6zU/8PDm0MC4bpjwHwGI/jBMeZueqgi9eapIaBgkC7F+7c1KugZ3bVlrjw5CiEyYRw6bbrPaNpRZUXVItHcw7o1TeWy5/YNOMxwTBPmEtq35wb+zfoq9jYDhLqDONMNoCwtnvMtlSAxZqAoDRuo3GxuebGh0It8HxiYzuXQOkUE+OYarg1Qq/Nzc0v2gECum3hhHEfMM5ZNtq/AAabTmq/gLTta9LxpWYm1IYbZpP1bQCkora2tjdIIKST9ufZGMc0NKdhaNtoBgRV+6zNyeeXJPI3hSb7bV+uYu1epmJJ0DJUxYoJVbO+Ck2atXSpypspSGT+LzLk7SemvBCfNWMyeI59YPgtJAiuQh4QF3/ac644ffrrTmD8i+MnDA9R+9KCVbPmhaj8Pl+m9vsuROW7a5maJVmm8gVlxcL6SM/1O/bNDDs4NI9qQrjy/gLZqwwh5o7UmS959z1UwaHkD/w8wtrkZuPD+8yvjtxmbT13yz9Ko/s4HsOXqTjE8hR2L12WwsKXq1ldYLh3Q9W+xzmRrk/HZXiugLCmEV399QBk+nTEpXtt2Jk9/cXYWGf91U5wxGd8aIqfFParW6byuw0AtC9LYWv1/ZH7V7EJjuhLwjVIjrsGKe5O+Szxd+MLBrzWJLdTD+9T4hgQ1qlyvdantM3aeLqJJdK0kd8nNHvHTwR3z3ptsGruRTBgTajarxiu2JdBm5al+B3adJzpLsnwVt7LD1DizLwFcb/8h1OT30J9h6qYI0KSfXhg+Of6GLya3Qnr6pansMqh3/MhSZyiACm/Y+b67yB+lffEwkJMNzFkT9O0Lw62eoQllU79MoF6nQslgy+ztmSH+kXmNKCXaJl7uRYnJlfL2Z5ePnvnvvnCw74jg1XMt0NTfJ0jTk13js9injN6AcgTKiSZnjMjz7g+jWL9YLWPEAy9GIy+oxsAMP5QlV9GSMqssCVJPpOD1X7vL0n2GTVr40r6pOU7U92WSDotJIZoJrdjQsheEfWCL0ocIsxYzTPsKM1WMPpWq69djMpv+2j7afHCuO8mxBz3GQsA1BpyAZ040yt1R5r7yyjJXZIwYxR4jyPdHkDNQiDUADwxArU+p3AKOOz+rPCY78i5uwSukz+LWY8eWbRxb00nJHn5zvw91CsfKXEgDOGaZ/xEmvno/aL+0YU6669tz6n+fF90TWyaP/ICneJMz8ioE1NeQv0EJ/twIAy61BP++F4FD7ByUaLXG6gatFTNdIXEOCI4iZM2Z/un16atjta6BckJG+XKBheBdO3bC7ZTD89T8mDEdcWZp1nRhRtZ6DfOLIRKRp27Ix1fk/D1NidDGTRUxQrpAYClg7j/6PTv39NXWrhHPV4DQNSQF+iWHvqImLE2Ak0m2brDUkvjydQjA0TUj4ZQMjTiE1kwniUqkLOj8pttvLL9LngS6SLFtxuXqf2b70HgVw9hURgqkwaleD0XqvYND1WzGoT7PybYEWHEhGCxLQA66Hz5KRpfzhkVEkP9UAglQyvukuqnvLbmurGjCvJsvLKd8I/J7loo2UWEJM9pCD3ijSZUhqE5BvASeaHJ/p1zt39GTFoe26saZDYM4itaXPgYd0yAhPIClDxkQISX/IUVmR8GoVI5ejO19V+5OXeFFZ3/CXvHATfunsV5i6QCfMa6720DIMDqaVxsN5p1pc44JQ93uLQl7y2WKH8LhEst1qtLhR1s0Zn6qaviCLcgqa0wqBNCoIMuPLHbKA/q52UpeZSAiMp4jx2lyQZtt5w7aHQTQ/e3WYGgi87Dal24so+dqB8cp+TR9Q5Zw8E7BLCiCnLNVZfYkRrdB6EJd82/KU5eh25eG7s4/hXqTFLyh5Dp31/4M3tr3hpWVH6bTRDQ2+ME2P575VDr78CkhJJHUnxFhWMgHNrDjipo6gOCQNFG42On6UKMTd0eQckfXtzDq5+aFZkzkS3K3++3Ne/GByEJDeABslEeYOkZYEooeVjkPy3HjG+9F3+oAAAAAElFTkSuQmCC"
+
+/***/ }),
+
+/***/ "owsU":
+/***/ (function(module, exports) {
+
+module.exports = "data:image/png;base64,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"
 
 /***/ }),
 
@@ -9121,17 +10645,6 @@ var messages = {
 
 /***/ }),
 
-/***/ "qpBf":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("RLpJ")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"teal"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Info\n      "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      New\n      "),_c('v-icon',[_vm._v("child_care")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n      Check\n      "),_c('v-icon',[_vm._v("search")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('div',[_c('img',{staticStyle:{"width":"50%","height":"auto"},attrs:{"src":__webpack_require__("TGXn")}})]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to MyOffspring!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                    This application allows you to register your children and create a Birth Certificate for them in the "),_c('b',[_vm._v("AltHash")]),_vm._v(" blockchain.\n                    "),_c('br'),_c('br'),_vm._v("\n                    To create a new record, just click on \"New\" menu item, and fill in the details about the birth of your heir.\n                    "),_c('br'),_c('br'),_vm._v(" "),_c('b',[_vm._v("Take note of the hash code generated, as it will be the unique identifier for the birth registration.")]),_vm._v(" "),_c('br'),_c('br'),_vm._v("\n                    Once the transaction is confirmed, the registration is complete and you can verify it through the menu item \"Check\".\n                    "),_c('br'),_c('br'),_vm._v("\n                    MyOffspring was developed based on suggestions given by our Communities Manager, "),_c('b',[_vm._v("Heitor Guimarães")]),_vm._v(", supported by the Community member "),_c('b',[_vm._v("Karol Pyla")]),_vm._v(", who wanted to register his son, "),_c('b',[_vm._v("Julek")]),_vm._v(", on AltHash blockchain. The HTMLCOIN Foundation is glad to have the support of such smart and dedicated people. Thank you!\n                  ")]),_vm._v(" "),_c('br'),_c('br')])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Full Name","required":"","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.fullName),callback:function ($$v) {_vm.fullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fullName"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Mother's Full Name","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.motherFullName),callback:function ($$v) {_vm.motherFullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"motherFullName"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Father's Full Name","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.fatherFullName),callback:function ($$v) {_vm.fatherFullName=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fatherFullName"}}),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs6":""}},[_c('v-menu',{ref:"dateOfBirth_menu",attrs:{"close-on-content-click":false,"nudge-right":40,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","min-width":"290px"},model:{value:(_vm.dateOfBirth_menu),callback:function ($$v) {_vm.dateOfBirth_menu=$$v},expression:"dateOfBirth_menu"}},[_c('v-text-field',{attrs:{"slot":"activator","label":"Date of Birth","prepend-icon":"event","readonly":"","outline":"","background-color":"teal"},slot:"activator",model:{value:(_vm.dateOfBirth),callback:function ($$v) {_vm.dateOfBirth=$$v},expression:"dateOfBirth"}}),_vm._v(" "),_c('v-date-picker',{ref:"picker",attrs:{"max":new Date().toISOString().substr(0, 10),"min":"1900-01-01"},on:{"change":_vm.dateOfBirth_save},model:{value:(_vm.dateOfBirth),callback:function ($$v) {_vm.dateOfBirth=$$v},expression:"dateOfBirth"}})],1)],1),_vm._v(" "),_c('v-flex',{attrs:{"xs6":""}},[_c('v-menu',{ref:"timeOfBirth_menu",attrs:{"close-on-content-click":false,"nudge-right":40,"return-value":_vm.timeOfBirth,"lazy":"","transition":"scale-transition","offset-y":"","full-width":"","max-width":"290px","min-width":"290px"},on:{"update:returnValue":function($event){_vm.timeOfBirth=$event}},model:{value:(_vm.timePicker),callback:function ($$v) {_vm.timePicker=$$v},expression:"timePicker"}},[_c('v-text-field',{attrs:{"slot":"activator","label":"Time of Birth","prepend-icon":"access_time","readonly":"","outline":"","background-color":"teal"},slot:"activator",model:{value:(_vm.timeOfBirth),callback:function ($$v) {_vm.timeOfBirth=$$v},expression:"timeOfBirth"}}),_vm._v(" "),(_vm.timePicker)?_c('v-time-picker',{attrs:{"full-width":"","format":"24hr"},on:{"change":_vm.timeOfBirth_save},model:{value:(_vm.timeOfBirth),callback:function ($$v) {_vm.timeOfBirth=$$v},expression:"timeOfBirth"}}):_vm._e()],1)],1)],1),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Place of Birth (Facility, City, State/Province, Country)","outline":"","background-color":"teal","maxlength":"200"},model:{value:(_vm.placeOfBirth),callback:function ($$v) {_vm.placeOfBirth=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"placeOfBirth"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","outline":"","background-color":"indigo"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                  "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n                  ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('b',[_vm._v("Please store the ID below in a safe place, as it is the unique ID for this Birth registration.")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs10":""}},[_c('v-text-field',{attrs:{"label":"Hash ID","disabled":""},model:{value:(_vm.hashID),callback:function ($$v) {_vm.hashID=$$v},expression:"hashID"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('v-btn',{directives:[{name:"clipboard",rawName:"v-clipboard:copy",value:(_vm.hashID),expression:"hashID",arg:"copy"},{name:"clipboard",rawName:"v-clipboard:success",value:(_vm.onCopySucc),expression:"onCopySucc",arg:"success"},{name:"clipboard",rawName:"v-clipboard:error",value:(_vm.onCopyError),expression:"onCopyError",arg:"error"}],staticClass:"mt-3",attrs:{"small":"","color":"cyan"}},[_vm._v("\n                          "+_vm._s(_vm.$t('common.copy'))+"\n                        ")])],1),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-flex',{attrs:{"xs8":"","offset-xs2":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs10":""}},[_c('v-text-field',{staticClass:"mx-3",attrs:{"label":"Hash ID","append-icon":"search","outline":"","background-color":"teal"},on:{"click:append":_vm.openCertificate},model:{value:(_vm.searchHashID),callback:function ($$v) {_vm.searchHashID=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"searchHashID"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs2":""}},[_c('img',{staticClass:"cursor",attrs:{"src":__webpack_require__("igel")},on:{"click":_vm.scanQrcode}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('p',{staticClass:"error"},[_vm._v(_vm._s(_vm.error))])])],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"width":"600px"},model:{value:(_vm.execResultDialog),callback:function ($$v) {_vm.execResultDialog=$$v},expression:"execResultDialog"}},[_c('span',{attrs:{"id":"certificate"}},[_c('v-card',{staticClass:"modal-detail"},[_c('v-card-text',[_c('v-container',{attrs:{"align-center":"","grid-list-md":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs6":"","text-md-center":""}},[_c('img',{staticClass:"logo1",attrs:{"src":__webpack_require__("RLpJ")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","text-md-center":""}},[_c('img',{staticClass:"logo2",attrs:{"src":__webpack_require__("2Gzf")}})]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":"","text-md-center":""}},[_c('span',{staticClass:"font-weight-medium my-2 headline font-bold",attrs:{"id":"title"}},[_vm._v("\n                  Digital Birth Certificate\n                ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('p'),_vm._v(" "),_c('p',[_c('b',[_vm._v("Full Name:")]),_vm._v(" "+_vm._s(_vm.resultFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Mother's Full Name:")]),_vm._v(" "+_vm._s(_vm.resultMotherFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Father's Full Name:")]),_vm._v(" "+_vm._s(_vm.resultFatherFullName)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Date of Birth:")]),_vm._v(" "+_vm._s(_vm.resultDateOfBirth)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Time of Birth:")]),_vm._v(" "+_vm._s(_vm.resultTimeOfBirth)+"\n                ")]),_vm._v(" "),_c('p',[_c('b',[_vm._v("Place of Birth:")]),_vm._v(" "+_vm._s(_vm.resultPlaceOfBirth)+"\n                ")]),_vm._v(" "),_c('p',{staticClass:"text-xs-center"},[_c('span',{staticClass:"caption",attrs:{"id":"certificate_id"}},[_vm._v("Hash ID: "+_vm._s(_vm.searchHashID))]),_vm._v(" "),_c('img',{staticClass:"qr",attrs:{"src":_vm.qr,"id":"qr"}}),_vm._v(" "),_c('br'),_vm._v(" "),_c('v-btn',{attrs:{"icon":"","id":"btn"},on:{"click":_vm.print}},[_c('v-icon',[_vm._v("print")])],1)],1)])],1)],1)],1)],1)],1)]),_vm._v(" "),_c('v-dialog',{attrs:{"max-width":"50%"},model:{value:(_vm.qrScan),callback:function ($$v) {_vm.qrScan=$$v},expression:"qrScan"}},[_c('v-container',[_c('v-layout',[_c('v-flex',{attrs:{"xs12":"","align-center":"","text-xs-center":""}},[(_vm.qrComponent)?_c('qrcode-stream',{attrs:{"track":false,"camera":_vm.camera},on:{"decode":_vm.onDecode,"init":_vm.onInit}}):_vm._e()],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"hide-overlay":"","persistent":"","width":"300"},model:{value:(_vm.loading),callback:function ($$v) {_vm.loading=$$v},expression:"loading"}},[_c('v-card',{attrs:{"color":"teal","dark":""}},[_c('v-card-text',[_vm._v("\n        Please stand by\n        "),_c('v-progress-linear',{staticClass:"mb-0",attrs:{"indeterminate":"","color":"white"}})],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "qvsf":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -9200,6 +10713,41 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
     this.drawQrCode();
   }
 });
+
+/***/ }),
+
+/***/ "r1Qh":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_BiffyPlutonium_vue__ = __webpack_require__("Rz30");
+/* unused harmony namespace reexport */
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_602864a1_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_BiffyPlutonium_vue__ = __webpack_require__("DiSS");
+var normalizeComponent = __webpack_require__("VU/8")
+/* script */
+
+
+/* template */
+
+/* template functional */
+var __vue_template_functional__ = false
+/* styles */
+var __vue_styles__ = null
+/* scopeId */
+var __vue_scopeId__ = null
+/* moduleIdentifier (server only) */
+var __vue_module_identifier__ = null
+var Component = normalizeComponent(
+  __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_BiffyPlutonium_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_602864a1_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_BiffyPlutonium_vue__["a" /* default */],
+  __vue_template_functional__,
+  __vue_styles__,
+  __vue_scopeId__,
+  __vue_module_identifier__
+)
+
+/* harmony default export */ __webpack_exports__["a"] = (Component.exports);
+
 
 /***/ }),
 
@@ -9409,6 +10957,13 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 
 /***/ }),
 
+/***/ "t7Gd":
+/***/ (function(module, exports, __webpack_require__) {
+
+module.exports = __webpack_require__.p + "static/images/biffy_manure.fd0ff29.jpg";
+
+/***/ }),
+
 /***/ "tUk+":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -9495,17 +11050,6 @@ var Component = normalizeComponent(
 
 /***/ }),
 
-/***/ "vyTM":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v(_vm._s(_vm.$t('create_contract.title')))])]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Byte Code","multiLine":"","required":""},model:{value:(_vm.code),callback:function ($$v) {_vm.code=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"code"}}),_vm._v(" "),_c('a',{staticStyle:{"float":"right"},attrs:{"href":"https://remix.ethereum.org","target":"_blank"}},[_vm._v(_vm._s(_vm.$t('create_contract.compiler')))]),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))])],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('create_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-text-field',{attrs:{"label":"Raw Tx","multi-line":"","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":50}})],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "wOSG":
 /***/ (function(module, exports) {
 
@@ -9542,14 +11086,23 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_20_controllers_Dapp_MyOffspring__ = __webpack_require__("NysP");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_21_controllers_Dapp_CrypticMAG__ = __webpack_require__("glbK");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_22_controllers_Dapp_AltProof__ = __webpack_require__("9DK7");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_controllers_CreateContract__ = __webpack_require__("QbG2");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_controllers_SendToContract_vue__ = __webpack_require__("ayyg");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_controllers_CallContract_vue__ = __webpack_require__("Nj6y");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_controllers_Config__ = __webpack_require__("/kv9");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_libs_config__ = __webpack_require__("6+u4");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_libs_web_wallet__ = __webpack_require__("G2dt");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_libs_i18n__ = __webpack_require__("KUFz");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_23_controllers_Dapp_BiffyPlutonium__ = __webpack_require__("r1Qh");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_24_controllers_CreateContract__ = __webpack_require__("QbG2");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_25_controllers_SendToContract_vue__ = __webpack_require__("ayyg");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_26_controllers_CallContract_vue__ = __webpack_require__("Nj6y");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_27_controllers_Config__ = __webpack_require__("/kv9");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_28_libs_config__ = __webpack_require__("6+u4");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_29_libs_web_wallet__ = __webpack_require__("G2dt");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_30_libs_i18n__ = __webpack_require__("KUFz");
 
+//
+//
+//
+//
+//
+//
+//
+//
 //
 //
 //
@@ -9727,20 +11280,21 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAJYAAACWCAYAAAA8
 
 
 
+
 var log = __WEBPACK_IMPORTED_MODULE_2_localstorage_logger___default()({
   maxLogSizeInBytes: 500 * 1024 // 500KB
 });
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   name: "app",
-  i18n: __WEBPACK_IMPORTED_MODULE_29_libs_i18n__["a" /* default */],
+  i18n: __WEBPACK_IMPORTED_MODULE_30_libs_i18n__["a" /* default */],
   data: function data() {
     return {
       wallet: false,
       current: "home",
       logoff_dialog: false,
-      network: __WEBPACK_IMPORTED_MODULE_27_libs_config__["a" /* default */].getNetwork(),
-      mode: __WEBPACK_IMPORTED_MODULE_27_libs_config__["a" /* default */].getMode(),
+      network: __WEBPACK_IMPORTED_MODULE_28_libs_config__["a" /* default */].getNetwork(),
+      mode: __WEBPACK_IMPORTED_MODULE_28_libs_config__["a" /* default */].getMode(),
       log: log,
       notifyList: {},
       items: [{
@@ -9861,6 +11415,7 @@ var log = __WEBPACK_IMPORTED_MODULE_2_localstorage_logger___default()({
         dapp_myoffspring: this.mode === "offline" || !this.wallet,
         dapp_crypticmag: this.mode === "offline" || !this.wallet,
         dapp_altproof: this.mode === "offline" || !this.wallet,
+        dapp_biffyplutonium: this.mode === "offline" || !this.wallet,
         dapps: this.mode === "offline" || !this.wallet
       };
     },
@@ -9892,14 +11447,15 @@ var log = __WEBPACK_IMPORTED_MODULE_2_localstorage_logger___default()({
     DappMyoffspring: __WEBPACK_IMPORTED_MODULE_20_controllers_Dapp_MyOffspring__["a" /* default */],
     DappCrypticmag: __WEBPACK_IMPORTED_MODULE_21_controllers_Dapp_CrypticMAG__["a" /* default */],
     DappAltProof: __WEBPACK_IMPORTED_MODULE_22_controllers_Dapp_AltProof__["a" /* default */],
-    CreateContract: __WEBPACK_IMPORTED_MODULE_23_controllers_CreateContract__["a" /* default */],
-    SendToContract: __WEBPACK_IMPORTED_MODULE_24_controllers_SendToContract_vue__["a" /* default */],
-    CallContract: __WEBPACK_IMPORTED_MODULE_25_controllers_CallContract_vue__["a" /* default */],
-    Config: __WEBPACK_IMPORTED_MODULE_26_controllers_Config__["a" /* default */]
+    DappBiffyPlutonium: __WEBPACK_IMPORTED_MODULE_23_controllers_Dapp_BiffyPlutonium__["a" /* default */],
+    CreateContract: __WEBPACK_IMPORTED_MODULE_24_controllers_CreateContract__["a" /* default */],
+    SendToContract: __WEBPACK_IMPORTED_MODULE_25_controllers_SendToContract_vue__["a" /* default */],
+    CallContract: __WEBPACK_IMPORTED_MODULE_26_controllers_CallContract_vue__["a" /* default */],
+    Config: __WEBPACK_IMPORTED_MODULE_27_controllers_Config__["a" /* default */]
   },
   methods: {
     setWallet: function setWallet() {
-      this.wallet = __WEBPACK_IMPORTED_MODULE_28_libs_web_wallet__["a" /* default */].getWallet();
+      this.wallet = __WEBPACK_IMPORTED_MODULE_29_libs_web_wallet__["a" /* default */].getWallet();
       this.wallet.init();
       if (this.wallet) {
         if (this.mode === "offline") {
@@ -10274,4 +11830,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.a4d6d0e6154aca8eb3ce.js.map
+//# sourceMappingURL=app.8ae617e5864c6a4b0716.js.map

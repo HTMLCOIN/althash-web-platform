@@ -65,7 +65,7 @@
           <v-container grid-list-md>
             <v-layout wrap>
               <v-flex xs12>
-                <v-text-field label="Raw Tx" v-model="rawTx" multi-line disabled></v-text-field>
+                <v-textarea label="Raw Tx" v-model="rawTx" disabled></v-text-field>
               </v-flex>
             </v-layout>
           </v-container>
@@ -168,7 +168,8 @@ export default {
         const txId = await webWallet.getWallet().sendRawTx(this.rawTx)
         this.confirmSendDialog = false
         this.sending = false
-        this.$root.success('Successful send. You can view at ' + server.currentNode().getTxExplorerUrl(txId))
+        const txViewUrl = server.currentNode().getTxExplorerUrl(txId);
+        this.$root.success(`Successful sent! You can follow the transaction on <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`, true, 0);
         this.$emit('send')
       } catch (e) {
         alert(e.message || e)
