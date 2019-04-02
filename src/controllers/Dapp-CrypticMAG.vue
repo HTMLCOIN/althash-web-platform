@@ -48,6 +48,14 @@
             		    We look forward to rewarding you again in the next edition.
             		    <br><br>
             		    Stay Tuned & Good Luck!
+                    <br><br><br><br>
+                    <small>
+                      <b>Disclaimer</b>
+                      <br>
+                      HTMLCoin Foundation has reviewed and approved this application's code, having Althash Web Platform as a proud host, however the Foundation is not responsible for any funds transacted within this application scope.
+                      <br>
+                      By using this application you agree on this terms.
+                    </small>
             		  </span>
             		  <br><br>
                 </div>

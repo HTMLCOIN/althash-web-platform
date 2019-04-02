@@ -111,30 +111,28 @@
                   <v-flex xs6>
                     <v-card color="blue-grey" class="py-3 white--text" height="100%">
                       <v-layout row wrap>
-                        <v-flex xs4 align-center>
+                        <v-flex xs12>
                           <img src="~/assets/images/BIFP_menu_btn.png" style="width: 75%; max-width: 85px; height: auto; max-height: 85px;">
                         </v-flex>
-                        <v-flex xs8>
-                          <v-layout row wrap>
-                            <v-flex xs12>
-                              <span class="title font-weight-black">BIFP Lottery</span>
-                            </v-flex>
-                            <v-flex xs12 v-if="this.tokenLotteryStatus == 'On'">
-                              Status: <span class="subheading font-weight-bold green--text">On</span>
-                            </v-flex>
-                            <v-flex xs12 v-else>
-                              Status: <span class="subheading font-weight-bold red--text">Off</span>
-                            </v-flex>
-                            <v-flex xs12>
-                              Max Prize: <span class="subheading font-weight-bold">{{ (Math.round(this.tokenLotteryPrize * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} BIFP*</span>
-                            </v-flex>
-                            <v-flex xs12>
-                              Bets between <b>1 and {{ this.tokenLotteryFeeThreshold }} BIFP</b>
-                            </v-flex>
-                            <v-flex xs12>
-                              Lucky number between <b>0 and {{ this.tokenLotteryPot }}</b>
-                            </v-flex>
-                          </v-layout>
+                        <v-flex xs12>
+                          <span class="title font-weight-black">BIFP Lottery</span>
+                        </v-flex>
+                        <v-flex xs12>
+                          <span v-if="this.tokenLotteryStatus == 'On'">
+                            Status: <span class="subheading font-weight-bold green--text">On</span>
+                          </span>
+                          <span v-else>
+                            Status: <span class="subheading font-weight-bold red--text">Off</span>
+                          </span>
+                        </v-flex>
+                        <v-flex xs12>
+                          Max Prize: <span class="subheading font-weight-bold">{{ (Math.round(this.tokenLotteryPrize * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} BIFP*</span>
+                        </v-flex>
+                        <v-flex xs12>
+                          Bets between <b>1 and {{ this.tokenLotteryFeeThreshold }} BIFP</b>
+                        </v-flex>
+                        <v-flex xs12>
+                          Lucky number between <b>0 and {{ this.tokenLotteryPot }}</b>
                         </v-flex>
                       </v-layout>
                     </v-card>
@@ -142,30 +140,26 @@
                   <v-flex xs6>
                     <v-card color="blue darken-1" class="py-3 white--text" height="100%">
                       <v-layout row wrap>
-                        <v-flex xs4 align-center>
+                        <v-flex xs12 align-center>
                           <img src="~/assets/images/logo_htmlcoin.png" style="width: 75%; max-width: 64px; height: auto; max-height: 85px;">
                         </v-flex>
-                        <v-flex xs8>
-                          <v-layout row wrap>
-                            <v-flex xs12>
-                              <span class="title font-weight-black">HTMLCoin Lottery</span>
-                            </v-flex>
-                            <v-flex xs12 v-if="this.htmlcoinLotteryStatus == 'On'">
-                              Status: <span class="subheading font-weight-bold green--text">On</span>
-                            </v-flex>
-                            <v-flex xs12 v-else>
-                              Status: <span class="subheading font-weight-bold red--text">Off</span>
-                            </v-flex>
-                            <v-flex xs12>
-                              Max Prize: <span class="subheading font-weight-bold">{{ (Math.round(this.htmlcoinLotteryPrize * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} HTML*</span>
-                            </v-flex>
-                            <v-flex xs12>
-                              Bets between <b>{{ this.tokenLotteryFeeThreshold + 1 }} and {{ this.htmlcoinLotteryFeeThreshold }} BIFP</b>
-                            </v-flex>
-                            <v-flex xs12>
-                              Lucky number between <b>0 and {{ this.htmlcoinLotteryPot }}</b>
-                            </v-flex>
-                          </v-layout>
+                        <v-flex xs12>
+                          <span class="title font-weight-black">HTMLCoin Lottery</span>
+                        </v-flex>
+                        <v-flex xs12 v-if="this.htmlcoinLotteryStatus == 'On'">
+                          Status: <span class="subheading font-weight-bold green--text">On</span>
+                        </v-flex>
+                        <v-flex xs12 v-else>
+                          Status: <span class="subheading font-weight-bold red--text">Off</span>
+                        </v-flex>
+                        <v-flex xs12>
+                          Max Prize: <span class="subheading font-weight-bold">{{ (Math.round(this.htmlcoinLotteryPrize * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} HTML*</span>
+                        </v-flex>
+                        <v-flex xs12>
+                          Bets between <b>{{ this.tokenLotteryFeeThreshold + 1 }} and {{ this.htmlcoinLotteryFeeThreshold }} BIFP</b>
+                        </v-flex>
+                        <v-flex xs12>
+                          Lucky number between <b>0 and {{ this.htmlcoinLotteryPot }}</b>
                         </v-flex>
                       </v-layout>
                     </v-card>
@@ -633,7 +627,7 @@ import axios from 'axios'
 import base58 from 'bs58'
 import sha256 from 'js-sha256'
 
-const contractAddress = config.getNetwork() == "mainnet" ? "0" : "9aedd68bb2635995097627331b49c473136343cb"; 
+const contractAddress = config.getNetwork() == "mainnet" ? "6de5afa19ca3e23987abccbe1a8498740c0fedd0" : "9aedd68bb2635995097627331b49c473136343cb"; 
 
 const abiJson = JSON.parse(
   '[{"constant": false, "inputs": [{"name": "new_j", "type": "address"} ], "name": "change_j", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "name", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "BIFP_getCuts", "outputs": [{"name": "BiffCutSetting", "type": "uint256"}, {"name": "JCutSetting", "type": "uint256"}, {"name": "PCutSetting", "type": "uint256"}, {"name": "NCutSetting", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_spender", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "approve", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "_from", "type": "address"}, {"name": "_to", "type": "address"} ], "name": "feeTransfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "new_n", "type": "address"} ], "name": "change_n", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "getTokenLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalSupply", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_seller", "type": "address"} ], "name": "BIFP_buyTokensFrom", "outputs": [{"name": "numOfTokensPurchased", "type": "uint256"} ], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "_from", "type": "address"}, {"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transferFrom", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setTokenLotteryFeeThreshold", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "_seller", "type": "address"} ], "name": "BIFP_whatsForSale", "outputs": [{"name": "numTokensBeingSold", "type": "uint256"}, {"name": "priceOfEachToken", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "decimals", "outputs": [{"name": "", "type": "uint8"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "get_j", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "lotteryID", "type": "string"} ], "name": "checkLotteryResults", "outputs": [{"name": "_player", "type": "address"}, {"name": "_lotteryType", "type": "uint8"}, {"name": "_playedAmount", "type": "uint256"}, {"name": "_luckyNumber", "type": "uint256"}, {"name": "_drawnNumber", "type": "uint256"}, {"name": "_win", "type": "bool"}, {"name": "_rewardAmount", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getHtmlcoinLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setHtmlcoinLotteryPot", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryOn", "outputs": [{"name": "", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getTokenLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "who", "type": "uint256"}, {"name": "fakeAmount", "type": "uint256"} ], "name": "BIFP_testFeeAndCuts", "outputs": [{"name": "feeCollected", "type": "uint256"}, {"name": "biffGot", "type": "uint256"}, {"name": "jGot", "type": "uint256"}, {"name": "pGot", "type": "uint256"}, {"name": "nGot", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "player", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "feeBalances", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "playedAmount", "type": "uint256"}, {"name": "lotteryID", "type": "string"} ], "name": "BIFP_upForGrabs", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "standard", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "b", "type": "uint256"}, {"name": "j", "type": "uint256"}, {"name": "p", "type": "uint256"}, {"name": "n", "type": "uint256"} ], "name": "BIFP_setFeeCuts", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [], "name": "feeWithdraw", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "f", "type": "uint256"} ], "name": "BIFP_setSellerIsOwnerFeePercent", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "bool"} ], "name": "switchTokenLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "tokensForSale", "outputs": [{"name": "numTokensForSale", "type": "uint256"}, {"name": "pricePerToken", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "balanceOf", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [], "name": "confirmOwnershipTransfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "new_p", "type": "address"} ], "name": "change_p", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "potentialOwner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryFeeThreshold", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "prizeName", "type": "string"} ], "name": "getPrizeBalance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "BIFP_addToTokenPrize", "outputs": [{"name": "newBalance", "type": "uint256"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "getHtmlcoinLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "symbol", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "prizeName", "type": "string"}, {"name": "newAmount", "type": "uint256"} ], "name": "setPrizeBalance", "outputs": [{"name": "prizePrevBalance", "type": "uint256"}, {"name": "prizeNewBalance", "type": "uint256"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setTokenLotteryPot", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [], "name": "BIFP_buyTokens", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": false, "inputs": [{"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [], "name": "BIFP_addToHtmlPrize", "outputs": [{"name": "newBalance", "type": "uint256"} ], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [], "name": "BIFP_getFees", "outputs": [{"name": "feeOwnerSetting", "type": "uint256"}, {"name": "feeSellerSetting", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "uint256"} ], "name": "setHtmlcoinLotteryFeeThreshold", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "amount", "type": "uint256"} ], "name": "BIFP_loadUpForGrabs", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "f", "type": "uint256"} ], "name": "BIFP_setSellerFeePercent", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "value", "type": "bool"} ], "name": "switchHtmlcoinLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "htmlcoinLotteryOn", "outputs": [{"name": "", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "tokenLotteryPot", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "get_n", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "playedAmount", "type": "uint256"}, {"name": "luckyNumber", "type": "uint256"}, {"name": "lotteryID", "type": "string"} ], "name": "BIFP_playLottery", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"}, {"name": "", "type": "address"} ], "name": "allowance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "quantity", "type": "uint256"}, {"name": "htmlPrice", "type": "uint256"} ], "name": "BIFP_setSell", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "get_p", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "newOwner", "type": "address"} ], "name": "transferOwnership", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": true, "name": "_from", "type": "address"}, {"indexed": true, "name": "_to", "type": "address"}, {"indexed": false, "name": "_value", "type": "uint256"} ], "name": "Transfer", "type": "event"} ]');

@@ -1,91 +1,173 @@
 <template>
   <v-app light>
     <v-toolbar :class="headerClass" app fixed height="82px" clipped-left>
+      <v-spacer></v-spacer>
+      <v-menu 
+        bottom open-on-hover offset-y
+        :nudge-width="100"
+      >
+        <v-btn large icon slot="activator">
+          <v-icon large color="blue darken-4">apps</v-icon>
+        </v-btn>
+          <v-toolbar color="light-blue darken-4" dark height="40px">
+            <span class="title bold">
+              DAPPS
+            </span>
+          </v-toolbar>
+          <v-card>
+            <v-card-text>
+              <v-container fluid grid-list-md>
+                <v-layout row wrap align-center text-xs-center>
+                  <v-flex xs4>
+                    <v-btn icon large dark slot="activator" @click="openURL('https://health.althash.org')">
+                      <img src="~assets/images/althash_health_menu_btn.png" style="height:50px;width:auto;">
+                    </v-btn>
+                  </v-flex>
+                  <v-flex xs4>
+                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_myoffspring')">
+                      <img src="~assets/images/myoffspring_menu_btn.png" style="height:50px;width:auto;">
+                    </v-btn>
+                  </v-flex>
+                  <v-flex xs4>
+                    <v-btn icon large dark slot="activator" @click="openDapp('create_token')">
+                      <img src="~assets/images/tokenfarm_menu_btn.png" style="height:50px;width:auto;">
+                    </v-btn>
+                  </v-flex>
+                  <v-flex xs4>
+                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_altproof')">
+                      <img src="~assets/images/altproof_menu_btn.png" style="height:50px;width:auto;">
+                    </v-btn>
+                  </v-flex>
+                  <v-flex xs4>
+                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_crypticmag')">
+                      <img src="~assets/images/crypticmag_menu_btn.png" style="height:50px;width:auto;">
+                    </v-btn>
+                  </v-flex>
+                  <v-flex xs4>
+                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_biffyplutonium')">
+                      <img src="~assets/images/BIFP_menu_black_btn.png" style="height:50px;width:auto;">
+                    </v-btn>
+                  </v-flex>
+                </v-layout>
+              </v-container>
+            </v-card-text>
+          </v-card>
+        </v-card>
+      </v-menu>
+      <v-spacer></v-spacer>
       <span class="title">
         <span class="text"><img src="~assets/images/logo_althash_webplatform.png" alt="Althash Web Platform Logo" class="cursor" @click="changeView('home')"></span>
       </span>
       <v-spacer></v-spacer>
       <v-menu bottom open-on-hover offset-y
-              nudge-width="100"              
-              key="myOffspring" >
-        <v-btn icon large dark slot="activator" @click="openDapp('dapp_myoffspring')">
-          <img src="~assets/images/myoffspring_menu_btn.png" style="height:35px;width:auto;">
-        </v-btn>
-      </v-menu>
-      <v-menu bottom open-on-hover offset-y
-              nudge-width="100"              
-              key="TokenFarm" >
-        <v-btn icon large dark slot="activator" @click="openDapp('create_token')">
-          <img src="~assets/images/tokenfarm_menu_btn.png" style="height:35px;width:auto;">
-        </v-btn>
-      </v-menu>
-      <v-menu bottom open-on-hover offset-y
-              nudge-width="100"              
-              key="AltProof" >
-        <v-btn icon large dark slot="activator" @click="openDapp('dapp_altproof')">
-          <img src="~assets/images/altproof_menu_btn.png" style="height:35px;width:auto;">
-        </v-btn>
-      </v-menu>
-      <v-menu bottom open-on-hover offset-y
-              nudge-width="100"              
-              key="CrypticMAG" >
-        <v-btn icon large dark slot="activator" @click="openDapp('dapp_crypticmag')">
-          <img src="~assets/images/crypticmag_menu_btn.png" style="height:35px;width:auto;">
-        </v-btn>
-      </v-menu>
-      <!--v-menu bottom open-on-hover offset-y
-              nudge-width="100"              
-              key="biffyPlutonium" >
-        <v-btn icon large dark slot="activator" @click="openDapp('dapp_biffyplutonium')">
-          <img src="~assets/images/BIFP_menu_btn.png" style="height:35px;width:auto;">
-        </v-btn>
-      </v-menu-->
-      <v-spacer></v-spacer>
-      <v-tooltip bottom>
-        <v-btn icon dark slot="activator" @click="changeView('home')">
-          <v-icon>home</v-icon>
-        </v-btn>
-        <span>Home</span>
-      </v-tooltip>
-      <v-menu bottom open-on-hover offset-y
               :nudge-width="100"
-              v-for="item in items"
-              :key="item.title"
-              v-show="!notShow[item.name]"
+              v-if="!this.wallet"
       >
-        <v-btn icon dark slot="activator">
-          <v-icon>{{ item.action }}</v-icon>
+        <v-btn large icon slot="activator">
+          <v-icon large color="blue darken-4">open_in_browser</v-icon>
         </v-btn>
-        <v-list subheader>
-	  <v-subheader>{{ item.title }}</v-subheader>
+        <v-list>
           <v-list-tile
-            v-for="subItem in item.items"
-            v-show="!notShow[subItem.name]"
-            :key="subItem.title"
-            @click="changeView(subItem.name)"
+            v-for="loginItem in loginItems"
+            v-show="!notShow[loginItem.name]"
+            :key="loginItem.title"
+            @click="changeView(loginItem.name)"
            >
              <v-list-tile-content>
-               <v-list-tile-title class="body-2">{{ subItem.title }}</v-list-tile-title>
+               <v-list-tile-title class="body-2">{{ loginItem.title }}</v-list-tile-title>
              </v-list-tile-content>
              <v-list-tile-action>
-               <v-icon>{{ subItem.action }}</v-icon>
+               <v-icon color="blue darken-4">{{ loginItem.action }}</v-icon>
+             </v-list-tile-action>
+           </v-list-tile>
+           <v-divider></v-divider>
+           <v-list-tile
+            v-show="!notShow['safe_send']"
+            @click="changeView('safe_send')"
+           >
+             <v-list-tile-content>
+               <v-list-tile-title class="body-2">Safe Send</v-list-tile-title>
+             </v-list-tile-content>
+             <v-list-tile-action>
+               <v-icon color="blue darken-4">security</v-icon>
              </v-list-tile-action>
            </v-list-tile>
         </v-list>
       </v-menu>
-      <v-tooltip bottom v-show="showLogoff">
-        <v-btn icon dark slot="activator" @click.stop="logoff_dialog = true">
-          <v-icon>power_settings_new</v-icon>
+      <v-menu bottom open-on-hover offset-y
+              :nudge-width="100"
+              v-if="this.wallet"
+      >
+        <v-btn large icon slot="activator">
+          <v-icon large color="blue darken-4">account_balance_wallet</v-icon>
         </v-btn>
-        <span>Log off</span>
-      </v-tooltip>      
+        <v-toolbar color="light-blue darken-4" dark v-if="this.wallet">
+          <center>
+            <span class="caption cursor" @click="changeView('view')">
+              <b>
+                {{ this.wallet.info['address'] }}
+              </b>
+              <br>
+                {{ this.wallet.info['balance'] }}
+            </span>
+          </center>
+        </v-toolbar>
+        <v-list>
+          <v-list-tile
+            v-for="walletItem in walletItems"
+            v-show="!notShow[walletItem.name]"
+            :key="walletItem.title"
+            @click="changeView(walletItem.name)"
+           >
+             <v-list-tile-content>
+               <v-list-tile-title class="body-2">{{ walletItem.title }}</v-list-tile-title>
+             </v-list-tile-content>
+             <v-list-tile-action>
+               <v-icon color="blue darken-4">{{ walletItem.action }}</v-icon>
+             </v-list-tile-action>
+           </v-list-tile>
+           <v-divider></v-divider>
+           <v-list-tile
+            v-for="smartContractItem in smartContractItems"
+            v-show="!notShow[smartContractItem.name]"
+            :key="smartContractItem.title"
+            @click="changeView(smartContractItem.name)"
+           >
+             <v-list-tile-content>
+               <v-list-tile-title class="body-2">{{ smartContractItem.title }}</v-list-tile-title>
+             </v-list-tile-content>
+             <v-list-tile-action>
+               <v-icon color="blue darken-4">{{ smartContractItem.action }}</v-icon>
+             </v-list-tile-action>
+           </v-list-tile>
+           <v-divider></v-divider>
+           <v-list-tile @click="changeView('settings')">
+            <v-list-tile-content>
+              <v-list-tile-title class="body-2">Settings</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action>
+              <v-icon color="blue darken-4">settings</v-icon>
+            </v-list-tile-action>
+           </v-list-tile>
+           <v-divider></v-divider>
+           <v-list-tile @click="logout_dialog = true">
+            <v-list-tile-content>
+              <v-list-tile-title class="body-2">Log Out</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action>
+              <v-icon color="blue darken-4">power_settings_new</v-icon>
+            </v-list-tile-action>
+           </v-list-tile>
+        </v-list>
+      </v-menu>
+      <v-spacer></v-spacer>  
     </v-toolbar>
     <main>
       <v-content>
         <v-container fluid fill-height justify-center>
           <v-layout row wrap>
             <v-flex xs10 offset-xs1>
-              <home v-show="isCurrent['home']" @openDapp="openDapp"></home>
+              <home v-show="isCurrent['home']" @openDapp="openDapp" @openURL="openURL"></home>
               <create-wallet :view="isCurrent['create']" @created="setWallet" v-show="isCurrent['create']"></create-wallet>
               <create-mnemonic :view="isCurrent['create_from_mnemonic']" @created="setWallet" v-show="isCurrent['create_from_mnemonic']"></create-mnemonic>
               <restore-wallet @restored="setWallet" v-show="isCurrent['restore_from_mnemonic']"></restore-wallet>
@@ -114,11 +196,11 @@
       </v-content>
     </main>
     <v-dialog
-      v-model="logoff_dialog"
+      v-model="logout_dialog"
       max-width="290"
     >
       <v-card>
-        <v-card-title class="headline">Log off?</v-card-title>
+        <v-card-title class="headline">Log out?</v-card-title>
 
         <v-card-actions>
           <v-spacer></v-spacer>
@@ -126,7 +208,7 @@
           <v-btn
             color="red darken-1"
             flat="flat"
-            @click="logoff_dialog = false"
+            @click="logout_dialog = false"
           >
             No
           </v-btn>
@@ -134,7 +216,7 @@
           <v-btn
             color="green darken-1"
             flat="flat"
-            @click="logoff"
+            @click="logout"
           >
             Yes
           </v-btn>
@@ -194,131 +276,95 @@ export default {
   data() {
     return {
       wallet: false,
+      walletAddress: '',
+      walletBalance: '',
       current: "home",
-      logoff_dialog: false,
+      logout_dialog: false,
       network: config.getNetwork(),
       mode: config.getMode(),
       log: log,
       notifyList: {},
-      items: [
+      loginItems: [
         {
-          action: "open_in_browser",
-          title: "Add Wallet",
-          name: "new_wallet",
-          active: true,
-          items: [
-            {
-              title: "Generate New Wallet",
-              name: "create",
-              action: "add"
-            },
-            {
-              title: "Restore from Key File",
-              name: "restore_from_key_file",
-              action: "cloud_upload"
-            },
-            {
-              title: "Create from Mnemonic",
-              name: "create_from_mnemonic",
-              action: "assignment"
-            },
-            {
-              title: "Restore from Mnemonic",
-              name: "restore_from_mnemonic",
-              action: "sms"
-            },
-            {
-              title: "Restore from WIF",
-              name: "restore_from_wif",
-              action: "create"
-            },
-            {
-              title: "Restore from Mobile",
-              name: "restore_from_mobile",
-              action: "phonelink_lock"
-            },
-            {
-              title: "Restore from Ledger",
-              name: "restore_from_ledger",
-              action: "flip_to_front"
-            }
-          ]
+          title: "Restore from Key File",
+          name: "restore_from_key_file",
+          action: "cloud_upload"
         },
         {
-          action: "account_balance_wallet",
-          title: "Wallet Functions",
-          name: "wallet",
-          active: false,
-          items: [
-            {
-              title: "View Wallet Info",
-              name: "view",
-              action: "info"
-            },
-            {
-              title: "View Wallet Txs",
-              name: "transactions",
-              action: "list"
-            },
-            {
-              title: "Send",
-              name: "send",
-              action: "redo"
-            },
-            {
-              title: "Safe Send",
-              name: "safe_send",
-              action: "security"
-            },
-            {
-              title: "Request Payment",
-              name: "request_payment",
-              action: "undo"
-            },
-            {
-              title: "Dump as Key File",
-              name: "dump_as_key_file",
-              action: "cloud_download"
-            }
-          ]
+          title: "Restore from Mnemonic",
+          name: "restore_from_mnemonic",
+          action: "sms"
         },
         {
-          action: "code",
-          title: "Smart Contracts",
-          name: "contract",
-          active: false,
-          items: [
-            {
-              title: "Send to Contract",
-              name: "send_to_contract",
-              action: "play_circle_outline"
-            },
-            {
-              title: "Call Contract",
-              name: "call_contract",
-              action: "pageview"
-            },
-            {
-              title: "Create Contract",
-              name: "create_contract",
-              action: "build"
-            }
-          ]
+          title: "Restore from WIF",
+          name: "restore_from_wif",
+          action: "create"
         },
         {
-          action: "settings",
-          title: "Settings",
-          name: "top_settings",
-          active: false,
-          items: [
-            {
-              title: "General",
-              name: "settings",
-              action: "list"
-            }
-          ]
+          title: "Restore from Mobile",
+          name: "restore_from_mobile",
+          action: "phonelink_lock"
+        },
+        {
+          title: "Generate New Wallet",
+          name: "create",
+          action: "add"
+        },
+        {
+          title: "Create from Mnemonic",
+          name: "create_from_mnemonic",
+          action: "assignment"
         }
-      ]
+      ],
+      walletItems: [
+        {
+          title: "View Wallet Info",
+          name: "view",
+          action: "info"
+        },
+        {
+          title: "View Wallet Txs",
+          name: "transactions",
+          action: "list"
+        },
+        {
+          title: "Send",
+          name: "send",
+          action: "call_made"
+        },
+        {
+          title: "Request Payment",
+          name: "request_payment",
+          action: "call_received"
+        },
+        {
+          title: "Dump as Key File",
+          name: "dump_as_key_file",
+          action: "cloud_download"
+        },
+        {
+          title: "Safe Send",
+          name: "safe_send",
+          action: "security"
+        }
+      ],
+      smartContractItems: [         
+        {
+          title: "Send to Contract",
+          name: "send_to_contract",
+          action: "play_circle_outline"
+        },
+        {
+          title: "Call Contract",
+          name: "call_contract",
+          action: "pageview"
+        },
+        {
+          title: "Create Contract",
+          name: "create_contract",
+          action: "build"
+        }
+      ],
     };
   },
   computed: {
@@ -350,12 +396,9 @@ export default {
     headerClass() {
       return this.mode === "normal"
         ? this.network === "mainnet"
-          ? "indigo darken-3"
+          ? "blue-grey lighten-5"
           : "red darken-3"
-        : "blue-grey lighten-1";
-    },
-    showLogoff() {
-      return !(this.mode === "offline" || !this.wallet);
+        : "blue-grey darken-4";
     }
   },
   components: {
@@ -393,14 +436,14 @@ export default {
         if (this.mode === "offline") {
           this.current = "request_payment";
         } else {
-          this.current = "view";
+          this.current = "home";
         }
       }
     },
-    logoff() {
+    logout() {
       this.wallet = null;
       this.current = "home";
-      this.logoff_dialog = false;
+      this.logout_dialog = false;
     },
     changeView(name) {
       this.current = name;
@@ -413,6 +456,9 @@ export default {
       } else {
         this.changeView(name);
       }
+    },
+    openURL(url) {
+      window.open(url, "_blank");
     },
     error(msg, isHtml = false, ttl = 10) {
       this.addNotify(msg, "error", isHtml, ttl);
