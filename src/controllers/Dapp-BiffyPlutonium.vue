@@ -32,13 +32,13 @@
         Sell
         <v-icon>attach_money</v-icon>
       </v-tab>
-      <!--v-tab
+      <v-tab
        ripple      
       >
         Buy
         <v-icon>add_shopping_cart</v-icon>
       </v-tab>
-      <v-tab
+      <!--v-tab
        ripple
       >
         Adm
@@ -119,10 +119,10 @@
                         </v-flex>
                         <v-flex xs12>
                           <span v-if="this.tokenLotteryStatus == 'On'">
-                            Status: <span class="subheading font-weight-bold green--text">On</span>
+                            Status: <span class="subheading font-weight-bold green">On</span>
                           </span>
                           <span v-else>
-                            Status: <span class="subheading font-weight-bold red--text">Off</span>
+                            Status: <span class="subheading font-weight-bold red">Off</span>
                           </span>
                         </v-flex>
                         <v-flex xs12>
@@ -147,10 +147,10 @@
                           <span class="title font-weight-black">HTMLCoin Lottery</span>
                         </v-flex>
                         <v-flex xs12 v-if="this.htmlcoinLotteryStatus == 'On'">
-                          Status: <span class="subheading font-weight-bold green--text">On</span>
+                          Status: <span class="subheading font-weight-bold green">On</span>
                         </v-flex>
                         <v-flex xs12 v-else>
-                          Status: <span class="subheading font-weight-bold red--text">Off</span>
+                          Status: <span class="subheading font-weight-bold red">Off</span>
                         </v-flex>
                         <v-flex xs12>
                           Max Prize: <span class="subheading font-weight-bold">{{ (Math.round(this.htmlcoinLotteryPrize * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} HTML*</span>
@@ -266,7 +266,7 @@
           </v-flex>
         </v-card>
       </v-tab-item>
-      <!--v-tab-item>
+      <v-tab-item>
         <v-container fluid grid-list-lg align-center text-xs-center>
           <v-flex xs8 offset-xs2>
             <v-layout row wrap>
@@ -293,11 +293,27 @@
               <v-flex xs12 v-if="buyBank">
                 <v-card flat>
                   <v-flex xs12>
-                    <span class="title font-weight-bold">FROM BANK</span>
+                    <div class="py-3 display-2 font-weight-light">FROM BANK</div>
                   </v-flex>
                   <v-flex xs8 offset-xs2>
                     <v-container fluid grid-list-md align-center text-xs-center>
                       <v-layout row wrap>
+                        <v-flex xs12>
+                          <span class="title">
+                            Tokens for sale: <b>{{ (Math.round(this.bankTokenQuantity * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} BIFP</b>
+                            <br><br>
+                            Price per token: <b>{{ (Math.round(this.bankPricePerToken * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} HTML</b>
+                          </span>
+                        </v-flex>
+                        <v-flex xs12>
+                        </v-flex>
+                        <v-flex xs12>
+                          <span class="subheading">
+                            The "buy from bank" functionality is not yet implemented on AWP. For more info, please go to <a href="http://biffytoken.site/BIFP.php" target="_blank">biffytoken.site</a>.
+                          </span>
+                        </v-flex>
+                      </v-layout>
+                      <!--v-layout row wrap>
                         <v-flex xs12>
                           Current price per token: <b>1 HTML</b>
                         </v-flex>
@@ -315,7 +331,7 @@
                           <v-btn class="success" @click="buyFromBank">Buy!</v-btn>
                           <v-spacer></v-spacer>              
                         </v-flex>
-                      </v-layout>
+                      </v-layout-->
                     </v-container>
                   </v-flex>
                 </v-card>
@@ -323,11 +339,18 @@
               <v-flex xs12 v-if="buyUsers">
                 <v-card flat>
                    <v-flex xs12>
-                    <span class="title font-weight-bold">FROM MARKET</span>
+                    <div class="py-3 display-2 font-weight-light">FROM MARKET</div>
                   </v-flex>
                   <v-flex xs8 offset-xs2>
                     <v-container fluid grid-list-md align-center text-xs-center>
                       <v-layout row wrap>
+                        <v-flex xs12>
+                          <span class="subheading">
+                            The "buy from market" functionality is not yet implemented on AWP. For more info, please go to <a href="http://biffytoken.site/BIFP.php" target="_blank">biffytoken.site</a>.
+                          </span>
+                        </v-flex>
+                      </v-layout>
+                      <!--v-layout row wrap>
                         <v-flex xs12>
                           <v-text-field
                            label="Who to buy from"
@@ -353,7 +376,7 @@
                           <v-btn class="success" @click="buyFromUser">Buy!</v-btn>
                           <v-spacer></v-spacer>              
                         </v-flex>
-                      </v-layout>
+                      </v-layout-->
                     </v-container>
                   </v-flex>
                 </v-card>
@@ -361,7 +384,7 @@
             </v-layout>
           </v-flex>
         </v-container>
-      </v-tab-item-->
+      </v-tab-item>
       <!--v-tab-item>
         <v-container fluid grid-list-lg align-center text-xs-center>
           <v-flex xs8 offset-xs2>
@@ -661,6 +684,8 @@ export default {
       htmlcoinLotteryPot: 0,
       upForGrabsBet: '',
       buyFromBankAmount: '',
+      bankPricePerToken: '',
+      bankTokenQuantity: '',
       txLotteryReceiptDialog: false,
       txBuyReceiptDialog: false,
       awaitingLotteryTx: false,
@@ -1044,6 +1069,16 @@ export default {
         );
 
         this.htmlcoinLotteryPot = parseInt(decodedResult[0]);
+
+        decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'BIFP_whatsForSale',
+          ['0x750db5c622d07fbbb9fd0129a322e810d12e5ca6']
+        );
+
+        this.bankTokenQuantity = parseInt(decodedResult[0]) / 100000000;
+        this.bankPricePerToken = parseInt(decodedResult[1]) / 100000000;
 
         for(var i = 0; i < this.wallet.info.hrc20.length; i++) {
           if(this.wallet.info.hrc20[i].contract.contract_address == contractAddress) {
