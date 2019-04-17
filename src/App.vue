@@ -92,6 +92,15 @@
                <v-icon color="blue darken-4">security</v-icon>
              </v-list-tile-action>
            </v-list-tile>
+           <v-divider></v-divider>
+           <v-list-tile @click="changeView('settings')">
+            <v-list-tile-content>
+              <v-list-tile-title class="body-2">Settings</v-list-tile-title>
+            </v-list-tile-content>
+            <v-list-tile-action>
+              <v-icon color="blue darken-4">settings</v-icon>
+            </v-list-tile-action>
+           </v-list-tile>
         </v-list>
       </v-menu>
       <v-menu bottom open-on-hover offset-y
