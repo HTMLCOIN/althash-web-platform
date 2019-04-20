@@ -54,7 +54,7 @@
                       <br>
                       HTMLCoin Foundation has reviewed and approved this application's code, having Althash Web Platform as a proud host, however the Foundation is not responsible for any funds transacted within this application scope.
                       <br>
-                      By using this application you agree on this terms.
+                      By using this application you agree on these terms.
                     </small>
             		  </span>
             		  <br><br>

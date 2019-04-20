@@ -48,6 +48,11 @@
                       <img src="~assets/images/BIFP_menu_black_btn.png" style="height:50px;width:auto;">
                     </v-btn>
                   </v-flex>
+                  <v-flex xs4>
+                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_photizo')">
+                      <img src="~assets/images/photizo_menu_btn.png" style="height:50px;width:auto;">
+                    </v-btn>
+                  </v-flex>
                 </v-layout>
               </v-container>
             </v-card-text>
@@ -198,6 +203,7 @@
               <dapp-crypticmag v-if="isCurrent['dapp_crypticmag']"></dapp-crypticmag>
               <dapp-alt-proof v-if="isCurrent['dapp_altproof']"></dapp-alt-proof>
               <dapp-biffy-plutonium v-if="isCurrent['dapp_biffyplutonium']"></dapp-biffy-plutonium>
+              <dapp-photizo v-if="isCurrent['dapp_photizo']"></dapp-photizo>
               <config v-if="isCurrent['settings']"></config>
             </v-flex>
           </v-layout>
@@ -268,6 +274,7 @@ import DappMyoffspring from "controllers/Dapp-MyOffspring";
 import DappCrypticmag from "controllers/Dapp-CrypticMAG";
 import DappAltProof from "controllers/Dapp-AltProof";
 import DappBiffyPlutonium from "controllers/Dapp-BiffyPlutonium";
+import DappPhotizo from "controllers/Dapp-Photizo";
 import CreateContract from "controllers/CreateContract";
 import SendToContract from "controllers/SendToContract.vue";
 import CallContract from "controllers/CallContract.vue";
@@ -399,6 +406,7 @@ export default {
         dapp_crypticmag: this.mode === "offline" || !this.wallet,
         dapp_altproof: this.mode === "offline" || !this.wallet,
         dapp_biffyplutonium: this.mode === "offline" || !this.wallet,
+        dapp_photizo: this.mode === "offline" || !this.wallet,
         dapps: this.mode === "offline" || !this.wallet
       };
     },
@@ -432,6 +440,7 @@ export default {
     DappCrypticmag,
     DappAltProof,
     DappBiffyPlutonium,
+    DappPhotizo,
     CreateContract,
     SendToContract,
     CallContract,
