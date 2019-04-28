@@ -37,9 +37,9 @@
                     <span class="display-1">Welcome to the Light Project.</span>
                     <br><br>
                     <span class="subheading">
-                      Photizo is an app focused in spreading bible knowledge amongst the wide crypto community.
+                      Photizo is an app focused on spreading bible knowledge amongst the wide crypto community.
                       <br><br>
-                      While answering general questions in our quiz, you will be able to gather Photizo Tokens (PHO) that will allow you to contribute to important charity projects around the globe. PHO tokens will be accepted by companies and converted into the donations.
+                      While answering general questions in our quiz, you will be able to gather Photizo Tokens (PHO) that will allow you to contribute to important charity projects around the globe. PHO tokens will be accepted by companies and converted into donations.
                       <br><br>
                       Thank you for being part of our great project of bringing a higher meaning to the crypto space.
                       <br><br><br><br>
@@ -61,33 +61,35 @@
       </v-tab-item>
       <v-tab-item>
         <v-container fluid grid-list-lg align-center text-xs-center>
-          <v-flex xs8 offset-xs2>
+          <v-flex xs6 offset-xs3>
             <v-layout row wrap>
-              <v-flex xs12>
-                <div class="py-3 display-2 font-weight-light">QUIZ</div>
-              </v-flex>
-              <v-flex xs12 text-xs-center v-if="this.currentStep == 0">
-                <span class="title">
-                  <p>
-                    Questions are randomically picked, in sets of 5, from our Smart Contrat in the Althash Blockchain.
+              <v-flex xs12 v-if="this.currentStep == -1">
+                  <p class="title">
+                    Questions are randomically picked, in sets of 5, from our Smart Contract in the Althash Blockchain.
+                    <br>
                     <br>
                     After answering the 5 questions, your answers will be processed and the tokens distributed/charged.
                   </p>
-                  <p>
-                    Correct answer: <b>{{ this.correctAnswerPrize }} PHO</b>
-                  </p>
-                  <p>
-                    Correct answer using a hint: <b>{{ this.correctAnswerHintPrize }} PHO</b>
-                  </p>
-                  <p>
-                    Wrong anser: <b>-{{ this.wrongAnswerFee }} PHO</b>
-                  </p>
+                  <br>
+                  <v-card color="blue-grey darken-2" class="white--text subheader" raised>
+                    <v-card-text>
+                      <p>
+                        Correct answer: <b>{{ this.correctAnswerPrize }} PHO</b>
+                      </p>
+                      <p>
+                        Correct answer using a hint: <b>{{ this.correctAnswerHintPrize }} PHO</b>
+                      </p>
+                      <p>
+                        Wrong answer: <b>-{{ this.wrongAnswerFee }} PHO</b>
+                      </p>
+                    </v-card-text>
+                  </v-card>
+                  <br>
                   <p>
                     <v-btn class="info" @click="prepareQuestions">Prepare Questions</v-btn>
                   </p>
-                </span>
               </v-flex>
-              <v-flex xs12 text-xs-center v-if="this.currentStep == 1">
+              <v-flex xs12 v-else-if="this.currentStep >= 0 && this.currentStep <= 4">
                 <v-layout row wrap>
                   <v-flex xs12>
                     <span class="title">
@@ -95,31 +97,324 @@
                     </span>
                   </v-flex>
                   <v-flex xs12>
-                    <v-radio-group v-model="answer">
-                      <v-radio value=1>
-                        <template v-slot:label>
-                          {{ this.option1 }}
-                        </template>
-                      </v-radio>
-                      <v-radio value=2>
-                        <template v-slot:label>
-                          {{ this.option2 }}
-                        </template>
-                      </v-radio>
-                      <v-radio value=3>
-                        <template v-slot:label>
-                          {{ this.option3 }}
-                        </template>
-                      </v-radio>
-                      <v-radio value=4>
-                        <template v-slot:label>
-                          {{ this.option4 }}
-                        </template>
-                      </v-radio>
+                    <v-radio-group v-model="currentAnswer">
+                      <v-radio value=1 :label="this.option1"></v-radio>
+                      <v-radio value=2 :label="this.option2"></v-radio>
+                      <v-radio value=3 :label="this.option3"></v-radio>
+                      <v-radio value=4 :label="this.option4"></v-radio>
                     </v-radio-group>
                   </v-flex>
                   <v-flex xs12>
-                    <v-btn class="success">Confirm</v-btn>
+                    <span class="caption gray--text">
+                      Question ID: {{ this.questionId }}
+                    </span>
+                  </v-flex>
+                  <v-flex xs6>
+                    <v-btn class="indigo--text" flat @click="getHint()">Get Hint</v-btn>
+                  </v-flex>
+                  <v-flex xs6>
+                    <v-btn class="success" @click="confirmAnswer()" :disabled="this.currentAnswer == ''">
+                      Confirm Answer
+                    </v-btn>
+                  </v-flex>
+                </v-layout>
+              </v-flex>
+              <v-flex xs12 v-else-if="this.currentStep == 5">
+                <v-layout row wrap>
+                  <v-flex xs12>
+                    <span class="title">
+                      All questions for this turn have been answered.
+                    </span>
+                  </v-flex>
+                  <v-flex xs12>
+                    <span class="subheading">
+                      Please click on the button below to process your answers and get the results.
+                    </span>
+                  </v-flex>
+                  <v-flex xs12>
+                    <v-btn class="info" @click="processAnswers()">Process Answers</v-btn>
+                  </v-flex>
+                </v-layout>
+              </v-flex>
+              <v-flex xs12 v-else-if="this.currentStep == 6">
+                <v-layout row wrap>
+                  <v-flex xs12>
+                    <span class="title">
+                      <b>Results</b>
+                    </span>
+                  </v-flex>
+                  <v-flex xs12>
+                    <v-layout row wrap>
+                      <v-flex xs3>
+                        <v-card color="blue darken-4">
+                          <span class="white--text">
+                            <b>Question #</b>
+                          </span>
+                        </v-card>
+                      </v-flex>
+                      <v-flex xs3>
+                        <v-card color="blue darken-4">
+                          <span class="white--text">
+                            <b>Correct?</b>
+                          </span>
+                        </v-card>
+                      </v-flex>
+                      <v-flex xs3>
+                        <v-card color="blue darken-4">
+                          <span class="white--text">
+                            <b>Hint used?</b>
+                          </span>
+                        </v-card>
+                      </v-flex>
+                      <v-flex xs3>
+                        <v-card color="blue darken-4">
+                          <span class="white--text">
+                            <b>PHO Tokens</b>
+                          </span>
+                        </v-card>
+                      </v-flex>
+                      <!-- Question 1 -->
+                      <v-flex xs3>
+                        <b>1</b>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[0]">
+                        <span class="blue--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userHints[0]">
+                        <span class="red--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="blue--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[0] && !this.userHints[0]">
+                        <span class="blue--text">
+                          <b>2</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="this.userResults[0] && this.userHints[0]">
+                        <span class="blue--text">
+                          <b>1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="!this.userResults[0] && !this.userHints[0]">
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <!-- Question 2 -->
+                      <v-flex xs3>
+                        <b>2</b>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[1]">
+                        <span class="blue--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userHints[1]">
+                        <span class="red--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="blue--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[1] && !this.userHints[1]">
+                        <span class="blue--text">
+                          <b>2</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="this.userResults[1] && this.userHints[1]">
+                        <span class="blue--text">
+                          <b>1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="!this.userResults[1] && !this.userHints[1]">
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <!-- Question 3 -->
+                      <v-flex xs3>
+                        <b>3</b>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[2]">
+                        <span class="blue--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userHints[2]">
+                        <span class="red--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="blue--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[2] && !this.userHints[2]">
+                        <span class="blue--text">
+                          <b>2</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="this.userResults[2] && this.userHints[2]">
+                        <span class="blue--text">
+                          <b>1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="!this.userResults[2] && !this.userHints[2]">
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <!-- Question 4 -->
+                      <v-flex xs3>
+                        <b>4</b>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[3]">
+                        <span class="blue--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userHints[3]">
+                        <span class="red--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="blue--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[3] && !this.userHints[3]">
+                        <span class="blue--text">
+                          <b>2</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="this.userResults[3] && this.userHints[3]">
+                        <span class="blue--text">
+                          <b>1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="!this.userResults[3] && !this.userHints[3]">
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <!-- Question 5 -->
+                      <v-flex xs3>
+                        <b>5</b>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[4]">
+                        <span class="blue--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userHints[4]">
+                        <span class="red--text">
+                          <b>Yes</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="blue--text">
+                          <b>No</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-if="this.userResults[4] && !this.userHints[4]">
+                        <span class="blue--text">
+                          <b>2</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="this.userResults[4] && this.userHints[4]">
+                        <span class="blue--text">
+                          <b>1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else-if="!this.userResults[4] && !this.userHints[4]">
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs3 v-else>
+                        <span class="red--text">
+                          <b>-1</b>
+                        </span>
+                      </v-flex>
+                      <v-flex xs12>
+                        <v-card color="blue-grey darken-4" height="1px">
+                        </v-card>
+                      </v-flex>
+                      <v-flex xs3>
+                      </v-flex>
+                      <v-flex xs3>
+                      </v-flex>
+                      <v-flex xs3>
+                        <span class="title">
+                          Total:
+                        </span>
+                      </v-flex>
+                      <v-flex xs3>
+                        <span class="title">
+                          <b>{{ this.totalEarnedTokens }}</b>
+                        </span>
+                      </v-flex>
+                    </v-layout>
+                  </v-flex>
+                  <v-flex xs12>
+                    <v-btn class="info" @click="restart()">Start another round</v-btn>
                   </v-flex>
                 </v-layout>
               </v-flex>
@@ -180,9 +475,32 @@
               </span>
             </v-flex>
             <v-flex xs12>
-              <v-btn color="error" @click="this.txReceiptDialog = false">
+              <v-btn color="error" @click="txReceiptDialog = false; txError = false">
                 Close
               </v-btn>
+            </v-flex>
+          </v-layout>
+        </v-container>
+      </v-card>
+    </v-dialog>
+    <v-dialog
+      v-model="hintDialog"
+      hide-overlay
+      width="300"
+    >
+      <v-card color="blue-grey lighten-4">
+        <v-container fluid grid-list-md>
+          <v-layout row wrap align-center text-xs-center>
+            <v-flex xs12>
+              <span class="title font-weight-black">
+                Hint
+              </span>
+            </v-flex>
+            <v-flex xs12>
+              <b>{{ this.hint }}</b>
+            </v-flex>
+            <v-flex xs12>
+              <v-btn flat class="grey--text" @click="hintDialog = false">Close</v-btn>
             </v-flex>
           </v-layout>
         </v-container>
@@ -227,7 +545,7 @@
         <v-card-actions>
           <v-spacer></v-spacer>
           <v-btn class="blue--text darken-1" flat @click="confirmSend" v-show="canSend && !sending">{{ $t('common.confirm') }}</v-btn>
-          <v-btn class="red--text darken-1" flat @click.native="confirmSendDialog = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
+          <v-btn class="red--text darken-1" flat @click="confirmSendDialog = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
           <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
         </v-card-actions>
       </v-card>
@@ -244,17 +562,19 @@ import axios from 'axios'
 import base58 from 'bs58'
 import sha256 from 'js-sha256'
 
-const tokenContractAddress = config.getNetwork() == "mainnet" ? "0" : "63738a07daf0514f2d242947117a8d748f85340b";
+const tokenContractAddress = config.getNetwork() == "mainnet" ? "4520d32ad7c6d863323a597d118cfdd6e28c3f29" : "63738a07daf0514f2d242947117a8d748f85340b";
 
-const contractAddress = config.getNetwork() == "mainnet" ? "0" : "f77a5d932b5c70a52852d7338f1ff1a5b56ea87b"; 
+const contractAddress = config.getNetwork() == "mainnet" ? "97b5bddc643c61eb739d2c779fe4786a947de436" : "723200bb39c42798e43183b0548ecd71afe61b4e"; 
 
 const abiJson = JSON.parse(
-  '[{"constant": true, "inputs": [{"name": "answeredQuestionsIds", "type": "bytes10[5]"}, {"name": "answeredQuestionsAnswers", "type": "uint8[5]"} ], "name": "getResults", "outputs": [{"name": "results", "type": "bool[5]"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "correctAnswerHintPrize", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [], "name": "prepareQuestions", "outputs": [{"name": "_preparedQuestionsId", "type": "bytes10[5]"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "_questionId", "type": "bytes10"} ], "name": "getHint", "outputs": [{"name": "hint", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "answeredQuestionsIds", "type": "bytes10[5]"}, {"name": "answeredQuestionsAnswers", "type": "uint8[5]"}, {"name": "answeredQuestionsHints", "type": "bool[5]"} ], "name": "processAnswers", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "correctAnswerPrize", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "questionIndex", "type": "uint256"} ], "name": "getUserQuestion", "outputs": [{"name": "questionId", "type": "bytes10"}, {"name": "question", "type": "string"}, {"name": "option1", "type": "string"}, {"name": "option2", "type": "string"}, {"name": "option3", "type": "string"}, {"name": "option4", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "wrongAnswerFee", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"} ]'
+  '[{"constant": true, "inputs": [{"name": "answeredQuestionsIds", "type": "bytes10[5]"}, {"name": "answeredQuestionsAnswers", "type": "uint8[5]"} ], "name": "getResults", "outputs": [{"name": "results", "type": "bool[5]"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "correctAnswerHintPrize", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [], "name": "prepareQuestions", "outputs": [{"name": "_preparedQuestionsId", "type": "bytes10[5]"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "_questionId", "type": "bytes10"} ], "name": "getHint", "outputs": [{"name": "hint", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "answeredQuestionsIds", "type": "bytes10[5]"}, {"name": "answeredQuestionsAnswers", "type": "uint8[5]"}, {"name": "answeredQuestionsHints", "type": "bool[5]"} ], "name": "processAnswers", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "correctAnswerPrize", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "_userAddress", "type": "address"}, {"name": "_questionIndex", "type": "uint256"} ], "name": "getUserQuestion", "outputs": [{"name": "questionId", "type": "bytes10"}, {"name": "question", "type": "string"}, {"name": "option1", "type": "string"}, {"name": "option2", "type": "string"}, {"name": "option3", "type": "string"}, {"name": "option4", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "wrongAnswerFee", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"} ]'
 );
 
 export default {
   data () {
     return {
+      txReceiptDialog: false,
+      confirmSendDialog: false,
       userTokenBalance: 0,
       loading: false,
       wallet: webWallet.getWallet(),
@@ -262,14 +582,22 @@ export default {
       correctAnswerHintPrize: 0,
       wrongAnswerFee: 0,
       minimumTokenAmount: 0,
-      currentStep: 0,
+      currentStep: -1,
       questionId: '',
       question: '',
-      answer: 0,
+      currentAnswer: 0,
       option1: '',
       option2: '',
       option3: '',
       option4: '',
+      hint: '',
+      userHints: [false,false,false,false,false],
+      userAnswers: [0,0,0,0,0],
+      userQuestionIds: ['0x','0x','0x','0x','0x'],
+      hintDialog: false,
+      userResults: [],
+      totalEarnedTokens: 0,
+      txError: false,
       gasPrice: '40',
       gasLimit: '2500000',
       fee: '0.01',
@@ -277,17 +605,6 @@ export default {
       canSend: false,
       sending: false
     }
-  },
-  computed: {
-    lotteryNotValid: function() {
-      return !(/^[0-9]+$/.test(this.lotteryBet) && /^[0-9]+$/.test(this.lotteryLuckyNumber));
-    },
-    ufgNotValid: function() {
-      return !(/^[0-9]+$/.test(this.upForGrabsBet));
-    },
-    sellNotValid: function() {
-      return !(/^[0-9]+$/.test(this.sellPricePerToken) && /^[0-9]+$/.test(this.sellTokenQty));
-    },
   },
   methods: {
     async prepareQuestions() {
@@ -299,9 +616,8 @@ export default {
             []
           );
 
+          this.rawTx = 'loading...';
           this.confirmSendDialog = true;
-          this.currentStep = 1;
-          this.getUserQuestion(0);
 
           try {
             this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
@@ -321,7 +637,45 @@ export default {
           return false;
         }
       } else {
-        alert('You do not have enough PHO to cover for any wrong question. You need at least ' + this.minimumTokenAmount + ' PHO.' );
+        alert('You do not have enough PHO to cover wrong questions. You need at least ' + this.minimumTokenAmount + ' PHO.' );
+      }
+    },
+
+    async processAnswers() {
+      if(parseInt(this.userTokenBalance) >= parseInt(this.minimumTokenAmount)) {
+        try {
+          const encodedData = this.encodeContractSendFunction(
+            abiJson, 
+            'processAnswers', 
+            [
+              this.userQuestionIds,
+              this.userAnswers,
+              this.userHints
+            ]
+          );
+
+          this.rawTx = 'loading...';
+          this.confirmSendDialog = true;
+
+          try {
+            this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
+          } catch (e) {
+            this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e);
+            alert(e.message || e);
+            this.confirmSendDialog = false;
+            this.currentStep = 0;
+            return false;
+          }
+            this.canSend = true;
+        } catch (e) {
+          this.$root.error('Params error');
+          this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e);
+          this.confirmSendDialog = false;
+          this.currentStep = 0;
+          return false;
+        }
+      } else {
+        alert('You do not have enough PHO to cover wrong questions. You need at least ' + this.minimumTokenAmount + ' PHO.' );
       }
     },
 
@@ -354,6 +708,14 @@ export default {
                 this.currentStep = 0;
               } else {
                 this.txReceiptDialog = false;
+                switch(this.currentStep) {
+                  case -1 :
+                    this.getUserQuestion(0);
+                    break;
+                  case 5 :
+                    this.getResults();
+                    break;
+                } 
                 this.currentStep++;
               }
             }
@@ -424,20 +786,32 @@ export default {
       this.loading = true;
 
       try{
+          
+        const userHexAddress = '0x' + base58.decode(this.wallet.info['address']).toString('hex').substr(2, 40);
+
         // Correct answer prize
         var decodedResult = await this.callContractFunction(
           contractAddress, 
           abiJson, 
           'getUserQuestion', 
-          [questionIndex]
+          [userHexAddress, questionIndex]
         );
 
-        this.questionId = decodedResult[0].toString();
-        this.question = decodedResult[1].toString();
-        this.option1 = decodedResult[2].toString();
-        this.option2 = decodedResult[3].toString();
-        this.option3 = decodedResult[4].toString();
-        this.option4 = decodedResult[5].toString();
+        if(decodedResult[1].toString() != '') {
+
+          this.questionId = decodedResult[0].toString();
+          this.question = decodedResult[1].toString();
+          this.option1 = decodedResult[2].toString();
+          this.option2 = decodedResult[3].toString();
+          this.option3 = decodedResult[4].toString();
+          this.option4 = decodedResult[5].toString();
+
+          this.userQuestionIds[this.currentStep] = this.questionId;
+        } else {
+
+          alert('Error when fetching question. Please start over.');
+          this.currentStep = -1;
+        }
 
       } catch (e) {
           this.loading = false;
@@ -446,6 +820,112 @@ export default {
       }
 
       this.loading = false;
+    },
+
+    async getHint(){
+      this.loading = true;
+
+      try{
+
+        // Correct answer prize
+        var decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'getHint', 
+          [this.questionId]
+        );
+
+        this.userHints[this.currentStep] = true;
+        this.hint = decodedResult[0].toString();
+        this.hintDialog = true;
+
+      } catch (e) {
+          this.loading = false;
+          this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e);
+          alert(e.message || e);
+      }
+
+      this.loading = false;
+    },
+
+    async confirmAnswer(){
+      this.loading = true;
+
+      try{
+
+        this.userAnswers[this.currentStep] = this.currentAnswer;
+        this.currentAnswer = 0;
+        this.currentStep++;
+        
+        if(this.currentStep <= 4) {
+          // Get next question
+          this.getUserQuestion(this.currentStep);
+        }
+
+      } catch (e) {
+          this.loading = false;
+          this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e);
+          alert(e.message || e);
+      }
+
+      this.loading = false;
+    },
+
+    async getResults(){
+      this.loading = true;
+
+      try{
+
+        // Correct answer prize
+        var decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'getResults', 
+          [
+            this.userQuestionIds,
+            this.userAnswers
+          ]
+        );
+
+        this.userResults = decodedResult[0];
+
+        for(var i = 0; i <= 4; i++) {
+          if(this.userResults[i]){
+            if(this.userHints[i]){
+              this.totalEarnedTokens += 1;
+            } else {
+              this.totalEarnedTokens += 2;
+            }
+          } else {
+            this.totalEarnedTokens -= 1;
+          }
+        }
+
+      } catch (e) {
+          this.loading = false;
+          this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e);
+          alert(e.message || e);
+      }
+
+      this.loading = false;
+    },
+
+    restart(){
+      this.currentStep = -1;
+      this.questionId = '';
+      this.question = '';
+      this.currentAnswer = 0;
+      this.option1 = '';
+      this.option2 = '';
+      this.option3 = '';
+      this.option4 = '';
+      this.hint = '';
+      this.userHints = [false,false,false,false,false];
+      this.userAnswers = [0,0,0,0,0];
+      this.userQuestionIds = ['0x','0x','0x','0x','0x'];
+      this.userResults = [];
+      this.totalEarnedTokens = 0;
+      this.rawTx = 'loading...';
     },
 
     findIndexByName(abiJson, name){
