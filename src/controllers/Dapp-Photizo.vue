@@ -423,30 +423,6 @@
         </v-container>
       </v-tab-item>
     </v-tabs>
-    <v-dialog v-model="confirmSendDialog" persistent max-width="50%">
-      <v-card>
-        <v-card-title>
-          <span class="headline">
-            {{ $t('send_to_contract.confirm') }}
-          </span>
-        </v-card-title>
-        <v-card-text>
-          <v-container grid-list-md>
-            <v-layout wrap>
-              <v-flex xs12>
-                <v-textarea label="Raw Tx" v-model="rawTx" disabled></v-textarea>
-              </v-flex>
-            </v-layout>
-          </v-container>
-        </v-card-text>
-        <v-card-actions>
-          <v-spacer></v-spacer>
-          <v-btn class="blue--text darken-1" flat @click="confirmSend" v-show="canSend && !sending">{{ $t('common.confirm') }}</v-btn>
-          <v-btn class="red--text darken-1" flat @click.native="confirmSendDialog = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
-          <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
-        </v-card-actions>
-      </v-card>
-    </v-dialog>
     <v-dialog v-model="txReceiptDialog" persistent width="600px">
       <v-card color="blue-grey lighten-5">
         <v-container fluid grid-list-md>
@@ -544,9 +520,9 @@
         </v-card-text>
         <v-card-actions>
           <v-spacer></v-spacer>
-          <v-btn class="blue--text darken-1" flat @click="confirmSend" v-show="canSend && !sending">{{ $t('common.confirm') }}</v-btn>
-          <v-btn class="red--text darken-1" flat @click="confirmSendDialog = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
-          <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
+          <v-btn class="blue--text darken-1" flat @click="confirmSend" v-show="canSend && !sending && rawTx != 'loading...'">{{ $t('common.confirm') }}</v-btn>
+          <v-btn class="red--text darken-1" flat @click="confirmSendDialog = false; canSend = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
+          <v-progress-circular indeterminate :size="20" v-show="sending" color="primary"></v-progress-circular>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -564,7 +540,7 @@ import sha256 from 'js-sha256'
 
 const tokenContractAddress = config.getNetwork() == "mainnet" ? "4520d32ad7c6d863323a597d118cfdd6e28c3f29" : "63738a07daf0514f2d242947117a8d748f85340b";
 
-const contractAddress = config.getNetwork() == "mainnet" ? "97b5bddc643c61eb739d2c779fe4786a947de436" : "723200bb39c42798e43183b0548ecd71afe61b4e"; 
+const contractAddress = config.getNetwork() == "mainnet" ? "f5bd6aace695cfaa43a7575b5b139675ab368cde" : "723200bb39c42798e43183b0548ecd71afe61b4e"; 
 
 const abiJson = JSON.parse(
   '[{"constant": true, "inputs": [{"name": "answeredQuestionsIds", "type": "bytes10[5]"}, {"name": "answeredQuestionsAnswers", "type": "uint8[5]"} ], "name": "getResults", "outputs": [{"name": "results", "type": "bool[5]"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "correctAnswerHintPrize", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [], "name": "prepareQuestions", "outputs": [{"name": "_preparedQuestionsId", "type": "bytes10[5]"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "_questionId", "type": "bytes10"} ], "name": "getHint", "outputs": [{"name": "hint", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "answeredQuestionsIds", "type": "bytes10[5]"}, {"name": "answeredQuestionsAnswers", "type": "uint8[5]"}, {"name": "answeredQuestionsHints", "type": "bool[5]"} ], "name": "processAnswers", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "correctAnswerPrize", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "_userAddress", "type": "address"}, {"name": "_questionIndex", "type": "uint256"} ], "name": "getUserQuestion", "outputs": [{"name": "questionId", "type": "bytes10"}, {"name": "question", "type": "string"}, {"name": "option1", "type": "string"}, {"name": "option2", "type": "string"}, {"name": "option3", "type": "string"}, {"name": "option4", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "wrongAnswerFee", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"} ]'
