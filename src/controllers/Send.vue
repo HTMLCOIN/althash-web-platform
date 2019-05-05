@@ -107,7 +107,7 @@
           <v-btn class="red--text darken-1" flat @click.native="confirmSendDialog = false" :v-show="!sending">
             {{ $t('common.cancel') }}
           </v-btn>
-          <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
+          <v-progress-circular indeterminate :size="20" v-show="sending" class="primary--text"></v-progress-circular>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -148,7 +148,7 @@
           <v-btn class="red--text darken-1" flat @click.native="addTokenDialog = false">
             {{ $t('common.cancel') }}
           </v-btn>
-          <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
+          <v-progress-circular indeterminate :size="20" v-show="sending" class="primary--text"></v-progress-circular>
         </v-card-actions>
       </v-card>
     </v-dialog>

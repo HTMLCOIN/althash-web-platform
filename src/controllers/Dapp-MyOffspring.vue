@@ -226,7 +226,7 @@
                     <v-spacer></v-spacer>
                     <v-btn class="blue--text darken-1" flat @click="confirmSend" v-show="canSend && !sending">{{ $t('common.confirm') }}</v-btn>
                     <v-btn class="red--text darken-1" flat @click.native="confirmSendDialog = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
-                    <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
+                    <v-progress-circular indeterminate :size="20" v-show="sending" class="primary--text"></v-progress-circular>
                   </v-card-actions>
                 </v-card>
               </v-dialog>

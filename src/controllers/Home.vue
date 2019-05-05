@@ -57,8 +57,6 @@
             </v-card>
           </v-flex>
           <v-flex xs3>
-          </v-flex>
-          <v-flex xs3>
             <v-toolbar color="cyan darken-1" dark height="30px">
               <v-spacer></v-spacer>
               <span class="font-weight-light text-no-wrap">
@@ -80,6 +78,18 @@
             </v-toolbar>
             <v-card>
               <img src="~assets/images/logo_biffy_plutonium.png" class="cursor dappImg" @click="openDapp('dapp_biffyplutonium')">
+            </v-card>
+          </v-flex>
+          <v-flex xs3>
+            <v-toolbar color="cyan darken-1" dark height="30px">
+              <v-spacer></v-spacer>
+              <span class="font-weight-light text-no-wrap">
+                COMMUNITY DAPP
+              </span>
+              <v-spacer></v-spacer>
+            </v-toolbar>
+            <v-card>
+              <img src="~assets/images/logo_photizo.png" class="cursor dappImg" @click="openDapp('dapp_photizo')">
             </v-card>
           </v-flex>
           <v-flex xs3>

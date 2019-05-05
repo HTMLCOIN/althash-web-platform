@@ -68,7 +68,7 @@
                       <br>
                       HTMLCoin Foundation has reviewed and approved this application's code, having Althash Web Platform as a proud host, however the Foundation is not responsible for any funds transacted within this application scope.
                       <br>
-                      By using this application you agree on this terms.
+                      By using this application you agree on these terms.
                     </small>
                   </span>
                   <br><br>
@@ -423,7 +423,7 @@
           <v-spacer></v-spacer>
           <v-btn class="blue--text darken-1" flat @click="confirmSendLottery" v-show="canSend && !sending">{{ $t('common.confirm') }}</v-btn>
           <v-btn class="red--text darken-1" flat @click.native="confirmSendLotteryDialog = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
-          <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
+          <v-progress-circular indeterminate :size="20" v-show="sending" class="primary--text"></v-progress-circular>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -562,7 +562,7 @@
           <v-spacer></v-spacer>
           <v-btn class="blue--text darken-1" flat @click="confirmSend" v-show="canSend && !sending">{{ $t('common.confirm') }}</v-btn>
           <v-btn class="red--text darken-1" flat @click.native="confirmSendDialog = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
-          <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
+          <v-progress-circular indeterminate :size="20" v-show="sending" class="primary--text"></v-progress-circular>
         </v-card-actions>
       </v-card>
     </v-dialog>
@@ -586,7 +586,7 @@
           <v-spacer></v-spacer>
           <v-btn class="blue--text darken-1" flat @click="confirmSendBuy" v-show="canSend && !sending">{{ $t('common.confirm') }}</v-btn>
           <v-btn class="red--text darken-1" flat @click.native="confirmSendBuyDialog = false" :v-show="!sending">{{ $t('common.cancel') }}</v-btn>
-          <v-progress-circular indeterminate :size="50" v-show="sending" class="primary--text"></v-progress-circular>
+          <v-progress-circular indeterminate :size="20" v-show="sending" class="primary--text"></v-progress-circular>
         </v-card-actions>
       </v-card>
     </v-dialog>
