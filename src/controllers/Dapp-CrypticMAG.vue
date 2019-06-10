@@ -76,11 +76,11 @@
                     Total available in prizes:
                   </span>
                 </v-flex>
-                <v-flex xs6 title>
-                  <b>{{ this.totalMAGAvailable }} MAG</b>
+                <v-flex xs6 title>   
+                  <b>{{ (Math.round(this.totalMAGAvailable * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} MAG</b>
                 </v-flex>
                 <v-flex xs6 title>
-                  <b>{{ this.totalHTMLAvailable }} HTML</b>
+                  <b>{{ (Math.round(this.totalHTMLAvailable * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} HTML</b>
                 </v-flex>
               </v-layout>
               <v-card-text>
