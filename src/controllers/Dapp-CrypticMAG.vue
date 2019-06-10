@@ -70,15 +70,15 @@
         <v-card flat>
           <v-container fluid grid-list-md align-center text-xs-center>
             <v-flex xs6 offset-xs3>
-              <v-layout>
+              <v-layout row wrap>
                 <v-flex xs12>
                   <span class="title">
-                    Total MAG available in prizes: <b>{{ this.totalMAGAvailable }}</b>
+                    Total <b>MAG</b> available in prizes: <b>{{ this.totalMAGAvailable }}</b>
                   </span>
                 </v-flex>
                 <v-flex xs12>
                   <span class="title">
-                    Total HTML available in prizes: <b>{{ this.totalHTMLAvailable }}</b>
+                    Total <b>Htmlcoin</b> available in prizes: <b>{{ this.totalHTMLAvailable }}</b>
                   </span>
                 </v-flex>
               </v-layout>
@@ -323,7 +323,7 @@ export default {
             this.confirmSendDialog = true;
                   
             try {
-              this.rawTx = await webWallet.getWallet().generateSendToContractTx(this.contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
+              this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
             } catch (e) {
               this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e);
               alert(e.message || e);
