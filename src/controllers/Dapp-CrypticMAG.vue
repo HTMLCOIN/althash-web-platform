@@ -205,7 +205,7 @@
               The reward was successfully redeemed. Congrats!
             </v-flex>
             <v-flex xs12>
-              <v-btn color="warning" @click="txConfirmed = false; txReceiptDialog = false">
+              <v-btn color="warning" @click="txConfirmed = false; txReceiptDialog = false; getData">
                 Close
               </v-btn>
             </v-flex>
@@ -312,7 +312,7 @@ export default {
           [this.rewardCode]
         );
 
-        if(decodedResult[0].toString == 'false') {
+        if(decodedResult[2].toString == 'false') {
           alert('This prize has already been redeemed.');
         } else {
           try {
