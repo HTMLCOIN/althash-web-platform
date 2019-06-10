@@ -205,7 +205,7 @@
               The reward was successfully redeemed. Congrats!
             </v-flex>
             <v-flex xs12>
-              <v-btn color="warning" @click="txConfirmed = false; txReceiptDialog = false; this.getData">
+              <v-btn color="warning" @click="closeMsg">
                 Close
               </v-btn>
             </v-flex>
@@ -288,6 +288,12 @@ export default {
     }
   },
   methods: {
+    closeMsg() {
+      this.getData();
+      this.txConfirmed = false; 
+      this.txReceiptDialog = false; 
+    },
+
     async getData(){
       this.loading = true;
 
