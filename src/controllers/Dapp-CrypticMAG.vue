@@ -312,7 +312,9 @@ export default {
           [this.rewardCode]
         );
 
-        if(decodedResult[2].toString == 'false') {
+        this.loading = false;
+        
+        if(!decodedResult[2]) {
           alert('This prize has already been redeemed.');
         } else {
           try {
@@ -349,8 +351,6 @@ export default {
           this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e);
           alert(e.message || e);
       }
-
-      this.loading = false;
 
     },
 
