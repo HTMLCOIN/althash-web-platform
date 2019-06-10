@@ -219,6 +219,7 @@
 import webWallet from 'libs/web-wallet'
 import abi from 'ethjs-abi'
 import server from 'libs/server'
+import config from 'libs/config'
 import axios from 'axios'
 import base58 from 'bs58'
 
@@ -384,6 +385,7 @@ export default {
 
         this.rewardCode = '';
         this.destinationWalletAddress = '';
+        this.getData();
 
       } catch (e) {
         alert(e.message || e);
@@ -426,7 +428,11 @@ export default {
     },
     onCopyError: function() {
       this.$root.error('copy fail');
-    }
+    },
+  },
+
+  mounted() {
+    this.getData();
   }
 }
 </script>
