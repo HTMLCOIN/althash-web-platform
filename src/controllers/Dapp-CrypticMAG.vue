@@ -205,12 +205,32 @@
               The reward was successfully redeemed. Congrats!
             </v-flex>
             <v-flex xs12>
-              <v-btn color="warning" @click="txConfirmed = false; txReceiptDialog = false; getData">
+              <v-btn color="warning" @click="txConfirmed = false; txReceiptDialog = false; this.getData">
                 Close
               </v-btn>
             </v-flex>
           </v-layout>
         </v-container>
+      </v-card>
+    </v-dialog>
+    <v-dialog
+      v-model="loading"
+      hide-overlay
+      persistent
+      width="300"
+    >
+      <v-card
+        color="blue"
+        dark
+      >
+        <v-card-text>
+          <b>Loading info...</b>
+          <v-progress-linear
+            indeterminate
+            color="white"
+            class="mb-0"
+          ></v-progress-linear>
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-card>
@@ -313,7 +333,7 @@ export default {
         );
 
         this.loading = false;
-        
+
         if(!decodedResult[2]) {
           alert('This prize has already been redeemed.');
         } else {
