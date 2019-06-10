@@ -273,7 +273,8 @@ export default {
       execResultDialog: false,
       rawTx: 'loading...',
       canSend: false,
-      sending: false
+      sending: false,
+      loading: false
     }
   },
   computed: {
