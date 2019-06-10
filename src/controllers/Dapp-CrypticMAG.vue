@@ -73,13 +73,14 @@
               <v-layout row wrap>
                 <v-flex xs12>
                   <span class="title">
-                    Total <b>MAG</b> available in prizes: <b>{{ this.totalMAGAvailable }}</b>
+                    Total available in prizes:
                   </span>
                 </v-flex>
-                <v-flex xs12>
-                  <span class="title">
-                    Total <b>Htmlcoin</b> available in prizes: <b>{{ this.totalHTMLAvailable }}</b>
-                  </span>
+                <v-flex xs6 title>
+                  <b>{{ this.totalMAGAvailable }} MAG</b>
+                </v-flex>
+                <v-flex xs6 title>
+                  <b>{{ this.totalHTMLAvailable }} HTML</b>
                 </v-flex>
               </v-layout>
               <v-card-text>
@@ -223,6 +224,8 @@ import config from 'libs/config'
 import axios from 'axios'
 import base58 from 'bs58'
 
+const explorerURL = config.getNetwork() == "mainnet" ? "https://explorer.htmlcoin.com/api/tx/" : "https://testnet.htmlcoin.com/api/tx/";
+
 const contractAddress = config.getNetwork() == "mainnet" ? "" : "af882cfe86fb0cba16778d8c33b5080b331271ff";
 
 const abiJson = JSON.parse(
@@ -232,6 +235,7 @@ const abiJson = JSON.parse(
 export default {
   data () {
     return {
+      wallet: webWallet.getWallet(),
       txReceiptDialog: false,
       awaitingTx: false,
       txError: false,
@@ -293,6 +297,7 @@ export default {
           alert(e.message || e);
       }
 
+      this.destinationWalletAddress = this.wallet.info['address'];
       this.loading = false;
     },
 
@@ -364,7 +369,7 @@ export default {
 
         const interval = setInterval(() => {
 
-          axios.get('https://explorer.htmlcoin.com/api/tx/' + txId)
+          axios.get(explorerURL + txId)
           .then(result=>{
             console.log('Checking Tx...')
 
