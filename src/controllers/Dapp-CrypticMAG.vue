@@ -73,7 +73,7 @@
               <v-layout row wrap>
                 <v-flex xs12>
                   <span class="title">
-                    Total available in prizes:
+                    Total available:
                   </span>
                 </v-flex>
                 <v-flex xs6 title>   
@@ -81,6 +81,12 @@
                 </v-flex>
                 <v-flex xs6 title>
                   <b>{{ (Math.round(this.totalHTMLAvailable * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} HTML</b>
+                </v-flex>
+                <v-flex xs6 title>   
+                  <b>{{ this.totalMAGPrizesAvailable }} prizes</b>
+                </v-flex>
+                <v-flex xs6 title>
+                  <b>{{ this.totalHTMLPrizesAvailable }} prizes</b>
                 </v-flex>
               </v-layout>
               <v-card-text>
@@ -246,10 +252,10 @@ import base58 from 'bs58'
 
 const explorerURL = config.getNetwork() == "mainnet" ? "https://explorer.htmlcoin.com/api/tx/" : "https://testnet.htmlcoin.com/api/tx/";
 
-const contractAddress = config.getNetwork() == "mainnet" ? "" : "f620b36099e2e562509b00fc93c2d14ff76822b3";
+const contractAddress = config.getNetwork() == "mainnet" ? "" : "0b53612290f7ebb0597389f1d69d52d4c7f07aa4";
 
 const abiJson = JSON.parse(
-  '[{"constant": true, "inputs": [{"name": "rewardCode", "type": "string"} ], "name": "checkReward", "outputs": [{"name": "rewardType", "type": "uint256"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "valid", "type": "bool"}, {"name": "redeemToAddress", "type": "address"}, {"name": "redeemTimestamp", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_newMAGOwner", "type": "address"} ], "name": "setMAGOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "rewardType", "type": "uint256"} ], "name": "addRewards", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalHTMLAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "destinationWallet", "type": "address"} ], "name": "myReward", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "_newMAGAddress", "type": "address"} ], "name": "setMAGAddress", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "MAGAddress", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "MAGOwner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalMAGAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"} ]'
+  '[{"constant": true, "inputs": [{"name": "rewardCode", "type": "string"} ], "name": "checkReward", "outputs": [{"name": "rewardType", "type": "uint256"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "valid", "type": "bool"}, {"name": "redeemToAddress", "type": "address"}, {"name": "redeemTimestamp", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_newMAGOwner", "type": "address"} ], "name": "setMAGOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "rewardType", "type": "uint256"} ], "name": "addRewards", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalHTMLAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "destinationWallet", "type": "address"} ], "name": "myReward", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalHTMLPrizesAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_newMAGAddress", "type": "address"} ], "name": "setMAGAddress", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "MAGAddress", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalMAGPrizesAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "MAGOwner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalMAGAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"} ]'
 );
 
 export default {
@@ -264,6 +270,8 @@ export default {
       method: null,
       totalHTMLAvailable: '',
       totalMAGAvailable: '',
+      totalHTMLPrizesAvailable: '',
+      totalMAGPrizesAvailable: '',
       rewardCode: '',
       destinationWalletAddress: '',
       gasPrice: '40',
@@ -308,7 +316,6 @@ export default {
 
         this.totalHTMLAvailable = parseInt(decodedResult[0]);
 
-        // Correct answer with hint prize
         decodedResult = await this.callContractFunction(
           contractAddress, 
           abiJson, 
@@ -317,6 +324,24 @@ export default {
         );
 
         this.totalMAGAvailable = parseInt(decodedResult[0]);
+
+        decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'totalHTMLPrizesAvailable', 
+          []
+        );
+
+        this.totalHTMLPrizesAvailable = parseInt(decodedResult[0]);
+
+        decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'totalMAGPrizesAvailable', 
+          []
+        );
+
+        this.totalMAGPrizesAvailable = parseInt(decodedResult[0]);
 
       } catch (e) {
           this.loading = false;
