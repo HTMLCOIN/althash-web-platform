@@ -83,16 +83,16 @@
                   <b>{{ (Math.round(this.totalHTMLAvailable * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} HTML</b>
                 </v-flex>
                 <v-flex xs6 title v-if="this.totalMAGPrizesAvailable > 1">   
-                  <b>{{ this.totalMAGPrizesAvailable }} prizes</b>
+                  <b>{{ this.totalMAGPrizesAvailable }} rewards</b>
                 </v-flex>
                 <v-flex xs6 title v-else>   
-                  <b>1 prize</b>
+                  <b>1 reward</b>
                 </v-flex>
                 <v-flex xs6 title v-if="this.totalHTMLPrizesAvailable > 1">
-                  <b>{{ this.totalHTMLPrizesAvailable }} prizes</b>
+                  <b>{{ this.totalHTMLPrizesAvailable }} rewards</b>
                 </v-flex>
-                <v-flex xs6 title v-else>   
-                  <b>1 prize</b>
+                <v-flex xs6 title v-else>
+                  <b>1 reward</b>
                 </v-flex>
               </v-layout>
               <v-card-text>
