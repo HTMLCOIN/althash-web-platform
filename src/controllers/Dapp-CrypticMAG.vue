@@ -380,7 +380,7 @@ export default {
 
         if(!decodedResult[2]) {
           alert('This reward code does\'t exist.');
-        else {
+        } else {
           if(decodedResult[3]) {
             alert('This reward has already been redeemed.');
           } else {
