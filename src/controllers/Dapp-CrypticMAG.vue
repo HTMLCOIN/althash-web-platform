@@ -373,37 +373,40 @@ export default {
         this.loading = false;
 
         if(!decodedResult[2]) {
-          alert('This prize has already been redeemed.');
-        } else {
-          try {
-  
-            const hexAddress = '0x' + base58.decode(this.destinationWalletAddress).toString('hex').substr(2, 40);
-                  
-            const encodedData = this.encodeContractSendFunction(
-                abiJson, 
-                'myReward', 
-                [this.rewardCode, hexAddress]
-              );
-
-            this.confirmSendDialog = true;
-                  
+          alert('This reward code does\'t exist.');
+        else {
+          if(decodedResult[3]) {
+            alert('This reward has already been redeemed.');
+          } else {
             try {
-              this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
+    
+              const hexAddress = '0x' + base58.decode(this.destinationWalletAddress).toString('hex').substr(2, 40);
+                    
+              const encodedData = this.encodeContractSendFunction(
+                  abiJson, 
+                  'myReward', 
+                  [this.rewardCode, hexAddress]
+                );
+
+              this.confirmSendDialog = true;
+                    
+              try {
+                this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
+              } catch (e) {
+                this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e);
+                alert(e.message || e);
+                this.confirmSendDialog = false;
+                return false;
+              }
+              this.canSend = true;
             } catch (e) {
-              this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e);
-              alert(e.message || e);
+              this.$root.error('Params error');
+              this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e);
               this.confirmSendDialog = false;
               return false;
             }
-            this.canSend = true;
-          } catch (e) {
-            this.$root.error('Params error');
-            this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e);
-            this.confirmSendDialog = false;
-            return false;
           }
         }
-
       } catch (e) {
           this.loading = false;
           this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e);
