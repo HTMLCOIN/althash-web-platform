@@ -379,7 +379,7 @@ export default {
         this.loading = false;
 
         if(!decodedResult[2]) {
-          alert('This reward code does\'t exist.');
+          alert('This reward code doesn\'t exist.');
         } else {
           if(decodedResult[3]) {
             alert('This reward has already been redeemed.');
