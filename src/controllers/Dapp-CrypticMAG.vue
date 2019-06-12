@@ -85,14 +85,20 @@
                 <v-flex xs6 title v-if="this.totalMAGPrizesAvailable > 1">   
                   <b>{{ this.totalMAGPrizesAvailable }} rewards</b>
                 </v-flex>
-                <v-flex xs6 title v-else>   
+                <v-flex xs6 title v-else-if="this.totalMAGPrizesAvailable == 1">   
                   <b>1 reward</b>
+                </v-flex>
+                <v-flex xs6 title v-else>   
+                  <b>No rewards available.</b>
                 </v-flex>
                 <v-flex xs6 title v-if="this.totalHTMLPrizesAvailable > 1">
                   <b>{{ this.totalHTMLPrizesAvailable }} rewards</b>
                 </v-flex>
-                <v-flex xs6 title v-else>
+                <v-flex xs6 title v-else-if="this.totalHTMLPrizesAvailable == 1">   
                   <b>1 reward</b>
+                </v-flex>
+                <v-flex xs6 title v-else>   
+                  <b>No rewards available.</b>
                 </v-flex>
               </v-layout>
               <v-card-text>
