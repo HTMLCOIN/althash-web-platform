@@ -68,8 +68,39 @@
       <v-tab-item
       >
         <v-card flat>
-          <v-container fluid grid-list-md>
+          <v-container fluid grid-list-md align-center text-xs-center>
             <v-flex xs6 offset-xs3>
+              <v-layout row wrap>
+                <v-flex xs12>
+                  <span class="title">
+                    Total available:
+                  </span>
+                </v-flex>
+                <v-flex xs6 title>   
+                  <b>{{ (Math.round(this.totalMAGAvailable * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} MAG</b>
+                </v-flex>
+                <v-flex xs6 title>
+                  <b>{{ (Math.round(this.totalHTMLAvailable * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}) }} HTML</b>
+                </v-flex>
+                <v-flex xs6 title v-if="this.totalMAGPrizesAvailable > 1">   
+                  <b>{{ this.totalMAGPrizesAvailable }} rewards</b>
+                </v-flex>
+                <v-flex xs6 title v-else-if="this.totalMAGPrizesAvailable == 1">   
+                  <b>1 reward</b>
+                </v-flex>
+                <v-flex xs6 title v-else>   
+                  <b>No rewards available.</b>
+                </v-flex>
+                <v-flex xs6 title v-if="this.totalHTMLPrizesAvailable > 1">
+                  <b>{{ this.totalHTMLPrizesAvailable }} rewards</b>
+                </v-flex>
+                <v-flex xs6 title v-else-if="this.totalHTMLPrizesAvailable == 1">   
+                  <b>1 reward</b>
+                </v-flex>
+                <v-flex xs6 title v-else>   
+                  <b>No rewards available.</b>
+                </v-flex>
+              </v-layout>
               <v-card-text>
                 <v-text-field
                  label="Reward Code"
@@ -192,12 +223,32 @@
               The reward was successfully redeemed. Congrats!
             </v-flex>
             <v-flex xs12>
-              <v-btn color="warning" @click="txConfirmed = false; txReceiptDialog = false">
+              <v-btn color="warning" @click="closeMsg">
                 Close
               </v-btn>
             </v-flex>
           </v-layout>
         </v-container>
+      </v-card>
+    </v-dialog>
+    <v-dialog
+      v-model="loading"
+      hide-overlay
+      persistent
+      width="300"
+    >
+      <v-card
+        color="blue"
+        dark
+      >
+        <v-card-text>
+          <b>Loading info...</b>
+          <v-progress-linear
+            indeterminate
+            color="white"
+            class="mb-0"
+          ></v-progress-linear>
+        </v-card-text>
       </v-card>
     </v-dialog>
   </v-card>
@@ -207,21 +258,32 @@
 import webWallet from 'libs/web-wallet'
 import abi from 'ethjs-abi'
 import server from 'libs/server'
+import config from 'libs/config'
 import axios from 'axios'
 import base58 from 'bs58'
+
+const explorerURL = config.getNetwork() == "mainnet" ? "https://explorer.htmlcoin.com/api/tx/" : "https://testnet.htmlcoin.com/api/tx/";
+
+const contractAddress = config.getNetwork() == "mainnet" ? "bbbb7dbd075840a73d5ca87ed2e0e26ccb7c97fb" : "9b71780abfefb16ccfd24bcb381dd03acf56bad3";
+
+const abiJson = JSON.parse(
+  '[{"constant": true, "inputs": [{"name": "rewardCode", "type": "string"} ], "name": "checkReward", "outputs": [{"name": "rewardType", "type": "uint256"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "valid", "type": "bool"}, {"name": "redeemed", "type": "bool"}, {"name": "redeemToAddress", "type": "address"}, {"name": "redeemTimestamp", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_newMAGOwner", "type": "address"} ], "name": "setMAGOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "rewardType", "type": "uint256"} ], "name": "addRewards", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalHTMLAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "destinationWallet", "type": "address"} ], "name": "myReward", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalHTMLPrizesAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_newMAGAddress", "type": "address"} ], "name": "setMAGAddress", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "MAGAddress", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalMAGPrizesAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "MAGOwner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalMAGAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"} ]'
+);
 
 export default {
   data () {
     return {
+      wallet: webWallet.getWallet(),
       txReceiptDialog: false,
       awaitingTx: false,
       txError: false,
       txConfirmed: false,
-      contractAddress: '8ef863bce3568898f293596b4638d00876bada86',
-      abi: '',
       parsedAbi: null,
       method: null,
-      inputParams: [],
+      totalHTMLAvailable: '',
+      totalMAGAvailable: '',
+      totalHTMLPrizesAvailable: '',
+      totalMAGPrizesAvailable: '',
       rewardCode: '',
       destinationWalletAddress: '',
       gasPrice: '40',
@@ -231,7 +293,8 @@ export default {
       execResultDialog: false,
       rawTx: 'loading...',
       canSend: false,
-      sending: false
+      sending: false,
+      loading: false
     }
   },
   computed: {
@@ -245,56 +308,135 @@ export default {
       return !(rewardCodeCheck && destinationWalletAddressCheck && gasPriceCheck && gasLimitCheck && feeCheck)
     }
   },
-  watch: {
-    method: function() {
-      this.inputParams = []
-    }
-  },
   methods: {
-    async send() {
-      try {
+    closeMsg() {
+      this.getData();
+      this.txConfirmed = false; 
+      this.txReceiptDialog = false; 
+    },
 
-	const abiJson = [{"constant": true, "inputs": [], "name": "name", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_spender", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "approve", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalSupply", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_from", "type": "address"}, {"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transferFrom", "outputs": [{"name": "success", "type": "bool"} ], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "decimals", "outputs": [{"name": "", "type": "uint8"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [{"name": "rewardCode", "type": "string"} ], "name": "checkReward", "outputs": [{"name": "rewardType", "type": "uint256"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "valid", "type": "bool"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "rewardType", "type": "uint256"} ], "name": "addRewards", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"} ], "name": "balanceOf", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "destinationWallet", "type": "address"} ], "name": "myReward", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "contractBalance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "symbol", "outputs": [{"name": "", "type": "string"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_to", "type": "address"}, {"name": "_value", "type": "uint256"} ], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [{"name": "", "type": "address"}, {"name": "", "type": "address"} ], "name": "allowance", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"}, {"payable": true, "stateMutability": "payable", "type": "fallback"}, {"anonymous": false, "inputs": [{"indexed": true, "name": "_from", "type": "address"}, {"indexed": true, "name": "_to", "type": "address"}, {"indexed": false, "name": "_value", "type": "uint256"} ], "name": "Transfer", "type": "event"} ]
-	
-  const hexAddress = '0x' + base58.decode(this.destinationWalletAddress).toString('hex').substr(2, 40)
-  const encodedData = abi.encodeMethod(abiJson[8], [this.rewardCode, hexAddress]).substr(2)
-        
-	this.confirmSendDialog = true
-        
-	try {
-          this.rawTx = await webWallet.getWallet().generateSendToContractTx(this.contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee)
-        } catch (e) {
-          this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e)
-          alert(e.message || e)
-          this.confirmSendDialog = false
-          return false
-        }
-        this.canSend = true
+    async getData(){
+      this.loading = true;
+
+      try{
+        var decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'totalHTMLAvailable', 
+          []
+        );
+
+        this.totalHTMLAvailable = parseInt(decodedResult[0]);
+
+        decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'totalMAGAvailable', 
+          []
+        );
+
+        this.totalMAGAvailable = parseInt(decodedResult[0]);
+
+        decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'totalHTMLPrizesAvailable', 
+          []
+        );
+
+        this.totalHTMLPrizesAvailable = parseInt(decodedResult[0]);
+
+        decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'totalMAGPrizesAvailable', 
+          []
+        );
+
+        this.totalMAGPrizesAvailable = parseInt(decodedResult[0]);
+
       } catch (e) {
-        this.$root.error('Params error')
-        this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e)
-        this.confirmSendDialog = false
-        return false
+          this.loading = false;
+          this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e);
+          alert(e.message || e);
       }
+
+      this.destinationWalletAddress = this.wallet.info['address'];
+      this.loading = false;
+    },
+
+    async send() {
+      this.loading = true;
+
+      try{
+        var decodedResult = await this.callContractFunction(
+          contractAddress, 
+          abiJson, 
+          'checkReward', 
+          [this.rewardCode]
+        );
+
+        this.loading = false;
+
+        if(!decodedResult[2]) {
+          alert('This reward code doesn\'t exist.');
+        } else {
+          if(decodedResult[3]) {
+            alert('This reward has already been redeemed.');
+          } else {
+            try {
+    
+              const hexAddress = '0x' + base58.decode(this.destinationWalletAddress).toString('hex').substr(2, 40);
+                    
+              const encodedData = this.encodeContractSendFunction(
+                  abiJson, 
+                  'myReward', 
+                  [this.rewardCode, hexAddress]
+                );
+
+              this.confirmSendDialog = true;
+                    
+              try {
+                this.rawTx = await webWallet.getWallet().generateSendToContractTx(contractAddress, encodedData, this.gasLimit, this.gasPrice, this.fee);
+              } catch (e) {
+                this.$root.log.error('send_to_generate_tx_error', e.stack || e.toString() || e);
+                alert(e.message || e);
+                this.confirmSendDialog = false;
+                return false;
+              }
+              this.canSend = true;
+            } catch (e) {
+              this.$root.error('Params error');
+              this.$root.log.error('send_to_contract_encode_abi_error', e.stack || e.toString() || e);
+              this.confirmSendDialog = false;
+              return false;
+            }
+          }
+        }
+      } catch (e) {
+          this.loading = false;
+          this.$root.log.error('call_contract_call_contract_error', e.stack || e.toString() || e);
+          alert(e.message || e);
+      }
+
     },
 
     async confirmSend() {
       
-      this.sending = true
+      this.sending = true;
       try {
-        const txId = await webWallet.getWallet().sendRawTx(this.rawTx)
-        this.confirmSendDialog = false
-        this.sending = false
-        const txViewUrl = server.currentNode().getTxExplorerUrl(txId)
-        this.$root.success(`Successful sent! You can follow the transaction on <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`, true, 0)
-        this.$emit('send')
+        const txId = await webWallet.getWallet().sendRawTx(this.rawTx);
+        this.confirmSendDialog = false;
+        this.sending = false;
+        const txViewUrl = server.currentNode().getTxExplorerUrl(txId);
+        this.$root.success(`Successful sent! You can follow the transaction on <a href="${txViewUrl}" target="_blank">${txViewUrl}</a>`, true, 0);
 
         this.txReceiptDialog = true;
         this.awaitingTx = true;
 
         const interval = setInterval(() => {
 
-          axios.get('https://explorer.htmlcoin.com/api/tx/' + txId)
+          axios.get(explorerURL + txId)
           .then(result=>{
             console.log('Checking Tx...')
 
@@ -311,24 +453,58 @@ export default {
 
           })
           .catch(console.error)
-        }, 30*1000)
+        }, 30*1000);
 
-        this.rewardCode = ''
-        this.destinationWalletAddress = ''
+        this.rewardCode = '';
+        this.destinationWalletAddress = '';
+        this.getData();
 
       } catch (e) {
-        alert(e.message || e)
-        this.$root.log.error('send_to_contract_post_raw_tx_error', e.response || e.stack || e.toString() || e)
-        this.confirmSendDialog = false
+        alert(e.message || e);
+        this.$root.log.error('send_to_contract_post_raw_tx_error', e.response || e.stack || e.toString() || e);
+        this.confirmSendDialog = false;
       }
     },
 
+    findIndexByName(abiJson, name){
+      return abiJson.findIndex(function(item){
+        return item.name === name;
+      });
+    },
+
+    async callContractFunction(contractAddress, abiJson, functionName, params){
+      const encodedData = abi.encodeMethod(
+        abiJson[
+          this.findIndexByName(
+            abiJson,
+            functionName
+          )
+        ], 
+        params
+      ).substr(2);
+      var encodedResult = await webWallet.getWallet().callContract(contractAddress, encodedData);          
+      encodedResult = '0x' + encodedResult;
+
+      return abi.decodeMethod(abiJson[this.findIndexByName(abiJson,functionName)], encodedResult);
+    },
+
+    encodeContractSendFunction(abiJson, functionName, params){
+      return abi.encodeMethod(
+        abiJson[this.findIndexByName(abiJson, functionName)], 
+        params
+      ).substr(2);
+    },
+
     onCopySucc: function() {
-      this.$root.success('copy success')
+      this.$root.success('copy success');
     },
     onCopyError: function() {
-      this.$root.error('copy fail')
-    }
+      this.$root.error('copy fail');
+    },
+  },
+
+  mounted() {
+    this.getData();
   }
 }
 </script>
