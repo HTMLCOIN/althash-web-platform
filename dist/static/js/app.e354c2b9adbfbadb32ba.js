@@ -11048,10 +11048,11 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAACWCAYAAADK
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethjs_abi__ = __webpack_require__("sVTA");
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_3_ethjs_abi__);
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_4_libs_server__ = __webpack_require__("yDAo");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_axios__ = __webpack_require__("mtWM");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_5_axios__);
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_bs58__ = __webpack_require__("ZDUk");
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_bs58___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_bs58__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_5_libs_config__ = __webpack_require__("6+u4");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_axios__ = __webpack_require__("mtWM");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_6_axios___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_6_axios__);
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_bs58__ = __webpack_require__("ZDUk");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_7_bs58___default = __webpack_require__.n(__WEBPACK_IMPORTED_MODULE_7_bs58__);
 
 
 //
@@ -11259,25 +11260,85 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAACWCAYAAADK
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
 
 
 
+
+
+var explorerURL = __WEBPACK_IMPORTED_MODULE_5_libs_config__["a" /* default */].getNetwork() == "mainnet" ? "https://explorer.htmlcoin.com/api/tx/" : "https://testnet.htmlcoin.com/api/tx/";
+
+var contractAddress = __WEBPACK_IMPORTED_MODULE_5_libs_config__["a" /* default */].getNetwork() == "mainnet" ? "bbbb7dbd075840a73d5ca87ed2e0e26ccb7c97fb" : "9b71780abfefb16ccfd24bcb381dd03acf56bad3";
+
+var abiJson = JSON.parse('[{"constant": true, "inputs": [{"name": "rewardCode", "type": "string"} ], "name": "checkReward", "outputs": [{"name": "rewardType", "type": "uint256"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "valid", "type": "bool"}, {"name": "redeemed", "type": "bool"}, {"name": "redeemToAddress", "type": "address"}, {"name": "redeemTimestamp", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_newMAGOwner", "type": "address"} ], "name": "setMAGOwner", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "rewardAmount", "type": "uint256"}, {"name": "rewardType", "type": "uint256"} ], "name": "addRewards", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalHTMLAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "rewardCode", "type": "string"}, {"name": "destinationWallet", "type": "address"} ], "name": "myReward", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "totalHTMLPrizesAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": false, "inputs": [{"name": "_newMAGAddress", "type": "address"} ], "name": "setMAGAddress", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function"}, {"constant": true, "inputs": [], "name": "MAGAddress", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "owner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalMAGPrizesAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "MAGOwner", "outputs": [{"name": "", "type": "address"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"constant": true, "inputs": [], "name": "totalMAGAvailable", "outputs": [{"name": "", "type": "uint256"} ], "payable": false, "stateMutability": "view", "type": "function"}, {"inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor"} ]');
 
 /* harmony default export */ __webpack_exports__["a"] = ({
   data: function data() {
     return {
+      wallet: __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet(),
       txReceiptDialog: false,
       awaitingTx: false,
       txError: false,
       txConfirmed: false,
-      contractAddress: '8ef863bce3568898f293596b4638d00876bada86',
-      abi: '',
       parsedAbi: null,
       method: null,
-      inputParams: [],
+      totalHTMLAvailable: '',
+      totalMAGAvailable: '',
+      totalHTMLPrizesAvailable: '',
+      totalMAGPrizesAvailable: '',
       rewardCode: '',
       destinationWalletAddress: '',
       gasPrice: '40',
@@ -11287,7 +11348,8 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAACWCAYAAADK
       execResultDialog: false,
       rawTx: 'loading...',
       canSend: false,
-      sending: false
+      sending: false,
+      loading: false
     };
   },
 
@@ -11302,137 +11364,288 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAACWCAYAAADK
       return !(rewardCodeCheck && destinationWalletAddressCheck && gasPriceCheck && gasLimitCheck && feeCheck);
     }
   },
-  watch: {
-    method: function method() {
-      this.inputParams = [];
-    }
-  },
   methods: {
-    send: function send() {
+    closeMsg: function closeMsg() {
+      this.getData();
+      this.txConfirmed = false;
+      this.txReceiptDialog = false;
+    },
+    getData: function getData() {
       var _this = this;
 
       return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee() {
-        var abiJson, hexAddress, encodedData;
+        var decodedResult;
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee$(_context) {
           while (1) {
             switch (_context.prev = _context.next) {
               case 0:
-                _context.prev = 0;
-                abiJson = [{ "constant": true, "inputs": [], "name": "name", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_spender", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "approve", "outputs": [{ "name": "success", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "totalSupply", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_from", "type": "address" }, { "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "transferFrom", "outputs": [{ "name": "success", "type": "bool" }], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "decimals", "outputs": [{ "name": "", "type": "uint8" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [{ "name": "rewardCode", "type": "string" }], "name": "checkReward", "outputs": [{ "name": "rewardType", "type": "uint256" }, { "name": "rewardAmount", "type": "uint256" }, { "name": "valid", "type": "bool" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "rewardCode", "type": "string" }, { "name": "rewardAmount", "type": "uint256" }, { "name": "rewardType", "type": "uint256" }], "name": "addRewards", "outputs": [], "payable": true, "stateMutability": "payable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }], "name": "balanceOf", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "rewardCode", "type": "string" }, { "name": "destinationWallet", "type": "address" }], "name": "myReward", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [], "name": "contractBalance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "owner", "outputs": [{ "name": "", "type": "address" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": true, "inputs": [], "name": "symbol", "outputs": [{ "name": "", "type": "string" }], "payable": false, "stateMutability": "view", "type": "function" }, { "constant": false, "inputs": [{ "name": "_to", "type": "address" }, { "name": "_value", "type": "uint256" }], "name": "transfer", "outputs": [], "payable": false, "stateMutability": "nonpayable", "type": "function" }, { "constant": true, "inputs": [{ "name": "", "type": "address" }, { "name": "", "type": "address" }], "name": "allowance", "outputs": [{ "name": "", "type": "uint256" }], "payable": false, "stateMutability": "view", "type": "function" }, { "inputs": [], "payable": false, "stateMutability": "nonpayable", "type": "constructor" }, { "payable": true, "stateMutability": "payable", "type": "fallback" }, { "anonymous": false, "inputs": [{ "indexed": true, "name": "_from", "type": "address" }, { "indexed": true, "name": "_to", "type": "address" }, { "indexed": false, "name": "_value", "type": "uint256" }], "name": "Transfer", "type": "event" }];
-                hexAddress = '0x' + __WEBPACK_IMPORTED_MODULE_6_bs58___default.a.decode(_this.destinationWalletAddress).toString('hex').substr(2, 40);
-                encodedData = __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.encodeMethod(abiJson[8], [_this.rewardCode, hexAddress]).substr(2);
+                _this.loading = true;
+
+                _context.prev = 1;
+                _context.next = 4;
+                return _this.callContractFunction(contractAddress, abiJson, 'totalHTMLAvailable', []);
+
+              case 4:
+                decodedResult = _context.sent;
 
 
-                _this.confirmSendDialog = true;
+                _this.totalHTMLAvailable = parseInt(decodedResult[0]);
 
-                _context.prev = 5;
                 _context.next = 8;
-                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(_this.contractAddress, encodedData, _this.gasLimit, _this.gasPrice, _this.fee);
+                return _this.callContractFunction(contractAddress, abiJson, 'totalMAGAvailable', []);
 
               case 8:
-                _this.rawTx = _context.sent;
-                _context.next = 17;
-                break;
+                decodedResult = _context.sent;
 
-              case 11:
-                _context.prev = 11;
-                _context.t0 = _context['catch'](5);
 
-                _this.$root.log.error('send_to_generate_tx_error', _context.t0.stack || _context.t0.toString() || _context.t0);
-                alert(_context.t0.message || _context.t0);
-                _this.confirmSendDialog = false;
-                return _context.abrupt('return', false);
+                _this.totalMAGAvailable = parseInt(decodedResult[0]);
 
-              case 17:
-                _this.canSend = true;
-                _context.next = 26;
+                _context.next = 12;
+                return _this.callContractFunction(contractAddress, abiJson, 'totalHTMLPrizesAvailable', []);
+
+              case 12:
+                decodedResult = _context.sent;
+
+
+                _this.totalHTMLPrizesAvailable = parseInt(decodedResult[0]);
+
+                _context.next = 16;
+                return _this.callContractFunction(contractAddress, abiJson, 'totalMAGPrizesAvailable', []);
+
+              case 16:
+                decodedResult = _context.sent;
+
+
+                _this.totalMAGPrizesAvailable = parseInt(decodedResult[0]);
+
+                _context.next = 25;
                 break;
 
               case 20:
                 _context.prev = 20;
-                _context.t1 = _context['catch'](0);
+                _context.t0 = _context['catch'](1);
 
-                _this.$root.error('Params error');
-                _this.$root.log.error('send_to_contract_encode_abi_error', _context.t1.stack || _context.t1.toString() || _context.t1);
-                _this.confirmSendDialog = false;
-                return _context.abrupt('return', false);
+                _this.loading = false;
+                _this.$root.log.error('call_contract_call_contract_error', _context.t0.stack || _context.t0.toString() || _context.t0);
+                alert(_context.t0.message || _context.t0);
 
-              case 26:
+              case 25:
+
+                _this.destinationWalletAddress = _this.wallet.info['address'];
+                _this.loading = false;
+
+              case 27:
               case 'end':
                 return _context.stop();
             }
           }
-        }, _callee, _this, [[0, 20], [5, 11]]);
+        }, _callee, _this, [[1, 20]]);
       }))();
     },
-    confirmSend: function confirmSend() {
+    send: function send() {
       var _this2 = this;
 
       return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee2() {
-        var txId, txViewUrl, interval;
+        var decodedResult, hexAddress, encodedData;
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee2$(_context2) {
           while (1) {
             switch (_context2.prev = _context2.next) {
               case 0:
+                _this2.loading = true;
 
-                _this2.sending = true;
                 _context2.prev = 1;
                 _context2.next = 4;
-                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().sendRawTx(_this2.rawTx);
+                return _this2.callContractFunction(contractAddress, abiJson, 'checkReward', [_this2.rewardCode]);
 
               case 4:
-                txId = _context2.sent;
+                decodedResult = _context2.sent;
 
+
+                _this2.loading = false;
+
+                if (decodedResult[2]) {
+                  _context2.next = 10;
+                  break;
+                }
+
+                alert('This reward code doesn\'t exist.');
+                _context2.next = 39;
+                break;
+
+              case 10:
+                if (!decodedResult[3]) {
+                  _context2.next = 14;
+                  break;
+                }
+
+                alert('This reward has already been redeemed.');
+                _context2.next = 39;
+                break;
+
+              case 14:
+                _context2.prev = 14;
+                hexAddress = '0x' + __WEBPACK_IMPORTED_MODULE_7_bs58___default.a.decode(_this2.destinationWalletAddress).toString('hex').substr(2, 40);
+                encodedData = _this2.encodeContractSendFunction(abiJson, 'myReward', [_this2.rewardCode, hexAddress]);
+
+
+                _this2.confirmSendDialog = true;
+
+                _context2.prev = 18;
+                _context2.next = 21;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(contractAddress, encodedData, _this2.gasLimit, _this2.gasPrice, _this2.fee);
+
+              case 21:
+                _this2.rawTx = _context2.sent;
+                _context2.next = 30;
+                break;
+
+              case 24:
+                _context2.prev = 24;
+                _context2.t0 = _context2['catch'](18);
+
+                _this2.$root.log.error('send_to_generate_tx_error', _context2.t0.stack || _context2.t0.toString() || _context2.t0);
+                alert(_context2.t0.message || _context2.t0);
                 _this2.confirmSendDialog = false;
-                _this2.sending = false;
+                return _context2.abrupt('return', false);
+
+              case 30:
+                _this2.canSend = true;
+                _context2.next = 39;
+                break;
+
+              case 33:
+                _context2.prev = 33;
+                _context2.t1 = _context2['catch'](14);
+
+                _this2.$root.error('Params error');
+                _this2.$root.log.error('send_to_contract_encode_abi_error', _context2.t1.stack || _context2.t1.toString() || _context2.t1);
+                _this2.confirmSendDialog = false;
+                return _context2.abrupt('return', false);
+
+              case 39:
+                _context2.next = 46;
+                break;
+
+              case 41:
+                _context2.prev = 41;
+                _context2.t2 = _context2['catch'](1);
+
+                _this2.loading = false;
+                _this2.$root.log.error('call_contract_call_contract_error', _context2.t2.stack || _context2.t2.toString() || _context2.t2);
+                alert(_context2.t2.message || _context2.t2);
+
+              case 46:
+              case 'end':
+                return _context2.stop();
+            }
+          }
+        }, _callee2, _this2, [[1, 41], [14, 33], [18, 24]]);
+      }))();
+    },
+    confirmSend: function confirmSend() {
+      var _this3 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee3() {
+        var txId, txViewUrl, interval;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee3$(_context3) {
+          while (1) {
+            switch (_context3.prev = _context3.next) {
+              case 0:
+
+                _this3.sending = true;
+                _context3.prev = 1;
+                _context3.next = 4;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().sendRawTx(_this3.rawTx);
+
+              case 4:
+                txId = _context3.sent;
+
+                _this3.confirmSendDialog = false;
+                _this3.sending = false;
                 txViewUrl = __WEBPACK_IMPORTED_MODULE_4_libs_server__["a" /* default */].currentNode().getTxExplorerUrl(txId);
 
-                _this2.$root.success('Successful sent! You can follow the transaction on <a href="' + txViewUrl + '" target="_blank">' + txViewUrl + '</a>', true, 0);
-                _this2.$emit('send');
+                _this3.$root.success('Successful sent! You can follow the transaction on <a href="' + txViewUrl + '" target="_blank">' + txViewUrl + '</a>', true, 0);
 
-                _this2.txReceiptDialog = true;
-                _this2.awaitingTx = true;
+                _this3.txReceiptDialog = true;
+                _this3.awaitingTx = true;
 
                 interval = setInterval(function () {
 
-                  __WEBPACK_IMPORTED_MODULE_5_axios___default.a.get('https://explorer.htmlcoin.com/api/tx/' + txId).then(function (result) {
+                  __WEBPACK_IMPORTED_MODULE_6_axios___default.a.get(explorerURL + txId).then(function (result) {
                     console.log('Checking Tx...');
 
                     if (result.data.confirmations > 0) {
                       clearInterval(interval);
-                      _this2.awaitingTx = false;
+                      _this3.awaitingTx = false;
 
                       if (result.data.receipt[0].excepted != 'None') {
-                        _this2.txError = true;
+                        _this3.txError = true;
                       } else {
-                        _this2.txConfirmed = true;
+                        _this3.txConfirmed = true;
                       }
                     }
                   }).catch(console.error);
                 }, 30 * 1000);
 
 
-                _this2.rewardCode = '';
-                _this2.destinationWalletAddress = '';
+                _this3.rewardCode = '';
+                _this3.destinationWalletAddress = '';
+                _this3.getData();
 
-                _context2.next = 22;
+                _context3.next = 22;
                 break;
 
               case 17:
-                _context2.prev = 17;
-                _context2.t0 = _context2['catch'](1);
+                _context3.prev = 17;
+                _context3.t0 = _context3['catch'](1);
 
-                alert(_context2.t0.message || _context2.t0);
-                _this2.$root.log.error('send_to_contract_post_raw_tx_error', _context2.t0.response || _context2.t0.stack || _context2.t0.toString() || _context2.t0);
-                _this2.confirmSendDialog = false;
+                alert(_context3.t0.message || _context3.t0);
+                _this3.$root.log.error('send_to_contract_post_raw_tx_error', _context3.t0.response || _context3.t0.stack || _context3.t0.toString() || _context3.t0);
+                _this3.confirmSendDialog = false;
 
               case 22:
               case 'end':
-                return _context2.stop();
+                return _context3.stop();
             }
           }
-        }, _callee2, _this2, [[1, 17]]);
+        }, _callee3, _this3, [[1, 17]]);
       }))();
+    },
+    findIndexByName: function findIndexByName(abiJson, name) {
+      return abiJson.findIndex(function (item) {
+        return item.name === name;
+      });
+    },
+    callContractFunction: function callContractFunction(contractAddress, abiJson, functionName, params) {
+      var _this4 = this;
+
+      return __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee4() {
+        var encodedData, encodedResult;
+        return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee4$(_context4) {
+          while (1) {
+            switch (_context4.prev = _context4.next) {
+              case 0:
+                encodedData = __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.encodeMethod(abiJson[_this4.findIndexByName(abiJson, functionName)], params).substr(2);
+                _context4.next = 3;
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().callContract(contractAddress, encodedData);
+
+              case 3:
+                encodedResult = _context4.sent;
+
+                encodedResult = '0x' + encodedResult;
+
+                return _context4.abrupt('return', __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.decodeMethod(abiJson[_this4.findIndexByName(abiJson, functionName)], encodedResult));
+
+              case 6:
+              case 'end':
+                return _context4.stop();
+            }
+          }
+        }, _callee4, _this4);
+      }))();
+    },
+    encodeContractSendFunction: function encodeContractSendFunction(abiJson, functionName, params) {
+      return __WEBPACK_IMPORTED_MODULE_3_ethjs_abi___default.a.encodeMethod(abiJson[this.findIndexByName(abiJson, functionName)], params).substr(2);
     },
 
 
@@ -11442,6 +11655,10 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAACWCAYAAADK
     onCopyError: function onCopyError() {
       this.$root.error('copy fail');
     }
+  },
+
+  mounted: function mounted() {
+    this.getData();
   }
 });
 
@@ -11467,7 +11684,7 @@ module.exports = __webpack_require__.p + "static/images/biffy_ufg_win.9072f3e.jp
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_CrypticMAG_vue__ = __webpack_require__("geKI");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1a3399de_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_CrypticMAG_vue__ = __webpack_require__("ohM7");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_72d096ce_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_CrypticMAG_vue__ = __webpack_require__("z9s6");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -11484,7 +11701,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_Dapp_CrypticMAG_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_1a3399de_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_CrypticMAG_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_72d096ce_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_Dapp_CrypticMAG_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -11589,17 +11806,6 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ (function(module, exports, __webpack_require__) {
 
 module.exports = __webpack_require__.p + "static/images/logo_althash_health.4545a25.png";
-
-/***/ }),
-
-/***/ "ohM7":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("wOSG")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"deep-orange"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Info\n        "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Redeem\n        "),_c('v-icon',[_vm._v("check_circle")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('div',[_c('img',{staticStyle:{"height":"auto","width":"75%"},attrs:{"src":__webpack_require__("90T0")}})]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to CypticMAG!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                    This application allows the redeeming of rewards found inside your Cryptic Magazine.\n                    "),_c('br'),_c('br'),_vm._v("\n            \t\t    To redeem your prize view the \"redeem\" tab, then enter the code found inside your magazine along with your destination wallet.\n            \t\t    "),_c('br'),_c('br'),_vm._v("\n            \t\t    After you have entered in the code, review that the info is correct then press confirm.\n            \t\t    "),_c('br'),_c('br'),_vm._v("\n            \t\t    We look forward to rewarding you again in the next edition.\n            \t\t    "),_c('br'),_c('br'),_vm._v("\n            \t\t    Stay Tuned & Good Luck!\n                    "),_c('br'),_c('br'),_c('br'),_c('br'),_vm._v(" "),_c('small',[_c('b',[_vm._v("Disclaimer")]),_vm._v(" "),_c('br'),_vm._v("\n                      HTMLCoin Foundation has reviewed and approved this application's code, having Althash Web Platform as a proud host, however the Foundation is not responsible for any funds transacted within this application scope.\n                      "),_c('br'),_vm._v("\n                      By using this application you agree on these terms.\n                    ")])]),_vm._v(" "),_c('br'),_c('br')])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-text',[_c('v-text-field',{attrs:{"label":"Reward Code","required":"","outline":"","background-color":"orange"},model:{value:(_vm.rewardCode),callback:function ($$v) {_vm.rewardCode=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"rewardCode"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Destination Wallet Address","outline":"","background-color":"orange"},model:{value:(_vm.destinationWalletAddress),callback:function ($$v) {_vm.destinationWalletAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"destinationWalletAddress"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","outline":"","background-color":"deep-orange"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","outline":"","background-color":"deep-orange"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","outline":"","background-color":"deep-orange"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                      "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n                    ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":20}})],1)],1)],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","width":"600px"},model:{value:(_vm.txReceiptDialog),callback:function ($$v) {_vm.txReceiptDialog=$$v},expression:"txReceiptDialog"}},[_c('v-card',{attrs:{"color":"white"}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[(this.awaitingTx)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title blue--text"},[_vm._v("\n                Transaction broadcasted to the "),_c('b',[_vm._v("Althash Blockchain")]),_vm._v("!\n              ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n              Awaiting confirmation from the network...\n            ")]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-progress-linear',{attrs:{"indeterminate":true,"color":"orange"}})],1)],1):_vm._e(),_vm._v(" "),(this.txError)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"red--text"},[_c('p'),_c('h1',[_vm._v("Unsuccessful")]),_vm._v(" "),_c('p'),_vm._v(" "),_c('p',[_vm._v(" \n                  This reward code has either been claimed or is invalid.\n                ")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{attrs:{"color":"error"},on:{"click":function($event){_vm.txError = false; _vm.txReceiptDialog = false}}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e(),_vm._v(" "),(this.txConfirmed)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title blue--text"},[_c('h1',[_vm._v("Successful!")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n              The reward was successfully redeemed. Congrats!\n            ")]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{attrs:{"color":"warning"},on:{"click":function($event){_vm.txConfirmed = false; _vm.txReceiptDialog = false}}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e()],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
 
 /***/ }),
 
@@ -13022,6 +13228,17 @@ module.exports = {"OP_FALSE":0,"OP_0":0,"OP_PUSHDATA1":76,"OP_PUSHDATA2":77,"OP_
 
 /***/ }),
 
+/***/ "z9s6":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-card-title',{staticClass:"justify-center"},[_c('span',{staticClass:"headline"},[_c('img',{attrs:{"src":__webpack_require__("wOSG")}})])])],1)],1),_vm._v(" "),_c('v-tabs',{attrs:{"centered":"","icons-and-text":"","color":"transparent","slider-color":"deep-orange"},model:{value:(_vm.active),callback:function ($$v) {_vm.active=$$v},expression:"active"}},[_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Info\n        "),_c('v-icon',[_vm._v("info")])],1),_vm._v(" "),_c('v-tab',{attrs:{"ripple":""}},[_vm._v("\n        Redeem\n        "),_c('v-icon',[_vm._v("check_circle")])],1),_vm._v(" "),_c('v-tab-item',[[_c('v-layout',{attrs:{"row":""}},[_c('v-flex',{attrs:{"xs12":"","sm6":"","offset-sm3":""}},[_c('br'),_c('br'),_vm._v(" "),_c('v-card',[_c('v-card-text',[_c('div',{attrs:{"align":"center"}},[_c('div',[_c('img',{staticStyle:{"height":"auto","width":"75%"},attrs:{"src":__webpack_require__("90T0")}})]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"display-1"},[_vm._v("Welcome to CypticMAG!")]),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('span',{staticClass:"subheading"},[_vm._v("\n                    This application allows the redeeming of rewards found inside your Cryptic Magazine.\n                    "),_c('br'),_c('br'),_vm._v("\n            \t\t    To redeem your prize view the \"redeem\" tab, then enter the code found inside your magazine along with your destination wallet.\n            \t\t    "),_c('br'),_c('br'),_vm._v("\n            \t\t    After you have entered in the code, review that the info is correct then press confirm.\n            \t\t    "),_c('br'),_c('br'),_vm._v("\n            \t\t    We look forward to rewarding you again in the next edition.\n            \t\t    "),_c('br'),_c('br'),_vm._v("\n            \t\t    Stay Tuned & Good Luck!\n                    "),_c('br'),_c('br'),_c('br'),_c('br'),_vm._v(" "),_c('small',[_c('b',[_vm._v("Disclaimer")]),_vm._v(" "),_c('br'),_vm._v("\n                      HTMLCoin Foundation has reviewed and approved this application's code, having Althash Web Platform as a proud host, however the Foundation is not responsible for any funds transacted within this application scope.\n                      "),_c('br'),_vm._v("\n                      By using this application you agree on these terms.\n                    ")])]),_vm._v(" "),_c('br'),_c('br')])])],1)],1)],1)]],2),_vm._v(" "),_c('v-tab-item',[_c('v-card',{attrs:{"flat":""}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs6":"","offset-xs3":""}},[_c('v-layout',{attrs:{"row":"","wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title"},[_vm._v("\n                    Total available:\n                  ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","title":""}},[_c('b',[_vm._v(_vm._s((Math.round(this.totalMAGAvailable * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}))+" MAG")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs6":"","title":""}},[_c('b',[_vm._v(_vm._s((Math.round(this.totalHTMLAvailable * 100) / 100).toLocaleString("en-US", {style: "decimal", minimumFractionDigits: 2}))+" HTML")])]),_vm._v(" "),(this.totalMAGPrizesAvailable > 1)?_c('v-flex',{attrs:{"xs6":"","title":""}},[_c('b',[_vm._v(_vm._s(this.totalMAGPrizesAvailable)+" rewards")])]):(this.totalMAGPrizesAvailable == 1)?_c('v-flex',{attrs:{"xs6":"","title":""}},[_c('b',[_vm._v("1 reward")])]):_c('v-flex',{attrs:{"xs6":"","title":""}},[_c('b',[_vm._v("No rewards available.")])]),_vm._v(" "),(this.totalHTMLPrizesAvailable > 1)?_c('v-flex',{attrs:{"xs6":"","title":""}},[_c('b',[_vm._v(_vm._s(this.totalHTMLPrizesAvailable)+" rewards")])]):(this.totalHTMLPrizesAvailable == 1)?_c('v-flex',{attrs:{"xs6":"","title":""}},[_c('b',[_vm._v("1 reward")])]):_c('v-flex',{attrs:{"xs6":"","title":""}},[_c('b',[_vm._v("No rewards available.")])])],1),_vm._v(" "),_c('v-card-text',[_c('v-text-field',{attrs:{"label":"Reward Code","required":"","outline":"","background-color":"orange"},model:{value:(_vm.rewardCode),callback:function ($$v) {_vm.rewardCode=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"rewardCode"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Destination Wallet Address","outline":"","background-color":"orange"},model:{value:(_vm.destinationWalletAddress),callback:function ($$v) {_vm.destinationWalletAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"destinationWalletAddress"}}),_vm._v(" "),_c('br'),_c('br'),_vm._v(" "),_c('v-layout',[_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","required":"","outline":"","background-color":"deep-orange"},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Gas Limit","required":"","outline":"","background-color":"deep-orange"},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}})],1),_vm._v(" "),_c('v-flex',{attrs:{"xs4":""}},[_c('v-text-field',{attrs:{"label":"Fee","required":"","outline":"","background-color":"deep-orange"},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n                      "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n                    ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":20}})],1)],1)],1)],1)],1)],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","width":"600px"},model:{value:(_vm.txReceiptDialog),callback:function ($$v) {_vm.txReceiptDialog=$$v},expression:"txReceiptDialog"}},[_c('v-card',{attrs:{"color":"white"}},[_c('v-container',{attrs:{"fluid":"","grid-list-md":""}},[(this.awaitingTx)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title blue--text"},[_vm._v("\n                Transaction broadcasted to the "),_c('b',[_vm._v("Althash Blockchain")]),_vm._v("!\n              ")])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n              Awaiting confirmation from the network...\n            ")]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-progress-linear',{attrs:{"indeterminate":true,"color":"orange"}})],1)],1):_vm._e(),_vm._v(" "),(this.txError)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"red--text"},[_c('p'),_c('h1',[_vm._v("Unsuccessful")]),_vm._v(" "),_c('p'),_vm._v(" "),_c('p',[_vm._v(" \n                  This reward code has either been claimed or is invalid.\n                ")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{attrs:{"color":"error"},on:{"click":function($event){_vm.txError = false; _vm.txReceiptDialog = false}}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e(),_vm._v(" "),(this.txConfirmed)?_c('v-layout',{attrs:{"row":"","wrap":"","align-center":"","text-xs-center":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('span',{staticClass:"title blue--text"},[_c('h1',[_vm._v("Successful!")])])]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_vm._v("\n              The reward was successfully redeemed. Congrats!\n            ")]),_vm._v(" "),_c('v-flex',{attrs:{"xs12":""}},[_c('v-btn',{attrs:{"color":"warning"},on:{"click":_vm.closeMsg}},[_vm._v("\n                Close\n              ")])],1)],1):_vm._e()],1)],1)],1),_vm._v(" "),_c('v-dialog',{attrs:{"hide-overlay":"","persistent":"","width":"300"},model:{value:(_vm.loading),callback:function ($$v) {_vm.loading=$$v},expression:"loading"}},[_c('v-card',{attrs:{"color":"blue","dark":""}},[_c('v-card-text',[_c('b',[_vm._v("Loading info...")]),_vm._v(" "),_c('v-progress-linear',{staticClass:"mb-0",attrs:{"indeterminate":"","color":"white"}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "zG4X":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -13176,4 +13393,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.6aedca6a268848da5de6.js.map
+//# sourceMappingURL=app.e354c2b9adbfbadb32ba.js.map
