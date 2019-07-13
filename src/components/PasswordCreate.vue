@@ -9,10 +9,24 @@
           <v-container grid-list-md>
             <v-layout wrap>
               <v-flex xs12>
-                <v-text-field :label="$t('password.password')" type="password" v-model="password" ref="passwordInput"></v-text-field>
+                <v-text-field 
+                  :label="$t('password.password')" 
+                  type="password" 
+                  v-model="password" 
+                  ref="passwordInput"
+                  outline
+                  background-color="blue lighten-1"
+                ></v-text-field>
               </v-flex>
               <v-flex xs12>
-                <v-text-field label="repeat the password" type="password" v-model="repeatPassword" @keydown.enter="confirmPassword"></v-text-field>
+                <v-text-field 
+                  label="repeat the password" 
+                  type="password" 
+                  v-model="repeatPassword" 
+                  @keydown.enter="confirmPassword"
+                  outline
+                  background-color="blue lighten-1"
+                ></v-text-field>
               </v-flex>
             </v-layout>
           </v-container>
@@ -57,6 +71,7 @@ export default {
       }        
       this.$emit('password', password)
       this.password = ''
+      this.repeatPassword = ''
       return true
     }
   },

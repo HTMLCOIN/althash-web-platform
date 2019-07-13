@@ -1,7 +1,10 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span class="headline">{{ $t('create_mnemonic.title') }}</span>
+    <v-card-title primary-title class="justify-center">
+      <div class="headline font-weight-medium blue--text">
+        <v-icon large>cloud_upload</v-icon>
+        {{ $t('create_mnemonic.title') }}
+      </div>
     </v-card-title>
     <v-card-text v-if="[3, 5].includes(step)">
       <template v-if="step === 3">
@@ -16,8 +19,13 @@
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
-      <v-btn color="error" dark @click="createWallet" v-if="step === 1">{{ $t('create_mnemonic.title') }}</v-btn>
+      <v-btn color="error" dark @click="createWallet" v-if="step === 1">
+        <slot>
+          <v-icon>assignment</v-icon>
+        </slot>
+      </v-btn>
       <v-btn color="info" dark @click="checkWallet" v-if="step === 3">{{ $t('create_mnemonic.remembered') }}</v-btn>
+      <v-spacer></v-spacer>
     </v-card-actions>
     <password :open="passwordRequired" @password="setPassword"></password>
   </v-card>

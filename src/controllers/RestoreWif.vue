@@ -1,7 +1,12 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span class="headline">{{ $t('restore_wif.title') }}</span>
+    <v-card-title primary-title class="justify-center">
+      <div>
+        <div class="headline font-weight-medium blue--text">
+          <v-icon large>edit</v-icon>
+          {{ $t('restore_wif.title') }}
+        </div>
+      </div>
     </v-card-title>
     <v-card-text>
       <v-layout>
@@ -21,6 +26,7 @@
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn color="success" @click="restore">{{ $t('common.confirm') }}</v-btn>
+      <v-spacer></v-spacer>
     </v-card-actions>
   </v-card>
 </template>

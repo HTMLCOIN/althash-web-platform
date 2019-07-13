@@ -1,7 +1,15 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span class="headline">{{ $t('restore_mobile.title') }}</span>
+    <v-card-title primary-title class="justify-center">
+      <div>
+        <div class="headline font-weight-medium blue--text">
+          <v-icon large>phonelink_lock</v-icon>
+          {{ $t('restore_mobile.title') }}
+        </div>
+        <center>
+          <span class="subheading grey--text">Please input the mnemonic words</span>
+        </center>
+      </div>
     </v-card-title>
     <v-card-text>
       <mnemonic @mnemonic="restore" v-show="this.restored === false"></mnemonic>

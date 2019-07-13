@@ -1,8 +1,14 @@
 <template>
-  <v-btn @click="clickBtn" :color="color">
-    <slot>{{ $t('file_reader.upload') }}</slot>
-    <input type="file" style="display: none;" @change="handleFiles" ref="input" />
-  </v-btn>
+  <v-layout>
+    <v-flex align-center text-xs-center>
+      <v-btn dark @click="clickBtn" :color="color">
+        <slot>
+          <v-icon>vpn_key</v-icon>
+        </slot>
+        <input type="file" style="display: none;" @change="handleFiles" ref="input" />
+      </v-btn>
+    </v-flex>
+  </v-layout>
 </template>
 
 <script>

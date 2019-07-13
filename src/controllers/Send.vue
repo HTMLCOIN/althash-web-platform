@@ -1,13 +1,18 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">{{ $t('send.send_tokens') }}</span>
+      <div class="headline font-weight-medium blue--text">
+        <v-icon large>call_made</v-icon>
+          {{ $t('send.send_tokens') }}
+      </div>
     </v-card-title>
     <v-card-text>
       <v-form>
         <v-text-field
           label="Address"
           v-model.trim="address"
+          outline
+          background-color="blue lighten-1"
           required
          ></v-text-field>
         <v-layout>
@@ -15,6 +20,8 @@
             <v-text-field
               label="Amount"
               v-model.trim="amount"
+              outline
+              background-color="blue lighten-1"
               required
             ></v-text-field>
           </v-flex>
@@ -22,7 +29,9 @@
             <v-select
               :items="tokens"
               v-model="symbol"
-              bottom
+              outline
+              background-color="blue lighten-1"
+              single-line
             >
               <template slot="item" slot-scope="data">
                <v-list-tile-content>
@@ -41,15 +50,21 @@
           v-if="symbol !== 'HTML'"
           label="Gas Price (1e-8 HTML/gas)"
           v-model="gasPrice"
+          background-color="indigo darken-4"
+          outline
         ></v-text-field>
         <v-text-field
           v-if="symbol !== 'HTML'"
           label="Gas Limit"
           v-model="gasLimit"
+          background-color="indigo darken-4"
+          outline
         ></v-text-field>
         <v-text-field
           label="Fee"
           v-model.trim="fee"
+          outline
+          background-color="indigo darken-4"
           required
           ></v-text-field>
       </v-form>
@@ -57,6 +72,7 @@
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn class="success" dark @click="send" :disabled="notValid">{{ $t('common.confirm') }}</v-btn>
+      <v-spacer></v-spacer>
     </v-card-actions>
     <v-dialog v-model="confirmAddressDialog" persistent max-width="50%">
       <v-card>
@@ -67,7 +83,12 @@
           <v-container grid-list-md>
             <v-layout wrap>
               <v-flex xs12>
-                <v-text-field label="Address" v-model.trim="repeatAddress"></v-text-field>
+                <v-text-field 
+                  label="Address" 
+                  v-model.trim="repeatAddress"
+                  outline
+                  background-color="blue lighten-1"
+                ></v-text-field>
               </v-flex>
             </v-layout>
           </v-container>

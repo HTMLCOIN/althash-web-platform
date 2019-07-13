@@ -1,6 +1,5 @@
 <template>
   <div>
-    <p>{{ $t('mnemonic.input_words') }}</p>
     <v-card-text>
       <v-container grid-list-md>
         <v-layout wrap>
@@ -20,6 +19,7 @@
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn color="success" dark @click="inputMnemonicWords" :disabled="notFinishInput">{{ $t('common.confirm') }}</v-btn>
+      <v-spacer></v-spacer>
     </v-card-actions>
   </div>
 </template>

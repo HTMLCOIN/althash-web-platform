@@ -1,11 +1,17 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">{{ $t('dump_as_key_file.title') }}</span>
+      <div class="headline font-weight-medium blue--text">
+        <v-icon large>cloud_download</v-icon>
+          {{ $t('dump_as_key_file.title') }}
+      </div>
     </v-card-title>
     <v-card-text>
-      <v-alert color="error" value="true">{{ $t('dump_as_key_file.warning') }}</v-alert>
-      <file-creator v-if="fileStr" color="green" :href="fileStr"></file-creator>
+      <center>
+        <span class="subheading red--text"><b>{{ $t('dump_as_key_file.warning') }}</b></span>
+      </center>
+      <br><br>
+      <file-creator v-if="fileStr" color="info" :href="fileStr"></file-creator>
       <password :open="passwordRequired" notEmpty="true" title="dump_as_key_file.password_title" @password="inputed"></password>
     </v-card-text>
   </v-card>

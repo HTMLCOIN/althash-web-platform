@@ -1,8 +1,21 @@
 <template>
   <div>
-    <v-btn :color="color" :download="downloadName" :href="href" @click="doneClick" target="_blank">
-      <slot>{{ $t('file_creator.download') }}</slot>
-    </v-btn>
+    <center>
+      <p>
+        <span class="subheading">
+          {{ $t('file_creator.download') }}
+        </span>
+      </p>
+      <p>
+        <v-btn :color="color" :download="downloadName" :href="href" @click="doneClick" target="_blank">
+          <slot>
+            <v-icon>
+              cloud_download
+            </v-icon>
+          </slot>
+        </v-btn>
+      </p>
+    </center>
   </div>
 </template>
 

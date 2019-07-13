@@ -1,7 +1,10 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">{{ $t('send_to_contract.title') }}</span>
+      <div class="headline font-weight-medium blue--text">
+        <v-icon large>play_circle_outline</v-icon>
+          {{ $t('send_to_contract.title') }}
+      </div>
     </v-card-title>
     <v-card-text>
       <v-form>
@@ -9,19 +12,24 @@
           label="Contract Address"
           v-model.trim="contractAddress"
           required
+          outline
+          background-color="blue lighten-1"
         ></v-text-field>
-        <v-text-field
+        <v-textarea
           label="ABI"
           v-model.trim="abi"
           required
-          multiLine
+          outline
+          background-color="blue lighten-1"
           @input="decodeAbi"
-        ></v-text-field>
+        ></v-textarea>
         <v-select
           v-if="parsedAbi"
           :items="parsedAbi"
           label="Method"
           v-model="method"
+          outline
+          background-color="blue lighten-1"
           single-line
           bottom
         ></v-select>
@@ -31,21 +39,29 @@
             :label="param.name"
             :key="index"
             v-model="inputParams[index]"
+            outline
+            background-color="blue lighten-1"
           ></v-text-field>
         </template>
         <v-text-field
           label="Gas Price (1e-8 HTML/gas)"
           v-model.trim="gasPrice"
+          outline
+          background-color="indigo darken-4"
           required
         ></v-text-field>
         <v-text-field
           label="Gas Limit"
           v-model.trim="gasLimit"
+          outline
+          background-color="indigo darken-4"
           required
         ></v-text-field>
         <v-text-field
           label="Fee"
           v-model.trim="fee"
+          outline
+          background-color="indigo darken-4"
           required
           ></v-text-field>
       </v-form>
@@ -53,6 +69,7 @@
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn class="success" dark @click="send" :disabled="notValid">{{ $t('common.confirm') }}</v-btn>
+      <v-spacer></v-spacer>
     </v-card-actions>
     <v-dialog v-model="confirmSendDialog" persistent max-width="50%">
       <v-card>

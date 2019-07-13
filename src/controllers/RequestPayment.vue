@@ -1,7 +1,10 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">{{ $t('request_payment.title') }}</span>
+      <div class="headline font-weight-medium blue--text">
+        <v-icon large>call_received</v-icon>
+          {{ $t('request_payment.title') }}
+      </div>
     </v-card-title>
     <v-card-text>
       <v-form>
@@ -9,19 +12,25 @@
           label="Address"
           v-model="address"
           required
-          disabled
+          outline
+          background-color="blue lighten-1"
+          readonly
           @input="drawQrCode"
           ></v-text-field>
         <v-text-field
           label="Amount"
           v-model.trim="amount"
           required
+          outline
+          background-color="blue lighten-1"
           @input="drawQrCode"
           ></v-text-field>
         <v-text-field
           label="Message"
           v-model="message"
           required
+          outline
+          background-color="blue lighten-1"
           @input="drawQrCode"
           ></v-text-field>
         <p class="text-xs-center">

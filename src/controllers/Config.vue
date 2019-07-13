@@ -1,7 +1,10 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">{{ $t('config.title') }}</span>
+      <div class="headline font-weight-medium blue--text">
+        <v-icon large>settings</v-icon>
+        {{ $t('config.title') }}
+      </div>
     </v-card-title>
     <v-card-text>
       <v-container grid-list-md>
@@ -16,6 +19,8 @@
               :label="$t('config.lan')"
               single-line
               bottom
+              outline
+              background-color="blue lighten-1"
             ></v-select>
           </v-flex>
           <v-flex xs6>
@@ -28,6 +33,8 @@
               :label="$t('config.network')"
               single-line
               bottom
+              outline
+              background-color="blue lighten-1"
             ></v-select>
           </v-flex>
           <v-flex xs6>
@@ -40,6 +47,8 @@
               :label="$t('config.mode')"
               single-line
               bottom
+              outline
+              background-color="blue lighten-1"
             ></v-select>
           </v-flex>
           <v-flex xs6>
@@ -54,6 +63,7 @@
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn class="info" @click="save">{{ $t('common.confirm') }}</v-btn>
+      <v-spacer></v-spacer>
     </v-card-actions>
   </v-card>
 </template>

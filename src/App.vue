@@ -9,53 +9,46 @@
         <v-btn large icon slot="activator">
           <v-icon large color="blue darken-4">apps</v-icon>
         </v-btn>
-          <v-toolbar color="light-blue darken-4" dark height="40px">
-            <span class="title bold">
-              DAPPS
-            </span>
-          </v-toolbar>
           <v-card>
-            <v-card-text>
-              <v-container fluid grid-list-md>
-                <v-layout row wrap align-center text-xs-center>
-                  <v-flex xs4>
-                    <v-btn icon large dark slot="activator" @click="openURL('https://health.althash.org')">
-                      <img src="~assets/images/althash_health_menu_btn.png" style="height:50px;width:auto;">
-                    </v-btn>
-                  </v-flex>
-                  <v-flex xs4>
-                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_myoffspring')">
-                      <img src="~assets/images/myoffspring_menu_btn.png" style="height:50px;width:auto;">
-                    </v-btn>
-                  </v-flex>
-                  <v-flex xs4>
-                    <v-btn icon large dark slot="activator" @click="openDapp('create_token')">
-                      <img src="~assets/images/tokenfarm_menu_btn.png" style="height:50px;width:auto;">
-                    </v-btn>
-                  </v-flex>
-                  <v-flex xs4>
-                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_altproof')">
-                      <img src="~assets/images/altproof_menu_btn.png" style="height:50px;width:auto;">
-                    </v-btn>
-                  </v-flex>
-                  <v-flex xs4>
-                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_crypticmag')">
-                      <img src="~assets/images/crypticmag_menu_btn.png" style="height:50px;width:auto;">
-                    </v-btn>
-                  </v-flex>
-                  <v-flex xs4>
-                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_biffyplutonium')">
-                      <img src="~assets/images/BIFP_menu_black_btn.png" style="height:50px;width:auto;">
-                    </v-btn>
-                  </v-flex>
-                  <v-flex xs4>
-                    <v-btn icon large dark slot="activator" @click="openDapp('dapp_photizo')">
-                      <img src="~assets/images/photizo_menu_btn.png" style="height:50px;width:auto;">
-                    </v-btn>
-                  </v-flex>
-                </v-layout>
-              </v-container>
-            </v-card-text>
+            <v-container fluid grid-list-md>
+              <v-layout row wrap align-center text-xs-center>
+                <v-flex xs4>
+                  <v-btn icon large dark slot="activator" @click="openURL('https://health.althash.org')">
+                    <img src="~assets/images/althash_health_menu_btn.png" style="height:50px;width:auto;">
+                  </v-btn>
+                </v-flex>
+                <v-flex xs4>
+                  <v-btn icon large dark slot="activator" @click="openDapp('dapp_myoffspring')">
+                    <img src="~assets/images/myoffspring_menu_btn.png" style="height:50px;width:auto;">
+                  </v-btn>
+                </v-flex>
+                <v-flex xs4>
+                  <v-btn icon large dark slot="activator" @click="openDapp('create_token')">
+                    <img src="~assets/images/tokenfarm_menu_btn.png" style="height:50px;width:auto;">
+                  </v-btn>
+                </v-flex>
+                <v-flex xs4>
+                  <v-btn icon large dark slot="activator" @click="openDapp('dapp_altproof')">
+                    <img src="~assets/images/altproof_menu_btn.png" style="height:50px;width:auto;">
+                  </v-btn>
+                </v-flex>
+                <v-flex xs4>
+                  <v-btn icon large dark slot="activator" @click="openDapp('dapp_crypticmag')">
+                    <img src="~assets/images/crypticmag_menu_btn.png" style="height:50px;width:auto;">
+                  </v-btn>
+                </v-flex>
+                <v-flex xs4>
+                  <v-btn icon large dark slot="activator" @click="openDapp('dapp_biffyplutonium')">
+                    <img src="~assets/images/BIFP_menu_black_btn.png" style="height:50px;width:auto;">
+                  </v-btn>
+                </v-flex>
+                <v-flex xs4>
+                  <v-btn icon large dark slot="activator" @click="openDapp('dapp_photizo')">
+                    <img src="~assets/images/photizo_menu_btn.png" style="height:50px;width:auto;">
+                  </v-btn>
+                </v-flex>
+              </v-layout>
+            </v-container>
           </v-card>
         </v-card>
       </v-menu>
@@ -324,7 +317,7 @@ export default {
         {
           title: "Generate New Wallet",
           name: "create",
-          action: "add"
+          action: "account_balance_wallet"
         },
         {
           title: "Create from Mnemonic",
@@ -469,7 +462,7 @@ export default {
     openDapp(name) {
       if (this.mode === "offline" || !this.wallet) {
         alert(
-          'You need to either import or create a new Wallet before using Dapps! Please go to the "Add Wallet" menu at the top-right corner of the page.'
+          'You need to either import or create a new Wallet before using Dapps! Please use the menu at the top-right corner of the page.'
         );
       } else {
         this.changeView(name);
@@ -479,10 +472,10 @@ export default {
       window.open(url, "_blank");
     },
     error(msg, isHtml = false, ttl = 10) {
-      this.addNotify(msg, "error", isHtml, ttl);
+      this.addNotify(msg, "error", true, ttl);
     },
     success(msg, isHtml = false, ttl = 10) {
-      this.addNotify(msg, "success", isHtml, ttl);
+      this.addNotify(msg, "success", true, ttl);
     },
     addNotify(msg, type, isHtml = false, ttl = 10) {
       const notifyId = [msg, type].join("_");
