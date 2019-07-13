@@ -1,7 +1,18 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">{{ $t('view_tx.title') }}</span>
+      <div class="headline font-weight-medium blue--text">
+        <v-icon large>list</v-icon>
+          {{ $t('view_tx.title') }}
+      </div>
+      <v-tooltip bottom>
+        <v-btn icon slot="activator" @click="refreshWallet">
+          <v-icon color="blue accent-4">
+            refresh
+          </v-icon>
+        </v-btn>
+        <span>Refresh</span>
+      </v-tooltip>
     </v-card-title>
     <v-card-text>
       <p>{{ $t('view_tx.recent') }}</p>
@@ -34,7 +45,9 @@
             </p>
           </v-flex>
           <v-flex xs1>
-            =&gt;
+            <v-icon>
+              arrow_right_alt
+            </v-icon>
           </v-flex>
           <v-flex xs3>
             <p v-for="(vtx, vid) in tx.vout" :key="vid" :class="vtx.scriptPubKey.addresses && vtx.scriptPubKey.addresses[0] === wallet.info.address ? 'green--text' : ''" style='overflow: hidden; text-overflow: ellipsis; white-space: nowrap;'>
@@ -101,6 +114,11 @@ export default {
     txList: function() {
       return this.wallet.txList
     },
+  },
+  methods: {
+    async refreshWallet(){
+      this.wallet.setTxList()
+    }
   }
 }
 </script>

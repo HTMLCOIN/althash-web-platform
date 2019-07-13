@@ -1,7 +1,15 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span class="headline">{{ $t('restore_key_file.title') }}</span>
+    <v-card-title primary-title class="justify-center">
+      <div>
+        <div class="headline font-weight-medium blue--text">
+          <v-icon large>cloud_upload</v-icon>
+          {{ $t('restore_key_file.title') }}
+        </div>
+        <center>
+          <span class="subheading grey--text">Please upload your key file</span>
+        </center>
+      </div>
     </v-card-title>
     <v-card-text>
       <file-reader color="blue" style="color:white;" @upload="parseKeyFile"></file-reader>
@@ -32,8 +40,8 @@ export default {
       let content = keyfile.parse(upload.content)
       if (content) {
         this.passwordRequired = true
-	this.content = content
-      }
+        this.content = content
+    }
       else {
         this.$root.error('the_key_file_is_not_a_valid_format')
       }

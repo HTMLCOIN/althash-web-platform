@@ -1,7 +1,10 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">{{ $t('safe_send.title') }}</span>
+      <div class="headline font-weight-medium blue--text">
+        <v-icon large>security</v-icon>
+          {{ $t('safe_send.title') }}
+      </div>
     </v-card-title>
     <v-card-text>
       <v-alert color="info" value="true">{{ $t('safe_send.info') }}</v-alert>

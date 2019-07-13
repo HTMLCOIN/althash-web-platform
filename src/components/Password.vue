@@ -3,13 +3,21 @@
     <v-dialog v-model="dialog" persistent max-width="50%">
       <v-card>
         <v-card-title>
-          <span class="headline">{{ $t(headline) }}</span>
+          <span class="headline">Please input your password:</span>
         </v-card-title>
         <v-card-text>
           <v-container grid-list-md>
             <v-layout wrap>
               <v-flex xs12>
-                <v-text-field :label="$t('password.password')" type="password" v-model="password" ref="passwordInput" @keydown.enter="confirmPassword"></v-text-field>
+                <v-text-field 
+                  :label="$t('password.password')" 
+                  type="password" 
+                  v-model="password" 
+                  ref="passwordInput" 
+                  @keydown.enter="confirmPassword"
+                  outline
+                  background-color="blue lighten-1"
+                ></v-text-field>
               </v-flex>
             </v-layout>
           </v-container>

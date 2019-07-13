@@ -1,37 +1,47 @@
 <template>
   <v-card>
     <v-card-title>
-      <span class="headline">{{ $t('create_contract.title') }}</span>
+      <div class="headline font-weight-medium blue--text">
+        <v-icon large>build</v-icon>
+        {{ $t('create_contract.title') }}
+      </div>
     </v-card-title>
     <v-card-text>
       <v-form>
-        <v-text-field
+        <v-textarea
           label="Byte Code"
           v-model.trim="code"
-          multiLine
           required
-          ></v-text-field>
-        <a href="https://remix.ethereum.org" target="_blank" style="float: right;">{{ $t('create_contract.compiler') }}</a>
+          outline
+          background-color="blue lighten-1"
+        ></v-textarea>
         <v-text-field
           label="Gas Price (1e-8 HTML/gas)"
           v-model.trim="gasPrice"
           required
+          outline
+          background-color="indigo darken-4"
         ></v-text-field>
         <v-text-field
           label="Gas Limit"
           v-model.trim="gasLimit"
           required
+          outline
+          background-color="indigo darken-4"
         ></v-text-field>
         <v-text-field
           label="Fee"
           v-model.trim="fee"
           required
+          outline
+          background-color="indigo darken-4"
           ></v-text-field>
       </v-form>
     </v-card-text>
     <v-card-actions>
       <v-spacer></v-spacer>
       <v-btn class="success" dark @click="send" :disabled="notValid">{{ $t('common.confirm') }}</v-btn>
+      <v-spacer></v-spacer>
     </v-card-actions>
     <v-dialog v-model="confirmSendDialog" persistent max-width="50%">
       <v-card>

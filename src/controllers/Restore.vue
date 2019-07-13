@@ -1,7 +1,15 @@
 <template>
   <v-card>
-    <v-card-title>
-      <span class="headline">{{ $t('restore.title') }}</span>
+    <v-card-title primary-title class="justify-center">
+      <div>
+        <div class="headline font-weight-medium blue--text">
+          <v-icon large>sms</v-icon>
+          {{ $t('restore.title') }}
+        </div>
+        <center>
+          <span class="subheading grey--text">{{ $t('mnemonic.input_words') }}</span>
+        </center>
+      </div>
     </v-card-title>
     <v-card-text>
       <mnemonic @mnemonic="restore"></mnemonic>
