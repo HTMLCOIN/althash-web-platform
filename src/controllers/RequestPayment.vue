@@ -56,7 +56,7 @@ export default {
   },
   methods: {
     drawQrCode() {
-      qrcode.toDataURL(`html:${this.address}?amount=${this.amount}&message=${this.message}`, (err, url) => {
+      qrcode.toDataURL(`htmlcoin:${this.address}?amount=${this.amount}&message=${this.message}`, (err, url) => {
         this.qr = url
       })
     }
