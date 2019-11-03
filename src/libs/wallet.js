@@ -87,8 +87,8 @@ export default class Wallet {
     return Wallet.generateCreateContractTx(this, code, gasLimit, gasPrice, fee, await server.currentNode().getUtxoList(this.info.address))
   }
 
-  async generateSendToContractTx(contractAddress, encodedData, gasLimit, gasPrice, fee) {
-    return await Wallet.generateSendToContractTx(this, contractAddress, encodedData, gasLimit, gasPrice, fee, await server.currentNode().getUtxoList(this.info.address))
+  async generateSendToContractTx(contractAddress, encodedData, gasLimit, gasPrice, fee, amount) {
+    return await Wallet.generateSendToContractTx(this, contractAddress, encodedData, gasLimit, gasPrice, fee, await server.currentNode().getUtxoList(this.info.address), amount)
   }
 
   async generateTx(to, amount, fee) {
@@ -125,13 +125,13 @@ export default class Wallet {
     return htmlcoin.utils.buildCreateContractTransaction(wallet.keyPair, code, gasLimit, gasPrice, fee, utxoList)
   }
 
-  static async generateSendToContractTx(wallet, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList) {
+  static async generateSendToContractTx(wallet, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList, amount) {
     if (!wallet.getHasPrivKey()) {
       if (wallet.extend.ledger) {
         return await ledger.generateSendToContractTx(wallet.keyPair, wallet.extend.ledger.ledger, wallet.extend.ledger.path, wallet.info.address, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList, server.currentNode().fetchRawTx)
       }
     }
-    return htmlcoin.utils.buildSendToContractTransaction(wallet.keyPair, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList)
+    return htmlcoin.utils.buildSendToContractTransaction(wallet.keyPair, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList, amount)
   }
 
   static async generateTx(wallet, to, amount, fee, utxoList) {
