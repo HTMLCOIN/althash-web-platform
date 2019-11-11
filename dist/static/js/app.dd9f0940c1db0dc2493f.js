@@ -224,17 +224,6 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAbEAAACJCAYAAACi
 
 /***/ }),
 
-/***/ "2Kgr":
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('div',{staticClass:"headline font-weight-medium blue--text"},[_c('v-icon',{attrs:{"large":""}},[_vm._v("play_circle_outline")]),_vm._v("\n        "+_vm._s(_vm.$t('send_to_contract.title'))+"\n    ")],1)]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":"","outline":"","background-color":"blue lighten-1"},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-textarea',{attrs:{"label":"ABI","required":"","outline":"","background-color":"blue lighten-1"},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","outline":"","background-color":"blue lighten-1","single-line":"","bottom":""},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name,"outline":"","background-color":"blue lighten-1"},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","outline":"","background-color":"indigo darken-4","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","outline":"","background-color":"indigo darken-4","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","outline":"","background-color":"indigo darken-4","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":20}})],1)],1)],1)],1)}
-var staticRenderFns = []
-var esExports = { render: render, staticRenderFns: staticRenderFns }
-/* harmony default export */ __webpack_exports__["a"] = (esExports);
-
-/***/ }),
-
 /***/ "2aRy":
 /***/ (function(module, exports) {
 
@@ -1744,6 +1733,17 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAFUAAABVCAYAAAA4
 
 /***/ }),
 
+/***/ "5T9h":
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;return _c('v-card',[_c('v-card-title',[_c('div',{staticClass:"headline font-weight-medium blue--text"},[_c('v-icon',{attrs:{"large":""}},[_vm._v("play_circle_outline")]),_vm._v("\n        "+_vm._s(_vm.$t('send_to_contract.title'))+"\n    ")],1)]),_vm._v(" "),_c('v-card-text',[_c('v-form',[_c('v-text-field',{attrs:{"label":"Contract Address","required":"","outline":"","background-color":"blue lighten-1"},model:{value:(_vm.contractAddress),callback:function ($$v) {_vm.contractAddress=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"contractAddress"}}),_vm._v(" "),_c('v-textarea',{attrs:{"label":"ABI","required":"","outline":"","background-color":"blue lighten-1"},on:{"input":_vm.decodeAbi},model:{value:(_vm.abi),callback:function ($$v) {_vm.abi=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"abi"}}),_vm._v(" "),(_vm.parsedAbi)?_c('v-select',{attrs:{"items":_vm.parsedAbi,"label":"Method","outline":"","background-color":"blue lighten-1","single-line":"","bottom":""},on:{"change":function($event){_vm.amount=0}},model:{value:(_vm.method),callback:function ($$v) {_vm.method=$$v},expression:"method"}}):_vm._e(),_vm._v(" "),(_vm.params)?_vm._l((_vm.params),function(param,index){return _c('v-text-field',{key:index,attrs:{"label":param.name,"outline":"","background-color":"blue lighten-1"},model:{value:(_vm.inputParams[index]),callback:function ($$v) {_vm.$set(_vm.inputParams, index, $$v)},expression:"inputParams[index]"}})}):_vm._e(),_vm._v(" "),(_vm.payable)?[_c('v-text-field',{attrs:{"label":"amount","outline":"","background-color":"blue lighten-1"},model:{value:(_vm.amount),callback:function ($$v) {_vm.amount=$$v},expression:"amount"}})]:_vm._e(),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Price (1e-8 HTML/gas)","outline":"","background-color":"indigo darken-4","required":""},model:{value:(_vm.gasPrice),callback:function ($$v) {_vm.gasPrice=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasPrice"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Gas Limit","outline":"","background-color":"indigo darken-4","required":""},model:{value:(_vm.gasLimit),callback:function ($$v) {_vm.gasLimit=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"gasLimit"}}),_vm._v(" "),_c('v-text-field',{attrs:{"label":"Fee","outline":"","background-color":"indigo darken-4","required":""},model:{value:(_vm.fee),callback:function ($$v) {_vm.fee=(typeof $$v === 'string'? $$v.trim(): $$v)},expression:"fee"}})],2)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{staticClass:"success",attrs:{"dark":"","disabled":_vm.notValid},on:{"click":_vm.send}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-spacer')],1),_vm._v(" "),_c('v-dialog',{attrs:{"persistent":"","max-width":"50%"},model:{value:(_vm.confirmSendDialog),callback:function ($$v) {_vm.confirmSendDialog=$$v},expression:"confirmSendDialog"}},[_c('v-card',[_c('v-card-title',[_c('span',{staticClass:"headline"},[_vm._v("\n          "+_vm._s(_vm.$t('send_to_contract.confirm'))+"\n        ")])]),_vm._v(" "),_c('v-card-text',[_c('v-container',{attrs:{"grid-list-md":""}},[_c('v-layout',{attrs:{"wrap":""}},[_c('v-flex',{attrs:{"xs12":""}},[_c('v-textarea',{attrs:{"label":"Raw Tx","disabled":""},model:{value:(_vm.rawTx),callback:function ($$v) {_vm.rawTx=$$v},expression:"rawTx"}})],1)],1)],1)],1),_vm._v(" "),_c('v-card-actions',[_c('v-spacer'),_vm._v(" "),_c('v-btn',{directives:[{name:"show",rawName:"v-show",value:(_vm.canSend && !_vm.sending),expression:"canSend && !sending"}],staticClass:"blue--text darken-1",attrs:{"flat":""},on:{"click":_vm.confirmSend}},[_vm._v(_vm._s(_vm.$t('common.confirm')))]),_vm._v(" "),_c('v-btn',{staticClass:"red--text darken-1",attrs:{"flat":"","v-show":!_vm.sending},nativeOn:{"click":function($event){_vm.confirmSendDialog = false}}},[_vm._v(_vm._s(_vm.$t('common.cancel')))]),_vm._v(" "),_c('v-progress-circular',{directives:[{name:"show",rawName:"v-show",value:(_vm.sending),expression:"sending"}],staticClass:"primary--text",attrs:{"indeterminate":"","size":20}})],1)],1)],1)],1)}
+var staticRenderFns = []
+var esExports = { render: render, staticRenderFns: staticRenderFns }
+/* harmony default export */ __webpack_exports__["a"] = (esExports);
+
+/***/ }),
+
 /***/ "6+u4":
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
@@ -1929,6 +1929,15 @@ module.exports = {"aes-128-ecb":{"cipher":"AES","key":128,"iv":0,"mode":"ECB","t
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
 
 
 
@@ -1945,6 +1954,7 @@ module.exports = {"aes-128-ecb":{"cipher":"AES","key":128,"iv":0,"mode":"ECB","t
       gasPrice: '40',
       gasLimit: '2500000',
       fee: '0.01',
+      amount: 0,
       confirmSendDialog: false,
       rawTx: 'loading...',
       canSend: false,
@@ -1962,6 +1972,13 @@ module.exports = {"aes-128-ecb":{"cipher":"AES","key":128,"iv":0,"mode":"ECB","t
         return inputs;
       }
       return null;
+    },
+    payable: function payable() {
+      if (this.method === null) {
+        return null;
+      } else {
+        return this.parsedAbi[this.method].info.payable;
+      }
     },
     notValid: function notValid() {
       //@todo valid the address
@@ -2004,7 +2021,7 @@ module.exports = {"aes-128-ecb":{"cipher":"AES","key":128,"iv":0,"mode":"ECB","t
                 _this.confirmSendDialog = true;
                 _context.prev = 3;
                 _context.next = 6;
-                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(_this.contractAddress, encodedData, _this.gasLimit, _this.gasPrice, _this.fee);
+                return __WEBPACK_IMPORTED_MODULE_2_libs_web_wallet__["a" /* default */].getWallet().generateSendToContractTx(_this.contractAddress, encodedData, _this.gasLimit, _this.gasPrice, _this.fee, _this.amount);
 
               case 6:
                 _this.rawTx = _context.sent;
@@ -8708,6 +8725,13 @@ module.exports = "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAOYAAACWCAYAAADK
 
 /***/ }),
 
+/***/ "VuLz":
+/***/ (function(module, exports) {
+
+module.exports = {"OP_FALSE":0,"OP_0":0,"OP_PUSHDATA1":76,"OP_PUSHDATA2":77,"OP_PUSHDATA4":78,"OP_1NEGATE":79,"OP_RESERVED":80,"OP_1":81,"OP_TRUE":81,"OP_2":82,"OP_3":83,"OP_4":84,"OP_5":85,"OP_6":86,"OP_7":87,"OP_8":88,"OP_9":89,"OP_10":90,"OP_11":91,"OP_12":92,"OP_13":93,"OP_14":94,"OP_15":95,"OP_16":96,"OP_NOP":97,"OP_VER":98,"OP_IF":99,"OP_NOTIF":100,"OP_VERIF":101,"OP_VERNOTIF":102,"OP_ELSE":103,"OP_ENDIF":104,"OP_VERIFY":105,"OP_RETURN":106,"OP_TOALTSTACK":107,"OP_FROMALTSTACK":108,"OP_2DROP":109,"OP_2DUP":110,"OP_3DUP":111,"OP_2OVER":112,"OP_2ROT":113,"OP_2SWAP":114,"OP_IFDUP":115,"OP_DEPTH":116,"OP_DROP":117,"OP_DUP":118,"OP_NIP":119,"OP_OVER":120,"OP_PICK":121,"OP_ROLL":122,"OP_ROT":123,"OP_SWAP":124,"OP_TUCK":125,"OP_CAT":126,"OP_SUBSTR":127,"OP_LEFT":128,"OP_RIGHT":129,"OP_SIZE":130,"OP_INVERT":131,"OP_AND":132,"OP_OR":133,"OP_XOR":134,"OP_EQUAL":135,"OP_EQUALVERIFY":136,"OP_RESERVED1":137,"OP_RESERVED2":138,"OP_1ADD":139,"OP_1SUB":140,"OP_2MUL":141,"OP_2DIV":142,"OP_NEGATE":143,"OP_ABS":144,"OP_NOT":145,"OP_0NOTEQUAL":146,"OP_ADD":147,"OP_SUB":148,"OP_MUL":149,"OP_DIV":150,"OP_MOD":151,"OP_LSHIFT":152,"OP_RSHIFT":153,"OP_BOOLAND":154,"OP_BOOLOR":155,"OP_NUMEQUAL":156,"OP_NUMEQUALVERIFY":157,"OP_NUMNOTEQUAL":158,"OP_LESSTHAN":159,"OP_GREATERTHAN":160,"OP_LESSTHANOREQUAL":161,"OP_GREATERTHANOREQUAL":162,"OP_MIN":163,"OP_MAX":164,"OP_WITHIN":165,"OP_RIPEMD160":166,"OP_SHA1":167,"OP_SHA256":168,"OP_HASH160":169,"OP_HASH256":170,"OP_CODESEPARATOR":171,"OP_CHECKSIG":172,"OP_CHECKSIGVERIFY":173,"OP_CHECKMULTISIG":174,"OP_CHECKMULTISIGVERIFY":175,"OP_NOP1":176,"OP_NOP2":177,"OP_CHECKLOCKTIMEVERIFY":177,"OP_NOP3":178,"OP_NOP4":179,"OP_NOP5":180,"OP_NOP6":181,"OP_NOP7":182,"OP_NOP8":183,"OP_NOP9":184,"OP_NOP10":185,"OP_CREATE":193,"OP_CALL":194,"OP_SPEND":195,"OP_GAS_PRICE":245,"OP_VERSION":246,"OP_GAS_LIMIT":247,"OP_DATA":248,"OP_SMALLINTEGER":250,"OP_PUBKEYS":251,"OP_PUBKEYHASH":253,"OP_PUBKEY":254,"OP_INVALIDOPCODE":255}
+
+/***/ }),
+
 /***/ "Vw+u":
 /***/ (function(module, exports) {
 
@@ -8983,7 +9007,7 @@ var Wallet = function () {
   }, {
     key: 'generateSendToContractTx',
     value: function () {
-      var _ref6 = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee6(contractAddress, encodedData, gasLimit, gasPrice, fee) {
+      var _ref6 = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee6(contractAddress, encodedData, gasLimit, gasPrice, fee, amount) {
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee6$(_context6) {
           while (1) {
             switch (_context6.prev = _context6.next) {
@@ -9000,13 +9024,14 @@ var Wallet = function () {
 
               case 9:
                 _context6.t7 = _context6.sent;
-                _context6.next = 12;
-                return _context6.t0.generateSendToContractTx.call(_context6.t0, _context6.t1, _context6.t2, _context6.t3, _context6.t4, _context6.t5, _context6.t6, _context6.t7);
-
-              case 12:
-                return _context6.abrupt('return', _context6.sent);
+                _context6.t8 = amount;
+                _context6.next = 13;
+                return _context6.t0.generateSendToContractTx.call(_context6.t0, _context6.t1, _context6.t2, _context6.t3, _context6.t4, _context6.t5, _context6.t6, _context6.t7, _context6.t8);
 
               case 13:
+                return _context6.abrupt('return', _context6.sent);
+
+              case 14:
               case 'end':
                 return _context6.stop();
             }
@@ -9014,7 +9039,7 @@ var Wallet = function () {
         }, _callee6, this);
       }));
 
-      function generateSendToContractTx(_x13, _x14, _x15, _x16, _x17) {
+      function generateSendToContractTx(_x13, _x14, _x15, _x16, _x17, _x18) {
         return _ref6.apply(this, arguments);
       }
 
@@ -9052,7 +9077,7 @@ var Wallet = function () {
         }, _callee7, this);
       }));
 
-      function generateTx(_x18, _x19, _x20) {
+      function generateTx(_x19, _x20, _x21) {
         return _ref7.apply(this, arguments);
       }
 
@@ -9084,7 +9109,7 @@ var Wallet = function () {
         }, _callee8, this);
       }));
 
-      function sendRawTx(_x21) {
+      function sendRawTx(_x22) {
         return _ref8.apply(this, arguments);
       }
 
@@ -9112,7 +9137,7 @@ var Wallet = function () {
         }, _callee9, this);
       }));
 
-      function callContract(_x22, _x23) {
+      function callContract(_x23, _x24) {
         return _ref9.apply(this, arguments);
       }
 
@@ -9138,7 +9163,7 @@ var Wallet = function () {
   }, {
     key: 'generateSendToContractTx',
     value: function () {
-      var _ref10 = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee10(wallet, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList) {
+      var _ref10 = __WEBPACK_IMPORTED_MODULE_1_babel_runtime_helpers_asyncToGenerator___default()( /*#__PURE__*/__WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.mark(function _callee10(wallet, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList, amount) {
         return __WEBPACK_IMPORTED_MODULE_0_babel_runtime_regenerator___default.a.wrap(function _callee10$(_context10) {
           while (1) {
             switch (_context10.prev = _context10.next) {
@@ -9160,7 +9185,7 @@ var Wallet = function () {
                 return _context10.abrupt('return', _context10.sent);
 
               case 5:
-                return _context10.abrupt('return', __WEBPACK_IMPORTED_MODULE_4_htmlcoinjs_lib___default.a.utils.buildSendToContractTransaction(wallet.keyPair, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList));
+                return _context10.abrupt('return', __WEBPACK_IMPORTED_MODULE_4_htmlcoinjs_lib___default.a.utils.buildSendToContractTransaction(wallet.keyPair, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList, amount));
 
               case 6:
               case 'end':
@@ -9170,7 +9195,7 @@ var Wallet = function () {
         }, _callee10, this);
       }));
 
-      function generateSendToContractTx(_x24, _x25, _x26, _x27, _x28, _x29, _x30) {
+      function generateSendToContractTx(_x25, _x26, _x27, _x28, _x29, _x30, _x31, _x32) {
         return _ref10.apply(this, arguments);
       }
 
@@ -9211,7 +9236,7 @@ var Wallet = function () {
         }, _callee11, this);
       }));
 
-      function generateTx(_x31, _x32, _x33, _x34, _x35) {
+      function generateTx(_x33, _x34, _x35, _x36, _x37) {
         return _ref11.apply(this, arguments);
       }
 
@@ -9239,7 +9264,7 @@ var Wallet = function () {
         }, _callee12, this);
       }));
 
-      function sendRawTx(_x36) {
+      function sendRawTx(_x38) {
         return _ref12.apply(this, arguments);
       }
 
@@ -9267,7 +9292,7 @@ var Wallet = function () {
         }, _callee13, this);
       }));
 
-      function callContract(_x37, _x38) {
+      function callContract(_x39, _x40) {
         return _ref13.apply(this, arguments);
       }
 
@@ -9344,7 +9369,7 @@ var Wallet = function () {
         }, _callee14, this);
       }));
 
-      function restoreHdNodeFromLedgerPath(_x39, _x40) {
+      function restoreHdNodeFromLedgerPath(_x41, _x42) {
         return _ref14.apply(this, arguments);
       }
 
@@ -10130,7 +10155,7 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 "use strict";
 /* harmony import */ var __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SendToContract_vue__ = __webpack_require__("6dsK");
 /* unused harmony namespace reexport */
-/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b5286efc_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__ = __webpack_require__("2Kgr");
+/* harmony import */ var __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2a7e4cbf_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__ = __webpack_require__("5T9h");
 var normalizeComponent = __webpack_require__("VU/8")
 /* script */
 
@@ -10147,7 +10172,7 @@ var __vue_scopeId__ = null
 var __vue_module_identifier__ = null
 var Component = normalizeComponent(
   __WEBPACK_IMPORTED_MODULE_0__babel_loader_node_modules_vue_loader_lib_selector_type_script_index_0_SendToContract_vue__["a" /* default */],
-  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_b5286efc_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__["a" /* default */],
+  __WEBPACK_IMPORTED_MODULE_1__node_modules_vue_loader_lib_template_compiler_index_id_data_v_2a7e4cbf_hasScoped_false_transformToRequire_video_src_source_src_img_src_image_xlink_href_buble_transforms_node_modules_vue_loader_lib_selector_type_template_index_0_SendToContract_vue__["a" /* default */],
   __vue_template_functional__,
   __vue_styles__,
   __vue_scopeId__,
@@ -13640,4 +13665,4 @@ var esExports = { render: render, staticRenderFns: staticRenderFns }
 /***/ })
 
 },["NHnr"]);
-//# sourceMappingURL=app.c6d2e699ecb3be31fe4b.js.map
+//# sourceMappingURL=app.dd9f0940c1db0dc2493f.js.map
