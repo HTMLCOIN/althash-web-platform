@@ -45661,8 +45661,8 @@ module.exports = BitBuffer
 
 module.exports = {
     htmlcoin: {
-        messagePrefix: '\x19HTMLCOIN Signed Message:\n',
-        bech32: 'bc',
+        messagePrefix: '\x15HTMLCOIN Signed Message:\n',
+        bech32: 'hc',
         bip32: {
             public: 0x0488b21e,
             private: 0x0488ade4
@@ -45672,15 +45672,15 @@ module.exports = {
         wif: 0xa9
     },
     htmlcoin_testnet: {
-        messagePrefix: '\x19Htmlcoin Signed Message:\n',
-        bech32: 'tb',
+        messagePrefix: '\x15Htmlcoin Signed Message:\n',
+        bech32: 'th',
         bip32: {
             public: 0x043587cf,
             private: 0x04358394
         },
         pubKeyHash: 0x64,
         scriptHash: 0x6e,
-        wif: 0xe4
+        wif: 0xef
     }
 }
 
@@ -95199,7 +95199,7 @@ module.exports = ReedSolomonEncoder
 
 var bitcoinjs = __webpack_require__("9pAC")
 var BigNumber = __webpack_require__("XzWX")
-var OPS = __webpack_require__("b4MT")
+var OPS = __webpack_require__("VuLz")
 var Buffer = __webpack_require__("X3l8").Buffer
 
 /**
@@ -95324,11 +95324,11 @@ function buildCreateContractTransaction(keyPair, code, gasLimit, gasPrice, fee, 
  * @param Number gasPrice(unit: 1e-8 HTML/gas)
  * @param Number fee(unit: HTML)
  * @param [transaction] utxoList
+ * @param Number amount
  * @returns String the built tx
  */
-function buildSendToContractTransaction(keyPair, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList) {
+function buildSendToContractTransaction(keyPair, contractAddress, encodedData, gasLimit, gasPrice, fee, utxoList, amount=0) {
     var from = keyPair.getAddress()
-    var amount = 0
     fee = new BigNumber(gasLimit).times(gasPrice).div(1e8).plus(fee).toNumber()
     var inputs = selectTxs(utxoList, amount, fee)
     var tx = new bitcoinjs.TransactionBuilder(keyPair.network)
@@ -95346,9 +95346,10 @@ function buildSendToContractTransaction(keyPair, contractAddress, encodedData, g
         hex2Buffer(contractAddress),
         OPS.OP_CALL
     ])
-    tx.addOutput(contract, 0)
-    if (totalValue.minus(sendFee).toNumber() > 0) {
-        tx.addOutput(from, totalValue.minus(sendFee).toNumber())
+    var sendAmount = new BigNumber(amount).times(1e8).toNumber()
+    tx.addOutput(contract, sendAmount)
+    if (totalValue.minus(sendFee).minus(sendAmount).toNumber() > 0.00072799) {
+        tx.addOutput(from, totalValue.minus(sendFee).minus(sendAmount).toNumber())
     }
     for (var i = 0; i < inputs.length; i++) {
         tx.sign(i, keyPair)
@@ -99469,4 +99470,4 @@ exports.default = function (self, call) {
 /***/ })
 
 });
-//# sourceMappingURL=vendor.35f74b1c3c8651f67481.js.map
+//# sourceMappingURL=vendor.dd41864ad30e2d9cb75b.js.map
